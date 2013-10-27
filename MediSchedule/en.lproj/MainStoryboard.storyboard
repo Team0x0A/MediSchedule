@@ -4,25 +4,57 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="oz4-es-Bvf">
+            <objects>
+                <viewController id="fFV-0u-msP" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wfH-8w-f7f">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-x8-n94">
+                                <items>
+                                    <navigationItem id="yr6-mJ-1Ft">
+                                        <barButtonItem key="rightBarButtonItem" title="Log in" id="kkE-nf-L9f">
+                                            <connections>
+                                                <segue destination="12" kind="push" id="J5t-tf-LMi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3ka-x8-n94" firstAttribute="trailing" secondItem="wfH-8w-f7f" secondAttribute="trailing" type="default" id="RMH-57-nlB"/>
+                            <constraint firstItem="3ka-x8-n94" firstAttribute="bottom" secondItem="wfH-8w-f7f" secondAttribute="bottom" type="default" id="VmL-4h-qP3"/>
+                            <constraint firstItem="3ka-x8-n94" firstAttribute="leading" secondItem="wfH-8w-f7f" secondAttribute="leading" type="default" id="rE6-VJ-z3w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dKr-ns-PxA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X5g-g3-o4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-56" y="884"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="11">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
                 <navigationController id="3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="12" kind="relationship" relationship="rootViewController" id="19"/>
+                        <segue destination="fFV-0u-msP" kind="relationship" relationship="rootViewController" id="4uH-Mh-bDU"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="64"/>
+            <point key="canvasLocation" x="-593" y="96"/>
         </scene>
         <!--Medi Schedule Master View Controller - Master-->
         <scene sceneID="18">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="MediScheduleMasterViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -65,13 +97,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Reminders" id="36"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="531" y="64"/>
         </scene>
         <!--Medi Schedule Detail View Controller - Create Reminder-->
         <scene sceneID="24">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="" title="Create Reminder" id="21" customClass="MediScheduleDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
@@ -127,6 +159,7 @@
                         <outlet property="timeTextField" destination="uX2-C2-Wkn" id="YIu-jb-eCt"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1118" y="64"/>
         </scene>
@@ -139,7 +172,6 @@
                 <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="dosageTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="dossageTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="pillIdTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="timeTextField" candidateClass="UITextField"/>
