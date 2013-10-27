@@ -1,16 +1,16 @@
 /*
  *  ReminderManager.h
  *  MediSchedule
+ *  
+ *  Header file for ReminderManager class
+ *  Allows the user interface to create and delete reminders.
  *
- *  Group 10
- *  CMPT 275
+ *  Created by: Team 0x0A
  */
 
 #import <Foundation/Foundation.h>
 #import "Time.h"
 
-// Justin is inserting a comment here
-// zheren
 @interface ReminderManager : NSObject
 
 -(id)init;

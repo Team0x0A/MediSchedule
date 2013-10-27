@@ -1,10 +1,11 @@
-//
-//  Reminder.m
-//  Reminder
-//
-//  Created by Justin Wang on 10/24/13.
-//  Copyright (c) 2013 Justin Wang. All rights reserved.
-//
+/*
+ *  Reminder.m
+ *  MediSchedule
+ *
+ *  Implementation file for Reminder class
+ *
+ *  Created by: Team 0x0A
+ */
 
 #import "Reminder.h"
 

@@ -1,10 +1,12 @@
-//
-//  Reminder.h
-//  Reminder
-//
-//  Created by Justin Wang on 10/24/13.
-//  Copyright (c) 2013 Justin Wang. All rights reserved.
-//
+/*
+ *  Reminder.h
+ *  MediSchedule
+ *
+ *  Header file for Reminder class
+ *  Creates each individual reminder to be stored in the ReminderManager class
+ *
+ *  Created by: Team 0x0A
+ */
 
 #import <Foundation/Foundation.h>
 #import "Time.h"
