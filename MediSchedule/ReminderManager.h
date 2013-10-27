@@ -1,10 +1,10 @@
-//
-//  ReminderManager.h
-//  MediSchedule
-//
-//  Created by Justin Wang on 10/24/13.
-//  Copyright (c) 2013 Justin Wang. All rights reserved.
-//
+/*
+ *  ReminderManager.h
+ *  MediSchedule
+ *
+ *  Group 10
+ *  CMPT 275
+ */
 
 #import <Foundation/Foundation.h>
 #import "Time.h"
