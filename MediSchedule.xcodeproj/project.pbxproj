@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C82C0E0181CA0A90006F60B /* MediScheduleDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C0DD181CA0A90006F60B /* MediScheduleDetailViewController.m */; };
-		0C82C0E1181CA0A90006F60B /* MediScheduleMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C0DF181CA0A90006F60B /* MediScheduleMasterViewController.m */; };
+		0C82C0E0181CA0A90006F60B /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C0DD181CA0A90006F60B /* ReminderViewController.m */; };
+		0C82C0E1181CA0A90006F60B /* ReminderManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C0DF181CA0A90006F60B /* ReminderManagerViewController.m */; };
 		0CB8570B181C7E3100D71BA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB8570A181C7E3100D71BA1 /* UIKit.framework */; };
 		0CB8570D181C7E3100D71BA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB8570C181C7E3100D71BA1 /* Foundation.framework */; };
 		0CB8570F181C7E3100D71BA1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB8570E181C7E3100D71BA1 /* CoreGraphics.framework */; };
@@ -29,7 +29,6 @@
 		0CB85754181C7FE500D71BA1 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574D181C7FE500D71BA1 /* Reminder.m */; };
 		0CB85755181C7FE500D71BA1 /* ReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574F181C7FE500D71BA1 /* ReminderManager.m */; };
 		0CB85756181C7FE500D71BA1 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB85751181C7FE500D71BA1 /* Time.m */; };
-		8445BB9D181D099A00B13809 /* MediScheduleCreateReminderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8445BB9C181D099A00B13809 /* MediScheduleCreateReminderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,10 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C82C0DC181CA0A90006F60B /* MediScheduleDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediScheduleDetailViewController.h; sourceTree = "<group>"; };
-		0C82C0DD181CA0A90006F60B /* MediScheduleDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediScheduleDetailViewController.m; sourceTree = "<group>"; };
-		0C82C0DE181CA0A90006F60B /* MediScheduleMasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediScheduleMasterViewController.h; sourceTree = "<group>"; };
-		0C82C0DF181CA0A90006F60B /* MediScheduleMasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediScheduleMasterViewController.m; sourceTree = "<group>"; };
+		0C82C0DC181CA0A90006F60B /* ReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderViewController.h; sourceTree = "<group>"; };
+		0C82C0DD181CA0A90006F60B /* ReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderViewController.m; sourceTree = "<group>"; };
+		0C82C0DE181CA0A90006F60B /* ReminderManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderManagerViewController.h; sourceTree = "<group>"; };
+		0C82C0DF181CA0A90006F60B /* ReminderManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManagerViewController.m; sourceTree = "<group>"; };
 		0CB85707181C7E3100D71BA1 /* MediSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB8570A181C7E3100D71BA1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0CB8570C181C7E3100D71BA1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,8 +76,6 @@
 		0CB8574F181C7FE500D71BA1 /* ReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManager.m; sourceTree = "<group>"; };
 		0CB85750181C7FE500D71BA1 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
 		0CB85751181C7FE500D71BA1 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
-		8445BB9B181D099A00B13809 /* MediScheduleCreateReminderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediScheduleCreateReminderView.h; sourceTree = "<group>"; };
-		8445BB9C181D099A00B13809 /* MediScheduleCreateReminderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediScheduleCreateReminderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +105,10 @@
 		0C82C0DB181C8BA80006F60B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8445BB9B181D099A00B13809 /* MediScheduleCreateReminderView.h */,
-				8445BB9C181D099A00B13809 /* MediScheduleCreateReminderView.m */,
-				0C82C0DC181CA0A90006F60B /* MediScheduleDetailViewController.h */,
-				0C82C0DD181CA0A90006F60B /* MediScheduleDetailViewController.m */,
-				0C82C0DE181CA0A90006F60B /* MediScheduleMasterViewController.h */,
-				0C82C0DF181CA0A90006F60B /* MediScheduleMasterViewController.m */,
+				0C82C0DC181CA0A90006F60B /* ReminderViewController.h */,
+				0C82C0DD181CA0A90006F60B /* ReminderViewController.m */,
+				0C82C0DE181CA0A90006F60B /* ReminderManagerViewController.h */,
+				0C82C0DF181CA0A90006F60B /* ReminderManagerViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -329,9 +324,8 @@
 				0CB85754181C7FE500D71BA1 /* Reminder.m in Sources */,
 				0CB85755181C7FE500D71BA1 /* ReminderManager.m in Sources */,
 				0CB85756181C7FE500D71BA1 /* Time.m in Sources */,
-				0C82C0E0181CA0A90006F60B /* MediScheduleDetailViewController.m in Sources */,
-				0C82C0E1181CA0A90006F60B /* MediScheduleMasterViewController.m in Sources */,
-				8445BB9D181D099A00B13809 /* MediScheduleCreateReminderView.m in Sources */,
+				0C82C0E0181CA0A90006F60B /* ReminderViewController.m in Sources */,
+				0C82C0E1181CA0A90006F60B /* ReminderManagerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  MediScheduleCreateReminderView.h
+//  MediScheduleMasterViewController.h
 //  MediSchedule
 //
 //  Created by Ishan Bhutani on 10/26/13.
@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MediScheduleCreateReminderView : UIViewController
+@interface ReminderManagerViewController : UITableViewController
 
+- (void) addCellAt:(int)index;
 @end
