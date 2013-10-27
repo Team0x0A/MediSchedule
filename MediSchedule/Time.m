@@ -37,6 +37,7 @@
 
 -initWithString:(NSString*) inputString
 {
+
     self = [super init];
     if (self)
     {
@@ -58,6 +59,7 @@
     return self;
    
 
+
 }
 
 - (NSString *)description
@@ -68,7 +70,7 @@
     [output appendString: @":"];
     [output appendString: [[NSString alloc] initWithFormat:@"%d", [self min]]];
     [output appendString: @":"];
-    [output appendString: [[NSString alloc] initWithFormat:@"%d", [self sec]]];
+    [output appendString: [[NSString alloc] initWithFormat:@"%d", [self hour]]];
     
     return (NSString*)output;
 }
