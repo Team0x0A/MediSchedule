@@ -4,7 +4,7 @@
  *
  *  Implementation file for Reminder class
  *
- *  Created by: Team 0x0A
+ *  Copyright (c) 2013 Team 0x0A
  */
 
 #import "Reminder.h"

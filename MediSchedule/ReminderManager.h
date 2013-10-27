@@ -3,9 +3,9 @@
  *  MediSchedule
  *  
  *  Header file for ReminderManager class
- *  Allows the user interface to create and delete reminders.
+ *  Manages list of reminders: creates ability to add/remove reminders.
  *
- *  Created by: Team 0x0A
+ *  Copyright (c) 2013 Team 0x0A
  */
 
 #import <Foundation/Foundation.h>

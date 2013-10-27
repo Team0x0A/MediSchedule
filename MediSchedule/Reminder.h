@@ -5,7 +5,7 @@
  *  Header file for Reminder class
  *  Creates each individual reminder to be stored in the ReminderManager class
  *
- *  Created by: Team 0x0A
+ *  Copyright (c) 2013 Team 0x0A
  */
 
 #import <Foundation/Foundation.h>

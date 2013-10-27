@@ -1,10 +1,12 @@
-//
-//  Pill.h
-//  MediSchedule
-//
-//  Created by Ishan Bhutani on 10/24/13.
-//  Copyright (c) 2013 Justin Wang. All rights reserved.
-//
+/*
+ *  Pill.h
+ *  MediSchedule
+ *
+ *  Header file for each Pill class
+ *  Manages list of reminders: creates ability to add/remove pills.
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import <Foundation/Foundation.h>
 
