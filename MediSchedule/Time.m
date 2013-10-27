@@ -37,11 +37,26 @@
 
 -initWithString:(NSString*) inputString
 {
-    NSArray *tokens = [timestampString componentsSeparatedByString:@"("];
-    NSString *afterOpenBracket = [components objectAtIndex:1];
-    components = [afterOpenBracket componentsSeparatedByString:@")"];
-    NSString *numberString = [components objectAtIndex:0];
-    long timeStamp = [numberString longValue];
+    self = [super init];
+    if (self)
+    {
+        NSArray *tokens = [inputString componentsSeparatedByString:@":"];
+        NSString *token0 = [tokens objectAtIndex:0];
+        NSString *token1 = [tokens objectAtIndex:1];
+        int setHour = [token0 intValue];
+        int setMin = [token1 intValue];
+
+        
+        NSDateComponents *comps = [[NSDateComponents alloc] init];
+        [comps setHour:setHour];
+        [comps setMinute:setMin];
+        [comps setSecond:0];
+        NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
+        date = [gregorian dateFromComponents:comps];
+    }
+    
+    return self;
+   
 }
 
 - (NSString *)description
@@ -52,7 +67,7 @@
     [output appendString: @":"];
     [output appendString: [[NSString alloc] initWithFormat:@"%d", [self min]]];
     [output appendString: @":"];
-    [output appendString: [[NSString alloc] initWithFormat:@"%d", [self hour]]];
+    [output appendString: [[NSString alloc] initWithFormat:@"%d", [self sec]]];
     
     return (NSString*)output;
 }
