@@ -1,10 +1,11 @@
-//
-//  Time.m
-//  MediSchedule
-//
-//  Created by Justin Wang on 10/24/13.
-//  Copyright (c) 2013 Justin Wang. All rights reserved.
-//
+/*
+ *  Time.m
+ *  MediSchedule
+ *
+ *  Implementation file for Time class
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import "Time.h"
 

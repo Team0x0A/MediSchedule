@@ -1,10 +1,12 @@
-//
-//  Time.h
-//  MediSchedule
-//
-//  Created by Justin Wang on 10/24/13.
-//  Copyright (c) 2013 Justin Wang. All rights reserved.
-//
+/*
+ *  Time.h
+ *  MediSchedule
+ *
+ *  Header file for Pill class
+ *  Data structure for each time in a reminder
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import <Foundation/Foundation.h>
 
