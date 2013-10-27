@@ -15,6 +15,8 @@
        WithMin:(int) min
        WithSec:(int) sec;
 
+-initWithString:(NSString*) inputString;
+
 - (NSString *)description;
 - (int) hour;
 - (int) min;

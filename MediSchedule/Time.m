@@ -35,6 +35,15 @@
     return self;
 }
 
+-initWithString:(NSString*) inputString
+{
+    NSArray *tokens = [timestampString componentsSeparatedByString:@"("];
+    NSString *afterOpenBracket = [components objectAtIndex:1];
+    components = [afterOpenBracket componentsSeparatedByString:@")"];
+    NSString *numberString = [components objectAtIndex:0];
+    long timeStamp = [numberString longValue];
+}
+
 - (NSString *)description
 {
     NSMutableString* output = [[NSMutableString alloc] init];
