@@ -1,10 +1,15 @@
-//
-//  main.m
-//  MediSchedule
-//
-//  Created by Ishan Bhutani on 10/26/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
+/*
+ *  main.m
+ *  MediSchedule
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import <UIKit/UIKit.h>
 
