@@ -50,10 +50,7 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTapped:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTapped:)];
-    self.navigationItem.;
-    
+      
 }
 
 
@@ -162,7 +159,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Reminder: %@",[myManager notesAt:[indexPath item]]]];
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]]; //,[myManager notesAt:[indexPath item]]]];
     [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
     return cell;
 }
