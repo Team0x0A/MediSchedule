@@ -189,9 +189,15 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    ReminderViewController *detailController = segue.destinationViewController;
-    detailController.detailItem = myManager;
-    detailController.callBack = self;
+    UIViewController* destination = [segue destinationViewController];
+    
+    if([[destination title] isEqual: @"CreateReminder"])
+    {
+ 
+        ReminderViewController *detailController = segue.destinationViewController;
+        detailController.detailItem = myManager;
+        detailController.callBack = self;
+    }
 }
 
 
