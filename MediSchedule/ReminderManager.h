@@ -5,6 +5,12 @@
  *  Header file for ReminderManager class
  *  Manages list of reminders: creates ability to add/remove reminders.
  *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
  *  Copyright (c) 2013 Team 0x0A
  */
 

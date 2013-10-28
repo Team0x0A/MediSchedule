@@ -5,6 +5,12 @@
  *  Header file for Pill class
  *  Data structure for each time in a reminder
  *
+ *  Programmers: 
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *  
  *  Copyright (c) 2013 Team 0x0A
  */
 

@@ -1,10 +1,19 @@
-//
-//  MediScheduleDetailViewController.h
-//  MediSchedule
-//
-//  Created by Ishan Bhutani on 10/26/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
+/*
+ *  ReminderViewController.h
+ *  MediSchedule
+ *
+ *  Header file for ReminderViewController class
+ *  Inherits from UIViewController
+ *  Manages display for each individual reminder in the GUI
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import <UIKit/UIKit.h>
 #import "ReminderManager.h"

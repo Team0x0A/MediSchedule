@@ -5,6 +5,12 @@
  *  Header file for each PillManager class
  *  Creates each individual pill to be stored in the PillManager class
  *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
  *  Copyright (c) 2013 Team 0x0A
  */
 

@@ -5,6 +5,12 @@
  *  Header file for Reminder class
  *  Creates each individual reminder to be stored in the ReminderManager class
  *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
  *  Copyright (c) 2013 Team 0x0A
  */
 

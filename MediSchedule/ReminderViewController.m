@@ -1,10 +1,18 @@
-//
-//  MediScheduleDetailViewController.m
-//  MediSchedule
-//
-//  Created by Ishan Bhutani on 10/26/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
+/*
+ *  ReminderViewController.m
+ *  MediSchedule
+ *
+ *  Implementation file for ReminderViewController class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
+
 
 #import "ReminderViewController.h"
 

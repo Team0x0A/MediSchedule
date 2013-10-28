@@ -1,10 +1,17 @@
-//
-//  MediScheduleMasterViewController.m
-//  MediSchedule
-//
-//  Created by Ishan Bhutani on 10/26/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
+/*
+ *  ReminderManagerViewController.h
+ *  MediSchedule
+ *
+ *  Implementation file for ReminderManagerViewController class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import "ReminderManagerViewController.h"
 #import "ReminderViewController.h"
@@ -30,6 +37,11 @@
     [super awakeFromNib];
 }
 
+
+
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,15 +55,6 @@
     }
     
     [self testReminderManager];
-    
-    
-    
-	// Do any additional setup after loading the view, typically from a nib.
-    //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    
-    // Add new Reminder button:
-    //UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    //self.navigationItem.rightBarButtonItem = addButton;
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTapped:)];
     self.navigationItem.rightBarButtonItem = addButton;
@@ -72,12 +75,18 @@
 
 
 
+
+
+
 - (void) addCellAt:(int)index
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
+
+
+
 
 
 
@@ -92,15 +101,6 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
-     /*
-      if (!_objects) {
-    _objects = [[NSMutableArray alloc] init];
-     }
-     [
-     _objects insertObject:[NSDate date] atIndex:0];
-     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-     */
     somecount++;
 }
 
@@ -109,18 +109,9 @@
 
 
 
-- (void)addTapped:(id)sender {
+- (void)addTapped:(id)sender
+{
     
-    /*
-    int index = [myManager addReminderWithTime:[[Time alloc] initWithHour:rand()%24 WithMin:00 WithSec:0]
-                                    WithPillId:52
-                                    WithDosage:5000
-                                     WithNotes:[[NSString alloc] initWithFormat:@"%d", 12345]];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    
-    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];*/
     [self performSegueWithIdentifier:@"MySegue" sender:self];
 }
 
@@ -141,8 +132,6 @@
 
 
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
@@ -154,22 +143,15 @@
 
 
 
-
-
-
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ReminderCell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
     [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]]; //,[myManager notesAt:[indexPath item]]]];
     [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
     return cell;
 }
-
-
 
 
 
@@ -182,8 +164,6 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-
-
 
 
 
@@ -206,48 +186,18 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
 
 
 
-/*
- // Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
- {
- }
- */
-
-/*
- // Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
- {
- // Return NO if you do not want the item to be re-orderable.
- return YES;
- }
- */
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    /*
-     if ([[segue identifier] isEqualToString:@"showDetail"]) {
-     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-     NSDate *object = _objects[indexPath.row];
-     [[segue destinationViewController] setDetailItem:object];
-     }
-     */
-    
-    /*
-    MediScheduleDetailViewController *detailController = segue.destinationViewController;
-    Reminder* editReminder = [[Reminder alloc] initWithTime:
-                              [myManager timeAt: self.tableView.indexPathForSelectedRow.row]
-                                                 WithPillId:[myManager pillIdAt: self.tableView.indexPathForSelectedRow.row]
-                                                 WithDosage:[myManager dosageAt: self.tableView.indexPathForSelectedRow.row]
-                                                  WithNotes:[myManager notesAt: self.tableView.indexPathForSelectedRow.row]
-                              ];
-    
-    //ScaryBugDoc *bug = [self.bugs objectAtIndex:self.tableView.indexPathForSelectedRow.row];*/
-
     ReminderViewController *detailController = segue.destinationViewController;
     detailController.detailItem = myManager;
     detailController.callBack = self;
 }
+
+
+
+
+
 
 - (void) testReminderManager
 {
