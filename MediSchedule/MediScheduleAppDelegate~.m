@@ -1,17 +1,10 @@
-/*
- *  MediScheduleAppDelegate.m
- *  MediSchedule
- *
- *  Implementation file for MediScheduleAppDelegate class
- *
- *  Programmers:
- *  Ishan Bhutani
- *  Ning Chai
- *  Zheren Lu
- *  Justin Wang
- *
- *  Copyright (c) 2013 Team 0x0A
- */
+//
+//  MediScheduleAppDelegate.m
+//  MediSchedule
+//
+//  Created by Ishan Bhutani on 10/26/13.
+//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
+//
 
 #import "MediScheduleAppDelegate.h"
 
