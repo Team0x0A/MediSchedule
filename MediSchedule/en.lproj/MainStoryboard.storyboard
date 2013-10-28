@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5g-g3-o4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="103"/>
+            <point key="canvasLocation" x="-127" y="77"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="11">
@@ -149,7 +149,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="17" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="352" y="103"/>
+            <point key="canvasLocation" x="364" y="49"/>
         </scene>
         <!--Reminder View Controller - Create Reminder-->
         <scene sceneID="24">
@@ -178,20 +178,37 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jkj-6v-ccl">
+                                <items>
+                                    <navigationItem title="Create Reminder " id="sUh-i2-F8G"/>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csC-gP-BT7">
+                                <items>
+                                    <barButtonItem title="Item" id="r6Y-Ni-X8O"/>
+                                    <barButtonItem title="Item" id="vwV-Vl-tat"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="0QN-Zl-hHx" firstAttribute="top" secondItem="22" secondAttribute="top" constant="70" id="0XT-fz-8QX"/>
-                            <constraint firstItem="uX2-C2-Wkn" firstAttribute="top" secondItem="22" secondAttribute="top" constant="20" symbolic="YES" type="default" id="9EZ-aO-Mfy"/>
-                            <constraint firstItem="0QN-Zl-hHx" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EGK-vT-yvg"/>
-                            <constraint firstItem="N1l-oe-vFj" firstAttribute="top" secondItem="22" secondAttribute="top" constant="161" id="Kwa-bR-2Ra"/>
-                            <constraint firstItem="N1l-oe-vFj" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="LHu-zh-6Ci"/>
-                            <constraint firstItem="0QN-Zl-hHx" firstAttribute="trailing" secondItem="uX2-C2-Wkn" secondAttribute="trailing" type="default" id="QIb-80-Hjj"/>
-                            <constraint firstItem="TRr-i9-26V" firstAttribute="top" secondItem="22" secondAttribute="top" constant="115" id="WvH-D5-mDQ"/>
-                            <constraint firstItem="TRr-i9-26V" firstAttribute="trailing" secondItem="0QN-Zl-hHx" secondAttribute="trailing" type="default" id="dzR-go-Cuc"/>
-                            <constraint firstItem="TRr-i9-26V" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fkA-Nw-rkz"/>
-                            <constraint firstItem="uX2-C2-Wkn" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="g0c-iJ-TC2"/>
-                            <constraint firstItem="N1l-oe-vFj" firstAttribute="trailing" secondItem="TRr-i9-26V" secondAttribute="trailing" type="default" id="gic-fD-Ysz"/>
+                            <constraint firstItem="uX2-C2-Wkn" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="41" id="0CU-OX-8XM"/>
+                            <constraint firstItem="Jkj-6v-ccl" firstAttribute="top" secondItem="22" secondAttribute="top" type="default" id="1jB-WK-5my"/>
+                            <constraint firstItem="uX2-C2-Wkn" firstAttribute="leading" secondItem="0QN-Zl-hHx" secondAttribute="leading" type="default" id="DcD-6G-utE"/>
+                            <constraint firstItem="uX2-C2-Wkn" firstAttribute="trailing" secondItem="0QN-Zl-hHx" secondAttribute="trailing" type="default" id="IZS-gc-SPk"/>
+                            <constraint firstItem="Jkj-6v-ccl" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="Ikb-7R-6qq"/>
+                            <constraint firstItem="uX2-C2-Wkn" firstAttribute="top" secondItem="22" secondAttribute="top" constant="65" id="L2D-CL-NAv"/>
+                            <constraint firstItem="csC-gP-BT7" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="Lg7-A2-Dcf"/>
+                            <constraint firstItem="Jkj-6v-ccl" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="SyR-iP-j7a"/>
+                            <constraint firstItem="TRr-i9-26V" firstAttribute="trailing" secondItem="N1l-oe-vFj" secondAttribute="trailing" type="default" id="YSQ-8a-b7j"/>
+                            <constraint firstItem="0QN-Zl-hHx" firstAttribute="leading" secondItem="TRr-i9-26V" secondAttribute="leading" type="default" id="fz0-hN-Xog"/>
+                            <constraint firstItem="csC-gP-BT7" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="hod-qt-F6A"/>
+                            <constraint firstItem="0QN-Zl-hHx" firstAttribute="trailing" secondItem="TRr-i9-26V" secondAttribute="trailing" type="default" id="ixn-Ja-Asv"/>
+                            <constraint firstItem="TRr-i9-26V" firstAttribute="leading" secondItem="N1l-oe-vFj" secondAttribute="leading" type="default" id="jX5-ih-3fq"/>
+                            <constraint firstItem="TRr-i9-26V" firstAttribute="top" secondItem="22" secondAttribute="top" constant="193" id="nYA-k5-Rpd"/>
+                            <constraint firstItem="0QN-Zl-hHx" firstAttribute="top" secondItem="22" secondAttribute="top" constant="130" id="qVs-dR-lAL"/>
+                            <constraint firstAttribute="bottom" secondItem="N1l-oe-vFj" secondAttribute="bottom" constant="244" id="vkH-fM-nEZ"/>
+                            <constraint firstItem="csC-gP-BT7" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="ygz-Mw-SXB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="26">
@@ -217,21 +234,110 @@
         <scene sceneID="qLV-jd-2fW">
             <objects>
                 <viewController id="Czc-kF-Umy" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="mo7-E0-7ez">
+                    <view key="view" contentMode="scaleToFill" id="mo7-E0-7ez" customClass="CreateDoctorScreen">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBq-Pb-1fW">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Zx7-rz-w5G"/>
+                                    <constraint firstAttribute="width" constant="134" id="uNL-B6-6f9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-SH-ex8">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DoctorName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ei-f7-DNx">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Doctor Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lq-Dq-jsv">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aP-ux-xwp">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOZ-Wp-9Nf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FqP-PZ-fvm">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v96-3U-y3A">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xzu-Y8-s25">
+                                <items>
+                                    <navigationItem title="Create Doctor" id="oOM-bg-U4e">
+                                        <barButtonItem key="rightBarButtonItem" title="Done" id="VdJ-aQ-mrg">
+                                            <connections>
+                                                <segue destination="7yS-l9-em5" kind="push" id="ITL-zM-IPb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgb-QR-yas">
+                                <items>
+                                    <barButtonItem title="Item" id="4hY-H3-Yfj"/>
+                                    <barButtonItem width="203" style="plain" systemItem="fixedSpace" id="Zbp-54-zXr"/>
+                                    <barButtonItem title="Item" id="rm0-En-u73"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FqP-PZ-fvm" firstAttribute="trailing" secondItem="4z2-SH-ex8" secondAttribute="trailing" type="default" id="0UE-0s-TgA"/>
+                            <constraint firstItem="0aP-ux-xwp" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="268" id="47f-DZ-mGR"/>
+                            <constraint firstAttribute="bottom" secondItem="v96-3U-y3A" secondAttribute="bottom" constant="178" id="4hP-S6-dyj"/>
+                            <constraint firstItem="4z2-SH-ex8" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="195" id="6od-5R-zew"/>
+                            <constraint firstItem="Xzu-Y8-s25" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" type="default" id="Bn7-57-3cf"/>
+                            <constraint firstItem="Xzu-Y8-s25" firstAttribute="trailing" secondItem="mo7-E0-7ez" secondAttribute="trailing" type="default" id="Ceb-iq-6IL"/>
+                            <constraint firstItem="Xzu-Y8-s25" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" type="default" id="FZa-55-nrg"/>
+                            <constraint firstItem="FqP-PZ-fvm" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="264" id="KAW-Vk-MSZ"/>
+                            <constraint firstItem="6lq-Dq-jsv" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="199" id="RJT-ud-B4g"/>
+                            <constraint firstItem="wOZ-Wp-9Nf" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Uvx-Ee-1e7"/>
+                            <constraint firstItem="1ei-f7-DNx" firstAttribute="baseline" secondItem="XBq-Pb-1fW" secondAttribute="baseline" type="default" id="YFE-G8-EEB"/>
+                            <constraint firstItem="XBq-Pb-1fW" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" constant="148" id="dIa-kL-YNl"/>
+                            <constraint firstItem="1ei-f7-DNx" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="120" id="dfj-MU-uiJ"/>
+                            <constraint firstItem="6lq-Dq-jsv" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="euK-ur-ST4"/>
+                            <constraint firstItem="1ei-f7-DNx" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="inK-Ag-tig"/>
+                            <constraint firstItem="FqP-PZ-fvm" firstAttribute="trailing" secondItem="v96-3U-y3A" secondAttribute="trailing" type="default" id="jeO-Oh-7sq"/>
+                            <constraint firstItem="0aP-ux-xwp" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ktK-sU-MwT"/>
+                            <constraint firstItem="v96-3U-y3A" firstAttribute="leading" secondItem="FqP-PZ-fvm" secondAttribute="leading" type="default" id="mCW-RL-Y8N"/>
+                            <constraint firstItem="Xgb-QR-yas" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" type="default" id="mlp-hN-WWN"/>
+                            <constraint firstItem="4z2-SH-ex8" firstAttribute="leading" secondItem="XBq-Pb-1fW" secondAttribute="leading" type="default" id="ora-E0-aIF"/>
+                            <constraint firstItem="Xgb-QR-yas" firstAttribute="trailing" secondItem="mo7-E0-7ez" secondAttribute="trailing" type="default" id="pxf-MM-2Sh"/>
+                            <constraint firstItem="XBq-Pb-1fW" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="116" id="sFY-BC-sQe"/>
+                            <constraint firstItem="wOZ-Wp-9Nf" firstAttribute="baseline" secondItem="v96-3U-y3A" secondAttribute="baseline" type="default" id="tdQ-Dp-ufE"/>
+                            <constraint firstItem="Xgb-QR-yas" firstAttribute="bottom" secondItem="mo7-E0-7ez" secondAttribute="bottom" type="default" id="xMt-PT-xwK"/>
+                            <constraint firstItem="FqP-PZ-fvm" firstAttribute="leading" secondItem="4z2-SH-ex8" secondAttribute="leading" type="default" id="z97-kf-okw"/>
+                            <constraint firstItem="XBq-Pb-1fW" firstAttribute="trailing" secondItem="4z2-SH-ex8" secondAttribute="trailing" type="default" id="zJM-4y-afG"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="eg9-aX-khn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1H-qe-62f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="889" y="464"/>
+            <point key="canvasLocation" x="1863" y="-361"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="rpB-aH-aUY">
             <objects>
                 <viewController id="7yS-l9-em5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Foq-4C-ErG">
+                    <view key="view" contentMode="scaleToFill" id="Foq-4C-ErG" customClass="CreatPillScreen">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -243,14 +349,6 @@
                                                 <segue destination="21" kind="push" id="koq-xr-WqW"/>
                                             </connections>
                                         </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lol-JY-RHA">
-                                <items>
-                                    <navigationItem title="Title" id="sfM-Ox-2qj">
-                                        <barButtonItem key="leftBarButtonItem" title="View Pill" id="YBr-wT-HAi"/>
-                                        <barButtonItem key="rightBarButtonItem" title="Create Doctor" id="wrH-tb-MX0"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -275,26 +373,38 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJl-Fu-RNt">
+                                <items>
+                                    <barButtonItem title="View Pill" id="y1i-zD-b43"/>
+                                    <barButtonItem width="129" style="plain" systemItem="fixedSpace" id="dup-O0-xJK"/>
+                                    <barButtonItem title="Create Doctor" id="uAo-jt-Jv7">
+                                        <connections>
+                                            <segue destination="Czc-kF-Umy" kind="push" id="3xO-bF-ptB"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="qix-nC-hYx" firstAttribute="leading" secondItem="47b-wT-iCx" secondAttribute="leading" type="default" id="2LN-Ta-zE4"/>
-                            <constraint firstItem="v36-4c-Oyp" firstAttribute="bottom" secondItem="47b-wT-iCx" secondAttribute="bottom" type="default" id="2og-j8-Rd1"/>
                             <constraint firstItem="8ya-S6-byI" firstAttribute="trailing" secondItem="Foq-4C-ErG" secondAttribute="trailing" type="default" id="4oe-LQ-sP3"/>
-                            <constraint firstItem="Lol-JY-RHA" firstAttribute="bottom" secondItem="Foq-4C-ErG" secondAttribute="bottom" type="default" id="EE0-zI-FGe"/>
                             <constraint firstItem="47b-wT-iCx" firstAttribute="trailing" secondItem="qix-nC-hYx" secondAttribute="trailing" type="default" id="FUG-h3-GwW"/>
-                            <constraint firstItem="Lol-JY-RHA" firstAttribute="leading" secondItem="Foq-4C-ErG" secondAttribute="leading" type="default" id="HQ3-oc-HWi"/>
+                            <constraint firstItem="bJl-Fu-RNt" firstAttribute="leading" secondItem="Foq-4C-ErG" secondAttribute="leading" type="default" id="HBA-Iy-i3t"/>
                             <constraint firstItem="8ya-S6-byI" firstAttribute="leading" secondItem="Foq-4C-ErG" secondAttribute="leading" type="default" id="I82-c0-1Tu"/>
                             <constraint firstItem="v36-4c-Oyp" firstAttribute="leading" secondItem="Foq-4C-ErG" secondAttribute="leading" constant="42" id="IZb-nJ-qoX"/>
-                            <constraint firstItem="qix-nC-hYx" firstAttribute="top" secondItem="M7Y-5d-8gC" secondAttribute="top" type="default" id="Kbk-sJ-3Oc"/>
                             <constraint firstItem="M7Y-5d-8gC" firstAttribute="leading" secondItem="v36-4c-Oyp" secondAttribute="leading" type="default" id="M7P-uq-YXP"/>
-                            <constraint firstItem="Lol-JY-RHA" firstAttribute="trailing" secondItem="Foq-4C-ErG" secondAttribute="trailing" type="default" id="MMt-eX-Rpn"/>
                             <constraint firstItem="47b-wT-iCx" firstAttribute="leading" secondItem="Foq-4C-ErG" secondAttribute="leading" constant="135" id="RW0-wS-wZV"/>
+                            <constraint firstItem="M7Y-5d-8gC" firstAttribute="baseline" secondItem="qix-nC-hYx" secondAttribute="baseline" type="default" id="SCF-6y-dJ2"/>
+                            <constraint firstItem="v36-4c-Oyp" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="151" id="XE8-sJ-zbl"/>
+                            <constraint firstItem="bJl-Fu-RNt" firstAttribute="bottom" secondItem="Foq-4C-ErG" secondAttribute="bottom" type="default" id="YuW-AB-jfr"/>
+                            <constraint firstItem="bJl-Fu-RNt" firstAttribute="trailing" secondItem="Foq-4C-ErG" secondAttribute="trailing" type="default" id="ZzS-9b-q0y"/>
                             <constraint firstItem="8ya-S6-byI" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" type="default" id="iOG-6X-uAm"/>
-                            <constraint firstItem="M7Y-5d-8gC" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="226" id="qqk-Aq-6cz"/>
+                            <constraint firstItem="qix-nC-hYx" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="226" id="vjc-zx-FwQ"/>
                             <constraint firstItem="47b-wT-iCx" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="147" id="zUo-nl-22A"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="1eu-BM-P13"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kv9-ue-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
