@@ -12,10 +12,14 @@
 #import "Reminder.h"
 
 
-@interface ReminderManagerViewController () {
+@interface ReminderManagerViewController ()
+{
     ReminderManager *myManager;// Reminder Manager to be used for entire application
     NSMutableArray *_objects;
+    
 }
+
+-(void) testReminderManager;
 
 @end
 
@@ -37,7 +41,8 @@
     {
         myManager = [[ReminderManager alloc] init];
     }
-    //[self test];
+    
+    [self testReminderManager];
     
     
     
@@ -244,11 +249,37 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
     detailController.callBack = self;
 }
 
-- (void) test
+- (void) testReminderManager
 {
-    [myManager addReminderWithTime:[[Time alloc] initWithHour:16 WithMin:20 WithSec:0] WithPillId:14123 WithDosage:5000 WithNotes:@"IM HIGH"];
-    [myManager addReminderWithTime:[[Time alloc] initWithHour:0 WithMin:20 WithSec:0] WithPillId:14123 WithDosage:5000 WithNotes:@"IM NOT HIGH"];
-    [myManager addReminderWithTime:[[Time alloc] initWithHour:10 WithMin:20 WithSec:0] WithPillId:14123 WithDosage:5000 WithNotes:@"I WANA GET HIGH"];
+    int index;
+    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"6:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 1st"];
+    [self addCellAt:index];
+    
+    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"12:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 2nd"];
+    [self addCellAt:index];
+    
+    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
+    [self addCellAt:index];
+    
+    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"9:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 4th"];
+    [self addCellAt:index];
+    
+    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"1:45"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 5th"];
+    [self addCellAt:index];
+    
+    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"5:30"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 6th"];
+    [self addCellAt:index];
+    
+    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"4:45"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 5th"];
+    [self addCellAt:index];
+    
+    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"12:30"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 6th"];
+    [self addCellAt:index];
+    
+    [myManager deleteReminderWith:0];
+    [myManager deleteReminderWith:0];
+    [myManager deleteReminderWith:0];
+    [myManager deleteReminderWith:0];
 }
 
 @end
