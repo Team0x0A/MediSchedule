@@ -95,7 +95,7 @@
             <objects>
                 <tableViewController storyboardIdentifier="" title="Master" id="12" customClass="ReminderManagerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="13">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8cf-RS-uA0">
@@ -156,7 +156,7 @@
             <objects>
                 <viewController storyboardIdentifier="" title="Create Reminder" id="21" customClass="ReminderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-C2-Wkn">
@@ -260,7 +260,7 @@
             <objects>
                 <viewController id="Czc-kF-Umy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mo7-E0-7ez" customClass="CreateDoctorScreen">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBq-Pb-1fW">
@@ -350,18 +350,51 @@
             <point key="canvasLocation" x="1863" y="-361"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="zhf-cC-haM">
+            <objects>
+                <viewController id="ol7-fq-Jvy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L9n-nt-ijZ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="goK-xV-BYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="996"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="2Fe-1Y-PaE">
             <objects>
                 <viewController id="dHl-Tf-6OY" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XCq-Ni-gxT">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="56U-cf-cfp">
+                                <items>
+                                    <barButtonItem title="Item" id="QRC-3k-efg"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="56U-cf-cfp" firstAttribute="trailing" secondItem="XCq-Ni-gxT" secondAttribute="trailing" type="default" id="YMk-wo-oug"/>
+                            <constraint firstItem="56U-cf-cfp" firstAttribute="leading" secondItem="XCq-Ni-gxT" secondAttribute="leading" type="default" id="cCd-Kp-E8u"/>
+                            <constraint firstItem="56U-cf-cfp" firstAttribute="bottom" secondItem="XCq-Ni-gxT" secondAttribute="bottom" type="default" id="zEH-5t-QGq"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="DNR-xT-orb">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="D1d-JM-CEr">
+                            <connections>
+                                <segue destination="12" kind="push" id="CbP-VZ-pLy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJy-1F-ONN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893" y="352"/>
+            <point key="canvasLocation" x="1347" y="354"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="C9U-UG-jhs">
@@ -375,14 +408,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2i-i5-odO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="346"/>
+            <point key="canvasLocation" x="1916" y="340"/>
         </scene>
         <!--View Controller - Medication-->
         <scene sceneID="rpB-aH-aUY">
             <objects>
                 <viewController id="7yS-l9-em5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Foq-4C-ErG" customClass="CreatPillScreen">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47b-wT-iCx">
@@ -408,7 +441,11 @@
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJl-Fu-RNt">
                                 <items>
-                                    <barButtonItem title="View Pill" id="y1i-zD-b43"/>
+                                    <barButtonItem title="View Pill" id="y1i-zD-b43">
+                                        <connections>
+                                            <segue destination="dHl-Tf-6OY" kind="push" id="bfn-lx-OIT"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem width="129" style="plain" systemItem="fixedSpace" id="dup-O0-xJK"/>
                                     <barButtonItem title="Create Doctor" id="uAo-jt-Jv7">
                                         <connections>
@@ -468,4 +505,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="CbP-VZ-pLy"/>
+    </inferredMetricsTieBreakers>
 </document>
