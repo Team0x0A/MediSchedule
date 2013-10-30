@@ -14,7 +14,6 @@
  */
 
 #import "ReminderManagerViewController.h"
-#import "ReminderManagerTableView.h"
 #import "ReminderViewController.h"
 #import "ReminderManager.h"
 #import "Reminder.h"
@@ -29,7 +28,6 @@
     NSMutableArray *_objects;
     
 }
-@property (strong, nonatomic) IBOutlet ReminderManagerTableView *table;
 
 -(void) testReminderManager;
 @end
@@ -42,6 +40,10 @@
 //***************************************************************************************
 @implementation ReminderManagerViewController
 
+
+// ************************************************************************************************************************
+// View Controller Methods:
+// ************************************************************************************************************************
 - (void)awakeFromNib
 {
     [super awakeFromNib];
@@ -124,13 +126,108 @@
 {
     int index;
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"6:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 1st"];
-    [self.table addCellAt:index];
+    [self addCellAt:index];
     
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"12:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 2nd"];
-    [self.table addCellAt:index];
+    [self addCellAt:index];
     
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
-    [self.table addCellAt:index];
+    [self addCellAt:index];
+}
+
+
+// ************************************************************************************************************************
+// Table Methods:
+// ************************************************************************************************************************
+
+
+// addCellAt:
+// ****************************************
+- (void) addCellAt:(int)index
+{
+    // Convert the index to an indexPath into the table:
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    
+    // Create a new cell at:
+    [self insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    NSLog(@"addCellAt called...");
+}
+
+
+
+
+// cellForRowAtIndexPath
+// Returns the table cell at the specified index path.
+// ****************************************
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"ReminderCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]];
+    
+    //,[myManager notesAt:[indexPath item]]]];
+    //[[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
+    
+    return cell;
+}
+
+
+
+
+
+
+// numberOfSectionsInTableView:
+// ****************************************
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+
+
+
+
+// numberOfRowsInSections:
+// ****************************************
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    //return [myManager numOfReminders];
+    return 3;
+}
+
+
+
+
+
+
+// canEditRowAtIndexPath:
+// ****************************************
+- (BOOL)tableView:(UITableView *)tableView
+canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+
+
+
+
+// commitEditingStyle:
+// ****************************************
+- (void)tableView:(UITableView *)tableView
+commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //[myManager deleteReminderWith:[indexPath item]];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    }
 }
 
 @end

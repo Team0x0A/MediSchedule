@@ -36,7 +36,6 @@
 		27F5B2DA1821AEFB000FDF42 /* MedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2D11821AEFB000FDF42 /* MedicationViewController.m */; };
 		27F5B2DB1821AEFB000FDF42 /* PillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2D31821AEFB000FDF42 /* PillViewController.m */; };
 		27F5B2DC1821AEFB000FDF42 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2D51821AEFB000FDF42 /* ProfileViewController.m */; };
-		9EB6DD151821BBFE0086666E /* ReminderManagerTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6DD141821BBFE0086666E /* ReminderManagerTableView.m */; };
 		D15F6E2B181DDC2300322100 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D15F6E2A181DDC2300322100 /* icon.png */; };
 /* End PBXBuildFile section */
 
@@ -99,8 +98,6 @@
 		27F5B2D31821AEFB000FDF42 /* PillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PillViewController.m; sourceTree = "<group>"; };
 		27F5B2D41821AEFB000FDF42 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		27F5B2D51821AEFB000FDF42 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		9EB6DD131821BBFE0086666E /* ReminderManagerTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderManagerTableView.h; sourceTree = "<group>"; };
-		9EB6DD141821BBFE0086666E /* ReminderManagerTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManagerTableView.m; sourceTree = "<group>"; };
 		D15F6E2A181DDC2300322100 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,8 +153,6 @@
 		0CB856FE181C7E3100D71BA1 = {
 			isa = PBXGroup;
 			children = (
-				9EB6DD131821BBFE0086666E /* ReminderManagerTableView.h */,
-				9EB6DD141821BBFE0086666E /* ReminderManagerTableView.m */,
 				D15F6E2A181DDC2300322100 /* icon.png */,
 				0CB85710181C7E3100D71BA1 /* MediSchedule */,
 				0CB85737181C7E3200D71BA1 /* MediScheduleTests */,
@@ -377,7 +372,6 @@
 				27F5B2DA1821AEFB000FDF42 /* MedicationViewController.m in Sources */,
 				27F5B2DB1821AEFB000FDF42 /* PillViewController.m in Sources */,
 				27F5B2DC1821AEFB000FDF42 /* ProfileViewController.m in Sources */,
-				9EB6DD151821BBFE0086666E /* ReminderManagerTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
