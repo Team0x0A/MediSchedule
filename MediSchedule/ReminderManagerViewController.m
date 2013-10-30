@@ -19,17 +19,25 @@
 #import "Reminder.h"
 
 
+//***************************************************************************************
+// Private Interface:
+//***************************************************************************************
 @interface ReminderManagerViewController ()
 {
     ReminderManager *myManager;// Reminder Manager to be used for entire application
     NSMutableArray *_objects;
     
 }
-
+@property (strong, nonatomic) IBOutlet UITableView *table;
 -(void) testReminderManager;
-
 @end
 
+
+
+
+//***************************************************************************************
+// Implementation:
+//***************************************************************************************
 @implementation ReminderManagerViewController
 
 - (void)awakeFromNib
@@ -45,6 +53,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //[self.table setDelegate:self];
+    //[self.table setDataSource:self];
     
     // The reminder manager is initialized the first time the application loads
     // Note: there is not file system support as of now. Each time the application is loaded, myManager is re-initialized
@@ -56,9 +66,13 @@
     
     [self testReminderManager];
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addTapped:)];
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd // This is the plus sign icon
+                                                                               target: self
+                                                                               action: @selector(addTapped:)]; // This is linking the button to method addTapped
     self.navigationItem.rightBarButtonItem = addButton;
-      
+     
+    
 }
 
 
@@ -81,7 +95,7 @@
 - (void) addCellAt:(int)index
 {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.table insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
 
@@ -99,7 +113,7 @@
                                      WithNotes:[[NSString alloc] initWithFormat:@"%d", somecount]
                  ];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.table insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
     somecount++;
 }
@@ -174,7 +188,7 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-         [myManager deleteReminderWith:[indexPath item]];
+        [myManager deleteReminderWith:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -193,7 +207,7 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
     
     if([[destination title] isEqual: @"CreateReminder"])
     {
- 
+        
         ReminderViewController *detailController = segue.destinationViewController;
         detailController.detailItem = myManager;
         detailController.callBack = self;

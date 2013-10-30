@@ -18,7 +18,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ReminderManagerViewController : UITableViewController
+//***************************************************************************************
+// Public Interface:
+//***************************************************************************************
+@interface ReminderManagerViewController : UIViewController
 
 - (void) addCellAt:(int)index;
 @end
