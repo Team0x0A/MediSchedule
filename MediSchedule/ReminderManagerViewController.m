@@ -64,13 +64,14 @@
         myManager = [[ReminderManager alloc] init];
     }
     
+    // This calls some tests on the reminder manager
     [self testReminderManager];
     
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd // This is the plus sign icon
+    UIBarButtonItem *addReminderButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd // This is the plus sign icon
                                                                                target: self
-                                                                               action: @selector(addTapped:)]; // This is linking the button to method addTapped
-    self.navigationItem.rightBarButtonItem = addButton;
+                                                                               action: @selector(addReminderButtonTapped:)]; // This is linking the button to method addTapped
+    self.navigationItem.rightBarButtonItem = addReminderButton;
      
     
 }
@@ -122,11 +123,11 @@
 
 
 
-
-- (void)addTapped:(id)sender
+// This method is called by addButt
+- (void)addReminderButtonTapped:(id)sender
 {
     
-    [self performSegueWithIdentifier:@"MySegue" sender:self];
+    [self performSegueWithIdentifier:@"ReminderManagerToCreateReminderSegue" sender:self];
 }
 
 
