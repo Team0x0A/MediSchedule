@@ -31,6 +31,8 @@
         if (!reminders)
         {
             reminders = [[NSMutableArray alloc] init];
+            //Once the reminders is initialized, it retrieves content array from the ReminderManger file and creates an NSMutableArray to assign to the reminders
+            //If the file is empty, an empty array will assigned
             reminders = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithContentsOfURL:[self fileLocation]]];
         }
     }

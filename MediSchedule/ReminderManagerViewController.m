@@ -124,7 +124,7 @@
 
 - (void) testReminderManager
 {
-    int index;
+    /*int index;
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"6:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 1st"];
     [self addCellAt:index];
     
@@ -133,6 +133,7 @@
     
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
     [self addCellAt:index];
+     */
 }
 
 
