@@ -11,7 +11,7 @@
             <objects>
                 <viewController id="fFV-0u-msP" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wfH-8w-f7f">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-x8-n94">
@@ -27,7 +27,7 @@
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Log in" id="kkE-nf-L9f">
                                             <connections>
-                                                <segue destination="V9R-Xh-qc8" kind="push" id="oKe-rY-LU8"/>
+                                                <segue destination="6A4-LH-Njl" kind="push" id="Od1-hN-AG3"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -84,24 +84,28 @@
         <!--Navigation Controller-->
         <scene sceneID="11">
             <objects>
-                <navigationController id="3" sceneMemberID="viewController">
+                <navigationController toolbarHidden="NO" id="3" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Wg7-Mq-lqG">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="fFV-0u-msP" kind="relationship" relationship="rootViewController" id="4uH-Mh-bDU"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-576" y="-315"/>
+            <point key="canvasLocation" x="-769" y="-315"/>
         </scene>
         <!--Reminder View Controller - CreateReminder-->
         <scene sceneID="24">
             <objects>
                 <viewController title="CreateReminder" id="21" customClass="ReminderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-C2-Wkn">
@@ -205,7 +209,7 @@
             <objects>
                 <viewController id="Czc-kF-Umy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mo7-E0-7ez" customClass="CreateDoctorScreen">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBq-Pb-1fW">
@@ -308,7 +312,7 @@
             <objects>
                 <viewController id="ol7-fq-Jvy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L9n-nt-ijZ">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-Ac-C9y">
@@ -385,7 +389,7 @@
             <objects>
                 <viewController title="PillView" id="dHl-Tf-6OY" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XCq-Ni-gxT">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5Uh-je-kKg">
@@ -422,63 +426,50 @@
             </objects>
             <point key="canvasLocation" x="1023" y="360"/>
         </scene>
-        <!--Reminder Manager View Controller-->
-        <scene sceneID="cii-Qs-q23">
+        <!--Table View Controller-->
+        <scene sceneID="t6f-Xk-l9O">
             <objects>
-                <viewController id="V9R-Xh-qc8" customClass="ReminderManagerViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="lEb-P3-1p3">
+                <tableViewController id="6A4-LH-Njl" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="d5r-YT-VLo">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xE6-oy-f2m" customClass="ReminderManagerTableView">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ReminderCell" id="3jF-hi-h4C">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <toolbar autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NIF-bg-a6m">
-                                <items>
-                                    <barButtonItem title="Item" width="125" id="mTP-FV-0bg"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="A3O-7T-YFm"/>
-                                    <barButtonItem title="Item" width="125" id="mkh-XK-2Qp"/>
-                                </items>
-                            </toolbar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NIF-bg-a6m" firstAttribute="bottom" secondItem="lEb-P3-1p3" secondAttribute="bottom" type="default" id="E9Z-My-wK4"/>
-                            <constraint firstItem="NIF-bg-a6m" firstAttribute="leading" secondItem="lEb-P3-1p3" secondAttribute="leading" type="default" id="Jyo-xX-zYQ"/>
-                            <constraint firstItem="xE6-oy-f2m" firstAttribute="top" secondItem="lEb-P3-1p3" secondAttribute="top" type="default" id="eh9-TL-DWZ"/>
-                            <constraint firstItem="xE6-oy-f2m" firstAttribute="trailing" secondItem="lEb-P3-1p3" secondAttribute="trailing" type="default" id="oSI-Jt-CFP"/>
-                            <constraint firstItem="xE6-oy-f2m" firstAttribute="bottom" secondItem="NIF-bg-a6m" secondAttribute="top" type="default" id="sRU-69-EIh"/>
-                            <constraint firstItem="NIF-bg-a6m" firstAttribute="trailing" secondItem="lEb-P3-1p3" secondAttribute="trailing" type="default" id="wQi-cw-Wby"/>
-                            <constraint firstItem="xE6-oy-f2m" firstAttribute="leading" secondItem="lEb-P3-1p3" secondAttribute="leading" type="default" id="y9g-dV-5D5"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ZK8-3P-GHx"/>
-                    <connections>
-                        <outlet property="table" destination="xE6-oy-f2m" id="4lL-xe-YaN"/>
-                        <segue destination="21" kind="push" identifier="ReminderManagerToCreateReminderSegue" id="el9-Tu-KsD"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mJW-pa-hQA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lDq-B1-j3y">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6A4-LH-Njl" id="Lc8-Qs-kRM"/>
+                            <outlet property="delegate" destination="6A4-LH-Njl" id="jq3-wb-tFf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="PLT-bk-SLi"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-4L-sSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2pW-x6-de2">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <items>
+                        <barButtonItem title="Item" id="pIs-F7-Wjm"/>
+                    </items>
+                </toolbar>
             </objects>
-            <point key="canvasLocation" x="341" y="-332"/>
+            <point key="canvasLocation" x="425" y="-361"/>
         </scene>
         <!--View Controller - DoctorView-->
         <scene sceneID="C9U-UG-jhs">
             <objects>
                 <viewController title="DoctorView" id="eM0-Lc-DWq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="amS-T4-jkr">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bPl-MI-aa5">
@@ -518,7 +509,7 @@
             <objects>
                 <viewController id="G8q-bk-XQQ" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aII-DW-lII">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uiv-f2-Rac">
@@ -595,7 +586,7 @@
             <objects>
                 <viewController id="7yS-l9-em5" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Foq-4C-ErG" customClass="CreatPillScreen">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47b-wT-iCx">
@@ -682,15 +673,6 @@
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ReminderManagerTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderManagerTableView.h"/>
-        </class>
-        <class className="ReminderManagerViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderManagerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="table" candidateClass="ReminderManagerTableView"/>
-            </relationships>
         </class>
         <class className="ReminderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderViewController.h"/>

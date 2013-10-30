@@ -14,6 +14,7 @@
  */
 
 #import "ReminderManagerViewController.h"
+#import "ReminderManagerTableView.h"
 #import "ReminderViewController.h"
 #import "ReminderManager.h"
 #import "Reminder.h"

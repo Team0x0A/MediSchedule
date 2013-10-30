@@ -21,7 +21,7 @@
 //***************************************************************************************
 // Public Interface:
 //***************************************************************************************
-@interface ReminderManagerViewController : UIViewController
+@interface ReminderManagerViewController : UITableViewController
 
 - (void) addCellAt:(int)index;
 @end

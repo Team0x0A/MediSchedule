@@ -50,7 +50,7 @@
     
     // Create a new cell at:
     [self insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
+    NSLog(@"addCellAt called...");
 }
 
 
@@ -66,8 +66,11 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]]; //,[myManager notesAt:[indexPath item]]]];
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]];
+    
+    //,[myManager notesAt:[indexPath item]]]];
     //[[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
+    
     return cell;
 }
 
