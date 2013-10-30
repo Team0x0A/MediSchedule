@@ -139,6 +139,8 @@
 // ************************************************************************************************************************
 // Table Methods:
 // ************************************************************************************************************************
+#pragma mark - Table View
+
 
 
 // addCellAt:
@@ -149,7 +151,7 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     
     // Create a new cell at:
-    [self insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     NSLog(@"addCellAt called...");
 }
 
