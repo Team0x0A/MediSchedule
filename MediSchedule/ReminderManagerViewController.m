@@ -95,7 +95,10 @@
 
 - (void) addCellAt:(int)index
 {
+    // Convert the index to an indexPath into the table:
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    
+    // Create a new cell at:
     [self.table insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     
 }
@@ -104,7 +107,7 @@
 
 
 
-
+/*
 - (void)insertNewObject:(id)sender
 {
     static int somecount = 0;
@@ -118,7 +121,7 @@
     
     somecount++;
 }
-
+*/
 
 
 
@@ -231,26 +234,6 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
     
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
     [self addCellAt:index];
-    
-    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"9:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 4th"];
-    [self addCellAt:index];
-    
-    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"1:45"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 5th"];
-    [self addCellAt:index];
-    
-    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"5:30"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 6th"];
-    [self addCellAt:index];
-    
-    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"4:45"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 5th"];
-    [self addCellAt:index];
-    
-    index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"12:30"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 6th"];
-    [self addCellAt:index];
-    
-    [myManager deleteReminderWith:0];
-    [myManager deleteReminderWith:0];
-    [myManager deleteReminderWith:0];
-    [myManager deleteReminderWith:0];
 }
 
 @end

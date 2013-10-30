@@ -25,7 +25,11 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Log in" id="kkE-nf-L9f"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Log in" id="kkE-nf-L9f">
+                                            <connections>
+                                                <segue destination="V9R-Xh-qc8" kind="push" id="oKe-rY-LU8"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -72,9 +76,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="dKr-ns-PxA"/>
-                    <connections>
-                        <segue destination="V9R-Xh-qc8" kind="push" id="yzN-jY-N1U"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5g-g3-o4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
