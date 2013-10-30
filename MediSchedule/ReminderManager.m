@@ -31,6 +31,7 @@
         if (!reminders)
         {
             reminders = [[NSMutableArray alloc] init];
+            reminders = [[NSMutableArray alloc] initWithArray:[NSArray arrayWithContentsOfURL:[self fileLocation]]];
         }
     }
     return self;
@@ -61,6 +62,7 @@
                                                  WithNotes:notes];
     [reminders addObject:newReminder];
     [reminders sortUsingFunction:timeSort context:nil];
+    [self save];
     return [reminders indexOfObject:newReminder];
 }
 
@@ -68,6 +70,7 @@
 {
     [reminders removeObjectAtIndex:index];
     [reminders sortUsingFunction:timeSort context:nil];
+    [self save];
 }
 
 // Modifiers:
@@ -76,24 +79,28 @@
 {
     [[reminders objectAtIndex:index] setTime:newTime];
     [reminders sortUsingFunction:timeSort context:nil];
+    [self save];
 }
 
 - (void) setPillIdTo:(int) newPillId
                   At:(int) index
 {
     [[reminders objectAtIndex:index] setPillId:newPillId];
+    [self save];
 }
 
 - (void) setDosageTo:(int) newDosage
                   At:(int) index
 {
     [[reminders objectAtIndex:index] setDosage:newDosage];
+    [self save];
 }
 
 - (void) setNotesTo:(NSString*) newNotes
                  At:(int) index
 {
     [[reminders objectAtIndex:index] setNotes:newNotes];
+    [self save];
 }
 
 
@@ -137,6 +144,21 @@ NSInteger timeSort(id reminder1, id reminder2, void *context)
         return NSOrderedDescending;
     else
         return NSOrderedSame;
+}
+
+//Returns the location of the file saved on the device
+- (NSURL *) fileLocation
+{
+    NSURL *documentDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory
+                                                                      inDomains:NSUserDomainMask] lastObject];
+    return [NSURL URLWithString:@"ReminderManager"
+                  relativeToURL:documentDirectory];
+}
+
+//Saves the reminder manager into the appropriate file
+- (void) save
+{
+    [reminders writeToURL:[self fileLocation] atomically:YES];
 }
 
 @end
