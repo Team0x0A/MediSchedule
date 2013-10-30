@@ -29,6 +29,13 @@
 		0CB85754181C7FE500D71BA1 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574D181C7FE500D71BA1 /* Reminder.m */; };
 		0CB85755181C7FE500D71BA1 /* ReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574F181C7FE500D71BA1 /* ReminderManager.m */; };
 		0CB85756181C7FE500D71BA1 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB85751181C7FE500D71BA1 /* Time.m */; };
+		27F5B2D61821AEFB000FDF42 /* CreateDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2C91821AEFB000FDF42 /* CreateDoctorViewController.m */; };
+		27F5B2D71821AEFB000FDF42 /* DoctorEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2CB1821AEFB000FDF42 /* DoctorEditViewController.m */; };
+		27F5B2D81821AEFB000FDF42 /* DoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2CD1821AEFB000FDF42 /* DoctorViewController.m */; };
+		27F5B2D91821AEFB000FDF42 /* EditPillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2CF1821AEFB000FDF42 /* EditPillViewController.m */; };
+		27F5B2DA1821AEFB000FDF42 /* MedicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2D11821AEFB000FDF42 /* MedicationViewController.m */; };
+		27F5B2DB1821AEFB000FDF42 /* PillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2D31821AEFB000FDF42 /* PillViewController.m */; };
+		27F5B2DC1821AEFB000FDF42 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27F5B2D51821AEFB000FDF42 /* ProfileViewController.m */; };
 		D15F6E2B181DDC2300322100 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D15F6E2A181DDC2300322100 /* icon.png */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +84,20 @@
 		0CB8574F181C7FE500D71BA1 /* ReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManager.m; sourceTree = "<group>"; };
 		0CB85750181C7FE500D71BA1 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
 		0CB85751181C7FE500D71BA1 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
+		27F5B2C81821AEFB000FDF42 /* CreateDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDoctorViewController.h; sourceTree = "<group>"; };
+		27F5B2C91821AEFB000FDF42 /* CreateDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDoctorViewController.m; sourceTree = "<group>"; };
+		27F5B2CA1821AEFB000FDF42 /* DoctorEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorEditViewController.h; sourceTree = "<group>"; };
+		27F5B2CB1821AEFB000FDF42 /* DoctorEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorEditViewController.m; sourceTree = "<group>"; };
+		27F5B2CC1821AEFB000FDF42 /* DoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorViewController.h; sourceTree = "<group>"; };
+		27F5B2CD1821AEFB000FDF42 /* DoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorViewController.m; sourceTree = "<group>"; };
+		27F5B2CE1821AEFB000FDF42 /* EditPillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPillViewController.h; sourceTree = "<group>"; };
+		27F5B2CF1821AEFB000FDF42 /* EditPillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPillViewController.m; sourceTree = "<group>"; };
+		27F5B2D01821AEFB000FDF42 /* MedicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationViewController.h; sourceTree = "<group>"; };
+		27F5B2D11821AEFB000FDF42 /* MedicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationViewController.m; sourceTree = "<group>"; };
+		27F5B2D21821AEFB000FDF42 /* PillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PillViewController.h; sourceTree = "<group>"; };
+		27F5B2D31821AEFB000FDF42 /* PillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PillViewController.m; sourceTree = "<group>"; };
+		27F5B2D41821AEFB000FDF42 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		27F5B2D51821AEFB000FDF42 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		D15F6E2A181DDC2300322100 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +128,20 @@
 		0C82C0DB181C8BA80006F60B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				27F5B2C81821AEFB000FDF42 /* CreateDoctorViewController.h */,
+				27F5B2C91821AEFB000FDF42 /* CreateDoctorViewController.m */,
+				27F5B2CA1821AEFB000FDF42 /* DoctorEditViewController.h */,
+				27F5B2CB1821AEFB000FDF42 /* DoctorEditViewController.m */,
+				27F5B2CC1821AEFB000FDF42 /* DoctorViewController.h */,
+				27F5B2CD1821AEFB000FDF42 /* DoctorViewController.m */,
+				27F5B2CE1821AEFB000FDF42 /* EditPillViewController.h */,
+				27F5B2CF1821AEFB000FDF42 /* EditPillViewController.m */,
+				27F5B2D01821AEFB000FDF42 /* MedicationViewController.h */,
+				27F5B2D11821AEFB000FDF42 /* MedicationViewController.m */,
+				27F5B2D21821AEFB000FDF42 /* PillViewController.h */,
+				27F5B2D31821AEFB000FDF42 /* PillViewController.m */,
+				27F5B2D41821AEFB000FDF42 /* ProfileViewController.h */,
+				27F5B2D51821AEFB000FDF42 /* ProfileViewController.m */,
 				0C82C0DC181CA0A90006F60B /* ReminderViewController.h */,
 				0C82C0DD181CA0A90006F60B /* ReminderViewController.m */,
 				0C82C0DE181CA0A90006F60B /* ReminderManagerViewController.h */,
@@ -330,6 +365,13 @@
 				0CB85756181C7FE500D71BA1 /* Time.m in Sources */,
 				0C82C0E0181CA0A90006F60B /* ReminderViewController.m in Sources */,
 				0C82C0E1181CA0A90006F60B /* ReminderManagerViewController.m in Sources */,
+				27F5B2D61821AEFB000FDF42 /* CreateDoctorViewController.m in Sources */,
+				27F5B2D71821AEFB000FDF42 /* DoctorEditViewController.m in Sources */,
+				27F5B2D81821AEFB000FDF42 /* DoctorViewController.m in Sources */,
+				27F5B2D91821AEFB000FDF42 /* EditPillViewController.m in Sources */,
+				27F5B2DA1821AEFB000FDF42 /* MedicationViewController.m in Sources */,
+				27F5B2DB1821AEFB000FDF42 /* PillViewController.m in Sources */,
+				27F5B2DC1821AEFB000FDF42 /* ProfileViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
