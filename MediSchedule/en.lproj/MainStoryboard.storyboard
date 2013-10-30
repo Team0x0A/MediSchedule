@@ -465,7 +465,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZK8-3P-GHx"/>
                     <connections>
-                        <outlet property="table" destination="xE6-oy-f2m" id="43G-9j-NYa"/>
+                        <outlet property="table" destination="xE6-oy-f2m" id="4lL-xe-YaN"/>
                         <segue destination="21" kind="push" identifier="ReminderManagerToCreateReminderSegue" id="el9-Tu-KsD"/>
                     </connections>
                 </viewController>
@@ -689,7 +689,7 @@
         <class className="ReminderManagerViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderManagerViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="table" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="table" candidateClass="ReminderManagerTableView"/>
             </relationships>
         </class>
         <class className="ReminderViewController" superclassName="UIViewController">

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ReminderManagerTableView : UITableView
+- (void) addCellAt:(int)index;
 
 @end

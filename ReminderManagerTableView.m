@@ -41,6 +41,20 @@
 
 
 
+// addCellAt:
+// ****************************************
+- (void) addCellAt:(int)index
+{
+    // Convert the index to an indexPath into the table:
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    
+    // Create a new cell at:
+    [self insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+}
+
+
+
 
 // cellForRowAtIndexPath
 // Returns the table cell at the specified index path.

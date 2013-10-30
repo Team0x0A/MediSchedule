@@ -28,7 +28,8 @@
     NSMutableArray *_objects;
     
 }
-@property (strong, nonatomic) IBOutlet UITableView *table;
+@property (strong, nonatomic) IBOutlet ReminderManagerTableView *table;
+
 -(void) testReminderManager;
 @end
 
@@ -48,14 +49,15 @@
 
 
 
-
-
+// viewDidLoad:
+// gets called when the view manager is created?
+// ****************************************
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //[self.table setDelegate:self];
     //[self.table setDataSource:self];
-    
+    NSLog(@"viewDidLoad called...");
     // The reminder manager is initialized the first time the application loads
     // Note: there is not file system support as of now. Each time the application is loaded, myManager is re-initialized
     if (!myManager)
@@ -76,23 +78,6 @@
     
 }
 
-
-
-
-
-
-
-// addCellAt:
-// ****************************************
-- (void) addCellAt:(int)index
-{
-    // Convert the index to an indexPath into the table:
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
-    
-    // Create a new cell at:
-    [self.table insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-}
 
 
 
@@ -138,13 +123,13 @@
 {
     int index;
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"6:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 1st"];
-    [self addCellAt:index];
+    [self.table addCellAt:index];
     
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"12:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 2nd"];
-    [self addCellAt:index];
+    [self.table addCellAt:index];
     
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
-    [self addCellAt:index];
+    [self.table addCellAt:index];
 }
 
 @end
