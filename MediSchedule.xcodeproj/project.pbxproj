@@ -29,6 +29,7 @@
 		0CB85754181C7FE500D71BA1 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574D181C7FE500D71BA1 /* Reminder.m */; };
 		0CB85755181C7FE500D71BA1 /* ReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574F181C7FE500D71BA1 /* ReminderManager.m */; };
 		0CB85756181C7FE500D71BA1 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB85751181C7FE500D71BA1 /* Time.m */; };
+		9EB6DD181821E1740086666E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6DD171821E1740086666E /* LoginViewController.m */; };
 		D15F6E2B181DDC2300322100 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D15F6E2A181DDC2300322100 /* icon.png */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,8 @@
 		0CB8574F181C7FE500D71BA1 /* ReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManager.m; sourceTree = "<group>"; };
 		0CB85750181C7FE500D71BA1 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
 		0CB85751181C7FE500D71BA1 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
+		9EB6DD161821E1740086666E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		9EB6DD171821E1740086666E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		D15F6E2A181DDC2300322100 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +110,8 @@
 		0C82C0DB181C8BA80006F60B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				9EB6DD161821E1740086666E /* LoginViewController.h */,
+				9EB6DD171821E1740086666E /* LoginViewController.m */,
 				0C82C0DC181CA0A90006F60B /* CreateReminderViewController.h */,
 				0C82C0DD181CA0A90006F60B /* CreateReminderViewController.m */,
 				0C82C0DE181CA0A90006F60B /* ReminderManagerViewController.h */,
@@ -330,6 +335,7 @@
 				0CB85756181C7FE500D71BA1 /* Time.m in Sources */,
 				0C82C0E0181CA0A90006F60B /* CreateReminderViewController.m in Sources */,
 				0C82C0E1181CA0A90006F60B /* ReminderManagerViewController.m in Sources */,
+				9EB6DD181821E1740086666E /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

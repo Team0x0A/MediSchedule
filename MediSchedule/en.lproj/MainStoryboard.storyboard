@@ -6,10 +6,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Login-->
+        <!--Login View Controller - Login-->
         <scene sceneID="oz4-es-Bvf">
             <objects>
-                <viewController id="fFV-0u-msP" sceneMemberID="viewController">
+                <viewController id="fFV-0u-msP" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wfH-8w-f7f">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -43,14 +43,13 @@
                         <constraints>
                             <constraint firstItem="TLH-jP-KAA" firstAttribute="centerY" secondItem="yeV-4g-HJ2" secondAttribute="centerY" type="default" id="4Lk-6d-iSs"/>
                             <constraint firstItem="yeV-4g-HJ2" firstAttribute="top" secondItem="wfH-8w-f7f" secondAttribute="top" constant="180" id="8Hx-tK-lzX"/>
-                            <constraint firstItem="2P8-Qg-D4m" firstAttribute="centerY" secondItem="wfH-8w-f7f" secondAttribute="centerY" type="default" id="AHL-cv-Ozc"/>
-                            <constraint firstItem="2P8-Qg-D4m" firstAttribute="baseline" secondItem="tNX-58-VQR" secondAttribute="baseline" type="default" id="O4v-2L-Tep"/>
                             <constraint firstItem="yeV-4g-HJ2" firstAttribute="trailing" secondItem="2P8-Qg-D4m" secondAttribute="trailing" type="default" id="UxW-zs-v62"/>
                             <constraint firstItem="yeV-4g-HJ2" firstAttribute="leading" secondItem="2P8-Qg-D4m" secondAttribute="leading" type="default" id="W0P-5t-Vlo"/>
-                            <constraint firstItem="tNX-58-VQR" firstAttribute="top" secondItem="wfH-8w-f7f" secondAttribute="top" constant="219" id="WwU-jE-PNc"/>
+                            <constraint firstAttribute="bottom" secondItem="tNX-58-VQR" secondAttribute="bottom" constant="205" id="k3Z-ze-8tl"/>
                             <constraint firstItem="yeV-4g-HJ2" firstAttribute="leading" secondItem="wfH-8w-f7f" secondAttribute="leading" constant="138" id="lNO-Cq-QY1"/>
                             <constraint firstItem="TLH-jP-KAA" firstAttribute="leading" secondItem="wfH-8w-f7f" secondAttribute="leading" constant="30" id="meF-gJ-fTs"/>
                             <constraint firstItem="TLH-jP-KAA" firstAttribute="trailing" secondItem="tNX-58-VQR" secondAttribute="trailing" type="default" id="pKM-LT-rL9"/>
+                            <constraint firstAttribute="bottom" secondItem="2P8-Qg-D4m" secondAttribute="bottom" constant="200" id="tNt-aE-HbM"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -61,8 +60,12 @@
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Login" id="dKr-ns-PxA" customClass="LoginViewController"/>
+                    <navigationItem key="navigationItem" title="Login" id="dKr-ns-PxA"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="passWordTextField" destination="2P8-Qg-D4m" id="2e0-8E-WLs"/>
+                        <outlet property="userNameTextField" destination="yeV-4g-HJ2" id="76b-nh-LEg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5g-g3-o4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -673,6 +676,13 @@
                 <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="pillIdTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="timeTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="passWordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userNameTextField" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
