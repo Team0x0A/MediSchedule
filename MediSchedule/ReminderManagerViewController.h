@@ -17,11 +17,17 @@
 
 
 #import <UIKit/UIKit.h>
+#import "Time.h"
 
 //***************************************************************************************
 // Public Interface:
 //***************************************************************************************
 @interface ReminderManagerViewController : UITableViewController
 
-- (void) addCellAt:(int)index;
+// called by CreateReminderViewController when creating new reminder:
+-(void) addReminderWithTime:(Time*) time
+                 WithPillId:(int) pillId
+                 WithDosage:(int) dosage
+                  WithNotes:(NSString *) notes;
+
 @end

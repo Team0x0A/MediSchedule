@@ -42,8 +42,6 @@
 //***************************************************************************************
 @implementation CreateReminderViewController
 
-
-@synthesize detailItem;
 @synthesize callBack;
 
 
@@ -54,10 +52,10 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
+    /*
     if (self.detailItem) {
         self.detailDescriptionLabel.text = [self.detailItem description];
-    }
+    }*/
 }
 
 
@@ -77,33 +75,34 @@
 }
 
 
+
+
+
 // createReminderButtonTapped:
 // called by createReminderButton
 // ****************************************
 - (void)createReminderButtonTapped: (id)sender
 {
-    
-}
-
-
-
-
-
-
-- (IBAction)createReminder:(UIBarButtonItem *)sender
-{
-    NSLog(@"THIS IS CALLED");
+    // Get time from field:
     Time* time = [[Time alloc] init];
+    
+    // Get pillId from field:
     int pillid = [[[self pillIdTextField] text] integerValue];
+    
+    // Get dosage from field:
     int dosage = [[[self dosageTextField] text] integerValue];
+    
+    // Get notes from field:
     NSString *notes = [[self notesTextField] text];
     
-    int index = [[self detailItem] addReminderWithTime:time
-                                WithPillId:pillid
-                                WithDosage:dosage
-                                 WithNotes:notes];
-    [callBack addCellAt:index];
+    // Add the reminder to the reminder manager:
+    [callBack addReminderWithTime:time
+                       WithPillId:pillid
+                       WithDosage:dosage
+                        WithNotes:notes];
 }
+
+
 
 
 

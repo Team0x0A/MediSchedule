@@ -16,14 +16,11 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "ReminderManager.h"
 #import "ReminderManagerViewController.h"
 
 @interface CreateReminderViewController : UIViewController
 
-@property (strong, nonatomic) ReminderManager* detailItem;
 @property (strong, nonatomic) ReminderManagerViewController* callBack;
-
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end
