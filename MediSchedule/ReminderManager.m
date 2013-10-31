@@ -32,6 +32,7 @@
         {
             NSLog(@"Initializing reminder manager...");
             reminders = [[NSMutableArray alloc] init];
+            [self loadFile:[self fileLocation]];
         }
     }
     return self;
@@ -52,9 +53,9 @@
 }
 
 - (int) addReminderWithTime:(Time*)time
-                  WithPillId:(int)pillId
-                  WithDosage:(int)dosage
-                   WithNotes:(NSString *)notes
+                 WithPillId:(int)pillId
+                 WithDosage:(int)dosage
+                  WithNotes:(NSString *)notes
 {
     Reminder* newReminder = [[Reminder alloc] initWithTime:time
                                                 WithPillId:pillId
@@ -62,7 +63,7 @@
                                                  WithNotes:notes];
     [reminders addObject:newReminder];
     [reminders sortUsingFunction:timeSort context:nil];
-    [self save];
+    [self saveToFile:[self fileLocation]];
     return [reminders indexOfObject:newReminder];
 }
 
@@ -70,7 +71,7 @@
 {
     [reminders removeObjectAtIndex:index];
     [reminders sortUsingFunction:timeSort context:nil];
-    [self save];
+    [self saveToFile:[self fileLocation]];
 }
 
 // Modifiers:
@@ -79,28 +80,28 @@
 {
     [[reminders objectAtIndex:index] setTime:newTime];
     [reminders sortUsingFunction:timeSort context:nil];
-    [self save];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setPillIdTo:(int) newPillId
                   At:(int) index
 {
     [[reminders objectAtIndex:index] setPillId:newPillId];
-    [self save];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setDosageTo:(int) newDosage
                   At:(int) index
 {
     [[reminders objectAtIndex:index] setDosage:newDosage];
-    [self save];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setNotesTo:(NSString*) newNotes
                  At:(int) index
 {
     [[reminders objectAtIndex:index] setNotes:newNotes];
-    [self save];
+    [self saveToFile:[self fileLocation]];
 }
 
 
@@ -156,49 +157,57 @@ NSInteger timeSort(id reminder1, id reminder2, void *context)
 }
 
 //Saves the reminder manager into the appropriate file
-- (void) save
+- (void) saveToFile: (NSURL*) fileLocation
 {
     //Create arrays with list of times, pillids, dosages and notes to create a property list using nsdictionary
     NSMutableArray *listOfTimes = [[NSMutableArray alloc] init];
     NSMutableArray *listOfPillIds = [[NSMutableArray alloc] init];
     NSMutableArray *listOfDosages = [[NSMutableArray alloc] init];
     NSMutableArray *listOfNotes = [[NSMutableArray alloc] init];
-
-    for (Reminder* i in reminders)
-    {
-        NSString* temp = [[NSString alloc] initWithFormat:@"%d:%d", [[i time] hour], [[i time] min]];
-        [listOfTimes addObject:temp];
-    }
     
     for (Reminder* i in reminders)
     {
-        NSString* temp = [[NSString alloc] initWithFormat:@"%d", [i pillId]];
-        [listOfPillIds addObject:temp];
-    }
-    
-    for (Reminder* i in reminders)
-    {
-        NSString* temp = [[NSString alloc] initWithFormat:@"%d", [i dosage]];
-        [listOfDosages addObject:temp];
-    }
-        
-    for (Reminder* i in reminders)
-    {
-        NSString* temp = [[NSString alloc] initWithFormat:@"%@", [i notes]];
-        [listOfNotes addObject:temp];
+        [listOfTimes addObject:[[NSString alloc] initWithFormat:@"%d:%d", [[i time] hour], [[i time] min]]];
+        [listOfPillIds addObject:[[NSString alloc] initWithFormat:@"%d", [i pillId]]];
+        [listOfDosages addObject:[[NSString alloc] initWithFormat:@"%d", [i dosage]]];
+        [listOfNotes addObject:[[NSString alloc] initWithFormat:@"%@", [i notes]]];
     }
     
     //Create NSDictionary; valid property list
     NSDictionary *writeToFile = [[NSDictionary alloc] initWithObjects:@[listOfTimes, listOfPillIds, listOfDosages, listOfNotes] forKeys:@[@"time", @"pillId", @"dosage", @"notes"]];
     
     //NSDictionary is written to file
-    if([writeToFile writeToURL:[self fileLocation] atomically:YES])
+    if([writeToFile writeToURL:fileLocation atomically:YES])
     {
         NSLog(@"Writing to file successful!");
     }
     else
     {
         NSLog(@"Writing to file failed.");
+    }
+}
+
+// Initialize reminder list from file
+- (void) loadFile: (NSURL*) fileLocation
+{
+    // New reminders are created from the values of these arrays. Note: a single reminder is a row
+    // in the matrix [listOfTimes, listOfPillIds, listOfDosages, listOfNotes]
+    // where listOfTimes, listOfPillIds, listOfDosages, listOfNotes are valid property lists
+    // stored in the NSDictionary readFromFile
+    NSDictionary *readFromFile = [[NSDictionary alloc] initWithContentsOfURL:fileLocation];
+    NSMutableArray *listOfTimes = [[NSMutableArray alloc] initWithArray:[readFromFile objectForKey:@"time"]];
+    NSMutableArray *listOfPillIds = [[NSMutableArray alloc] initWithArray:[readFromFile objectForKey:@"pillId"]];
+    NSMutableArray *listOfDosages = [[NSMutableArray alloc] initWithArray:[readFromFile objectForKey:@"dosage"]];
+    NSMutableArray *listOfNotes = [[NSMutableArray alloc] initWithArray:[readFromFile objectForKey:@"notes"]];
+    
+    // Add each reminder into array of reminders
+    for(int i = 0; i < [listOfTimes count]; i++)
+    {
+        NSLog(@"%@", [listOfTimes objectAtIndex:i]);
+        [self addReminderWithTime: [[Time alloc] initWithString:[listOfTimes objectAtIndex:i]]
+                       WithPillId: [[listOfPillIds objectAtIndex:i] integerValue]
+                       WithDosage: [[listOfDosages objectAtIndex:i] integerValue]
+                        WithNotes:[listOfNotes objectAtIndex:i]];
     }
 }
 
