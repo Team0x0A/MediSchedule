@@ -80,61 +80,108 @@
     return  [pills count];
 }
 
-//Not implemented
+//implemented
 - (NSArray*) getListOfPillsIds
 {
-    return @[];
+    if([pills count] > 0){
+        NSArray* PILLID = [NSArray array];
+        
+        for (Pill* i in pills) {
+            PILLID = [PILLID arrayByAddingObject:@([i pillId])];
+        }
+        return PILLID;
+    }
+    return 0; //if there are no Pill
 }
 
-//Not implemented
+//implemented
 - (NSString*) getPillNameOf: (int) pillId
 {
-    return @"";
+    if([pills count] > 0){
+        for (Pill* i in pills) {
+            if([i pillId] == pillId) return [i name];
+        }
+    }
+    return NULL; //if there did not find
 }
 
-//Not implemented
+//implemented
 - (void) setPillNameTo: (NSString*) newName
                     Of: (int) pillId
 {
+    for (Pill* i in pills) {
+        if([i pillId] == pillId){
+            [i setName:newName];
+        }
+    }
     
 }
 
-//Not implemented
+//implemented
 - (UIImage*) getPillImageOf: (int) pillId
 {
-    return [[UIImage alloc] init];
+    for (Pill* i in pills) {
+        if ([i pillId] == pillId) {
+            return [[UIImage alloc] init];
+        }
+    }
+    return NULL;//if there did not find
 }
 
-//Not implemented
+//implemented
 - (void) setPillImageTo: (UIImage*) newImage
                      Of: (int) pillId
 {
+    for (Pill* i in pills) {
+        if ([i pillId] == pillId) {
+            [i setImage:newImage];
+        }
+    }
     
 }
 
-//Not implemented
+//implemented
 - (int) getDoctorIdOf: (int) pillId
 {
-    return 0;
+    for (Pill* i in pills) {
+        if ([i pillId] == pillId) return [i doctorId];
+                    
+    }
+    return -1;//if did not find
 }
 
-//Not implemented
+//implemented
 - (void) setDoctorIdOf: (int) pillId
                     To: (int) newDoctorID
 {
+    for (Pill* i in pills) {
+        if ([i pillId] == pillId){
+            [i setDoctorId:newDoctorID];
+        }
+    }
     
 }
 
-//Not implemented
+//implemented
 - (NSString *) getPillNotesOf:(int) pillId
 {
-    return @"";
+    for (Pill* i in pills) {
+        if ([i pillId] == pillId) return [i notes];
+    }
+
+    return NULL;//if there did not find
 }
 
-//Not implemented
+//implemented
 - (void) setPillNotesTo: (NSString*) newNotes
                      Of: (int) pillId
 {
+    for (Pill* i in pills) {
+        if ([i pillId] == pillId){
+            [i setNotes: newNotes];
+        }
+    }
+
     
 }
 
