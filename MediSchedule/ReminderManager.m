@@ -151,46 +151,55 @@ NSInteger timeSort(id reminder1, id reminder2, void *context)
 {
     NSURL *documentDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory
                                                                       inDomains:NSUserDomainMask] lastObject];
-    return [NSURL URLWithString:@"Reminder Manager"
+    return [NSURL URLWithString:@"ReminderManager"
                   relativeToURL:documentDirectory];
 }
 
 //Saves the reminder manager into the appropriate file
 - (void) save
 {
-    NSMutableArray* tempArray = [[NSMutableArray alloc] init];
-    
+    //Create arrays with list of times, pillids, dosages and notes to create a property list using nsdictionary
+    NSMutableArray *listOfTimes = [[NSMutableArray alloc] init];
+    NSMutableArray *listOfPillIds = [[NSMutableArray alloc] init];
+    NSMutableArray *listOfDosages = [[NSMutableArray alloc] init];
+    NSMutableArray *listOfNotes = [[NSMutableArray alloc] init];
+
     for (Reminder* i in reminders)
     {
         NSString* temp = [[NSString alloc] initWithFormat:@"%d:%d", [[i time] hour], [[i time] min]];
-        [tempArray addObject:temp];
+        [listOfTimes addObject:temp];
     }
-    NSArray *listOfTimes = [[NSArray alloc] initWithArray:tempArray];
     
     for (Reminder* i in reminders)
     {
         NSString* temp = [[NSString alloc] initWithFormat:@"%d", [i pillId]];
-        [tempArray addObject:temp];
+        [listOfPillIds addObject:temp];
     }
-    NSArray *listOfPillIds = [[NSArray alloc] initWithArray:tempArray];
     
     for (Reminder* i in reminders)
     {
         NSString* temp = [[NSString alloc] initWithFormat:@"%d", [i dosage]];
-        [tempArray addObject:temp];
+        [listOfDosages addObject:temp];
     }
-    NSArray *listOfDosages = [[NSArray alloc] initWithArray:tempArray];
-    
+        
     for (Reminder* i in reminders)
     {
         NSString* temp = [[NSString alloc] initWithFormat:@"%@", [i notes]];
-        [tempArray addObject:temp];
+        [listOfNotes addObject:temp];
     }
-    NSArray *listOfNotes = [[NSArray alloc] initWithArray:tempArray];
     
+    //Create NSDictionary; valid property list
     NSDictionary *writeToFile = [[NSDictionary alloc] initWithObjects:@[listOfTimes, listOfPillIds, listOfDosages, listOfNotes] forKeys:@[@"time", @"pillId", @"dosage", @"notes"]];
     
-    NSLog(@"Writing..... Status: %d", [writeToFile writeToURL:[self fileLocation] atomically:YES]);
+    //NSDictionary is written to file
+    if([writeToFile writeToURL:[self fileLocation] atomically:YES])
+    {
+        NSLog(@"Writing to file successful!");
+    }
+    else
+    {
+        NSLog(@"Writing to file failed.");
+    }
 }
 
 @end
