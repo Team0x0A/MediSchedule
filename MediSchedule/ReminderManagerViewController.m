@@ -61,9 +61,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //[self.table setDelegate:self];
-    //[self.table setDataSource:self];
-    NSLog(@"viewDidLoad called...");
+
     // The reminder manager is initialized the first time the application loads
     // Note: there is not file system support as of now. Each time the application is loaded, myManager is re-initialized
     if (!myManager)
@@ -74,15 +72,7 @@
     // This calls some tests on the reminder manager
     [self testReminderManager];
     
-    
-    /*
-    // Create a button to add reminders to the table:
-    UIBarButtonItem *addReminderButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd // This is the plus sign icon
-                                                                               target: self
-                                                                               action: @selector(addReminderButtonTapped:)]; // This is linking the button to method addTapped
-    self.navigationItem.rightBarButtonItem = addReminderButton;
-    */
-    
+    // Setup the addReminderButton to call the addReminderButtonTapped method:
     [_addReminderButton setTarget:self];
     [_addReminderButton setAction:@selector(addReminderButtonTapped:)];
 }
@@ -97,7 +87,6 @@
 // ****************************************
 - (void)addReminderButtonTapped:(id)sender
 {
-    
     [self performSegueWithIdentifier:@"ReminderManagerToCreateReminderSegue" sender:self];
 }
 

@@ -13,39 +13,44 @@
  *  Copyright (c) 2013 Team 0x0A
  */
 
-
 #import "CreateReminderViewController.h"
 
+//***************************************************************************************
+// Private Interface:
+//***************************************************************************************
 @interface CreateReminderViewController ()
+{
+    
+}
+
 @property (strong, nonatomic) IBOutlet UITextField *timeTextField;
 @property (strong, nonatomic) IBOutlet UITextField *pillIdTextField;
 @property (strong, nonatomic) IBOutlet UITextField *dosageTextField;
 @property (strong, nonatomic) IBOutlet UITextField *notesTextField;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *doneButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *createReminderButton;
+
+
 - (void)configureView;
+
 @end
 
+
+
+
+//***************************************************************************************
+// Implementation:
+//***************************************************************************************
 @implementation CreateReminderViewController
 
-#pragma mark - Managing the detail item
+
 @synthesize detailItem;
 @synthesize callBack;
 
-//- (void)setDetailItem:(id)newDetailItem
-//{
-//    if (_detailItem != newDetailItem) {
-//        _detailItem = newDetailItem;
-//        
-//        // Update the view.
-//        [self configureView];
-//    }
-//}
-//
-//- (ReminderManager*) detailItem
-//{
-//    return _detailItem;
-//}
 
+
+
+// configureView:
+// ****************************************
 - (void)configureView
 {
     // Update the user interface for the detail item.
@@ -55,18 +60,36 @@
     }
 }
 
+
+
+
+
+// viewDidLoad:
+// ****************************************
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
+    
+    // Setup the createReminderButton to call the createReminderButtonTapped method:
+    [_createReminderButton setTarget:self];
+    [_createReminderButton setAction:@selector(createReminderButtonTapped:)];
 }
 
-- (void)didReceiveMemoryWarning
+
+// createReminderButtonTapped:
+// called by createReminderButton
+// ****************************************
+- (void)createReminderButtonTapped: (id)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
+
+
+
+
+
+
 - (IBAction)createReminder:(UIBarButtonItem *)sender
 {
     NSLog(@"THIS IS CALLED");
@@ -79,11 +102,31 @@
                                 WithPillId:pillid
                                 WithDosage:dosage
                                  WithNotes:notes];
-    
     [callBack addCellAt:index];
 }
 
 
 
+#pragma mark - Managing the detail item
+// setDetailItem:
+// ****************************************
+/* - (void)setDetailItem:(id)newDetailItem
+ {
+ if (_detailItem != newDetailItem) {
+ _detailItem = newDetailItem;
+ 
+ // Update the view.
+ [self configureView];
+ }
+ }*/
+
+
+
+
+// detailItem:
+// ****************************************
+/*{- (ReminderManager*) detailItem
+return _detailItem;
+} */
 
 @end
