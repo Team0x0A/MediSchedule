@@ -14,25 +14,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ka-x8-n94">
-                                <items>
-                                    <navigationItem id="yr6-mJ-1Ft">
-                                        <barButtonItem key="leftBarButtonItem" style="plain" id="Wwh-8h-6lj">
-                                            <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Create Account" borderStyle="roundedRect" minimumFontSize="17" id="QqG-fE-deN">
-                                                <rect key="frame" x="5" y="7" width="118" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Log in" id="kkE-nf-L9f">
-                                            <connections>
-                                                <segue destination="6A4-LH-Njl" kind="push" id="Od1-hN-AG3"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeV-4g-HJ2">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="J9j-vT-DLj"/>
@@ -63,19 +44,25 @@
                             <constraint firstItem="TLH-jP-KAA" firstAttribute="centerY" secondItem="yeV-4g-HJ2" secondAttribute="centerY" type="default" id="4Lk-6d-iSs"/>
                             <constraint firstItem="yeV-4g-HJ2" firstAttribute="top" secondItem="wfH-8w-f7f" secondAttribute="top" constant="180" id="8Hx-tK-lzX"/>
                             <constraint firstItem="2P8-Qg-D4m" firstAttribute="baseline" secondItem="tNX-58-VQR" secondAttribute="baseline" type="default" id="O4v-2L-Tep"/>
-                            <constraint firstItem="3ka-x8-n94" firstAttribute="trailing" secondItem="wfH-8w-f7f" secondAttribute="trailing" type="default" id="RMH-57-nlB"/>
                             <constraint firstItem="yeV-4g-HJ2" firstAttribute="trailing" secondItem="2P8-Qg-D4m" secondAttribute="trailing" type="default" id="UxW-zs-v62"/>
-                            <constraint firstItem="3ka-x8-n94" firstAttribute="bottom" secondItem="wfH-8w-f7f" secondAttribute="bottom" type="default" id="VmL-4h-qP3"/>
                             <constraint firstItem="yeV-4g-HJ2" firstAttribute="leading" secondItem="2P8-Qg-D4m" secondAttribute="leading" type="default" id="W0P-5t-Vlo"/>
                             <constraint firstAttribute="bottom" secondItem="tNX-58-VQR" secondAttribute="bottom" constant="228" id="bIJ-uh-QYp"/>
                             <constraint firstItem="tNX-58-VQR" firstAttribute="trailing" secondItem="TLH-jP-KAA" secondAttribute="trailing" type="default" id="iYb-Ag-F6w"/>
                             <constraint firstItem="yeV-4g-HJ2" firstAttribute="leading" secondItem="wfH-8w-f7f" secondAttribute="leading" constant="138" id="lNO-Cq-QY1"/>
                             <constraint firstItem="TLH-jP-KAA" firstAttribute="leading" secondItem="wfH-8w-f7f" secondAttribute="leading" constant="30" id="meF-gJ-fTs"/>
-                            <constraint firstItem="3ka-x8-n94" firstAttribute="leading" secondItem="wfH-8w-f7f" secondAttribute="leading" type="default" id="rE6-VJ-z3w"/>
                             <constraint firstAttribute="bottom" secondItem="2P8-Qg-D4m" secondAttribute="bottom" constant="221" id="v2u-gz-vMI"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Create Account" id="1Mh-kQ-biX"/>
+                        <barButtonItem title="Login" id="ybz-xp-pmc">
+                            <connections>
+                                <segue destination="6A4-LH-Njl" kind="push" id="BfL-6P-jp3"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Login" id="dKr-ns-PxA"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5g-g3-o4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -100,12 +87,12 @@
             </objects>
             <point key="canvasLocation" x="-769" y="-315"/>
         </scene>
-        <!--Reminder View Controller - CreateReminder-->
+        <!--Create Reminder View Controller - CreateReminder-->
         <scene sceneID="24">
             <objects>
-                <viewController title="CreateReminder" id="21" customClass="ReminderViewController" sceneMemberID="viewController">
+                <viewController title="CreateReminder" id="21" customClass="CreateReminderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="22">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-C2-Wkn">
@@ -127,17 +114,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csC-gP-BT7">
-                                <items>
-                                    <barButtonItem title="Add Picture" id="r6Y-Ni-X8O"/>
-                                    <barButtonItem width="127" style="plain" systemItem="fixedSpace" id="fCD-Hp-UAb"/>
-                                    <barButtonItem title="Create Pill" id="vwV-Vl-tat">
-                                        <connections>
-                                            <segue destination="7yS-l9-em5" kind="push" id="ihe-nV-6gf"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIe-fR-nYg">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -167,15 +143,12 @@
                             <constraint firstItem="N1l-oe-vFj" firstAttribute="top" secondItem="22" secondAttribute="top" constant="233" id="4zA-9e-aWs"/>
                             <constraint firstItem="Vzl-1X-89U" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="79f-TT-22q"/>
                             <constraint firstItem="0QN-Zl-hHx" firstAttribute="leading" secondItem="TRr-i9-26V" secondAttribute="leading" type="default" id="845-Ol-MjW"/>
-                            <constraint firstItem="csC-gP-BT7" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="FSx-NZ-KqS"/>
                             <constraint firstItem="uX2-C2-Wkn" firstAttribute="baseline" secondItem="MIe-fR-nYg" secondAttribute="baseline" type="default" id="Fa1-Zu-3NU"/>
-                            <constraint firstItem="csC-gP-BT7" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="Lg7-A2-Dcf"/>
                             <constraint firstItem="2eF-uG-9LE" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NJL-3m-BiM"/>
                             <constraint firstItem="uX2-C2-Wkn" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="101" id="NLJ-m3-bhA"/>
                             <constraint firstItem="OyN-K8-Rkd" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="St9-IX-99f"/>
                             <constraint firstItem="uX2-C2-Wkn" firstAttribute="leading" secondItem="0QN-Zl-hHx" secondAttribute="leading" type="default" id="Xdg-be-pkD"/>
                             <constraint firstItem="2eF-uG-9LE" firstAttribute="baseline" secondItem="N1l-oe-vFj" secondAttribute="baseline" type="default" id="hbj-ql-rlL"/>
-                            <constraint firstItem="csC-gP-BT7" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="hod-qt-F6A"/>
                             <constraint firstItem="Vzl-1X-89U" firstAttribute="baseline" secondItem="TRr-i9-26V" secondAttribute="baseline" type="default" id="iHy-WI-4Yh"/>
                             <constraint firstItem="0QN-Zl-hHx" firstAttribute="trailing" secondItem="TRr-i9-26V" secondAttribute="trailing" type="default" id="lDo-VW-vnX"/>
                             <constraint firstItem="MIe-fR-nYg" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="21" id="oXU-BV-on0"/>
@@ -202,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="-361"/>
+            <point key="canvasLocation" x="885" y="-315"/>
         </scene>
         <!--View Controller - Create Doctor-->
         <scene sceneID="qLV-jd-2fW">
@@ -426,21 +399,33 @@
             </objects>
             <point key="canvasLocation" x="1023" y="360"/>
         </scene>
-        <!--Reminder Manager View Controller-->
+        <!--Reminder Manager View Controller - Reminder Manager-->
         <scene sceneID="t6f-Xk-l9O">
             <objects>
                 <tableViewController id="6A4-LH-Njl" customClass="ReminderManagerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="d5r-YT-VLo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" id="lDq-B1-j3y">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" textLabel="Esh-LN-tFe" detailTextLabel="12Z-vb-gsc" style="IBUITableViewCellStyleSubtitle" id="lDq-B1-j3y">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esh-LN-tFe">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-vb-gsc">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
@@ -450,8 +435,19 @@
                             <outlet property="delegate" destination="6A4-LH-Njl" id="jq3-wb-tFf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="PLT-bk-SLi"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <toolbarItems>
+                        <barButtonItem title="Add Reminder" id="C1r-Ok-MkV"/>
+                        <barButtonItem title="View Pills" id="GhS-Rw-vaS"/>
+                        <barButtonItem title="View Doctors" id="sdC-dG-hpu"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Reminder Manager" id="PLT-bk-SLi"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addReminderButton" destination="C1r-Ok-MkV" id="Lgd-JK-UVN"/>
+                        <outlet property="viewDoctorsButton" destination="sdC-dG-hpu" id="Fid-Ov-93d"/>
+                        <outlet property="viewPillsButton" destination="GhS-Rw-vaS" id="Qh2-ud-VV9"/>
+                        <segue destination="21" kind="push" identifier="ReminderManagerToCreateReminderSegue" id="i1g-3C-Vkw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-4L-sSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="2pW-x6-de2">
@@ -462,7 +458,7 @@
                     </items>
                 </toolbar>
             </objects>
-            <point key="canvasLocation" x="418" y="-315"/>
+            <point key="canvasLocation" x="346" y="-315"/>
         </scene>
         <!--View Controller - DoctorView-->
         <scene sceneID="C9U-UG-jhs">
@@ -670,26 +666,6 @@
             <point key="canvasLocation" x="1331" y="-361"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ReminderManagerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderManagerViewController.h"/>
-        </class>
-        <class className="ReminderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="createReminder:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="detailDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="doneButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="dosageTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pillIdTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="timeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C82C0E0181CA0A90006F60B /* ReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C0DD181CA0A90006F60B /* ReminderViewController.m */; };
+		0C82C0E0181CA0A90006F60B /* CreateReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C0DD181CA0A90006F60B /* CreateReminderViewController.m */; };
 		0C82C0E1181CA0A90006F60B /* ReminderManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C82C0DF181CA0A90006F60B /* ReminderManagerViewController.m */; };
 		0CB8570B181C7E3100D71BA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB8570A181C7E3100D71BA1 /* UIKit.framework */; };
 		0CB8570D181C7E3100D71BA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CB8570C181C7E3100D71BA1 /* Foundation.framework */; };
@@ -50,8 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C82C0DC181CA0A90006F60B /* ReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderViewController.h; sourceTree = "<group>"; };
-		0C82C0DD181CA0A90006F60B /* ReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderViewController.m; sourceTree = "<group>"; };
+		0C82C0DC181CA0A90006F60B /* CreateReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateReminderViewController.h; sourceTree = "<group>"; };
+		0C82C0DD181CA0A90006F60B /* CreateReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateReminderViewController.m; sourceTree = "<group>"; };
 		0C82C0DE181CA0A90006F60B /* ReminderManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderManagerViewController.h; sourceTree = "<group>"; };
 		0C82C0DF181CA0A90006F60B /* ReminderManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManagerViewController.m; sourceTree = "<group>"; };
 		0CB85707181C7E3100D71BA1 /* MediSchedule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediSchedule.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,8 +142,8 @@
 				27F5B2D31821AEFB000FDF42 /* PillViewController.m */,
 				27F5B2D41821AEFB000FDF42 /* ProfileViewController.h */,
 				27F5B2D51821AEFB000FDF42 /* ProfileViewController.m */,
-				0C82C0DC181CA0A90006F60B /* ReminderViewController.h */,
-				0C82C0DD181CA0A90006F60B /* ReminderViewController.m */,
+				0C82C0DC181CA0A90006F60B /* CreateReminderViewController.h */,
+				0C82C0DD181CA0A90006F60B /* CreateReminderViewController.m */,
 				0C82C0DE181CA0A90006F60B /* ReminderManagerViewController.h */,
 				0C82C0DF181CA0A90006F60B /* ReminderManagerViewController.m */,
 			);
@@ -363,7 +363,7 @@
 				0CB85754181C7FE500D71BA1 /* Reminder.m in Sources */,
 				0CB85755181C7FE500D71BA1 /* ReminderManager.m in Sources */,
 				0CB85756181C7FE500D71BA1 /* Time.m in Sources */,
-				0C82C0E0181CA0A90006F60B /* ReminderViewController.m in Sources */,
+				0C82C0E0181CA0A90006F60B /* CreateReminderViewController.m in Sources */,
 				0C82C0E1181CA0A90006F60B /* ReminderManagerViewController.m in Sources */,
 				27F5B2D61821AEFB000FDF42 /* CreateDoctorViewController.m in Sources */,
 				27F5B2D71821AEFB000FDF42 /* DoctorEditViewController.m in Sources */,

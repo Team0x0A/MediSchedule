@@ -14,9 +14,9 @@
  */
 
 
-#import "ReminderViewController.h"
+#import "CreateReminderViewController.h"
 
-@interface ReminderViewController ()
+@interface CreateReminderViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *timeTextField;
 @property (strong, nonatomic) IBOutlet UITextField *pillIdTextField;
 @property (strong, nonatomic) IBOutlet UITextField *dosageTextField;
@@ -25,7 +25,7 @@
 - (void)configureView;
 @end
 
-@implementation ReminderViewController
+@implementation CreateReminderViewController
 
 #pragma mark - Managing the detail item
 @synthesize detailItem;

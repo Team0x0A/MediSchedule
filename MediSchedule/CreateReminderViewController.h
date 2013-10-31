@@ -1,5 +1,5 @@
 /*
- *  ReminderViewController.h
+ *  CreateReminderViewController.h
  *  MediSchedule
  *
  *  Header file for ReminderViewController class
@@ -19,7 +19,7 @@
 #import "ReminderManager.h"
 #import "ReminderManagerViewController.h"
 
-@interface ReminderViewController : UIViewController
+@interface CreateReminderViewController : UIViewController
 
 @property (strong, nonatomic) ReminderManager* detailItem;
 @property (strong, nonatomic) ReminderManagerViewController* callBack;

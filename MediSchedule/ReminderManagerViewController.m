@@ -14,7 +14,7 @@
  */
 
 #import "ReminderManagerViewController.h"
-#import "ReminderViewController.h"
+#import "CreateReminderViewController.h"
 #import "ReminderManager.h"
 #import "Reminder.h"
 
@@ -28,6 +28,9 @@
     NSMutableArray *_objects;
     
 }
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *addReminderButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *viewPillsButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *viewDoctorsButton;
 
 -(void) testReminderManager;
 @end
@@ -72,13 +75,16 @@
     [self testReminderManager];
     
     
+    /*
     // Create a button to add reminders to the table:
     UIBarButtonItem *addReminderButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAdd // This is the plus sign icon
                                                                                target: self
                                                                                action: @selector(addReminderButtonTapped:)]; // This is linking the button to method addTapped
     self.navigationItem.rightBarButtonItem = addReminderButton;
-     
+    */
     
+    [_addReminderButton setTarget:self];
+    [_addReminderButton setAction:@selector(addReminderButtonTapped:)];
 }
 
 
@@ -111,7 +117,7 @@
     if([[destination title] isEqual: @"CreateReminder"])
     {
         
-        ReminderViewController *detailController = segue.destinationViewController;
+        CreateReminderViewController *detailController = segue.destinationViewController;
         detailController.detailItem = myManager;
         detailController.callBack = self;
     }
@@ -124,7 +130,8 @@
 
 - (void) testReminderManager
 {
-    /*int index;
+    
+    int index;
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"6:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 1st"];
     [self addCellAt:index];
     
@@ -133,7 +140,7 @@
     
     index = [myManager addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
     [self addCellAt:index];
-     */
+    
 }
 
 
@@ -169,10 +176,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]];
-    
-    //,[myManager notesAt:[indexPath item]]]];
-    //[[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]]; //,[myManager notesAt:[indexPath item]]]];
+    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
     
     return cell;
 }
@@ -198,8 +203,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    //return [myManager numOfReminders];
-    return 3;
+    return [myManager numOfReminders];
 }
 
 
@@ -226,7 +230,7 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        //[myManager deleteReminderWith:[indexPath item]];
+        [myManager deleteReminderWith:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
