@@ -69,6 +69,12 @@
     [super viewDidLoad];
     [self configureView];
     
+    // Set this view controller as the delegate of all the text fields
+    [_timeTextField setDelegate:self];
+    [_pillIdTextField setDelegate:self];
+    [_dosageTextField setDelegate:self];
+    [_notesTextField setDelegate:self];
+    
     // Setup the createReminderButton to call the createReminderButtonTapped method:
     [_createReminderButton setTarget:self];
     [_createReminderButton setAction:@selector(createReminderButtonTapped:)];
@@ -84,6 +90,7 @@
 - (void)createReminderButtonTapped: (id)sender
 {
     // Get time from field:
+    // This needs to be read from the text field:
     Time* time = [[Time alloc] init];
     
     // Get pillId from field:
@@ -100,32 +107,25 @@
                        WithPillId:pillid
                        WithDosage:dosage
                         WithNotes:notes];
+    
+    // Pop CreateReminderViewController off of the navigationController view stack:
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 
 
 
-
-#pragma mark - Managing the detail item
-// setDetailItem:
+#pragma mark UITextFieldDelegate
+// textFieldShouldReturn:
+// delegated from the time, pillId, dosage and notes text fields:
 // ****************************************
-/* - (void)setDetailItem:(id)newDetailItem
- {
- if (_detailItem != newDetailItem) {
- _detailItem = newDetailItem;
- 
- // Update the view.
- [self configureView];
- }
- }*/
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+	[textField resignFirstResponder];
+    
+	return YES;
+    
+}
 
-
-
-
-// detailItem:
-// ****************************************
-/*{- (ReminderManager*) detailItem
-return _detailItem;
-} */
 
 @end
