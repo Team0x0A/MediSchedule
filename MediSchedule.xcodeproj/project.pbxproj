@@ -306,7 +306,7 @@
 			attributes = {
 				CLASSPREFIX = MediSchedule;
 				LastUpgradeCheck = 0460;
-				ORGANIZATIONNAME = "Ishan Bhutani";
+				ORGANIZATIONNAME = "Team 0x0A";
 			};
 			buildConfigurationList = 0CB85702181C7E3100D71BA1 /* Build configuration list for PBXProject "MediSchedule" */;
 			compatibilityVersion = "Xcode 3.2";
