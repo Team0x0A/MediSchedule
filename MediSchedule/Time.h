@@ -16,7 +16,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Time : NSObject
+//NSCoding protocol allows the object to archive/unarchive itself when saving to files
+@interface Time : NSObject <NSCoding>
 - initWithHour:(int) hour
        WithMin:(int) min
        WithSec:(int) sec;

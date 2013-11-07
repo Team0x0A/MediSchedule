@@ -65,6 +65,24 @@
    
 }
 
+// Initialize Time object with unarchived data from aDecoder
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        date = [aDecoder decodeObjectForKey:@"date"];
+    }
+    return self;
+}
+
+// Writes archived variable instances to aCoder
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:date forKey:@"date"];
+
+}
+
 - (NSString *)description
 {
     NSMutableString* output = [[NSMutableString alloc] init];

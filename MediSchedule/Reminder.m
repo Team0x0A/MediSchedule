@@ -38,8 +38,32 @@
         [self setPillId:newPillId];
         [self setDosage:newDosage];
         [self setNotes:newNotes];
+        
     }
     return self;
+}
+
+// Initialize Reminder object with unarchived data from aDecoder
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        [self setTime:[aDecoder decodeObjectForKey:@"time"]];
+        [self setPillId:[aDecoder decodeIntegerForKey:@"pillid"]];
+        [self setDosage:[aDecoder decodeIntegerForKey:@"dosage"]];
+        [self setNotes:[aDecoder decodeObjectForKey:@"notes"]];
+    }
+    return self;
+}
+
+// Writes archived variable instances to aCoder
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeObject:self.time forKey:@"time"];
+    [aCoder encodeInt:pillId forKey:@"pillid"];
+    [aCoder encodeInt:dosage forKey:@"dosage"];
+    [aCoder encodeObject:self.notes forKey:@"notes"];
 }
 
 - (NSString *)description

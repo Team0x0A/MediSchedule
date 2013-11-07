@@ -17,7 +17,8 @@
 #import <Foundation/Foundation.h>
 #import "Time.h"
 
-@interface Reminder : NSObject
+//NSCoding protocol allows the object to archive/unarchive itself when saving to files
+@interface Reminder : NSObject <NSCoding>
 
 @property Time* time;
 @property int pillId;

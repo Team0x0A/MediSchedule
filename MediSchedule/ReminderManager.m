@@ -159,55 +159,18 @@ NSInteger timeSort(id reminder1, id reminder2, void *context)
 //Saves the reminder manager into the appropriate file
 - (void) saveToFile: (NSURL*) fileLocation
 {
-    //Create arrays with list of times, pillids, dosages and notes to create a property list using nsdictionary
-    NSMutableArray *listOfTimes = [[NSMutableArray alloc] init];
-    NSMutableArray *listOfPillIds = [[NSMutableArray alloc] init];
-    NSMutableArray *listOfDosages = [[NSMutableArray alloc] init];
-    NSMutableArray *listOfNotes = [[NSMutableArray alloc] init];
-    
-    for (Reminder* i in reminders)
-    {
-        [listOfTimes addObject:[[NSString alloc] initWithFormat:@"%d:%d", [[i time] hour], [[i time] min]]];
-        [listOfPillIds addObject:[[NSString alloc] initWithFormat:@"%d", [i pillId]]];
-        [listOfDosages addObject:[[NSString alloc] initWithFormat:@"%d", [i dosage]]];
-        [listOfNotes addObject:[[NSString alloc] initWithFormat:@"%@", [i notes]]];
-    }
-    
-    //Create NSDictionary; valid property list
-    NSDictionary *writeToFile = [[NSDictionary alloc] initWithObjects:@[listOfTimes, listOfPillIds, listOfDosages, listOfNotes] forKeys:@[@"time", @"pillId", @"dosage", @"notes"]];
-    
-    //NSDictionary is written to file
-    if([writeToFile writeToURL:fileLocation atomically:YES])
-    {
-        NSLog(@"Writing to file successful!");
-    }
-    else
-    {
-        NSLog(@"Writing to file failed.");
-    }
+    // Archive reminders and store in dataToSave, dataToSave can then write itself to the file
+    NSData* dataToSave = [NSKeyedArchiver archivedDataWithRootObject:reminders];
+    [dataToSave writeToURL:fileLocation atomically:YES];
 }
 
 // Initialize reminder list from file
 - (void) loadFile: (NSURL*) fileLocation
 {
-    // New reminders are created from the values of these arrays. Note: a single reminder is a row
-    // in the matrix [listOfTimes, listOfPillIds, listOfDosages, listOfNotes]
-    // where listOfTimes, listOfPillIds, listOfDosages, listOfNotes are valid property lists
-    // stored in the NSDictionary readFromFile
-    NSDictionary *readFromFile = [[NSDictionary alloc] initWithContentsOfURL:fileLocation];
-    NSMutableArray *listOfTimes = [[NSMutableArray alloc] initWithArray:[readFromFile objectForKey:@"time"]];
-    NSMutableArray *listOfPillIds = [[NSMutableArray alloc] initWithArray:[readFromFile objectForKey:@"pillId"]];
-    NSMutableArray *listOfDosages = [[NSMutableArray alloc] initWithArray:[readFromFile objectForKey:@"dosage"]];
-    NSMutableArray *listOfNotes = [[NSMutableArray alloc] initWithArray:[readFromFile objectForKey:@"notes"]];
-    
-    // Add each reminder into array of reminders
-    for(int i = 0; i < [listOfTimes count]; i++)
+    NSData *savedReminders = [[NSData alloc] initWithContentsOfURL:fileLocation]; //Get data from file and initialize NSData object
+    if (savedReminders)//If the file was not empty, unarchive data and re-initialize reminders
     {
-        NSLog(@"%@", [listOfTimes objectAtIndex:i]);
-        [self addReminderWithTime: [[Time alloc] initWithString:[listOfTimes objectAtIndex:i]]
-                       WithPillId: [[listOfPillIds objectAtIndex:i] integerValue]
-                       WithDosage: [[listOfDosages objectAtIndex:i] integerValue]
-                        WithNotes:[listOfNotes objectAtIndex:i]];
+        reminders = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedReminders]];
     }
 }
 
