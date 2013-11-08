@@ -57,4 +57,12 @@
 
 - (NSString *) emailOfDoctorWithId:(int) doctorId;
 
+- (NSString*) nameOfDoctorWithIndex: (int) index;
+
+- (NSString*) addressOfDoctorWithIndex: (int) index;
+
+- (NSString*) numberOfDoctorWithIndex: (int) index;
+
+- (NSString *) emailOfDoctorWithIndex:(int) index;
+
 @end

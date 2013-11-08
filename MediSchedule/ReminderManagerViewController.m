@@ -59,7 +59,6 @@
     [super viewDidLoad];
 
     // The reminder manager is initialized the first time the application loads
-    // Note: there is not file system support as of now. Each time the application is loaded, myManager is re-initialized
     if (!myManager)
     {
         myManager = [[ReminderManager alloc] init];
@@ -180,7 +179,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ReminderCell";
-    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]];

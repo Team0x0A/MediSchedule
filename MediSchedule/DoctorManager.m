@@ -163,4 +163,28 @@
     return [doctor email];
 }
 
+- (NSString*) nameOfDoctorWithIndex: (int) index
+{
+    Doctor *doctor = [doctors objectAtIndex:index];
+    return [doctor name];
+}
+
+- (NSString*) addressOfDoctorWithIndex: (int) index
+{
+    Doctor *doctor = [doctors objectAtIndex:index];
+    return [doctor address];
+}
+
+- (NSString*) numberOfDoctorWithIndex: (int) index
+{
+    Doctor *doctor = [doctors objectAtIndex:index];
+    return [doctor number];
+}
+
+- (NSString *) emailOfDoctorWithIndex:(int) index
+{
+    Doctor *doctor = [doctors objectAtIndex:index];
+    return [doctor email];
+}
+
 @end

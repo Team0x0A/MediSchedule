@@ -399,6 +399,7 @@
                         <outlet property="viewPillsButton" destination="GhS-Rw-vaS" id="Qh2-ud-VV9"/>
                         <segue destination="21" kind="push" identifier="ReminderManagerToCreateReminderSegue" id="i1g-3C-Vkw"/>
                         <segue destination="XrY-mU-idU" kind="push" identifier="ReminderManagerToPillManagerSegue" id="nSY-ud-cOh"/>
+                        <segue destination="eM0-Lc-DWq" kind="push" id="xSN-yO-mP1"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-4L-sSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -467,36 +468,51 @@
             <objects>
                 <viewController title="DoctorView" id="eM0-Lc-DWq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="amS-T4-jkr">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bPl-MI-aa5">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="416" id="NYA-mq-CQE"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorCell" textLabel="jnO-Yh-bWN" detailTextLabel="UI8-Md-rlq" style="IBUITableViewCellStyleSubtitle" id="Xve-XM-tDe">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-Yh-bWN">
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI8-Md-rlq">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muv-kc-ZSJ">
-                                <items>
-                                    <barButtonItem title="Edit Doctor" id="7Lg-FF-Hxb"/>
-                                    <barButtonItem width="128" style="plain" systemItem="fixedSpace" id="SiR-Mo-ZsZ"/>
-                                    <barButtonItem title="Main Page" id="tld-Ne-1e7"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bPl-MI-aa5" firstAttribute="top" secondItem="amS-T4-jkr" secondAttribute="top" type="default" id="2im-7u-giK"/>
                             <constraint firstItem="bPl-MI-aa5" firstAttribute="leading" secondItem="amS-T4-jkr" secondAttribute="leading" type="default" id="Fwu-oi-QEY"/>
-                            <constraint firstItem="muv-kc-ZSJ" firstAttribute="leading" secondItem="amS-T4-jkr" secondAttribute="leading" type="default" id="R4K-dN-ygo"/>
-                            <constraint firstItem="muv-kc-ZSJ" firstAttribute="trailing" secondItem="amS-T4-jkr" secondAttribute="trailing" type="default" id="cCa-cQ-4Ve"/>
-                            <constraint firstItem="bPl-MI-aa5" firstAttribute="bottom" secondItem="muv-kc-ZSJ" secondAttribute="top" type="default" id="fSo-Bd-OZm"/>
                             <constraint firstItem="bPl-MI-aa5" firstAttribute="trailing" secondItem="amS-T4-jkr" secondAttribute="trailing" type="default" id="rfd-vc-91a"/>
-                            <constraint firstItem="muv-kc-ZSJ" firstAttribute="bottom" secondItem="amS-T4-jkr" secondAttribute="bottom" type="default" id="sWT-GV-DQ3"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Doctor View" id="a0S-UL-ir9"/>
+                    <navigationItem key="navigationItem" title="Doctor Manager" id="a0S-UL-ir9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2i-i5-odO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2462" y="872"/>
+            <point key="canvasLocation" x="885" y="1126"/>
         </scene>
         <!--View Controller - Doctor Edit-->
         <scene sceneID="UsK-ec-D8h">
