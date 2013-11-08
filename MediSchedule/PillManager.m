@@ -91,8 +91,14 @@
 - (void) deletePillWithId: (int) pillId
 {
     [pills removeObjectAtIndex:[self getIndexOfPillWithId:pillId]];
+    [self saveToFile:[self fileLocation]];
 }
 
+- (void) deletePillWithIndex: (int)index
+{
+    [pills removeObjectAtIndex:index];
+    [self saveToFile:[self fileLocation]];
+}
 
 // Modifiers:
 - (void) setNameTo: (NSString*) newName
@@ -190,6 +196,18 @@
     {
         pills = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedReminders]];
     }
+}
+
+- (NSString*) nameOfPillWithIndex: (int) index
+{
+    Pill *pill = [pills objectAtIndex:index];
+    return [pill name];
+}
+
+- (NSString *) notesOfPillWithIndex:(int) index
+{
+    Pill *pill = [pills objectAtIndex:index];
+    return [pill notes];
 }
 
 @end

@@ -41,9 +41,6 @@
         myManager = [[PillManager alloc] init];
     }
     
-    // Tests:
-    [self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
-    
     // Setup the addPillButton:
     [_addPillButton setTarget:self];
     [_addPillButton setAction:@selector(addPillButtonTapped:)];
@@ -75,7 +72,7 @@
                WithNotes: (NSString*) newNotes;
 {
     [myManager addPillWithName:newName WithImage:newImage WithDoctorId:newDoctorId WithNotes:newNotes];
-    [self addCellAt:0];
+    [self addCellAt:[myManager numOfPills] - 1];
 }
 
 
@@ -149,9 +146,9 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager nameOfPillWithId:[indexPath item]]]];
-    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:[myManager notesOfPillWithId:[indexPath item]]]];
-    
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager nameOfPillWithIndex:[indexPath item]]]];
+    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:[myManager notesOfPillWithIndex:[indexPath item]]]];
+
     return cell;
 }
 
@@ -176,7 +173,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [myManager deletePillWithId:[indexPath item]];
+        [myManager deletePillWithIndex:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {

@@ -51,7 +51,7 @@
 // createPillButtonTapped:
 // called by createPillButton
 // ****************************************
-- (void) createPillButton: (id)sender
+- (void) createPillButtonTapped: (id)sender
 {
     
     // Get the pill name from the text field:

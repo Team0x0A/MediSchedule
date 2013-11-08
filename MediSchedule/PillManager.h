@@ -24,23 +24,38 @@
                WithNotes: (NSString*) newNotes;
 
 - (NSString *) description;
+
 - (void) deletePillWithId: (int) pillId;
+
+- (void) deletePillWithIndex: (int)index;
 
 // Modifiers:
 - (void) setNameTo: (NSString*) newName
                 OfPillId: (int) pillId;
+
 - (void) setImageTo: (UIImage*) newImage
                  OfPillId: (int) pillId;
+
 - (void) setDoctorIdTo: (int) newDoctorID
                     OfPillId: (int) pillId;
+
 - (void) setNotesTo: (NSString*) newNotes
                  OfPillId: (int) pillId;
 // Accessors:
 - (int) numOfPills;
+
 - (NSArray*) listOfPillsIds;
+
 - (NSString*) nameOfPillWithId: (int) pillId;
+
 - (UIImage*) imageOfPillWithId: (int) pillId;
+
 - (int) doctorIdOfPillWithId: (int) pillId;
-- (NSString *) notesOfPillWithId:(int) pillId;
+
+- (NSString*) notesOfPillWithId:(int) pillId;
+
+- (NSString*) nameOfPillWithIndex: (int) index;
+
+- (NSString*) notesOfPillWithIndex:(int) index;
 
 @end
