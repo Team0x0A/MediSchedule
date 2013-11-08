@@ -39,7 +39,7 @@
         myManager = [[PillManager alloc] init];
     }
     
-    [self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
+    //[self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
 }
 
 
@@ -141,5 +141,45 @@
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
+}
+
+
+// testPillManager:
+// ****************************************
+- (void) testPillManager
+{
+    [myManager addPillWithName:@"Tylenol"
+                         WithImage:[[UIImage alloc] init]
+                      WithDoctorId:1
+                         WithNotes:@"First pill added"];
+    
+    [myManager addPillWithName:@"Advil"
+                         WithImage:[[UIImage alloc] init]
+                      WithDoctorId:1
+                         WithNotes:@"Second pill added"];
+    
+    [myManager addPillWithName:@"Benelyn"
+                         WithImage:[[UIImage alloc] init]
+                      WithDoctorId:1
+                         WithNotes:@"Third pill added"];
+    
+    [myManager addPillWithName:@"Some more drugs"
+                         WithImage:[[UIImage alloc] init]
+                      WithDoctorId:2
+                         WithNotes:@"Fourth pill added"];
+    
+    [myManager addPillWithName:@"Even more drugs"
+                         WithImage:[[UIImage alloc] init]
+                      WithDoctorId:2
+                         WithNotes:@"Fifth pill added"];
+    
+    NSLog(@"PillMangager description: %@",[myManager description]);
+    
+    NSLog(@"PillMangager pillids: %@",[[myManager getListOfPillsIds] description]);
+    
+    assert([myManager getNumOfPills] == 5);
+    [myManager deletePill:0];
+    assert([myManager getNumOfPills] == 4);
+    
 }
 @end
