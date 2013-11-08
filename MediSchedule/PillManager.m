@@ -29,11 +29,13 @@
 - (id)init
 {
     self = [super init];
+    NSLog(@"Initializing PillManager...");
     if (self)
     {
         if (!pills)
         {
             pills = [[NSMutableArray alloc] init];
+            NSLog(@"PillManager Initialized!");
         }
     }
     return self;
@@ -44,9 +46,10 @@
             WithDoctorId: (int) newDoctorId
                WithNotes: (NSString*) newNotes
 {
+    //NSLog(@"Adding %@ : {%@, %d, %@}", newName, [newImage description], newDoctorId, newNotes);
     int pillId = 0;
     int maxId = 0;
-    for(Pill* i in pills)
+    for(Pill* i in pills) 
     {
         if([i pillId] > maxId) maxId = [i pillId];
         pillId = maxId + 1;
@@ -55,6 +58,20 @@
     Pill* newPill = [[Pill alloc] initWithId:pillId WithName:newName WithImage:newImage WithDoctorId:newDoctorId WithNotes:newNotes];
     
     [pills addObject:newPill];
+}
+
+- (NSString *) description
+{
+    NSMutableString* output = [[NSMutableString alloc] init];
+    [output appendString: @"\n"];
+    
+    for(Pill* i in pills)
+    {
+        [output appendString:[i description]];
+        [output appendString: @"\n"];
+    }
+    
+    return (NSString*)output;
 }
 
 - (int) getIndexOfPillAt: (int) pillId
@@ -71,7 +88,6 @@
 
 - (void) deletePill: (int) pillId
 {
-    
     [pills removeObjectAtIndex:[self getIndexOfPillAt:pillId]];
 }
 
@@ -80,21 +96,17 @@
     return  [pills count];
 }
 
-//implemented
 - (NSArray*) getListOfPillsIds
 {
-    if([pills count] > 0){
-        NSArray* PILLID = [NSArray array];
-        
-        for (Pill* i in pills) {
-            PILLID = [PILLID arrayByAddingObject:@([i pillId])];
-        }
-        return PILLID;
+    NSMutableArray *pillIds = [[NSMutableArray alloc] init];
+    for (Pill* i in pills)
+    {
+        [pillIds addObject: [[NSNumber alloc] initWithInt:[i pillId]]];
     }
-    return 0; //if there are no Pill
+    return pillIds;
 }
 
-//implemented
+//FIX THIS
 - (NSString*) getPillNameOf: (int) pillId
 {
     if([pills count] > 0){
@@ -105,7 +117,7 @@
     return NULL; //if there did not find
 }
 
-//implemented
+//FIX THIS
 - (void) setPillNameTo: (NSString*) newName
                     Of: (int) pillId
 {
@@ -117,7 +129,7 @@
     
 }
 
-//implemented
+//FIX THIS
 - (UIImage*) getPillImageOf: (int) pillId
 {
     for (Pill* i in pills) {
@@ -128,7 +140,7 @@
     return NULL;//if there did not find
 }
 
-//implemented
+//FIX THIS
 - (void) setPillImageTo: (UIImage*) newImage
                      Of: (int) pillId
 {
@@ -140,7 +152,7 @@
     
 }
 
-//implemented
+//FIX THIS
 - (int) getDoctorIdOf: (int) pillId
 {
     for (Pill* i in pills) {
@@ -150,7 +162,7 @@
     return -1;//if did not find
 }
 
-//implemented
+//FIX THIS
 - (void) setDoctorIdOf: (int) pillId
                     To: (int) newDoctorID
 {
@@ -162,7 +174,7 @@
     
 }
 
-//implemented
+//FIX THIS
 - (NSString *) getPillNotesOf:(int) pillId
 {
     for (Pill* i in pills) {
@@ -172,7 +184,7 @@
     return NULL;//if there did not find
 }
 
-//implemented
+//FIX THIS
 - (void) setPillNotesTo: (NSString*) newNotes
                      Of: (int) pillId
 {
