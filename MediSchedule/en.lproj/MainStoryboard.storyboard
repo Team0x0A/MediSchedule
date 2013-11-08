@@ -352,7 +352,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goK-xV-BYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1031" y="1004"/>
+            <point key="canvasLocation" x="1435" y="394"/>
         </scene>
         <!--Reminder Manager View Controller - Reminder Manager-->
         <scene sceneID="t6f-Xk-l9O">
@@ -402,6 +402,7 @@
                         <outlet property="viewDoctorsButton" destination="sdC-dG-hpu" id="Fid-Ov-93d"/>
                         <outlet property="viewPillsButton" destination="GhS-Rw-vaS" id="Qh2-ud-VV9"/>
                         <segue destination="21" kind="push" identifier="ReminderManagerToCreateReminderSegue" id="i1g-3C-Vkw"/>
+                        <segue destination="XrY-mU-idU" kind="push" identifier="ReminderManagerToPillManagerSegue" id="nSY-ud-cOh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-4L-sSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -415,16 +416,16 @@
             </objects>
             <point key="canvasLocation" x="346" y="-315"/>
         </scene>
-        <!--Table View Controller - Pill Manager View-->
+        <!--Pill Manager View Controller - Pill Manager View-->
         <scene sceneID="fiu-h3-BTJ">
             <objects>
-                <tableViewController title="Pill Manager View" id="XrY-mU-idU" sceneMemberID="viewController">
+                <tableViewController title="Pill Manager View" id="XrY-mU-idU" customClass="PillManagerViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XQt-LR-usS">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="jZc-mb-kja">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PillCell" id="jZc-mb-kja">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -439,10 +440,15 @@
                             <outlet property="delegate" destination="XrY-mU-idU" id="CXD-NV-Vv4"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Add Pill" id="Evd-Oc-m2o"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Pill Manager" id="Oq2-R5-8Oh"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD4-yr-oP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="350" y="424"/>
+            <point key="canvasLocation" x="885" y="394"/>
         </scene>
         <!--View Controller - DoctorView-->
         <scene sceneID="C9U-UG-jhs">
@@ -478,7 +484,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2i-i5-odO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772" y="472"/>
+            <point key="canvasLocation" x="1858" y="636"/>
         </scene>
         <!--View Controller - Doctor Edit-->
         <scene sceneID="UsK-ec-D8h">

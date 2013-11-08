@@ -26,7 +26,6 @@
 {
     ReminderManager *myManager;// Reminder Manager to be used for entire application
     NSMutableArray *_objects;
-    
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addReminderButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *viewPillsButton;
@@ -53,7 +52,7 @@
 
 
 // viewDidLoad:
-// gets called when the view manager is created?
+// gets called when the view manager is created
 // ****************************************
 - (void)viewDidLoad
 {
@@ -72,6 +71,10 @@
     // Setup the addReminderButton to call the addReminderButtonTapped method:
     [_addReminderButton setTarget:self];
     [_addReminderButton setAction:@selector(addReminderButtonTapped:)];
+    
+    // Setup the viewPillsButton to call the viewPillsButtonTapped method:
+    [_viewPillsButton setTarget:self];
+    [_viewPillsButton setAction:@selector(veiwPillsButtonTapped:)];
 }
 
 
@@ -80,7 +83,7 @@
 
 
 // addReminderButtonTapped:
-// This method is called by addButton
+// This method is called by addReminderButton
 // ****************************************
 - (void)addReminderButtonTapped:(id)sender
 {
@@ -88,6 +91,15 @@
 }
 
 
+
+
+// viewPillsButtonTapped:
+// This method is called by viewPillsButton
+// ****************************************
+- (void)veiwPillsButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"ReminderManagerToPillManagerSegue" sender:self];
+}
 
 
 
@@ -165,14 +177,13 @@
 // cellForRowAtIndexPath
 // Returns the table cell at the specified index path.
 // ****************************************
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ReminderCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]]; //,[myManager notesAt:[indexPath item]]]];
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]];
     [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
     
     return cell;
