@@ -19,36 +19,42 @@
 @interface DoctorManager : NSObject
 
 - (void) addDoctorWithName: (NSString*) newName
-               WithPhonenum: (NSString*) newPhonenum
-            WithAddress: (NSString*) newAddress
-               WithEmail: (NSString*) newEmail;
+              WithNumber: (NSString*) newNumber
+               WithAddress: (NSString*) newAddress
+                 WithEmail: (NSString*) newEmail;
+
+- (NSString *) description;
+
+//Modifiers:
+
+- (void) deleteDoctorWithId:(int) doctorId;
 
 
+- (void) setNameTo: (NSString*) newName
+       OfDoctorId: (int) doctorId;
 
-- (void) deleteDoctor: (int) doctorId;
+- (void) setAddressTo: (NSString*) newAddress
+           OfDoctorId: (int) doctorId;
 
-- (int) getNumOfDoctors;
+- (void) setNumberTo: (NSString *) newNumber
+          OfDoctorId: (int) doctorId;
 
-- (NSArray*) getListOfDoctorIds;
+- (void) setEmailTo: (NSString*) newEmail
+         OfDoctorId: (int) doctorId;
 
-- (NSString*) getDoctorName: (int) doctorId;
 
-- (void) setDoctorNameTo: (NSString*) newName
-                    Of: (int) doctorId;
+//Accessors:
 
-- (NSString*) getDoctorAddress: (int) doctorId;
+- (int) numOfDoctors;
 
-- (void) setDoctorAddressTo: (NSString*) newAddress
-                      Of: (int) doctorId;
+- (NSArray*) listOfDoctorIds;
 
-- (NSString*) getDoctorPhonenum: (int) doctorId;
+- (NSString*) nameOfDoctorWithId: (int) doctorId;
 
-- (void) setDoctorPhonenumOf: (int) doctorId
-                    To: (NSString *) newPhonenum;
+- (NSString*) addressOfDoctorWithId: (int) doctorId;
 
-- (NSString *) getDoctorEmail:(int) doctorId;
+- (NSString*) numberOfDoctorWithId: (int) doctorId;
 
-- (void) setDoctorEmailTo: (NSString*) newEmail
-                     Of: (int) doctorId;
+- (NSString *) emailOfDoctorWithId:(int) doctorId;
 
 @end

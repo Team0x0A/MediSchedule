@@ -44,7 +44,6 @@
     // Setup the addPillButton:
     [_addPillButton setTarget:self];
     [_addPillButton setAction:@selector(addPillButtonTapped:)];
-    [self testPillManager];
 }
 
 

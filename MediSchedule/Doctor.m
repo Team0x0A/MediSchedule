@@ -22,13 +22,13 @@
 
 @synthesize doctorId;
 @synthesize name;
-@synthesize phonenum;
+@synthesize number;
 @synthesize address;
 @synthesize email;
 
 -(id)initWithId:(int) newId
        WithName:(NSString*) newName
-   WithPhonenum: (NSString*) newPhonenum
+   WithNumber: (NSString*) newNumber
     WithAddress: (NSString*) newAddress
       WithEmail: (NSString*) newEmail;
 {
@@ -36,7 +36,7 @@
     if (self){
         [self setDoctorId:newId];
         [self setName:newName];
-        [self setPhonenum:newPhonenum];
+        [self setNumber:newNumber];
         [self setAddress:newAddress];
         [self setEmail:newEmail];
     }
@@ -44,6 +44,6 @@
 }
 - (NSString *)description
 {
-    return [[NSString alloc] initWithFormat:@"%d, %@, %@, %@, %@", [self doctorId], [self name], [self phonenum], [self address], [self email]];
+    return [[NSString alloc] initWithFormat:@"%d, %@, %@, %@, %@", [self doctorId], [self name], [self number], [self address], [self email]];
 }
 @end

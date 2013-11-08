@@ -20,14 +20,14 @@
 
 @property int doctorId;
 @property NSString *name;
-@property NSString *phonenum;
+@property NSString *number;
 @property NSString *address;
 @property NSString *email;
 
 
 -(id)initWithId:(int) newId
        WithName:(NSString*) newName
-   WithPhonenum: (NSString*) newPhonenum
+   WithNumber: (NSString*) newNumber
     WithAddress: (NSString*) newAddress
       WithEmail: (NSString*) newEmail;
 

@@ -87,6 +87,8 @@
     return -1; // pills is empty (error)
 }
 
+
+// Modifiers:
 - (void) deletePillWithId: (int) pillId
 {
     [pills removeObjectAtIndex:[self getIndexOfPillWithId:pillId]];
@@ -99,7 +101,6 @@
     [self saveToFile:[self fileLocation]];
 }
 
-// Modifiers:
 - (void) setNameTo: (NSString*) newName
                 OfPillId: (int) pillId
 {

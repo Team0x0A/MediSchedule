@@ -38,10 +38,10 @@
 
 }
 
-- (void) addDoctorWithName:(NSString *)newName
-               WithPhonenum:(NSString *)newPhonenum
-                WithAddress:(NSString *)newAddress
-                  WithEmail:(NSString *)newEmail
+- (void) addDoctorWithName: (NSString*) newName
+                WithNumber: (NSString*) newNumber
+               WithAddress: (NSString*) newAddress
+                 WithEmail: (NSString*) newEmail
 
 {
     int doctorId = 0;
@@ -51,118 +51,116 @@
         doctorId = maxId + 1;
     }
     
-    Doctor * newDoctor = [[Doctor alloc] initWithId:doctorId WithName:newName WithPhonenum:newPhonenum WithAddress:newAddress WithEmail:newAddress];
+    Doctor *newDoctor = [[Doctor alloc] initWithId:doctorId WithName:newName WithNumber:newNumber WithAddress:newAddress WithEmail:newEmail];
     
     [doctors addObject:newDoctor];
 }
 
-- (int)getIndexOfDoctorAt: (int) doctorId
+- (NSString *) description
 {
-    if ([doctors count] > 0 )
+    NSMutableString* output = [[NSMutableString alloc] init];
+    [output appendString: @"\n"];
+    
+    for(Doctor* i in doctors)
     {
-        for (Doctor* i in doctors) return [doctors indexOfObject: i];
+        [output appendString:[i description]];
+        [output appendString: @"\n"];
     }
-    return -1; // doctors is empty (error)
+    
+    return (NSString*)output;
 }
 
-- (void) deleteDoctor:(int)doctorId
+- (int)getIndexOfDoctorWithId: (int) doctorId
 {
-    [doctors removeObjectAtIndex:[self getIndexOfDoctorAt:doctorId]];
+    if([doctors count] > 0)
+    {
+        for (Doctor* i in doctors)
+        {
+            if ([i doctorId] == doctorId) return [doctors indexOfObject:i];
+        }
+    }
+    return -1; // pills is empty (error)
 }
 
-- (int) getNumOfDoctors
+//Modifiers:
+
+- (void) deleteDoctorWithId:(int) doctorId
+{
+    [doctors removeObjectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    //[self saveToFile:[self fileLocation]];
+}
+
+
+- (void) setNameTo: (NSString*) newName
+        OfDoctorId: (int) doctorId
+{
+    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    [doctor setName:newName];
+}
+
+- (void) setAddressTo: (NSString*) newAddress
+           OfDoctorId: (int) doctorId
+{
+    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    [doctor setAddress:newAddress];
+    //[self saveToFile:[self fileLocation]];
+}
+
+- (void) setNumberTo: (NSString *) newNumber
+          OfDoctorId: (int) doctorId
+{
+    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    [doctor setNumber:newNumber];
+    //[self saveToFile:[self fileLocation]];
+}
+
+- (void) setEmailTo: (NSString*) newEmail
+         OfDoctorId: (int) doctorId
+{
+    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    [doctor setEmail:newEmail];
+     //[self saveToFile:[self fileLocation]];
+}
+
+//Accessors:
+
+- (int) numOfDoctors
 {
     return [doctors count];
 }
 
-- (NSArray*)getListOfDoctorIds
+- (NSArray*) listOfDoctorIds
 {
-    if([doctors count] > 0){
-        NSArray* DOCTORID = [NSArray array];
-        
-        for(Doctor* i in doctors){
-            DOCTORID = [DOCTORID arrayByAddingObject:@([i doctorId])];
-        }
-        return DOCTORID;
+    NSMutableArray *doctorIds = [[NSMutableArray alloc] init];
+    for (Doctor* i in doctors)
+    {
+        [doctorIds addObject: [[NSNumber alloc] initWithInt:[i doctorId]]];
     }
-    return 0; // fi there no Doctor
+    return doctorIds;
 }
 
-- (NSString*) getDoctorName:(int)doctorId
+- (NSString*) nameOfDoctorWithId: (int) doctorId
 {
-    if([doctors count] > 0){
-        for(Doctor* i in doctors) return [i name];
-    }
-    return NULL; // if there di not find
+    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    return [doctor name];
 }
 
-- (void) setDoctorNameTo:(NSString *)newName
-                      Of:(int)doctorId
+- (NSString*) addressOfDoctorWithId: (int) doctorId
 {
-    for(Doctor* i in doctors){
-        if([i doctorId] == doctorId){
-            [i setName:newName];
-        }
-    }
+    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    return [doctor address];
 }
 
-- (NSString *) getDoctorAddress:(int)doctorId
+- (NSString*) numberOfDoctorWithId: (int) doctorId
 {
-    if ([doctors count] > 0){
-        for (Doctor* i in doctors){
-            if([i doctorId] == doctorId) return [i address];
-        }
-    }
-    return NULL; // if there did not find
+    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    return [doctor number];
 }
 
-- (void) setDoctorAddressTo:(NSString *)newAddress
-                         Of:(int)doctorId
+- (NSString *) emailOfDoctorWithId:(int) doctorId
 {
-    for(Doctor* i in doctors){
-        if ([i doctorId] == doctorId){
-            [i setAddress:newAddress];
-        }
-    }
+    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
+    return [doctor email];
 }
-
-- (NSString *) getDoctorPhonenum:(int)doctorId
-{
-    if ([doctors count] > 0){
-        for(Doctor* i in doctors) return [i phonenum];
-    }
-    return NULL; // if there are not find
-}
-
--(void) setDoctorPhonenumOf:(int)doctorId
-                         To:(NSString *)newPhonenum
-                         
-                         
-{
-    for(Doctor* i in doctors){
-        if ([i doctorId] == doctorId){
-            [i setPhonenum:newPhonenum];
-        }
-    }
-}
-
--(NSString *) getDoctorEmail:(int)doctorId
-{
-    if ([doctors count] > 0){
-        for (Doctor* i in doctors) return [i email];
-    }
-    return NULL; // if there are not find
-}
-
--(void) setDoctorEmailTo:(NSString *)newEmail
-                      Of:(int)doctorId
-{
-    for(Doctor* i in doctors){
-        if ([i doctorId] == doctorId){
-            [i setEmail:newEmail];
-        }
-    }
-}
-
 
 @end
