@@ -74,7 +74,7 @@
                WithNotes: (NSString*) newNotes;
 {
     [myManager addPillWithName:newName WithImage:newImage WithDoctorId:newDoctorId WithNotes:newNotes];
-    [self addCellAt:1];
+    [self addCellAt:0];
 }
 
 

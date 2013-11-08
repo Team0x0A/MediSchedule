@@ -12,5 +12,8 @@
 // Public Interface:
 //***************************************************************************************
 @interface PillManagerViewController : UITableViewController
-
+- (void) addPillWithName: (NSString*) newName
+               WithImage: (UIImage*) newImage
+            WithDoctorId: (int) newDoctorId
+               WithNotes: (NSString*) newNotes;
 @end

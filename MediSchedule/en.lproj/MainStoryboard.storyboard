@@ -275,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1H-qe-62f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2123" y="-369"/>
+            <point key="canvasLocation" x="2849" y="167"/>
         </scene>
         <!--Create Pill View Controller - Create Pill View Controller-->
         <scene sceneID="zhf-cC-haM">
@@ -292,23 +292,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="57S-dm-NKx">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LwR-2e-YIp">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="uC3-vR-JCn"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pill Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs2-hH-yQB">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pill ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZrO-FO-amB">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -318,10 +306,16 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUp-mt-y1O">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="dqe-tl-epV"/>
-                                </constraints>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Doctor Id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUp-mt-y1O">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wu-wd-vNm">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-u9-EZW">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -330,25 +324,36 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="URX-yz-nPU" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="52" id="0OF-yh-dyd"/>
-                            <constraint firstItem="57S-dm-NKx" firstAttribute="trailing" secondItem="LwR-2e-YIp" secondAttribute="trailing" type="default" id="0eV-wz-sNv"/>
-                            <constraint firstItem="LwR-2e-YIp" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="173" id="2pe-B3-Jfr"/>
                             <constraint firstItem="URX-yz-nPU" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="236" id="Ayp-i5-ooC"/>
                             <constraint firstItem="Jrh-Ac-C9y" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="47" id="Bkz-N7-FeD"/>
-                            <constraint firstItem="TUp-mt-y1O" firstAttribute="baseline" secondItem="LwR-2e-YIp" secondAttribute="baseline" type="default" id="Fa2-8Q-lN2"/>
-                            <constraint firstItem="LwR-2e-YIp" firstAttribute="leading" secondItem="57S-dm-NKx" secondAttribute="leading" type="default" id="GKR-9q-kE8"/>
-                            <constraint firstItem="57S-dm-NKx" firstAttribute="trailing" secondItem="Jrh-Ac-C9y" secondAttribute="trailing" type="default" id="IFm-tN-4IK"/>
-                            <constraint firstItem="57S-dm-NKx" firstAttribute="leading" secondItem="Jrh-Ac-C9y" secondAttribute="leading" type="default" id="P0E-Y8-ETI"/>
-                            <constraint firstItem="ZrO-FO-amB" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="27" id="Ta7-T2-dCk"/>
+                            <constraint firstItem="LwR-2e-YIp" firstAttribute="top" secondItem="TUp-mt-y1O" secondAttribute="top" type="default" id="FL4-2Z-ln0"/>
+                            <constraint firstItem="vEN-u9-EZW" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="162" id="Iib-zW-r0q"/>
+                            <constraint firstItem="LwR-2e-YIp" firstAttribute="leading" secondItem="Jrh-Ac-C9y" secondAttribute="leading" type="default" id="Ksr-Eg-OND"/>
+                            <constraint firstItem="TUp-mt-y1O" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="110" id="WUG-Gm-Tia"/>
                             <constraint firstItem="zs2-hH-yQB" firstAttribute="baseline" secondItem="Jrh-Ac-C9y" secondAttribute="baseline" type="default" id="bcr-FT-iFo"/>
-                            <constraint firstItem="ZrO-FO-amB" firstAttribute="centerY" secondItem="57S-dm-NKx" secondAttribute="centerY" type="default" id="f9S-Jg-2eR"/>
-                            <constraint firstItem="TUp-mt-y1O" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="174" id="gLS-OI-zot"/>
+                            <constraint firstItem="vEN-u9-EZW" firstAttribute="centerX" secondItem="TUp-mt-y1O" secondAttribute="centerX" type="default" id="bvB-oY-aNd"/>
+                            <constraint firstItem="LwR-2e-YIp" firstAttribute="trailing" secondItem="Jrh-Ac-C9y" secondAttribute="trailing" type="default" id="gFf-NB-fXH"/>
                             <constraint firstItem="Jrh-Ac-C9y" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="115" id="gmS-Nc-kcp"/>
-                            <constraint firstItem="TUp-mt-y1O" firstAttribute="leading" secondItem="ZrO-FO-amB" secondAttribute="leading" type="default" id="pFq-o3-emX"/>
+                            <constraint firstItem="TUp-mt-y1O" firstAttribute="centerX" secondItem="zs2-hH-yQB" secondAttribute="centerX" type="default" id="hKa-BO-fGr"/>
                             <constraint firstItem="zs2-hH-yQB" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="24" id="s0C-NV-Mcb"/>
-                            <constraint firstItem="57S-dm-NKx" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="108" id="tzW-E4-swI"/>
+                            <constraint firstItem="vEN-u9-EZW" firstAttribute="top" secondItem="4wu-wd-vNm" secondAttribute="top" type="default" id="tAx-Lb-UFY"/>
+                            <constraint firstItem="LwR-2e-YIp" firstAttribute="trailing" secondItem="4wu-wd-vNm" secondAttribute="trailing" type="default" id="x0J-Jm-Jbi"/>
+                            <constraint firstItem="LwR-2e-YIp" firstAttribute="leading" secondItem="4wu-wd-vNm" secondAttribute="leading" type="default" id="y1C-3X-cu8"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Create Pill" id="miL-bP-goy"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Create Pill" id="d3f-GI-KJJ"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="createPillButton" destination="miL-bP-goy" id="JPM-hQ-p8Q"/>
+                        <outlet property="doctorIdTextField" destination="LwR-2e-YIp" id="ngp-ha-lXd"/>
+                        <outlet property="dosageTextField" destination="LwR-2e-YIp" id="jyh-Vd-VaH"/>
+                        <outlet property="notesTextField" destination="4wu-wd-vNm" id="gPf-Uz-dJ3"/>
+                        <outlet property="pillName" destination="Jrh-Ac-C9y" id="qff-Sw-jFf"/>
+                        <outlet property="pillNameTextField" destination="Jrh-Ac-C9y" id="7JR-rd-XFN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goK-xV-BYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -488,7 +493,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2i-i5-odO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2058" y="572"/>
+            <point key="canvasLocation" x="2462" y="872"/>
         </scene>
         <!--View Controller - Doctor Edit-->
         <scene sceneID="UsK-ec-D8h">
@@ -565,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfb-Wv-zbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2187" y="329"/>
+            <point key="canvasLocation" x="2849" y="885"/>
         </scene>
         <!--View Controller - Medication-->
         <scene sceneID="rpB-aH-aUY">
@@ -645,7 +650,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kv9-ue-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1781" y="-511"/>
+            <point key="canvasLocation" x="2849" y="-547"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
