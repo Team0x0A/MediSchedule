@@ -275,14 +275,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1H-qe-62f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="-361"/>
+            <point key="canvasLocation" x="2123" y="-369"/>
         </scene>
-        <!--View Controller - Edite Pill-->
+        <!--Create Pill View Controller - Create Pill View Controller-->
         <scene sceneID="zhf-cC-haM">
             <objects>
-                <viewController id="ol7-fq-Jvy" sceneMemberID="viewController">
+                <viewController title="Create Pill View Controller" id="ol7-fq-Jvy" customClass="CreatePillViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L9n-nt-ijZ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-Ac-C9y">
@@ -348,11 +348,11 @@
                             <constraint firstItem="57S-dm-NKx" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="108" id="tzW-E4-swI"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edite Pill" id="d3f-GI-KJJ"/>
+                    <navigationItem key="navigationItem" title="Create Pill" id="d3f-GI-KJJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goK-xV-BYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1435" y="394"/>
+            <point key="canvasLocation" x="1423" y="394"/>
         </scene>
         <!--Reminder Manager View Controller - Reminder Manager-->
         <scene sceneID="t6f-Xk-l9O">
@@ -445,6 +445,10 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Pill Manager" id="Oq2-R5-8Oh"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addPillButton" destination="Evd-Oc-m2o" id="RM3-xR-BxP"/>
+                        <segue destination="ol7-fq-Jvy" kind="push" identifier="PillManagerToCreatePillSegue" id="lTP-Jc-Kqm"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD4-yr-oP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -484,7 +488,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F2i-i5-odO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="636"/>
+            <point key="canvasLocation" x="2058" y="572"/>
         </scene>
         <!--View Controller - Doctor Edit-->
         <scene sceneID="UsK-ec-D8h">
@@ -561,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nfb-Wv-zbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863" y="1009"/>
+            <point key="canvasLocation" x="2187" y="329"/>
         </scene>
         <!--View Controller - Medication-->
         <scene sceneID="rpB-aH-aUY">
@@ -597,11 +601,7 @@
                                 <items>
                                     <barButtonItem title="View Pill" id="y1i-zD-b43"/>
                                     <barButtonItem width="129" style="plain" systemItem="fixedSpace" id="dup-O0-xJK"/>
-                                    <barButtonItem title="Create Doctor" id="uAo-jt-Jv7">
-                                        <connections>
-                                            <segue destination="Czc-kF-Umy" kind="push" id="3xO-bF-ptB"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="Create Doctor" id="uAo-jt-Jv7"/>
                                 </items>
                             </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-yf-u25">
@@ -645,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kv9-ue-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1331" y="-361"/>
+            <point key="canvasLocation" x="1781" y="-511"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

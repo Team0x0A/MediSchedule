@@ -18,9 +18,11 @@
 #import <UIKit/UIKit.h>
 #import "ReminderManagerViewController.h"
 
+//***************************************************************************************
+// Public Interface:
+//***************************************************************************************
 @interface CreateReminderViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) ReminderManagerViewController* callBack;
-//@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 
 @end

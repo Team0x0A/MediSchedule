@@ -16,6 +16,7 @@
 {
     PillManager *myManager; // Pill Manager to be used for entire application
 }
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addPillButton;
 
 @end
 
@@ -39,8 +40,28 @@
         myManager = [[PillManager alloc] init];
     }
     
-    //[self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
+    // Tests:
+    [self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
+    
+    // Setup the addPillButton:
+    [_addPillButton setTarget:self];
+    [_addPillButton setAction:@selector(addPillButtonTapped:)];
 }
+
+
+
+
+
+
+// addPillButtonTapped:
+// This method is called by addPillButton
+// ****************************************
+- (void)addPillButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"PillManagerToCreatePillSegue" sender:self];
+}
+
+
 
 
 
@@ -106,8 +127,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    //[[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager getPillNameOf:[indexPath item]]]];
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"A Pill"]];
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager getPillNameOf:[indexPath item]]]];
+    //[[cell textLabel] setText:[[NSString alloc] initWithFormat:@"A Pill"]];
     //,[myManager notesAt:[indexPath item]]]];
     //[[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
     
