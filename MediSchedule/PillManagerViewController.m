@@ -8,6 +8,7 @@
 
 #import "PillManagerViewController.h"
 #import "PillManager.h"
+#import "CreatePillViewController.h"
 
 //***************************************************************************************
 // Private Interface:
@@ -41,7 +42,7 @@
     }
     
     // Tests:
-    //[self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
+    [self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
     
     // Setup the addPillButton:
     [_addPillButton setTarget:self];
@@ -76,6 +77,27 @@
     [myManager addPillWithName:newName WithImage:newImage WithDoctorId:newDoctorId WithNotes:newNotes];
     [self addCellAt:0];
 }
+
+
+
+
+
+// prepareForSegue:
+// gets called before seguing to another view controller
+// ****************************************
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    UIViewController* destination = [segue destinationViewController];
+    
+    if([[destination title] isEqual: @"CreatePill"])
+    {
+        
+        CreatePillViewController *detailController = segue.destinationViewController;
+        detailController.callBack = self;
+    }
+}
+
 
 
 // ************************************************************************************************************************
@@ -128,9 +150,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     [[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager nameOfPillWithId:[indexPath item]]]];
-    //[[cell textLabel] setText:[[NSString alloc] initWithFormat:@"A Pill"]];
-    //,[myManager notesAt:[indexPath item]]]];
-    //[[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
+    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:[myManager notesOfPillWithId:[indexPath item]]]];
     
     return cell;
 }

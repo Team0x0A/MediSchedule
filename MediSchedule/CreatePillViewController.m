@@ -12,9 +12,9 @@
 // Private Interface:
 //***************************************************************************************
 @interface CreatePillViewController ()
-@property (strong, nonatomic) IBOutlet UITextField *pillNameTextField;
-@property (strong, nonatomic) IBOutlet UITextField *notesTextField;
-@property (strong, nonatomic) IBOutlet UITextField *doctorIdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *doctorIdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *notesTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *createPillButton;
 
 @end
@@ -37,7 +37,7 @@
     [super viewDidLoad];
 	
     // Set this view controller as the delegate of all the text fields:
-    [_pillNameTextField setDelegate:self];
+    [_nameTextField setDelegate:self];
     [_doctorIdTextField setDelegate:self];
     [_notesTextField setDelegate:self];
     
@@ -53,9 +53,9 @@
 // ****************************************
 - (void) createPillButton: (id)sender
 {
-    /*
+    
     // Get the pill name from the text field:
-    NSString* name = [[self pillNameTextField] text];
+    NSString* name = [[self nameTextField] text];
     
     // Get the doctorId from the text field:
     int doctorId = [[[self doctorIdTextField] text] integerValue];
@@ -65,6 +65,19 @@
     [callBack addPillWithName:name WithImage:NULL WithDoctorId:doctorId WithNotes:notes];
     
     // Pop CreatePillViewController off of the navigationController view stack:
-    [[self navigationController] popViewControllerAnimated:YES];*/
+    [[self navigationController] popViewControllerAnimated:YES];
+}
+
+
+#pragma mark UITextFieldDelegate
+// textFieldShouldReturn:
+// delegated from the name, doctorId and notes text fields:
+// ****************************************
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+	[textField resignFirstResponder];
+    
+	return YES;
+    
 }
 @end

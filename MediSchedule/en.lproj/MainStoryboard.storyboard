@@ -277,31 +277,15 @@
             </objects>
             <point key="canvasLocation" x="2849" y="167"/>
         </scene>
-        <!--Create Pill View Controller - Create Pill View Controller-->
+        <!--Create Pill View Controller - CreatePill-->
         <scene sceneID="zhf-cC-haM">
             <objects>
-                <viewController title="Create Pill View Controller" id="ol7-fq-Jvy" customClass="CreatePillViewController" sceneMemberID="viewController">
+                <viewController title="CreatePill" id="ol7-fq-Jvy" customClass="CreatePillViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L9n-nt-ijZ">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jrh-Ac-C9y">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="154" id="sG1-Xe-bFO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LwR-2e-YIp">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pill Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs2-hH-yQB">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="URX-yz-nPU">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -311,34 +295,43 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4wu-wd-vNm">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-u9-EZW">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7Y-jy-Yr1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Tzr-64-ot1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="De2-oN-ebi">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-Hr-zmX">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="URX-yz-nPU" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="52" id="0OF-yh-dyd"/>
-                            <constraint firstItem="URX-yz-nPU" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="236" id="Ayp-i5-ooC"/>
-                            <constraint firstItem="Jrh-Ac-C9y" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="47" id="Bkz-N7-FeD"/>
-                            <constraint firstItem="LwR-2e-YIp" firstAttribute="top" secondItem="TUp-mt-y1O" secondAttribute="top" type="default" id="FL4-2Z-ln0"/>
-                            <constraint firstItem="vEN-u9-EZW" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="162" id="Iib-zW-r0q"/>
-                            <constraint firstItem="LwR-2e-YIp" firstAttribute="leading" secondItem="Jrh-Ac-C9y" secondAttribute="leading" type="default" id="Ksr-Eg-OND"/>
-                            <constraint firstItem="TUp-mt-y1O" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="110" id="WUG-Gm-Tia"/>
-                            <constraint firstItem="zs2-hH-yQB" firstAttribute="baseline" secondItem="Jrh-Ac-C9y" secondAttribute="baseline" type="default" id="bcr-FT-iFo"/>
+                            <constraint firstItem="De2-oN-ebi" firstAttribute="trailing" secondItem="k7Y-jy-Yr1" secondAttribute="trailing" type="default" id="55c-x5-3IP"/>
+                            <constraint firstItem="k7Y-jy-Yr1" firstAttribute="bottom" secondItem="zs2-hH-yQB" secondAttribute="bottom" type="default" id="FVk-Rn-fUp"/>
+                            <constraint firstItem="De2-oN-ebi" firstAttribute="leading" secondItem="k7Y-jy-Yr1" secondAttribute="leading" type="default" id="GWU-we-t0u"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="153" id="JA6-Bg-b71"/>
+                            <constraint firstItem="k7Y-jy-Yr1" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="141" id="TOE-J7-fRg"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="leading" secondItem="De2-oN-ebi" secondAttribute="leading" type="default" id="ZIa-Us-Q4I"/>
+                            <constraint firstItem="De2-oN-ebi" firstAttribute="bottom" secondItem="TUp-mt-y1O" secondAttribute="bottom" type="default" id="aru-Cb-Nwo"/>
                             <constraint firstItem="vEN-u9-EZW" firstAttribute="centerX" secondItem="TUp-mt-y1O" secondAttribute="centerX" type="default" id="bvB-oY-aNd"/>
-                            <constraint firstItem="LwR-2e-YIp" firstAttribute="trailing" secondItem="Jrh-Ac-C9y" secondAttribute="trailing" type="default" id="gFf-NB-fXH"/>
-                            <constraint firstItem="Jrh-Ac-C9y" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="115" id="gmS-Nc-kcp"/>
                             <constraint firstItem="TUp-mt-y1O" firstAttribute="centerX" secondItem="zs2-hH-yQB" secondAttribute="centerX" type="default" id="hKa-BO-fGr"/>
+                            <constraint firstItem="k7Y-jy-Yr1" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="41" id="kH1-oZ-RIe"/>
+                            <constraint firstItem="De2-oN-ebi" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="101" id="ot6-Uh-e4X"/>
                             <constraint firstItem="zs2-hH-yQB" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="24" id="s0C-NV-Mcb"/>
-                            <constraint firstItem="vEN-u9-EZW" firstAttribute="top" secondItem="4wu-wd-vNm" secondAttribute="top" type="default" id="tAx-Lb-UFY"/>
-                            <constraint firstItem="LwR-2e-YIp" firstAttribute="trailing" secondItem="4wu-wd-vNm" secondAttribute="trailing" type="default" id="x0J-Jm-Jbi"/>
-                            <constraint firstItem="LwR-2e-YIp" firstAttribute="leading" secondItem="4wu-wd-vNm" secondAttribute="leading" type="default" id="y1C-3X-cu8"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="bottom" secondItem="vEN-u9-EZW" secondAttribute="bottom" type="default" id="tok-bk-OY7"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="trailing" secondItem="De2-oN-ebi" secondAttribute="trailing" type="default" id="vjf-33-omT"/>
                         </constraints>
                     </view>
                     <toolbarItems>
@@ -348,11 +341,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="createPillButton" destination="miL-bP-goy" id="JPM-hQ-p8Q"/>
-                        <outlet property="doctorIdTextField" destination="LwR-2e-YIp" id="ngp-ha-lXd"/>
-                        <outlet property="dosageTextField" destination="LwR-2e-YIp" id="jyh-Vd-VaH"/>
-                        <outlet property="notesTextField" destination="4wu-wd-vNm" id="gPf-Uz-dJ3"/>
-                        <outlet property="pillName" destination="Jrh-Ac-C9y" id="qff-Sw-jFf"/>
-                        <outlet property="pillNameTextField" destination="Jrh-Ac-C9y" id="7JR-rd-XFN"/>
+                        <outlet property="doctorIdTextField" destination="De2-oN-ebi" id="tvG-bI-fGc"/>
+                        <outlet property="nameTextField" destination="k7Y-jy-Yr1" id="CKw-5W-aDb"/>
+                        <outlet property="notesTextField" destination="4QR-Hr-zmX" id="ewb-JN-BDb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="goK-xV-BYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
