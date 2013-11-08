@@ -49,8 +49,6 @@
 
 
 
-
-
 // addPillButtonTapped:
 // This method is called by addPillButton
 // ****************************************
@@ -62,9 +60,8 @@
 
 
 
-
 // addPill:
-// called by CreateReminderViewController when creating new reminder
+// called by CreatePillViewController when creating new pill
 // ****************************************
 - (void) addPillWithName: (NSString*) newName
                WithImage: (UIImage*) newImage
@@ -74,8 +71,6 @@
     [myManager addPillWithName:newName WithImage:newImage WithDoctorId:newDoctorId WithNotes:newNotes];
     [self addCellAt:[myManager numOfPills] - 1];
 }
-
-
 
 
 

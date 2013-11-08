@@ -21,3 +21,4 @@
                  WithEmail: (NSString*) newEmail;
 
 @end
+

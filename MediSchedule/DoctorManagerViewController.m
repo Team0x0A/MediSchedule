@@ -16,6 +16,7 @@
 {
     DoctorManager *myManager; // Doctor manager to be used for entire applocation
 }
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addDoctorButton;
 
 @end
 
@@ -39,14 +40,74 @@
         myManager = [[DoctorManager alloc] init];
     }
 
-    
+    // Setup the addDoctorButton:
+    [_addDoctorButton setTarget:self];
+    [_addDoctorButton setAction:@selector(addDoctorButtonTapped:)];
 }
 
+
+
+
+// addDoctorButtonTapped:
+// This method is called by addDoctorButton
+// ****************************************
+- (void)addDoctorButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"DoctorManagerToCreateDoctorSegue" sender:self];
+}
+
+
+
+
+// addDoctor:
+// called by CreateDoctorViewController when creating new doctor
+// ****************************************
+- (void) addDoctorWithName: (NSString*) newName
+                WithNumber: (NSString*) newNumber
+               WithAddress: (NSString*) newAddress
+                 WithEmail: (NSString*) newEmail
+{
+    [myManager addDoctorWithName:newName WithNumber:newNumber WithAddress:newAddress WithEmail:newEmail];
+    [self addCellAt:[myManager numOfDoctors] - 1];
+}
+
+
+
+// prepareForSegue:
+// gets called before seguing to another view controller
+// ****************************************
+- (void)prepareForSegue:(UIStoryboardSegue *)segue
+                 sender:(id)sender
+{
+    /*
+    UIViewController* destination = [segue destinationViewController];
+    
+    if([[destination title] isEqual: @"CreateDoctor"])
+    {
+        
+        CreatePillViewController *detailController = segue.destinationViewController;
+        detailController.callBack = self;
+    }*/
+}
 
 
 //***************************************************************************************
 // Table Methods:
 //***************************************************************************************
+
+// addCellAt:
+// ****************************************
+- (void) addCellAt:(int)index
+{
+    // Convert the index to an indexPath into the table:
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    
+    // Create a new cell at:
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    NSLog(@"DoctorManagerViewController: addCellAt called...");
+}
+
+
 
 // numberOfSectionsInTableView:
 // ****************************************
@@ -90,47 +151,17 @@
 }
 
 
-/*
-// Override to support editing the table view.
+
+// commitEditingStyle:
+// ****************************************
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
+        [myManager deleteDoctorWithIndex:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
-
 @end

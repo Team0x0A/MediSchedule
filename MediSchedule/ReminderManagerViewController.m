@@ -74,6 +74,10 @@
     // Setup the viewPillsButton to call the viewPillsButtonTapped method:
     [_viewPillsButton setTarget:self];
     [_viewPillsButton setAction:@selector(veiwPillsButtonTapped:)];
+    
+    // Setup the viewDoctorButton to call the viewDoctorButtonTapped method:
+    [_viewDoctorsButton setTarget:self];
+    [_viewDoctorsButton setAction:@selector(viewDoctorButtonTapped:)];
 }
 
 
@@ -98,6 +102,17 @@
 - (void)veiwPillsButtonTapped:(id)sender
 {
     [self performSegueWithIdentifier:@"ReminderManagerToPillManagerSegue" sender:self];
+}
+
+
+
+
+// viewDoctorButtonTapped:
+// This method is called by viewDoctorButton
+// ****************************************
+- (void)viewDoctorButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"ReminderManagerToDoctorManagerSegue" sender:self];
 }
 
 

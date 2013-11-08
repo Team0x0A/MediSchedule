@@ -32,6 +32,7 @@
 		84AAAFAB182379F2009B7E98 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAF9B182379F2009B7E98 /* Doctor.m */; };
 		84AAAFAD182379F2009B7E98 /* DoctorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAF9F182379F2009B7E98 /* DoctorManager.m */; };
 		9E4D8A2E182D938F0011850E /* DoctorManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D8A2D182D938F0011850E /* DoctorManagerViewController.m */; };
+		9E4D8A34182D9FBA0011850E /* CreateDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D8A33182D9FBA0011850E /* CreateDoctorViewController.m */; };
 		9EB6DD181821E1740086666E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6DD171821E1740086666E /* LoginViewController.m */; };
 		9ED57BBA182C61AC000A8B38 /* PillManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BB9182C61AC000A8B38 /* PillManagerViewController.m */; };
 		9ED57BBD182C70BF000A8B38 /* CreatePillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */; };
@@ -89,6 +90,8 @@
 		84AAAF9F182379F2009B7E98 /* DoctorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorManager.m; sourceTree = "<group>"; };
 		9E4D8A2C182D938F0011850E /* DoctorManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorManagerViewController.h; sourceTree = "<group>"; };
 		9E4D8A2D182D938F0011850E /* DoctorManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorManagerViewController.m; sourceTree = "<group>"; };
+		9E4D8A32182D9FBA0011850E /* CreateDoctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateDoctorViewController.h; sourceTree = "<group>"; };
+		9E4D8A33182D9FBA0011850E /* CreateDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateDoctorViewController.m; sourceTree = "<group>"; };
 		9EB6DD161821E1740086666E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9EB6DD171821E1740086666E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		9ED57BB8182C61AC000A8B38 /* PillManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PillManagerViewController.h; sourceTree = "<group>"; };
@@ -259,6 +262,8 @@
 			children = (
 				9E4D8A2C182D938F0011850E /* DoctorManagerViewController.h */,
 				9E4D8A2D182D938F0011850E /* DoctorManagerViewController.m */,
+				9E4D8A32182D9FBA0011850E /* CreateDoctorViewController.h */,
+				9E4D8A33182D9FBA0011850E /* CreateDoctorViewController.m */,
 			);
 			name = Doctors;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				9ED57BBA182C61AC000A8B38 /* PillManagerViewController.m in Sources */,
 				9ED57BBD182C70BF000A8B38 /* CreatePillViewController.m in Sources */,
 				9E4D8A2E182D938F0011850E /* DoctorManagerViewController.m in Sources */,
+				9E4D8A34182D9FBA0011850E /* CreateDoctorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

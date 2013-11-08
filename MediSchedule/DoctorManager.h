@@ -29,6 +29,7 @@
 
 - (void) deleteDoctorWithId:(int) doctorId;
 
+- (void) deleteDoctorWithIndex:(int) index;
 
 - (void) setNameTo: (NSString*) newName
        OfDoctorId: (int) doctorId;

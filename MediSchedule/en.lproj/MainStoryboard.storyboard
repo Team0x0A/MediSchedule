@@ -88,7 +88,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-769" y="-315"/>
+            <point key="canvasLocation" x="-603" y="-315"/>
         </scene>
         <!--Create Reminder View Controller - CreateReminder-->
         <scene sceneID="24">
@@ -178,12 +178,62 @@
             </objects>
             <point key="canvasLocation" x="885" y="-315"/>
         </scene>
-        <!--View Controller - Create Doctor-->
+        <!--Doctor Manager View Controller-->
+        <scene sceneID="IUg-Xl-dDQ">
+            <objects>
+                <tableViewController id="cdv-Bx-qYn" customClass="DoctorManagerViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SZ8-Qd-zWT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorCell" textLabel="GfB-Fk-CEq" detailTextLabel="dMO-vo-UGs" style="IBUITableViewCellStyleSubtitle" id="eOH-Nw-zj9">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfB-Fk-CEq">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMO-vo-UGs">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cdv-Bx-qYn" id="1MN-mr-u7B"/>
+                            <outlet property="delegate" destination="cdv-Bx-qYn" id="FD6-vf-XLY"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Add Doctor" id="wa6-Dj-Lqn"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="dAN-i7-Xmw"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addDoctorButton" destination="wa6-Dj-Lqn" id="8FS-G1-hmK"/>
+                        <segue destination="Czc-kF-Umy" kind="push" identifier="DoctorManagerToCreateDoctorSegue" id="duD-sy-wGc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgt-EM-GZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="1126"/>
+        </scene>
+        <!--Create Doctor View Controller - Create Doctor-->
         <scene sceneID="qLV-jd-2fW">
             <objects>
-                <viewController id="Czc-kF-Umy" sceneMemberID="viewController">
+                <viewController id="Czc-kF-Umy" customClass="CreateDoctorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mo7-E0-7ez" customClass="CreateDoctorScreen">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBq-Pb-1fW">
@@ -227,12 +277,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgb-QR-yas">
-                                <items>
-                                    <barButtonItem width="203" style="plain" systemItem="fixedSpace" id="Zbp-54-zXr"/>
-                                    <barButtonItem title="View Doctor" id="rm0-En-u73"/>
-                                </items>
-                            </toolbar>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ElW-ZK-Ha3">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="DPl-Bb-zc5"/>
@@ -262,20 +306,28 @@
                             <constraint firstItem="6lq-Dq-jsv" firstAttribute="baseline" secondItem="4z2-SH-ex8" secondAttribute="baseline" type="default" id="cBp-C3-v6r"/>
                             <constraint firstItem="0aP-ux-xwp" firstAttribute="trailing" secondItem="6lq-Dq-jsv" secondAttribute="trailing" type="default" id="cyq-uA-KIe"/>
                             <constraint firstItem="FqP-PZ-fvm" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="161" id="lT1-rt-Zj0"/>
-                            <constraint firstItem="Xgb-QR-yas" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" type="default" id="mlp-hN-WWN"/>
-                            <constraint firstItem="Xgb-QR-yas" firstAttribute="trailing" secondItem="mo7-E0-7ez" secondAttribute="trailing" type="default" id="pxf-MM-2Sh"/>
                             <constraint firstItem="ElW-ZK-Ha3" firstAttribute="trailing" secondItem="FqP-PZ-fvm" secondAttribute="trailing" type="default" id="rym-0j-PEz"/>
                             <constraint firstItem="0aP-ux-xwp" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="165" id="tBt-1Q-5K5"/>
                             <constraint firstItem="4z2-SH-ex8" firstAttribute="trailing" secondItem="XBq-Pb-1fW" secondAttribute="trailing" type="default" id="wmT-JU-5DA"/>
-                            <constraint firstItem="Xgb-QR-yas" firstAttribute="bottom" secondItem="mo7-E0-7ez" secondAttribute="bottom" type="default" id="xMt-PT-xwK"/>
                             <constraint firstItem="wOZ-Wp-9Nf" firstAttribute="centerX" secondItem="6lq-Dq-jsv" secondAttribute="centerX" type="default" id="yoh-Oo-ItD"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Create Doctor" id="9p4-nS-dSZ"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Create Doctor" id="eg9-aX-khn"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="4z2-SH-ex8" id="8Af-DO-f7v"/>
+                        <outlet property="createDoctorButton" destination="9p4-nS-dSZ" id="71h-0g-b4h"/>
+                        <outlet property="emailTextField" destination="ElW-ZK-Ha3" id="Hh0-b7-CUq"/>
+                        <outlet property="nameTextField" destination="XBq-Pb-1fW" id="Bn4-Bf-kKe"/>
+                        <outlet property="phoneNumberTextField" destination="FqP-PZ-fvm" id="c4d-Xm-3N5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1H-qe-62f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="167"/>
+            <point key="canvasLocation" x="1423" y="1126"/>
         </scene>
         <!--Create Pill View Controller - CreatePill-->
         <scene sceneID="zhf-cC-haM">
@@ -399,7 +451,7 @@
                         <outlet property="viewPillsButton" destination="GhS-Rw-vaS" id="Qh2-ud-VV9"/>
                         <segue destination="21" kind="push" identifier="ReminderManagerToCreateReminderSegue" id="i1g-3C-Vkw"/>
                         <segue destination="XrY-mU-idU" kind="push" identifier="ReminderManagerToPillManagerSegue" id="nSY-ud-cOh"/>
-                        <segue destination="eM0-Lc-DWq" kind="push" id="xSN-yO-mP1"/>
+                        <segue destination="cdv-Bx-qYn" kind="push" identifier="ReminderManagerToDoctorManagerSegue" id="Ge2-SB-5q8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-4L-sSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -462,214 +514,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zD4-yr-oP5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885" y="394"/>
-        </scene>
-        <!--View Controller - DoctorView-->
-        <scene sceneID="C9U-UG-jhs">
-            <objects>
-                <viewController title="DoctorView" id="eM0-Lc-DWq" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="amS-T4-jkr">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bPl-MI-aa5">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="416" id="NYA-mq-CQE"/>
-                                </constraints>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorCell" textLabel="jnO-Yh-bWN" detailTextLabel="UI8-Md-rlq" style="IBUITableViewCellStyleSubtitle" id="Xve-XM-tDe">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jnO-Yh-bWN">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UI8-Md-rlq">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="bPl-MI-aa5" firstAttribute="top" secondItem="amS-T4-jkr" secondAttribute="top" type="default" id="2im-7u-giK"/>
-                            <constraint firstItem="bPl-MI-aa5" firstAttribute="leading" secondItem="amS-T4-jkr" secondAttribute="leading" type="default" id="Fwu-oi-QEY"/>
-                            <constraint firstItem="bPl-MI-aa5" firstAttribute="trailing" secondItem="amS-T4-jkr" secondAttribute="trailing" type="default" id="rfd-vc-91a"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Doctor Manager" id="a0S-UL-ir9"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F2i-i5-odO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="885" y="1126"/>
-        </scene>
-        <!--View Controller - Doctor Edit-->
-        <scene sceneID="UsK-ec-D8h">
-            <objects>
-                <viewController id="G8q-bk-XQQ" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aII-DW-lII">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uiv-f2-Rac">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="AMK-c8-wCI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qCU-zm-waX">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NTZ-2e-jdl">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1O-IZ-uB1">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7x-Oj-cKg">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqA-SV-zbQ">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiA-Lu-Z2p">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-wa-Iec">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="NTZ-2e-jdl" firstAttribute="leading" secondItem="qCU-zm-waX" secondAttribute="leading" type="default" id="2Rb-ZV-0gG"/>
-                            <constraint firstItem="c7x-Oj-cKg" firstAttribute="top" secondItem="aII-DW-lII" secondAttribute="top" constant="56" id="96Y-n7-XH1"/>
-                            <constraint firstItem="IiA-Lu-Z2p" firstAttribute="leading" secondItem="dqA-SV-zbQ" secondAttribute="leading" type="default" id="Aha-P9-wBc"/>
-                            <constraint firstItem="Uiv-f2-Rac" firstAttribute="leading" secondItem="aII-DW-lII" secondAttribute="leading" constant="153" id="HVO-eM-bjk"/>
-                            <constraint firstItem="NTZ-2e-jdl" firstAttribute="top" secondItem="aII-DW-lII" secondAttribute="top" constant="193" id="HX1-97-uaZ"/>
-                            <constraint firstItem="NTZ-2e-jdl" firstAttribute="leading" secondItem="V1O-IZ-uB1" secondAttribute="leading" type="default" id="KBo-55-P1U"/>
-                            <constraint firstItem="NTZ-2e-jdl" firstAttribute="trailing" secondItem="qCU-zm-waX" secondAttribute="trailing" type="default" id="OnB-n3-qKl"/>
-                            <constraint firstItem="qCU-zm-waX" firstAttribute="top" secondItem="dqA-SV-zbQ" secondAttribute="top" type="default" id="PTk-gW-TP9"/>
-                            <constraint firstItem="R5A-wa-Iec" firstAttribute="trailing" secondItem="IiA-Lu-Z2p" secondAttribute="trailing" type="default" id="SKA-AY-fWp"/>
-                            <constraint firstItem="NTZ-2e-jdl" firstAttribute="bottom" secondItem="R5A-wa-Iec" secondAttribute="bottom" type="default" id="Si1-WL-JOF"/>
-                            <constraint firstItem="dqA-SV-zbQ" firstAttribute="leading" secondItem="c7x-Oj-cKg" secondAttribute="leading" type="default" id="V36-Bq-oiR"/>
-                            <constraint firstItem="qCU-zm-waX" firstAttribute="leading" secondItem="Uiv-f2-Rac" secondAttribute="leading" type="default" id="Wgf-l0-rLj"/>
-                            <constraint firstItem="IiA-Lu-Z2p" firstAttribute="bottom" secondItem="V1O-IZ-uB1" secondAttribute="bottom" type="default" id="fki-kI-cH9"/>
-                            <constraint firstItem="NTZ-2e-jdl" firstAttribute="trailing" secondItem="V1O-IZ-uB1" secondAttribute="trailing" type="default" id="ggd-hi-6TC"/>
-                            <constraint firstItem="dqA-SV-zbQ" firstAttribute="top" secondItem="aII-DW-lII" secondAttribute="top" constant="126" id="jUd-Fx-NaS"/>
-                            <constraint firstItem="Uiv-f2-Rac" firstAttribute="top" secondItem="c7x-Oj-cKg" secondAttribute="top" type="default" id="nkE-8L-Nxp"/>
-                            <constraint firstItem="V1O-IZ-uB1" firstAttribute="top" secondItem="aII-DW-lII" secondAttribute="top" constant="267" id="q7W-YP-D5W"/>
-                            <constraint firstItem="qCU-zm-waX" firstAttribute="trailing" secondItem="Uiv-f2-Rac" secondAttribute="trailing" type="default" id="uf6-na-tSd"/>
-                            <constraint firstItem="R5A-wa-Iec" firstAttribute="leading" secondItem="aII-DW-lII" secondAttribute="leading" constant="27" id="vXQ-fL-C8c"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Doctor Edit" id="3Dg-oI-ycb"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nfb-Wv-zbK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2849" y="885"/>
-        </scene>
-        <!--View Controller - Medication-->
-        <scene sceneID="rpB-aH-aUY">
-            <objects>
-                <viewController id="7yS-l9-em5" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Foq-4C-ErG" customClass="CreatPillScreen">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47b-wT-iCx">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZZm-7Q-GJc"/>
-                                    <constraint firstAttribute="width" constant="154" id="olJ-Xp-Mnd"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pill Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v36-4c-Oyp">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7Y-5d-8gC">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qix-nC-hYx">
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJl-Fu-RNt">
-                                <items>
-                                    <barButtonItem title="View Pill" id="y1i-zD-b43"/>
-                                    <barButtonItem width="129" style="plain" systemItem="fixedSpace" id="dup-O0-xJK"/>
-                                    <barButtonItem title="Create Doctor" id="uAo-jt-Jv7"/>
-                                </items>
-                            </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-yf-u25">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9yt-Fy-SgA">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="a6U-a5-krf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="v36-4c-Oyp" firstAttribute="leading" secondItem="Foq-4C-ErG" secondAttribute="leading" constant="27" id="0BL-HL-Z4Z"/>
-                            <constraint firstItem="qix-nC-hYx" firstAttribute="leading" secondItem="47b-wT-iCx" secondAttribute="leading" type="default" id="2LN-Ta-zE4"/>
-                            <constraint firstItem="v36-4c-Oyp" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="39" id="6nF-fr-cdq"/>
-                            <constraint firstItem="9yt-Fy-SgA" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="185" id="9G2-vM-yBm"/>
-                            <constraint firstItem="ci2-yf-u25" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="189" id="9dL-uD-8gN"/>
-                            <constraint firstItem="M7Y-5d-8gC" firstAttribute="centerY" secondItem="qix-nC-hYx" secondAttribute="centerY" type="default" id="ArW-6d-YT1"/>
-                            <constraint firstItem="bJl-Fu-RNt" firstAttribute="leading" secondItem="Foq-4C-ErG" secondAttribute="leading" type="default" id="HBA-Iy-i3t"/>
-                            <constraint firstItem="qix-nC-hYx" firstAttribute="trailing" secondItem="47b-wT-iCx" secondAttribute="trailing" type="default" id="Imu-nR-HJU"/>
-                            <constraint firstItem="M7Y-5d-8gC" firstAttribute="leading" secondItem="v36-4c-Oyp" secondAttribute="leading" type="default" id="M7P-uq-YXP"/>
-                            <constraint firstItem="ci2-yf-u25" firstAttribute="baseline" secondItem="9yt-Fy-SgA" secondAttribute="baseline" type="default" id="VhD-2f-Mwd"/>
-                            <constraint firstItem="47b-wT-iCx" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="35" id="VhV-b1-1Lx"/>
-                            <constraint firstItem="bJl-Fu-RNt" firstAttribute="bottom" secondItem="Foq-4C-ErG" secondAttribute="bottom" type="default" id="YuW-AB-jfr"/>
-                            <constraint firstItem="bJl-Fu-RNt" firstAttribute="trailing" secondItem="Foq-4C-ErG" secondAttribute="trailing" type="default" id="ZzS-9b-q0y"/>
-                            <constraint firstItem="v36-4c-Oyp" firstAttribute="baseline" secondItem="47b-wT-iCx" secondAttribute="baseline" type="default" id="aDC-zN-0mO"/>
-                            <constraint firstItem="qix-nC-hYx" firstAttribute="top" secondItem="Foq-4C-ErG" secondAttribute="top" constant="109" id="bEs-lF-2nw"/>
-                            <constraint firstItem="ci2-yf-u25" firstAttribute="leading" secondItem="M7Y-5d-8gC" secondAttribute="leading" type="default" id="bee-fq-aeX"/>
-                            <constraint firstItem="9yt-Fy-SgA" firstAttribute="trailing" secondItem="qix-nC-hYx" secondAttribute="trailing" type="default" id="fXK-Em-OW7"/>
-                            <constraint firstItem="9yt-Fy-SgA" firstAttribute="leading" secondItem="qix-nC-hYx" secondAttribute="leading" type="default" id="g3A-UZ-h0x"/>
-                            <constraint firstItem="qix-nC-hYx" firstAttribute="baseline" secondItem="M7Y-5d-8gC" secondAttribute="baseline" type="default" id="rJL-Ql-RZE"/>
-                            <constraint firstItem="47b-wT-iCx" firstAttribute="leading" secondItem="Foq-4C-ErG" secondAttribute="leading" constant="120" id="uNU-aD-hkL"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Medication" id="1eu-BM-P13"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kv9-ue-faf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2849" y="-547"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -90,6 +90,12 @@
     //[self saveToFile:[self fileLocation]];
 }
 
+- (void) deleteDoctorWithIndex:(int) index
+{
+    [doctors removeObjectAtIndex:index];
+}
+
+
 
 - (void) setNameTo: (NSString*) newName
         OfDoctorId: (int) doctorId

@@ -1,29 +1,29 @@
 //
-//  CreatePillViewController.m
+//  CreateDoctorViewController.m
 //  MediSchedule
 //
-//  Created by Justin Wang on 2013-11-07.
+//  Created by Justin Wang on 11/8/13.
 //  Copyright (c) 2013 Team 0x0A. All rights reserved.
 //
 
-#import "CreatePillViewController.h"
+#import "CreateDoctorViewController.h"
 
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
-@interface CreatePillViewController ()
+@interface CreateDoctorViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *doctorIdTextField;
-@property (weak, nonatomic) IBOutlet UITextField *notesTextField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *createPillButton;
+@property (weak, nonatomic) IBOutlet UITextField *addressTextField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *createDoctorButton;
 
 @end
-
 
 //***************************************************************************************
 // Implementation:
 //***************************************************************************************
-@implementation CreatePillViewController
+@implementation CreateDoctorViewController
 
 @synthesize callBack;
 
@@ -35,25 +35,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    
     // Set this view controller as the delegate of all the text fields:
     [_nameTextField setDelegate:self];
-    [_doctorIdTextField setDelegate:self];
-    [_notesTextField setDelegate:self];
-    
-    // Setup the createPillButton to call the createPillButtonTapped method:
-    [_createPillButton setTarget:self];
-    [_createPillButton setAction:@selector(createPillButtonTapped:)];
-    
+    [_addressTextField setDelegate:self];
+    [_phoneNumberTextField setDelegate:self];
+    [_emailTextField setDelegate:self];
+	
+    // Setup the createDoctorButton to call the createDoctorButtonTapped method:
+    [_createDoctorButton setTarget:self];
+    [_createDoctorButton setAction:@selector(createDoctorButtonTapped:)];
 }
+
 
 
 // createPillButtonTapped:
 // called by createPillButton
 // ****************************************
-- (void) createPillButtonTapped: (id)sender
+- (void) createDoctorButtonTapped: (id)sender
 {
-    // Get the pill name from the text field:
+    /*
+    // Get the doctor name from the text field:
     NSString* name = [[self nameTextField] text];
     
     // Get the doctorId from the text field:
@@ -62,7 +64,7 @@
     NSString* notes = [[self notesTextField] text];
     
     [callBack addPillWithName:name WithImage:NULL WithDoctorId:doctorId WithNotes:notes];
-    
+    */
     // Pop CreatePillViewController off of the navigationController view stack:
     [[self navigationController] popViewControllerAnimated:YES];
 }
