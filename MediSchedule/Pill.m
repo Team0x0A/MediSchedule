@@ -44,6 +44,30 @@
     }
     return self;
 }
+
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if (self)
+    {
+        [self setPillId:[aDecoder decodeIntegerForKey:@"pillid"]];
+        [self setName:[aDecoder decodeObjectForKey:@"name"]];
+        [self setImage:[aDecoder decodeObjectForKey:@"image"]];
+        [self setDoctorId:[aDecoder decodeIntegerForKey:@"doctorid"]];
+        [self setNotes:[aDecoder decodeObjectForKey:@"notes"]];
+    }
+    return self;
+}
+
+- (void) encodeWithCoder:(NSCoder *)aCoder
+{
+    [aCoder encodeInt:self.pillId forKey:@"pillid"];
+    [aCoder encodeObject:self.name forKey:@"name"];
+    [aCoder encodeObject:self.image forKey:@"image"];
+    [aCoder encodeInt:self.doctorId forKey:@"doctorid"];
+    [aCoder encodeObject:self.notes forKey:@"notes"];
+}
+
 - (NSString *)description
 {
     return [[NSString alloc] initWithFormat:@"%d, %@, %@, %d, %@", [self pillId], [self name], [self image], [self doctorId], [self notes]];

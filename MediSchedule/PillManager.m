@@ -35,6 +35,7 @@
         if (!pills)
         {
             pills = [[NSMutableArray alloc] init];
+            [self loadFile:[self fileLocation]];
             NSLog(@"PillManager Initialized!");
         }
     }
@@ -58,6 +59,7 @@
     Pill* newPill = [[Pill alloc] initWithId:pillId WithName:newName WithImage:newImage WithDoctorId:newDoctorId WithNotes:newNotes];
     
     [pills addObject:newPill];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (NSString *) description
@@ -74,7 +76,7 @@
     return (NSString*)output;
 }
 
-- (int) getIndexOfPillAt: (int) pillId
+- (int) getIndexOfPillWithId: (int) pillId
 {
     if([pills count] > 0)
     {
@@ -88,7 +90,7 @@
 
 - (void) deletePillWithId: (int) pillId
 {
-    [pills removeObjectAtIndex:[self getIndexOfPillAt:pillId]];
+    [pills removeObjectAtIndex:[self getIndexOfPillWithId:pillId]];
 }
 
 
@@ -96,29 +98,33 @@
 - (void) setNameTo: (NSString*) newName
                 OfPillId: (int) pillId
 {
-    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillWithId:pillId]];
     [pill setName:newName];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setImageTo: (UIImage*) newImage
                  OfPillId: (int) pillId
 {
-    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillWithId:pillId]];
     [pill setImage:newImage];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setDoctorIdTo: (int) newDoctorID
                     OfPillId: (int) pillId
 {
-    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillWithId:pillId]];
     [pill setDoctorId:newDoctorID];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setNotesTo: (NSString*) newNotes
                  OfPillId: (int) pillId
 {
-    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillWithId:pillId]];
     [pill setNotes:newNotes];
+    [self saveToFile:[self fileLocation]];
 }
 
 
@@ -140,26 +146,50 @@
 
 - (NSString*) nameOfPillWithId: (int) pillId
 {
-    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillWithId:pillId]];
     return [pill name];
 }
 
 - (UIImage*) imageOfPillWithId: (int) pillId
 {
-    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillWithId:pillId]];
     return [pill image];
 }
 
 - (int) doctorIdOfPillWithId: (int) pillId
 {
-    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillWithId:pillId]];
     return [pill doctorId];
 }
 
 - (NSString *) notesOfPillWithId:(int) pillId
 {
-    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillWithId:pillId]];
     return [pill notes];
+}
+
+//Returns the location of the file saved on the device
+- (NSURL *) fileLocation
+{
+    NSURL *documentDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory
+                                                                      inDomains:NSUserDomainMask] lastObject];
+    return [NSURL URLWithString:@"PillManager"
+                  relativeToURL:documentDirectory];
+}
+
+- (void) saveToFile: (NSURL*) fileLocation
+{
+    NSData* dataToSave = [NSKeyedArchiver archivedDataWithRootObject:pills];
+    [dataToSave writeToURL:fileLocation atomically:YES];
+}
+
+- (void) loadFile: (NSURL*) fileLocation
+{
+    NSData *savedReminders = [[NSData alloc] initWithContentsOfURL:fileLocation];
+    if (savedReminders)
+    {
+        pills = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedReminders]];
+    }
 }
 
 @end

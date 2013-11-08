@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Pill : NSObject
+@interface Pill : NSObject <NSCoding>
 
 @property int pillId;
 @property NSString *name;
