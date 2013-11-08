@@ -1,9 +1,8 @@
 /*
- *  Pill.h
+ *  Pill.m
  *  MediSchedule
  *
- *  Header file for Pill class
- *  Manages list of reminders: creates ability to add/remove pills.
+ *  Implementation file for Pill class
  *
  *  Programmers:
  *  Ishan Bhutani

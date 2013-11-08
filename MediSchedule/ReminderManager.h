@@ -3,7 +3,7 @@
  *  MediSchedule
  *  
  *  Header file for ReminderManager class
- *  Manages list of reminders: creates ability to add/remove reminders.
+ *  Manages list of reminders: creates ability to add/remove reminders
  *
  *  Programmers:
  *  Ishan Bhutani

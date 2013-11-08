@@ -1,10 +1,17 @@
-//
-//  MediSchedule.m
-//  MediSchedule
-//
-//  Created by Ning Chai on 10/30/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
+/*
+ *  DoctorManager.m
+ *  MediSchedule
+ *
+ *  Implementation file for DoctorManager class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import "DoctorManager.h"
 #import "Doctor.h"

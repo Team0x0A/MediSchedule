@@ -2,8 +2,8 @@
  *  PillManager.h
  *  MediSchedule
  *
- *  Header file for each PillManager class
- *  Creates each individual pill to be stored in the PillManager class
+ *  Header file for PillManager class
+ *  Manages list of pills: creates ability to add/remove pills
  *
  *  Programmers:
  *  Ishan Bhutani

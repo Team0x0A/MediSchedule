@@ -2,8 +2,7 @@
  *  PillManager.m
  *  MediSchedule
  *
- *  Header file for each PillManager class
- *  Creates each individual pill to be stored in the PillManager class
+ *  Implementation file for each PillManager class
  *
  *  Programmers:
  *  Ishan Bhutani

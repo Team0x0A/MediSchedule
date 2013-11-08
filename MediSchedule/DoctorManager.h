@@ -1,10 +1,18 @@
-///Users/nchai/Documents/MediSchedule/MediSchedule.xcodeproj
-//  MediSchedule.h
-//  MediSchedule
-//
-//  Created by Ning Chai on 10/30/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
+/*
+ *  DoctorManager.h
+ *  MediSchedule
+ *
+ *  Header file for DoctorManager class
+ *  Manages list of doctors: creates ability to add/remove doctors
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import <Foundation/Foundation.h>
 
@@ -14,6 +22,8 @@
                WithPhonenum: (NSString*) newPhonenum
             WithAddress: (NSString*) newAddress
                WithEmail: (NSString*) newEmail;
+
+
 
 - (void) deleteDoctor: (int) doctorId;
 

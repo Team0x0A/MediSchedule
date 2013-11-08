@@ -3,7 +3,7 @@
  *  MediSchedule
  *
  *  Header file for Pill class
- *  Manages list of reminders: creates ability to add/remove pills.
+ *  Contains internal data structure for each pill
  *
  *  Programmers:
  *  Ishan Bhutani

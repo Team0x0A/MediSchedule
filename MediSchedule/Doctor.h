@@ -1,10 +1,18 @@
-//
-//  MediSchedule.h
-//  MediSchedule
-//
-//  Created by Ning Chai on 10/30/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
+/*
+ *  Doctor.h
+ *  MediSchedule
+ *
+ *  Header file for Doctor class
+ *  Contains internal data structure for each doctor
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import <Foundation/Foundation.h>
 
@@ -22,5 +30,7 @@
    WithPhonenum: (NSString*) newPhonenum
     WithAddress: (NSString*) newAddress
       WithEmail: (NSString*) newEmail;
+
+- (NSString *)description;
 
 @end

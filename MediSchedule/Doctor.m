@@ -1,10 +1,17 @@
-//
-//  MediSchedule.m
-//  MediSchedule
-//
-//  Created by Ning Chai on 10/30/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
+/*
+ *  Doctor.m
+ *  MediSchedule
+ *
+ *  Implementation file for Doctor class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import "Doctor.h"
 @interface Doctor ()
@@ -35,7 +42,8 @@
     }
     return self;
 }
-- (NSString *)description{
+- (NSString *)description
+{
     return [[NSString alloc] initWithFormat:@"%d, %@, %@, %@, %@", [self doctorId], [self name], [self phonenum], [self address], [self email]];
 }
 @end
