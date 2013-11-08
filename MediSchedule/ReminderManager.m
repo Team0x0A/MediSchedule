@@ -67,7 +67,7 @@
     return [reminders indexOfObject:newReminder];
 }
 
-- (void)deleteReminderWith:(int)index
+- (void)deleteReminderAtIndex:(int)index
 {
     [reminders removeObjectAtIndex:index];
     [reminders sortUsingFunction:timeSort context:nil];
@@ -76,7 +76,7 @@
 
 // Modifiers:
 - (void) setTimeTo:(Time*) newTime
-                At:(int) index
+                AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setTime:newTime];
     [reminders sortUsingFunction:timeSort context:nil];
@@ -84,21 +84,21 @@
 }
 
 - (void) setPillIdTo:(int) newPillId
-                  At:(int) index
+                  AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setPillId:newPillId];
     [self saveToFile:[self fileLocation]];
 }
 
 - (void) setDosageTo:(int) newDosage
-                  At:(int) index
+                  AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setDosage:newDosage];
     [self saveToFile:[self fileLocation]];
 }
 
 - (void) setNotesTo:(NSString*) newNotes
-                 At:(int) index
+                 AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setNotes:newNotes];
     [self saveToFile:[self fileLocation]];
@@ -111,22 +111,22 @@
     return [reminders count];
 }
 
-- (Time*) timeAt:(int)index
+- (Time*) timeAtIndex:(int)index
 {
     return [[reminders objectAtIndex:index] time];
 }
 
-- (int) pillIdAt:(int)index
+- (int) pillIdAtIndex:(int)index
 {
     return [[reminders objectAtIndex:index] pillId];
 }
 
-- (int) dosageAt:(int)index
+- (int) dosageAtIndex:(int)index
 {
     return [[reminders objectAtIndex:index] dosage];
 }
 
-- (NSString*) notesAt:(int)index
+- (NSString*) notesAtIndex:(int)index
 {
     return [[reminders objectAtIndex:index] notes];
 }

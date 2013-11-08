@@ -41,7 +41,7 @@
     }
     
     // Tests:
-    [self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
+    //[self addPillWithName:@"Crack Cocaine!" WithImage:NULL WithDoctorId:0 WithNotes:@"3/4 of a page or roughly 2500 words"];
     
     // Setup the addPillButton:
     [_addPillButton setTarget:self];
@@ -112,7 +112,7 @@
 // ****************************************
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [myManager getNumOfPills];
+    return [myManager numOfPills];
 }
 
 
@@ -156,7 +156,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [myManager deletePill:[indexPath item]];
+        [myManager deletePillWithId:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -196,11 +196,16 @@
     
     NSLog(@"PillMangager description: %@",[myManager description]);
     
-    NSLog(@"PillMangager pillids: %@",[[myManager getListOfPillsIds] description]);
+    NSLog(@"PillMangager pillids: %@",[[myManager listOfPillsIds] description]);
     
-    assert([myManager getNumOfPills] == 5);
-    [myManager deletePill:0];
-    assert([myManager getNumOfPills] == 4);
+    assert([myManager numOfPills] == 5);
+    
+    [myManager deletePillWithId:0];
+    assert([myManager numOfPills] == 4);
+    
+    NSLog(@"PillMangager description: %@",[myManager description]);
+    
+    assert([[myManager nameOfPillWithId:1] isEqualToString:@"Advil"]);
     
 }
 @end

@@ -184,7 +184,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]];
-    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
+    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAtIndex:[indexPath item]] description]]];
     
     return cell;
 }
@@ -237,7 +237,7 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [myManager deleteReminderWith:[indexPath item]];
+        [myManager deleteReminderAtIndex:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

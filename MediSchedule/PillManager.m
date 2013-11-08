@@ -86,17 +86,49 @@
     return -1; // pills is empty (error)
 }
 
-- (void) deletePill: (int) pillId
+- (void) deletePillWithId: (int) pillId
 {
     [pills removeObjectAtIndex:[self getIndexOfPillAt:pillId]];
 }
 
-- (int) getNumOfPills
+
+// Modifiers:
+- (void) setNameTo: (NSString*) newName
+                OfPillId: (int) pillId
+{
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    [pill setName:newName];
+}
+
+- (void) setImageTo: (UIImage*) newImage
+                 OfPillId: (int) pillId
+{
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    [pill setImage:newImage];
+}
+
+- (void) setDoctorIdTo: (int) newDoctorID
+                    OfPillId: (int) pillId
+{
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    [pill setDoctorId:newDoctorID];
+}
+
+- (void) setNotesTo: (NSString*) newNotes
+                 OfPillId: (int) pillId
+{
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    [pill setNotes:newNotes];
+}
+
+
+// Accessors:
+- (int) numOfPills
 {
     return  [pills count];
 }
 
-- (NSArray*) getListOfPillsIds
+- (NSArray*) listOfPillsIds
 {
     NSMutableArray *pillIds = [[NSMutableArray alloc] init];
     for (Pill* i in pills)
@@ -106,95 +138,28 @@
     return pillIds;
 }
 
-//FIX THIS
-- (NSString*) getPillNameOf: (int) pillId
+- (NSString*) nameOfPillWithId: (int) pillId
 {
-    if([pills count] > 0){
-        for (Pill* i in pills) {
-            if([i pillId] == pillId) return [i name];
-        }
-    }
-    return NULL; //if there did not find
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    return [pill name];
 }
 
-//FIX THIS
-- (void) setPillNameTo: (NSString*) newName
-                    Of: (int) pillId
+- (UIImage*) imageOfPillWithId: (int) pillId
 {
-    for (Pill* i in pills) {
-        if([i pillId] == pillId){
-            [i setName:newName];
-        }
-    }
-    
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    return [pill image];
 }
 
-//FIX THIS
-- (UIImage*) getPillImageOf: (int) pillId
+- (int) doctorIdOfPillWithId: (int) pillId
 {
-    for (Pill* i in pills) {
-        if ([i pillId] == pillId) {
-            return [[UIImage alloc] init];
-        }
-    }
-    return NULL;//if there did not find
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    return [pill doctorId];
 }
 
-//FIX THIS
-- (void) setPillImageTo: (UIImage*) newImage
-                     Of: (int) pillId
+- (NSString *) notesOfPillWithId:(int) pillId
 {
-    for (Pill* i in pills) {
-        if ([i pillId] == pillId) {
-            [i setImage:newImage];
-        }
-    }
-    
-}
-
-//FIX THIS
-- (int) getDoctorIdOf: (int) pillId
-{
-    for (Pill* i in pills) {
-        if ([i pillId] == pillId) return [i doctorId];
-                    
-    }
-    return -1;//if did not find
-}
-
-//FIX THIS
-- (void) setDoctorIdOf: (int) pillId
-                    To: (int) newDoctorID
-{
-    for (Pill* i in pills) {
-        if ([i pillId] == pillId){
-            [i setDoctorId:newDoctorID];
-        }
-    }
-    
-}
-
-//FIX THIS
-- (NSString *) getPillNotesOf:(int) pillId
-{
-    for (Pill* i in pills) {
-        if ([i pillId] == pillId) return [i notes];
-    }
-
-    return NULL;//if there did not find
-}
-
-//FIX THIS
-- (void) setPillNotesTo: (NSString*) newNotes
-                     Of: (int) pillId
-{
-    for (Pill* i in pills) {
-        if ([i pillId] == pillId){
-            [i setNotes: newNotes];
-        }
-    }
-
-    
+    Pill *pill = [pills objectAtIndex:[self getIndexOfPillAt:pillId]];
+    return [pill notes];
 }
 
 @end

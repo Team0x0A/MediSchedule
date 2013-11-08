@@ -26,30 +26,30 @@
                  WithDosage:(int) dosage
                   WithNotes:(NSString *) notes;
 
-- (void) deleteReminderWith:(int)index;
+- (void) deleteReminderAtIndex:(int)index;
 
 // Modifiers:
 - (void) setTimeTo:(Time*) newTime
-                At:(int) index;
+                AtIndex:(int) index;
 
 - (void) setPillIdTo:(int) newPillId
-                  At:(int) index;
+                  AtIndex:(int) index;
 
 - (void) setDosageTo:(int) newDosage
-                  At:(int) index;
+                  AtIndex:(int) index;
 
 - (void) setNotesTo:(NSString*) newNotes
-                 At:(int) index;
+                 AtIndex:(int) index;
 
 // Accessors:
 - (int) numOfReminders;
 
-- (Time*) timeAt:(int)index;
+- (Time*) timeAtIndex:(int)index;
 
-- (int) pillIdAt:(int)index;
+- (int) pillIdAtIndex:(int)index;
 
-- (int) dosageAt:(int)index;
+- (int) dosageAtIndex:(int)index;
 
-- (NSString*) notesAt:(int)index;
+- (NSString*) notesAtIndex:(int)index;
 
 @end

@@ -23,30 +23,24 @@
             WithDoctorId: (int) newDoctorId
                WithNotes: (NSString*) newNotes;
 
-- (void) deletePill: (int) pillId;
+- (NSString *) description;
+- (void) deletePillWithId: (int) pillId;
 
-- (int) getNumOfPills;
-
-- (NSArray*) getListOfPillsIds;
-
-- (NSString*) getPillNameOf: (int) pillId;
-
-- (void) setPillNameTo: (NSString*) newName
-                    Of: (int) pillId;
-
-- (UIImage*) getPillImageOf: (int) pillId;
-
-- (void) setPillImageTo: (UIImage*) newImage
-                     Of: (int) pillId;
-
-- (int) getDoctorIdOf: (int) pillId;
-
-- (void) setDoctorIdOf: (int) pillId
-                    To: (int) newDoctorID;
-
-- (NSString *) getPillNotesOf:(int) pillId;
-
-- (void) setPillNotesTo: (NSString*) newNotes
-                     Of: (int) pillId;
+// Modifiers:
+- (void) setNameTo: (NSString*) newName
+                OfPillId: (int) pillId;
+- (void) setImageTo: (UIImage*) newImage
+                 OfPillId: (int) pillId;
+- (void) setDoctorIdTo: (int) newDoctorID
+                    OfPillId: (int) pillId;
+- (void) setNotesTo: (NSString*) newNotes
+                 OfPillId: (int) pillId;
+// Accessors:
+- (int) numOfPills;
+- (NSArray*) listOfPillsIds;
+- (NSString*) nameOfPillWithId: (int) pillId;
+- (UIImage*) imageOfPillWithId: (int) pillId;
+- (int) doctorIdOfPillWithId: (int) pillId;
+- (NSString *) notesOfPillWithId:(int) pillId;
 
 @end
