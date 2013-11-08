@@ -10,12 +10,18 @@
 #import "PillManager.h"
 #import "CreatePillViewController.h"
 
+//Testing purposes only: (DELETE THIS AFTER)
+#import "DoctorManager.h"
+
+
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
 @interface PillManagerViewController ()
 {
     PillManager *myManager; // Pill Manager to be used for entire application
+    //Testing purposes only: (DELETE THIS AFTER)
+    DoctorManager *doctorManager;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addPillButton;
 
@@ -41,12 +47,36 @@
         myManager = [[PillManager alloc] init];
     }
     
+    //Testing purposes only: (DELETE THIS AFTER)
+    if (!doctorManager)
+    {
+        doctorManager = [[DoctorManager alloc] init];
+    }
+    //[self testPillManager];
+    //[self testDoctorManager];
     // Setup the addPillButton:
     [_addPillButton setTarget:self];
     [_addPillButton setAction:@selector(addPillButtonTapped:)];
 }
 
 
+- (void) testDoctorManager
+{
+    [doctorManager addDoctorWithName:@"HT" WithNumber:@"420" WithAddress:@"123 fake street" WithEmail:@"doctor@doctor.com"];
+    [doctorManager addDoctorWithName:@"HT1" WithNumber:@"4201" WithAddress:@"123 fake street1" WithEmail:@"doctor@doctor.com1"];
+    [doctorManager addDoctorWithName:@"HT2" WithNumber:@"4202" WithAddress:@"123 fake street2" WithEmail:@"doctor@doctor.com2"];
+    [doctorManager addDoctorWithName:@"HT3" WithNumber:@"4203" WithAddress:@"123 fake street3" WithEmail:@"doctor@doctor.com3"];
+    [doctorManager addDoctorWithName:@"HT4" WithNumber:@"4204" WithAddress:@"123 fake street4" WithEmail:@"doctor@doctor.com4"];
+    [doctorManager addDoctorWithName:@"HT5" WithNumber:@"4205" WithAddress:@"123 fake street5" WithEmail:@"doctor@doctor.com5"];
+    NSLog(@"%@", [doctorManager description]);
+    NSLog(@"%@",[doctorManager listOfDoctorIds]);
+    assert([doctorManager numOfDoctors] == 6);
+    assert([[doctorManager nameOfDoctorWithId:0] isEqualToString:@"HT"]);
+    assert([[doctorManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
+    [doctorManager deleteDoctorWithId:0];
+    assert([doctorManager numOfDoctors] == 5);
+    assert([[doctorManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
+}
 
 
 // addPillButtonTapped:
@@ -180,6 +210,16 @@
 // ****************************************
 - (void) testPillManager
 {
+    /*
+    NSURL *documentDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory
+                                                                      inDomains:NSUserDomainMask] lastObject];
+    NSURL *fileLocation = [NSURL URLWithString:@"PillManager"
+                  relativeToURL:documentDirectory];
+    NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
+    NSData* dataToSave = [NSKeyedArchiver archivedDataWithRootObject:emptyArray];
+    
+    [dataToSave writeToURL:fileLocation atomically:YES];
+    */
     [myManager addPillWithName:@"Tylenol"
                          WithImage:[[UIImage alloc] init]
                       WithDoctorId:1
