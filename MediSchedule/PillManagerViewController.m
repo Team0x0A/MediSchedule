@@ -127,7 +127,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager getPillNameOf:[indexPath item]]]];
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager nameOfPillWithId:[indexPath item]]]];
     //[[cell textLabel] setText:[[NSString alloc] initWithFormat:@"A Pill"]];
     //,[myManager notesAt:[indexPath item]]]];
     //[[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAt:[indexPath item]] description]]];
