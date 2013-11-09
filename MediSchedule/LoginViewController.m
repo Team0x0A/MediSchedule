@@ -19,6 +19,9 @@
 // Private Interface:
 //***************************************************************************************
 @interface LoginViewController ()
+{
+    NSMutableDictionary *userProfile;
+}
 @property (strong, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passWordTextField;
 
@@ -40,7 +43,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -54,10 +56,17 @@
 {
     [super viewDidLoad];
     
+    userProfile = [[NSMutableDictionary alloc] initWithContentsOfURL:[self fileLocation]];
+    if (!userProfile)
+    {
+        userProfile = [[NSMutableDictionary alloc] initWithObjects:@[@"",@""]
+                                                           forKeys:@[@"username", @"password"]];
+    }
+    
 	// Set this view controller as the delegate of all the text fields
     [_userNameTextField setDelegate:self];
     [_passWordTextField setDelegate:self];
-
+    
 }
 
 
@@ -75,5 +84,91 @@
 	return YES;
 }
 
+
+- (IBAction)createAccount:(UIBarButtonItem *)sender
+{
+    UIAlertView *alert;
+    
+    if ([[userProfile objectForKey:@"username"] isEqualToString:@""] && [[userProfile objectForKey:@"password"] isEqualToString:@""])
+    {
+        if ([[self.userNameTextField text] length] == 0 || [[self.passWordTextField text] length] == 0)
+        {
+            alert = [[UIAlertView alloc] initWithTitle:@"Invalid Entry"
+                                               message:@"Please fill out all fields."
+                                              delegate:nil
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil];
+            [alert show];
+        }
+        else
+        {
+            alert = [[UIAlertView alloc] initWithTitle:@"New Account"
+                                               message:@"Created successfully"
+                                              delegate:nil
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil];
+            [alert show];
+            [userProfile setValue:[[self userNameTextField] text] forKey:@"username"];
+            [userProfile setValue:[[self passWordTextField] text] forKey:@"password"];
+
+            [[self userNameTextField] setText:@""];
+            [[self passWordTextField] setText:@""];
+            [userProfile writeToURL:[self fileLocation] atomically:YES];
+            [self performSegueWithIdentifier:@"login" sender:self];
+        }
+    }
+    else
+    {
+        alert = [[UIAlertView alloc] initWithTitle:@"Account Exists"
+                                           message:@"There is already an account created. Please log in with the correct credentials."
+                                          delegate:nil
+                                 cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (IBAction)logIn:(UIBarButtonItem *)sender
+{
+    UIAlertView *alert;
+    if ([[userProfile objectForKey:@"username"] isEqualToString:@""] && [[userProfile objectForKey:@"password"] isEqualToString:@""])
+    {
+        alert = [[UIAlertView alloc] initWithTitle:@"No account found"
+                                           message:@"Please create an account before logging in."
+                                          delegate:nil
+                                 cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+        [alert show];
+    }
+    else
+    {
+    if ([[[self userNameTextField] text] isEqualToString:[userProfile objectForKey:@"username"]] && [[[self passWordTextField] text] isEqualToString:[userProfile objectForKey:@"password"]])
+    {
+        [[self userNameTextField] setText:@""];
+        [[self passWordTextField] setText:@""];
+        [self performSegueWithIdentifier:@"login" sender:self];
+    }
+    else
+    {
+        alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                           message:@"Incorrect username or password."
+                                          delegate:nil
+                                 cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+        [alert show];
+        [[self userNameTextField] setText:@""];
+        [[self passWordTextField] setText:@""];
+    }
+    }
+}
+
+//Returns the location of the file saved on the device
+- (NSURL *) fileLocation
+{
+    NSURL *documentDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory
+                                                                      inDomains:NSUserDomainMask] lastObject];
+    return [NSURL URLWithString:@"UserProfile"
+                  relativeToURL:documentDirectory];
+}
 
 @end
