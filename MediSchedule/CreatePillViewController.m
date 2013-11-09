@@ -1,10 +1,17 @@
-//
-//  CreatePillViewController.m
-//  MediSchedule
-//
-//  Created by Justin Wang on 2013-11-07.
-//  Copyright (c) 2013 Team 0x0A. All rights reserved.
-//
+/*
+ *  CreatePillViewController.m
+ *  MediSchedule
+ *
+ *  Implementation file for CreatePillViewController class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import "CreatePillViewController.h"
 

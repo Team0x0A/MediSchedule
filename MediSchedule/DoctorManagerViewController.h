@@ -1,10 +1,19 @@
-//
-//  DoctorManagerViewController.h
-//  MediSchedule
-//
-//  Created by Justin Wang on 11/8/13.
-//  Copyright (c) 2013 Team 0x0A. All rights reserved.
-//
+/*
+ *  DoctorManagerViewController.h
+ *  MediSchedule
+ *
+ *  Header file for DoctorManagerViewController class
+ *  Inherits from UITableViewController
+ *  Manages display for every doctor from DoctorManager
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import <UIKit/UIKit.h>
 

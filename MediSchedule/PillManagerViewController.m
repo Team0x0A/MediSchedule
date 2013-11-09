@@ -1,10 +1,17 @@
-//
-//  PillManagerViewController.m
-//  MediSchedule
-//
-//  Created by Justin Wang on 2013-11-07.
-//  Copyright (c) 2013 Team 0x0A. All rights reserved.
-//
+/*
+ *  PillManagerViewController.m
+ *  MediSchedule
+ *
+ *  Implementation file for PillManagerViewController class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import "PillManagerViewController.h"
 #import "PillManager.h"

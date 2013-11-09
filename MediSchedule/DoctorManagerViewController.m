@@ -1,10 +1,17 @@
-//
-//  DoctorManagerViewController.m
-//  MediSchedule
-//
-//  Created by Justin Wang on 11/8/13.
-//  Copyright (c) 2013 Team 0x0A. All rights reserved.
-//
+/*
+ *  DoctorManagerViewController.m
+ *  MediSchedule
+ *
+ *  Implementation file for DoctorManagerViewController class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import "DoctorManagerViewController.h"
 #import "DoctorManager.h"

@@ -1,5 +1,5 @@
 /*
- *  ReminderManagerViewController.h
+ *  ReminderManagerViewController.m
  *  MediSchedule
  *
  *  Implementation file for ReminderManagerViewController class

@@ -1,11 +1,17 @@
-//
-//  LoginViewController.m
-//  MediSchedule
-//
-//  Created by Justin Wang on 10/30/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
-//
-
+/*
+ *  LoginViewController.m
+ *  MediSchedule
+ *
+ *  Implementation file for LoginViewController class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 #import "LoginViewController.h"
 
 
