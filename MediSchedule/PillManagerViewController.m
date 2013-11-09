@@ -69,7 +69,7 @@
     //******************************************
     //Delete this once doctor manager view
     //controller is set up:
-    [self testDoctorManager];
+    //[self testDoctorManager];
     //*******************************************
     
     // Setup the addPillButton:
@@ -197,8 +197,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager nameOfPillWithIndex:[indexPath item]]]];
-    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:[myManager notesOfPillWithIndex:[indexPath item]]]];
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"%@",[myManager nameOfPillWithIndex:[indexPath item]]]];
+    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[myManager notesOfPillWithIndex:[indexPath item]]]];
     
     return cell;
 }
