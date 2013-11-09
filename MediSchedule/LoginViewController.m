@@ -57,7 +57,7 @@
     [super viewDidLoad];
     
     userProfile = [[NSMutableDictionary alloc] initWithContentsOfURL:[self fileLocation]];
-    if (!userProfile)
+    if (!userProfile)//If file was empty (i.e no username/password saved)
     {
         userProfile = [[NSMutableDictionary alloc] initWithObjects:@[@"",@""]
                                                            forKeys:@[@"username", @"password"]];
@@ -87,9 +87,10 @@
 
 - (IBAction)createAccount:(UIBarButtonItem *)sender
 {
+    //Alerts will be displayed with needed information to guide user through set up screens
     UIAlertView *alert;
     
-    if ([[userProfile objectForKey:@"username"] isEqualToString:@""] && [[userProfile objectForKey:@"password"] isEqualToString:@""])
+    if ([[userProfile objectForKey:@"username"] isEqualToString:@""] && [[userProfile objectForKey:@"password"] isEqualToString:@""])//Empty fields
     {
         if ([[self.userNameTextField text] length] == 0 || [[self.passWordTextField text] length] == 0)
         {
@@ -108,12 +109,17 @@
                                      cancelButtonTitle:@"OK"
                                      otherButtonTitles:nil];
             [alert show];
+            
+            //Add username and password to NSDictionary, and save to file on device
             [userProfile setValue:[[self userNameTextField] text] forKey:@"username"];
             [userProfile setValue:[[self passWordTextField] text] forKey:@"password"];
-
+            [userProfile writeToURL:[self fileLocation] atomically:YES];
+            
+            //Reset fields
             [[self userNameTextField] setText:@""];
             [[self passWordTextField] setText:@""];
-            [userProfile writeToURL:[self fileLocation] atomically:YES];
+            
+            //Push ReminderManager onto navigation controller
             [self performSegueWithIdentifier:@"login" sender:self];
         }
     }
@@ -142,23 +148,25 @@
     }
     else
     {
-    if ([[[self userNameTextField] text] isEqualToString:[userProfile objectForKey:@"username"]] && [[[self passWordTextField] text] isEqualToString:[userProfile objectForKey:@"password"]])
-    {
-        [[self userNameTextField] setText:@""];
-        [[self passWordTextField] setText:@""];
-        [self performSegueWithIdentifier:@"login" sender:self];
-    }
-    else
-    {
-        alert = [[UIAlertView alloc] initWithTitle:@"Error"
-                                           message:@"Incorrect username or password."
-                                          delegate:nil
-                                 cancelButtonTitle:@"OK"
-                                 otherButtonTitles:nil];
-        [alert show];
-        [[self userNameTextField] setText:@""];
-        [[self passWordTextField] setText:@""];
-    }
+        if ([[[self userNameTextField] text] isEqualToString:[userProfile objectForKey:@"username"]] && [[[self passWordTextField] text] isEqualToString:[userProfile objectForKey:@"password"]])//Username and password matched
+        {
+            [[self userNameTextField] setText:@""];
+            [[self passWordTextField] setText:@""];
+            
+            //Push ReminderManager onto navigation controller
+            [self performSegueWithIdentifier:@"login" sender:self];
+        }
+        else
+        {
+            alert = [[UIAlertView alloc] initWithTitle:@"Error"
+                                               message:@"Incorrect username or password."
+                                              delegate:nil
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil];
+            [alert show];
+            [[self userNameTextField] setText:@""];
+            [[self passWordTextField] setText:@""];
+        }
     }
 }
 
