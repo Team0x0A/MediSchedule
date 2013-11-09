@@ -32,6 +32,7 @@
         if (!doctors)
         {
             doctors = [[NSMutableArray alloc] init];
+            [self loadFile:[self fileLocation]];
         }
     }
     return self;
@@ -54,6 +55,7 @@
     Doctor *newDoctor = [[Doctor alloc] initWithId:doctorId WithName:newName WithNumber:newNumber WithAddress:newAddress WithEmail:newEmail];
     
     [doctors addObject:newDoctor];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (NSString *) description
@@ -111,14 +113,14 @@
 - (void) deleteDoctorWithId:(int) doctorId
 {
     [doctors removeObjectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
-    //[self saveToFile:[self fileLocation]];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) deleteDoctorWithIndex:(int) index
 {
     [doctors removeObjectAtIndex:index];
+    [self saveToFile:[self fileLocation]];
 }
-
 
 
 - (void) setNameTo: (NSString*) newName
@@ -126,6 +128,7 @@
 {
     Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
     [doctor setName:newName];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setAddressTo: (NSString*) newAddress
@@ -133,7 +136,7 @@
 {
     Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
     [doctor setAddress:newAddress];
-    //[self saveToFile:[self fileLocation]];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setNumberTo: (NSString *) newNumber
@@ -141,7 +144,7 @@
 {
     Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
     [doctor setNumber:newNumber];
-    //[self saveToFile:[self fileLocation]];
+    [self saveToFile:[self fileLocation]];
 }
 
 - (void) setEmailTo: (NSString*) newEmail
@@ -149,7 +152,7 @@
 {
     Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
     [doctor setEmail:newEmail];
-     //[self saveToFile:[self fileLocation]];
+     [self saveToFile:[self fileLocation]];
 }
 
 //Accessors:

@@ -27,8 +27,12 @@
 @interface PillManagerViewController ()
 {
     PillManager *myManager; // Pill Manager to be used for entire application
-    //Testing purposes only: (DELETE THIS AFTER)
+    //******************************************
+    //Delete this once doctor manager view
+    //controller is set up:
     DoctorManager *doctorManager;
+    //*******************************************
+    
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addPillButton;
 
@@ -59,22 +63,35 @@
     {
         doctorManager = [[DoctorManager alloc] init];
     }
-    //[self testPillManager];
-    //[self testDoctorManager];
+    // To test, uncomment following line:
+    //self testPillManager];
+    
+    //******************************************
+    //Delete this once doctor manager view
+    //controller is set up:
+    [self testDoctorManager];
+    //*******************************************
+    
     // Setup the addPillButton:
     [_addPillButton setTarget:self];
     [_addPillButton setAction:@selector(addPillButtonTapped:)];
 }
 
-
+//Move this to DoctorManagerViewController when implemented!
 - (void) testDoctorManager
 {
+   
+    while ([doctorManager numOfDoctors] > 0)
+    {
+        [doctorManager deleteDoctorWithIndex:0];
+    }
     [doctorManager addDoctorWithName:@"HT" WithNumber:@"420" WithAddress:@"123 fake street" WithEmail:@"doctor@doctor.com"];
     [doctorManager addDoctorWithName:@"HT1" WithNumber:@"4201" WithAddress:@"123 fake street1" WithEmail:@"doctor@doctor.com1"];
     [doctorManager addDoctorWithName:@"HT2" WithNumber:@"4202" WithAddress:@"123 fake street2" WithEmail:@"doctor@doctor.com2"];
     [doctorManager addDoctorWithName:@"HT3" WithNumber:@"4203" WithAddress:@"123 fake street3" WithEmail:@"doctor@doctor.com3"];
     [doctorManager addDoctorWithName:@"HT4" WithNumber:@"4204" WithAddress:@"123 fake street4" WithEmail:@"doctor@doctor.com4"];
     [doctorManager addDoctorWithName:@"HT5" WithNumber:@"4205" WithAddress:@"123 fake street5" WithEmail:@"doctor@doctor.com5"];
+    
     NSLog(@"%@", [doctorManager description]);
     NSLog(@"%@",[doctorManager listOfDoctorIds]);
     assert([doctorManager numOfDoctors] == 6);
@@ -83,6 +100,8 @@
     [doctorManager deleteDoctorWithId:0];
     assert([doctorManager numOfDoctors] == 5);
     assert([[doctorManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
+    NSLog(@"DoctorManager test succeeded!");
+    
 }
 
 
@@ -180,7 +199,7 @@
     
     [[cell textLabel] setText:[[NSString alloc] initWithFormat:[myManager nameOfPillWithIndex:[indexPath item]]]];
     [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:[myManager notesOfPillWithIndex:[indexPath item]]]];
-
+    
     return cell;
 }
 
@@ -206,51 +225,47 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [myManager deletePillWithIndex:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
+    }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 
 
 // testPillManager:
+// Note: This will delete all elements in myManager beforehand, so do not run if there is an instance saved that you need access to!
 // ****************************************
 - (void) testPillManager
 {
-    /*
-    NSURL *documentDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory
-                                                                      inDomains:NSUserDomainMask] lastObject];
-    NSURL *fileLocation = [NSURL URLWithString:@"PillManager"
-                  relativeToURL:documentDirectory];
-    NSMutableArray *emptyArray = [[NSMutableArray alloc] init];
-    NSData* dataToSave = [NSKeyedArchiver archivedDataWithRootObject:emptyArray];
+    while ([myManager numOfPills] > 0)
+    {
+        [myManager deletePillWithIndex:0];
+    }
     
-    [dataToSave writeToURL:fileLocation atomically:YES];
-    */
     [myManager addPillWithName:@"Tylenol"
-                         WithImage:[[UIImage alloc] init]
-                      WithDoctorId:1
-                         WithNotes:@"First pill added"];
+                     WithImage:[[UIImage alloc] init]
+                  WithDoctorId:1
+                     WithNotes:@"First pill added"];
     
     [myManager addPillWithName:@"Advil"
-                         WithImage:[[UIImage alloc] init]
-                      WithDoctorId:1
-                         WithNotes:@"Second pill added"];
+                     WithImage:[[UIImage alloc] init]
+                  WithDoctorId:1
+                     WithNotes:@"Second pill added"];
     
     [myManager addPillWithName:@"Benelyn"
-                         WithImage:[[UIImage alloc] init]
-                      WithDoctorId:1
-                         WithNotes:@"Third pill added"];
+                     WithImage:[[UIImage alloc] init]
+                  WithDoctorId:1
+                     WithNotes:@"Third pill added"];
     
     [myManager addPillWithName:@"Some more drugs"
-                         WithImage:[[UIImage alloc] init]
-                      WithDoctorId:2
-                         WithNotes:@"Fourth pill added"];
+                     WithImage:[[UIImage alloc] init]
+                  WithDoctorId:2
+                     WithNotes:@"Fourth pill added"];
     
     [myManager addPillWithName:@"Even more drugs"
-                         WithImage:[[UIImage alloc] init]
-                      WithDoctorId:2
-                         WithNotes:@"Fifth pill added"];
+                     WithImage:[[UIImage alloc] init]
+                  WithDoctorId:2
+                     WithNotes:@"Fifth pill added"];
     
     NSLog(@"PillMangager description: %@",[myManager description]);
     
@@ -264,6 +279,6 @@
     NSLog(@"PillMangager description: %@",[myManager description]);
     
     assert([[myManager nameOfPillWithId:1] isEqualToString:@"Advil"]);
-    
+    NSLog(@"PillManager test succeeded!");
 }
 @end

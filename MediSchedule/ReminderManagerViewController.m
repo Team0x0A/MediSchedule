@@ -65,7 +65,7 @@
     }
     
     // This calls some tests on the reminder manager
-    [self testReminderManager];
+    // [self testReminderManager];
     
     // Setup the addReminderButton to call the addReminderButtonTapped method:
     [_addReminderButton setTarget:self];
@@ -153,13 +153,17 @@
 
 
 // testReminderManager:
+// Note: This will delete all elements in myManager beforehand, so do not run if there is an instance saved that you need access to!
 // ****************************************
 - (void) testReminderManager
 {
-    /*
+    while ([myManager numOfReminders] > 0)
+    {
+        [myManager deleteReminderAtIndex:0];
+    }
     [self addReminderWithTime:[[Time alloc] initWithString:@"6:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 1st"];
     [self addReminderWithTime:[[Time alloc] initWithString:@"12:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 2nd"];
-    [self addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];*/
+    [self addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
 }
 
 
