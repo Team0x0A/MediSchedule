@@ -1,8 +1,8 @@
 /*
- *  ReminderViewController.m
+ *  CreateReminderViewController.m
  *  MediSchedule
  *
- *  Implementation file for ReminderViewController class
+ *  Implementation file for CreateReminderViewController class
  *
  *  Programmers:
  *  Ishan Bhutani
@@ -12,6 +12,7 @@
  *
  *  Copyright (c) 2013 Team 0x0A
  */
+
 
 #import "CreateReminderViewController.h"
 

@@ -4,7 +4,7 @@
  *
  *  Header file for ReminderManagerViewController class
  *  Inherits from UITableViewController
- *  Manages display for every reminders from ReminderViewController
+ *  Manages display for every reminder from ReminderManager
  *
  *  Programmers:
  *  Ishan Bhutani

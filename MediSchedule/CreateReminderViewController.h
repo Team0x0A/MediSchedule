@@ -2,9 +2,8 @@
  *  CreateReminderViewController.h
  *  MediSchedule
  *
- *  Header file for ReminderViewController class
- *  Inherits from UIViewController
- *  Manages display for each individual reminder in the GUI
+ *  Header file for CreateReminderViewController class
+ *  Creates display for individual reminders
  *
  *  Programmers:
  *  Ishan Bhutani
