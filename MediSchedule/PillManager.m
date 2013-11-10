@@ -87,6 +87,29 @@
     return -1; // pills is empty (error)
 }
 
+//Returns the location of the file saved on the device
+- (NSURL *) fileLocation
+{
+    NSURL *documentDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory
+                                                                      inDomains:NSUserDomainMask] lastObject];
+    return [NSURL URLWithString:@"PillManager"
+                  relativeToURL:documentDirectory];
+}
+
+- (void) saveToFile: (NSURL*) fileLocation
+{
+    NSData* dataToSave = [NSKeyedArchiver archivedDataWithRootObject:pills];
+    [dataToSave writeToURL:fileLocation atomically:YES];
+}
+
+- (void) loadFile: (NSURL*) fileLocation
+{
+    NSData *savedReminders = [[NSData alloc] initWithContentsOfURL:fileLocation];
+    if (savedReminders)
+    {
+        pills = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedReminders]];
+    }
+}
 
 // Modifiers:
 - (void) deletePillWithId: (int) pillId
@@ -174,29 +197,6 @@
     return [pill notes];
 }
 
-//Returns the location of the file saved on the device
-- (NSURL *) fileLocation
-{
-    NSURL *documentDirectory = [[[NSFileManager defaultManager]URLsForDirectory:NSDocumentDirectory
-                                                                      inDomains:NSUserDomainMask] lastObject];
-    return [NSURL URLWithString:@"PillManager"
-                  relativeToURL:documentDirectory];
-}
-
-- (void) saveToFile: (NSURL*) fileLocation
-{
-    NSData* dataToSave = [NSKeyedArchiver archivedDataWithRootObject:pills];
-    [dataToSave writeToURL:fileLocation atomically:YES];
-}
-
-- (void) loadFile: (NSURL*) fileLocation
-{
-    NSData *savedReminders = [[NSData alloc] initWithContentsOfURL:fileLocation];
-    if (savedReminders)
-    {
-        pills = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedReminders]];
-    }
-}
 
 - (NSString*) nameOfPillWithIndex: (int) index
 {

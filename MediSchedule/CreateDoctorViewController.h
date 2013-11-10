@@ -1,9 +1,9 @@
 /*
- *  CreatePillViewController.h
+ *  CreateDoctorViewController.h
  *  MediSchedule
  *
- *  Header file for CreatePillViewController class
- *  Creates display for individual pills
+ *  Header file for CreateDoctorViewController class
+ *  Creates display for individual doctors
  *
  *  Programmers:
  *  Ishan Bhutani
@@ -15,13 +15,13 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "PillManagerViewController.h"
+#import "DoctorManagerViewController.h"
 
 //***************************************************************************************
 // Public Interface:
 //***************************************************************************************
-@interface CreatePillViewController : UIViewController <UITextFieldDelegate>
+@interface CreateDoctorViewController : UIViewController <UITextFieldDelegate>
 
-@property (strong, nonatomic) PillManagerViewController* callBack;
+@property (strong, nonatomic) DoctorManagerViewController* callBack;
 
 @end

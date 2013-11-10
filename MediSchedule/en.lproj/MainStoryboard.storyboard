@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--Login View Controller - Login-->
@@ -15,25 +15,45 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeV-4g-HJ2">
+<<<<<<< HEAD
+                                <rect key="frame" x="138" y="180" width="154" height="30"/>
+=======
+                                <rect key="frame" x="83" y="49" width="154" height="30"/>
+>>>>>>> b8cd9ebd6bfbddb0b7af85d76207dc5ef7c52c2c
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="J9j-vT-DLj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <outlet property="delegate" destination="fFV-0u-msP" id="oKk-y0-uqf"/>
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2P8-Qg-D4m">
+<<<<<<< HEAD
+                                <rect key="frame" x="138" y="230" width="154" height="30"/>
+=======
+                                <rect key="frame" x="83" y="150" width="154" height="30"/>
+>>>>>>> b8cd9ebd6bfbddb0b7af85d76207dc5ef7c52c2c
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLH-jP-KAA">
+<<<<<<< HEAD
+                                <rect key="frame" x="30" y="185" width="79" height="21"/>
+=======
+                                <rect key="frame" x="121" y="27" width="79" height="21"/>
+>>>>>>> b8cd9ebd6bfbddb0b7af85d76207dc5ef7c52c2c
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNX-58-VQR">
+<<<<<<< HEAD
+                                <rect key="frame" x="33" y="234" width="76" height="21"/>
+=======
+                                <rect key="frame" x="121" y="130" width="76" height="21"/>
+>>>>>>> b8cd9ebd6bfbddb0b7af85d76207dc5ef7c52c2c
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -41,22 +61,27 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TLH-jP-KAA" firstAttribute="centerY" secondItem="yeV-4g-HJ2" secondAttribute="centerY" type="default" id="4Lk-6d-iSs"/>
-                            <constraint firstItem="yeV-4g-HJ2" firstAttribute="top" secondItem="wfH-8w-f7f" secondAttribute="top" constant="180" id="8Hx-tK-lzX"/>
-                            <constraint firstItem="yeV-4g-HJ2" firstAttribute="trailing" secondItem="2P8-Qg-D4m" secondAttribute="trailing" type="default" id="UxW-zs-v62"/>
-                            <constraint firstItem="yeV-4g-HJ2" firstAttribute="leading" secondItem="2P8-Qg-D4m" secondAttribute="leading" type="default" id="W0P-5t-Vlo"/>
-                            <constraint firstAttribute="bottom" secondItem="tNX-58-VQR" secondAttribute="bottom" constant="205" id="k3Z-ze-8tl"/>
-                            <constraint firstItem="yeV-4g-HJ2" firstAttribute="leading" secondItem="wfH-8w-f7f" secondAttribute="leading" constant="138" id="lNO-Cq-QY1"/>
-                            <constraint firstItem="TLH-jP-KAA" firstAttribute="leading" secondItem="wfH-8w-f7f" secondAttribute="leading" constant="30" id="meF-gJ-fTs"/>
-                            <constraint firstItem="TLH-jP-KAA" firstAttribute="trailing" secondItem="tNX-58-VQR" secondAttribute="trailing" type="default" id="pKM-LT-rL9"/>
-                            <constraint firstAttribute="bottom" secondItem="2P8-Qg-D4m" secondAttribute="bottom" constant="200" id="tNt-aE-HbM"/>
+                            <constraint firstItem="2P8-Qg-D4m" firstAttribute="trailing" secondItem="yeV-4g-HJ2" secondAttribute="trailing" type="default" id="1hc-bX-GgI"/>
+                            <constraint firstItem="tNX-58-VQR" firstAttribute="top" secondItem="wfH-8w-f7f" secondAttribute="top" constant="130" id="2rM-rX-a6q"/>
+                            <constraint firstItem="yeV-4g-HJ2" firstAttribute="centerX" secondItem="wfH-8w-f7f" secondAttribute="centerX" type="default" id="5qz-ns-Ts3"/>
+                            <constraint firstItem="TLH-jP-KAA" firstAttribute="top" secondItem="wfH-8w-f7f" secondAttribute="top" constant="27" id="AJh-6e-fCn"/>
+                            <constraint firstItem="TLH-jP-KAA" firstAttribute="centerX" secondItem="yeV-4g-HJ2" secondAttribute="centerX" type="default" id="CaG-Ul-UKA"/>
+                            <constraint firstItem="yeV-4g-HJ2" firstAttribute="top" secondItem="wfH-8w-f7f" secondAttribute="top" constant="49" id="Qra-bu-ycI"/>
+                            <constraint firstItem="tNX-58-VQR" firstAttribute="leading" secondItem="TLH-jP-KAA" secondAttribute="leading" type="default" id="WSD-iX-Xqb"/>
+                            <constraint firstItem="2P8-Qg-D4m" firstAttribute="top" secondItem="wfH-8w-f7f" secondAttribute="top" constant="150" id="d0X-Fu-CfB"/>
+                            <constraint firstItem="2P8-Qg-D4m" firstAttribute="leading" secondItem="yeV-4g-HJ2" secondAttribute="leading" type="default" id="xmz-MP-7ej"/>
                         </constraints>
                     </view>
                     <toolbarItems>
-                        <barButtonItem title="Create Account" id="1Mh-kQ-biX"/>
+                        <barButtonItem title="Create Account" id="1Mh-kQ-biX">
+                            <connections>
+                                <action selector="createAccount:" destination="fFV-0u-msP" id="SmM-xD-9Jx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="vYS-fZ-bYa"/>
                         <barButtonItem title="Login" id="ybz-xp-pmc">
                             <connections>
-                                <segue destination="6A4-LH-Njl" kind="push" id="BfL-6P-jp3"/>
+                                <action selector="logIn:" destination="fFV-0u-msP" id="7fw-i1-AJP"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -65,6 +90,7 @@
                     <connections>
                         <outlet property="passWordTextField" destination="2P8-Qg-D4m" id="2e0-8E-WLs"/>
                         <outlet property="userNameTextField" destination="yeV-4g-HJ2" id="76b-nh-LEg"/>
+                        <segue destination="6A4-LH-Njl" kind="push" identifier="login" id="kKH-Um-Brd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5g-g3-o4R" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -88,7 +114,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-769" y="-315"/>
+            <point key="canvasLocation" x="-603" y="-315"/>
         </scene>
         <!--Create Reminder View Controller - CreateReminder-->
         <scene sceneID="24">
@@ -99,6 +125,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-C2-Wkn">
+                                <rect key="frame" x="101" y="33" width="154" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="eIA-VM-IjE"/>
                                 </constraints>
@@ -106,33 +133,40 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0QN-Zl-hHx">
+                                <rect key="frame" x="101" y="98" width="154" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TRr-i9-26V">
+                                <rect key="frame" x="101" y="167" width="154" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N1l-oe-vFj">
+                                <rect key="frame" x="101" y="233" width="154" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIe-fR-nYg">
+                                <rect key="frame" x="21" y="36" width="38" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pill ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyN-K8-Rkd">
+                                <rect key="frame" x="20" y="103" width="44" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vzl-1X-89U">
+                                <rect key="frame" x="20" y="170" width="59" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eF-uG-9LE">
+                                <rect key="frame" x="20" y="236" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -178,15 +212,68 @@
             </objects>
             <point key="canvasLocation" x="885" y="-315"/>
         </scene>
-        <!--View Controller - Create Doctor-->
+        <!--Doctor Manager View Controller-->
+        <scene sceneID="IUg-Xl-dDQ">
+            <objects>
+                <tableViewController id="cdv-Bx-qYn" customClass="DoctorManagerViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="SZ8-Qd-zWT">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorCell" textLabel="GfB-Fk-CEq" detailTextLabel="dMO-vo-UGs" style="IBUITableViewCellStyleSubtitle" id="eOH-Nw-zj9">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfB-Fk-CEq">
+                                            <rect key="frame" x="10" y="2" width="36" height="22"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMO-vo-UGs">
+                                            <rect key="frame" x="10" y="24" width="50" height="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cdv-Bx-qYn" id="1MN-mr-u7B"/>
+                            <outlet property="delegate" destination="cdv-Bx-qYn" id="FD6-vf-XLY"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Add Doctor" id="wa6-Dj-Lqn"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="dAN-i7-Xmw"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addDoctorButton" destination="wa6-Dj-Lqn" id="8FS-G1-hmK"/>
+                        <segue destination="Czc-kF-Umy" kind="push" identifier="DoctorManagerToCreateDoctorSegue" id="duD-sy-wGc"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgt-EM-GZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="885" y="1126"/>
+        </scene>
+        <!--Create Doctor View Controller - Create Doctor-->
         <scene sceneID="qLV-jd-2fW">
             <objects>
-                <viewController id="Czc-kF-Umy" sceneMemberID="viewController">
+                <viewController id="Czc-kF-Umy" customClass="CreateDoctorViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mo7-E0-7ez" customClass="CreateDoctorScreen">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBq-Pb-1fW">
+                                <rect key="frame" x="141" y="27" width="154" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="154" id="3ZY-HK-juy"/>
                                 </constraints>
@@ -194,6 +281,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-SH-ex8">
+                                <rect key="frame" x="144" y="93" width="151" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" type="user" id="hcL-CL-vGO"/>
                                 </constraints>
@@ -201,26 +289,32 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DoctorName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ei-f7-DNx">
+                                <rect key="frame" x="20" y="31" width="98" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Doctor Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lq-Dq-jsv">
+                                <rect key="frame" x="20" y="97" width="120" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aP-ux-xwp">
+                                <rect key="frame" x="24" y="165" width="116" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOZ-Wp-9Nf">
+                                <rect key="frame" x="25" y="234" width="110" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FqP-PZ-fvm">
+                                <rect key="frame" x="144" y="161" width="151" height="30"/>
+<<<<<<< HEAD
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="riX-qC-lDQ"/>
                                 </constraints>
@@ -228,15 +322,21 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xgb-QR-yas">
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
                                 <items>
                                     <barButtonItem width="203" style="plain" systemItem="fixedSpace" id="Zbp-54-zXr"/>
                                     <barButtonItem title="View Doctor" id="rm0-En-u73"/>
                                 </items>
                             </toolbar>
+=======
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+>>>>>>> b8cd9ebd6bfbddb0b7af85d76207dc5ef7c52c2c
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ElW-ZK-Ha3">
+                                <rect key="frame" x="144" y="230" width="151" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="151" id="DPl-Bb-zc5"/>
-                                    <constraint firstAttribute="height" constant="30" id="TIA-LF-JW4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -262,20 +362,28 @@
                             <constraint firstItem="6lq-Dq-jsv" firstAttribute="baseline" secondItem="4z2-SH-ex8" secondAttribute="baseline" type="default" id="cBp-C3-v6r"/>
                             <constraint firstItem="0aP-ux-xwp" firstAttribute="trailing" secondItem="6lq-Dq-jsv" secondAttribute="trailing" type="default" id="cyq-uA-KIe"/>
                             <constraint firstItem="FqP-PZ-fvm" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="161" id="lT1-rt-Zj0"/>
-                            <constraint firstItem="Xgb-QR-yas" firstAttribute="leading" secondItem="mo7-E0-7ez" secondAttribute="leading" type="default" id="mlp-hN-WWN"/>
-                            <constraint firstItem="Xgb-QR-yas" firstAttribute="trailing" secondItem="mo7-E0-7ez" secondAttribute="trailing" type="default" id="pxf-MM-2Sh"/>
                             <constraint firstItem="ElW-ZK-Ha3" firstAttribute="trailing" secondItem="FqP-PZ-fvm" secondAttribute="trailing" type="default" id="rym-0j-PEz"/>
                             <constraint firstItem="0aP-ux-xwp" firstAttribute="top" secondItem="mo7-E0-7ez" secondAttribute="top" constant="165" id="tBt-1Q-5K5"/>
                             <constraint firstItem="4z2-SH-ex8" firstAttribute="trailing" secondItem="XBq-Pb-1fW" secondAttribute="trailing" type="default" id="wmT-JU-5DA"/>
-                            <constraint firstItem="Xgb-QR-yas" firstAttribute="bottom" secondItem="mo7-E0-7ez" secondAttribute="bottom" type="default" id="xMt-PT-xwK"/>
                             <constraint firstItem="wOZ-Wp-9Nf" firstAttribute="centerX" secondItem="6lq-Dq-jsv" secondAttribute="centerX" type="default" id="yoh-Oo-ItD"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Create Doctor" id="9p4-nS-dSZ"/>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" title="Create Doctor" id="eg9-aX-khn"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="4z2-SH-ex8" id="8Af-DO-f7v"/>
+                        <outlet property="createDoctorButton" destination="9p4-nS-dSZ" id="71h-0g-b4h"/>
+                        <outlet property="emailTextField" destination="ElW-ZK-Ha3" id="Hh0-b7-CUq"/>
+                        <outlet property="nameTextField" destination="XBq-Pb-1fW" id="Bn4-Bf-kKe"/>
+                        <outlet property="phoneNumberTextField" destination="FqP-PZ-fvm" id="c4d-Xm-3N5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W1H-qe-62f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2849" y="167"/>
+            <point key="canvasLocation" x="1423" y="1126"/>
         </scene>
         <!--Create Pill View Controller - CreatePill-->
         <scene sceneID="zhf-cC-haM">
@@ -286,21 +394,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pill Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zs2-hH-yQB">
+                                <rect key="frame" x="24" y="50" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Doctor Id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUp-mt-y1O">
+                                <rect key="frame" x="25" y="110" width="72" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-u9-EZW">
+                                <rect key="frame" x="38" y="162" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7Y-jy-Yr1">
+                                <rect key="frame" x="141" y="41" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="Tzr-64-ot1"/>
                                 </constraints>
@@ -308,10 +420,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="De2-oN-ebi">
+                                <rect key="frame" x="141" y="101" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-Hr-zmX">
+                                <rect key="frame" x="141" y="153" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -367,11 +481,21 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esh-LN-tFe">
+<<<<<<< HEAD
+                                            <rect key="frame" x="-77" y="-59" width="36" height="22"/>
+=======
+                                            <rect key="frame" x="10" y="2" width="36" height="22"/>
+>>>>>>> b8cd9ebd6bfbddb0b7af85d76207dc5ef7c52c2c
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="12Z-vb-gsc">
+<<<<<<< HEAD
+                                            <rect key="frame" x="82" y="-90" width="37" height="17"/>
+=======
+                                            <rect key="frame" x="10" y="24" width="37" height="17"/>
+>>>>>>> b8cd9ebd6bfbddb0b7af85d76207dc5ef7c52c2c
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -399,6 +523,7 @@
                         <outlet property="viewPillsButton" destination="GhS-Rw-vaS" id="Qh2-ud-VV9"/>
                         <segue destination="21" kind="push" identifier="ReminderManagerToCreateReminderSegue" id="i1g-3C-Vkw"/>
                         <segue destination="XrY-mU-idU" kind="push" identifier="ReminderManagerToPillManagerSegue" id="nSY-ud-cOh"/>
+                        <segue destination="cdv-Bx-qYn" kind="push" identifier="ReminderManagerToDoctorManagerSegue" id="Ge2-SB-5q8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-4L-sSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,11 +554,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U6-BZ-eOH">
+                                            <rect key="frame" x="10" y="2" width="36" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nO9-cO-mE6">
+                                            <rect key="frame" x="10" y="24" width="50" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -462,6 +589,7 @@
             </objects>
             <point key="canvasLocation" x="885" y="394"/>
         </scene>
+<<<<<<< HEAD
         <!--View Controller - DoctorView-->
         <scene sceneID="C9U-UG-jhs">
             <objects>
@@ -471,9 +599,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="bPl-MI-aa5">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="muv-kc-ZSJ">
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Edit Doctor" id="7Lg-FF-Hxb"/>
                                     <barButtonItem width="128" style="plain" systemItem="fixedSpace" id="SiR-Mo-ZsZ"/>
@@ -507,6 +637,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uiv-f2-Rac">
+                                <rect key="frame" x="153" y="56" width="97" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="97" id="AMK-c8-wCI"/>
                                 </constraints>
@@ -514,33 +645,40 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qCU-zm-waX">
+                                <rect key="frame" x="153" y="126" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NTZ-2e-jdl">
+                                <rect key="frame" x="153" y="193" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V1O-IZ-uB1">
+                                <rect key="frame" x="153" y="267" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7x-Oj-cKg">
+                                <rect key="frame" x="30" y="56" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqA-SV-zbQ">
+                                <rect key="frame" x="30" y="126" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiA-Lu-Z2p">
+                                <rect key="frame" x="30" y="276" width="47" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5A-wa-Iec">
+                                <rect key="frame" x="27" y="202" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -584,6 +722,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47b-wT-iCx">
+                                <rect key="frame" x="120" y="35" width="154" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZZm-7Q-GJc"/>
                                     <constraint firstAttribute="width" constant="154" id="olJ-Xp-Mnd"/>
@@ -592,20 +731,24 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pill Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v36-4c-Oyp">
+                                <rect key="frame" x="27" y="39" width="73" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Dosage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7Y-5d-8gC">
+                                <rect key="frame" x="27" y="115" width="59" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qix-nC-hYx">
+                                <rect key="frame" x="120" y="109" width="154" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJl-Fu-RNt">
+                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="View Pill" id="y1i-zD-b43"/>
                                     <barButtonItem width="129" style="plain" systemItem="fixedSpace" id="dup-O0-xJK"/>
@@ -613,11 +756,13 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DIN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-yf-u25">
+                                <rect key="frame" x="27" y="189" width="29" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9yt-Fy-SgA">
+                                <rect key="frame" x="120" y="185" width="154" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="a6U-a5-krf"/>
                                 </constraints>
@@ -655,6 +800,8 @@
             </objects>
             <point key="canvasLocation" x="2849" y="-547"/>
         </scene>
+=======
+>>>>>>> b8cd9ebd6bfbddb0b7af85d76207dc5ef7c52c2c
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
