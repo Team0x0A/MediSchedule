@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Doctor : NSObject <NSCoding>
+@interface Doctor : NSObject
 
 @property int doctorId;
 @property NSString *name;

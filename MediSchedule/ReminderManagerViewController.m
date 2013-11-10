@@ -1,5 +1,5 @@
 /*
- *  ReminderManagerViewController.m
+ *  ReminderManagerViewController.h
  *  MediSchedule
  *
  *  Implementation file for ReminderManagerViewController class
@@ -59,13 +59,14 @@
     [super viewDidLoad];
 
     // The reminder manager is initialized the first time the application loads
+    // Note: there is not file system support as of now. Each time the application is loaded, myManager is re-initialized
     if (!myManager)
     {
         myManager = [[ReminderManager alloc] init];
     }
     
     // This calls some tests on the reminder manager
-    // [self testReminderManager];
+    [self testReminderManager];
     
     // Setup the addReminderButton to call the addReminderButtonTapped method:
     [_addReminderButton setTarget:self];
@@ -74,10 +75,6 @@
     // Setup the viewPillsButton to call the viewPillsButtonTapped method:
     [_viewPillsButton setTarget:self];
     [_viewPillsButton setAction:@selector(veiwPillsButtonTapped:)];
-    
-    // Setup the viewDoctorButton to call the viewDoctorButtonTapped method:
-    [_viewDoctorsButton setTarget:self];
-    [_viewDoctorsButton setAction:@selector(viewDoctorButtonTapped:)];
 }
 
 
@@ -102,17 +99,6 @@
 - (void)veiwPillsButtonTapped:(id)sender
 {
     [self performSegueWithIdentifier:@"ReminderManagerToPillManagerSegue" sender:self];
-}
-
-
-
-
-// viewDoctorButtonTapped:
-// This method is called by viewDoctorButton
-// ****************************************
-- (void)viewDoctorButtonTapped:(id)sender
-{
-    [self performSegueWithIdentifier:@"ReminderManagerToDoctorManagerSegue" sender:self];
 }
 
 
@@ -153,17 +139,13 @@
 
 
 // testReminderManager:
-// Note: This will delete all elements in myManager beforehand, so do not run if there is an instance saved that you need access to!
 // ****************************************
 - (void) testReminderManager
 {
-    while ([myManager numOfReminders] > 0)
-    {
-        [myManager deleteReminderAtIndex:0];
-    }
+    /*
     [self addReminderWithTime:[[Time alloc] initWithString:@"6:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 1st"];
     [self addReminderWithTime:[[Time alloc] initWithString:@"12:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 2nd"];
-    [self addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
+    [self addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];*/
 }
 
 
@@ -198,6 +180,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ReminderCell";
+    
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]];
