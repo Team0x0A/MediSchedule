@@ -314,7 +314,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = MediSchedule;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Team 0x0A";
 			};
 			buildConfigurationList = 0CB85702181C7E3100D71BA1 /* Build configuration list for PBXProject "MediSchedule" */;
