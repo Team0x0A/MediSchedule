@@ -42,33 +42,6 @@
     }
     return self;
 }
-
-// Initialize Time object with unarchived data from aDecoder
-- (id) initWithCoder:(NSCoder *)aDecoder
-{
-    self = [super init];
-    if (self)
-    {
-        [self setDoctorId:[aDecoder decodeIntForKey:@"doctorid"]];
-        [self setName:[aDecoder decodeObjectForKey:@"name"]];
-        [self setNumber:[aDecoder decodeObjectForKey:@"number"]];
-        [self setAddress:[aDecoder decodeObjectForKey:@"address"]];
-        [self setEmail:[aDecoder decodeObjectForKey:@"email"]];
-    }
-    return self;
-}
-
-// Writes archived variable instances to aCoder
-- (void) encodeWithCoder:(NSCoder *)aCoder
-{
-    [aCoder encodeInt:doctorId forKey:@"doctorid"];
-    [aCoder encodeObject:self.name forKey:@"name"];
-    [aCoder encodeObject:self.number forKey:@"number"];
-    [aCoder encodeObject:self.address forKey:@"address"];
-    [aCoder encodeObject:self.email forKey:@"email"];
-}
-
-
 - (NSString *)description
 {
     return [[NSString alloc] initWithFormat:@"%d, %@, %@, %@, %@", [self doctorId], [self name], [self number], [self address], [self email]];

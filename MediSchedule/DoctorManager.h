@@ -29,7 +29,6 @@
 
 - (void) deleteDoctorWithId:(int) doctorId;
 
-- (void) deleteDoctorWithIndex:(int) index;
 
 - (void) setNameTo: (NSString*) newName
        OfDoctorId: (int) doctorId;
@@ -57,13 +56,5 @@
 - (NSString*) numberOfDoctorWithId: (int) doctorId;
 
 - (NSString *) emailOfDoctorWithId:(int) doctorId;
-
-- (NSString*) nameOfDoctorWithIndex: (int) index;
-
-- (NSString*) addressOfDoctorWithIndex: (int) index;
-
-- (NSString*) numberOfDoctorWithIndex: (int) index;
-
-- (NSString *) emailOfDoctorWithIndex:(int) index;
 
 @end

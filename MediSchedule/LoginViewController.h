@@ -1,18 +1,10 @@
-/*
- *  LoginViewController.h
- *  MediSchedule
- *
- *  Header file for LoginViewController class
- *  Manages and displays interface for user login
- *
- *  Programmers:
- *  Ishan Bhutani
- *  Ning Chai
- *  Zheren Lu
- *  Justin Wang
- *
- *  Copyright (c) 2013 Team 0x0A
- */
+//
+//  LoginViewController.h
+//  MediSchedule
+//
+//  Created by Justin Wang on 10/30/13.
+//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
+//
 
 #import <UIKit/UIKit.h>
 
