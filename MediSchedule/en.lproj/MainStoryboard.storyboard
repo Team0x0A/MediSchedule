@@ -193,11 +193,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorCell" textLabel="GfB-Fk-CEq" detailTextLabel="dMO-vo-UGs" style="IBUITableViewCellStyleSubtitle" id="eOH-Nw-zj9">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoctorCell" textLabel="GfB-Fk-CEq" detailTextLabel="dMO-vo-UGs" style="IBUITableViewCellStyleSubtitle" id="eOH-Nw-zj9">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GfB-Fk-CEq">
@@ -228,6 +228,7 @@
                     <connections>
                         <outlet property="addDoctorButton" destination="wa6-Dj-Lqn" id="8FS-G1-hmK"/>
                         <segue destination="Czc-kF-Umy" kind="push" identifier="DoctorManagerToCreateDoctorSegue" id="duD-sy-wGc"/>
+                        <segue destination="J4Y-g3-4cq" kind="push" identifier="DoctorManagerToEditDoctorSegue" id="3b1-sL-qjY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgt-EM-GZC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -517,7 +518,167 @@
             </objects>
             <point key="canvasLocation" x="885" y="394"/>
         </scene>
+        <!--Edit Doctor View Controller - EditDoctor-->
+        <scene sceneID="fwU-X1-mCn">
+            <objects>
+                <viewController title="EditDoctor" id="J4Y-g3-4cq" customClass="EditDoctorViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="exD-VL-rGA" customClass="CreateDoctorScreen">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6t-5I-CY6">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="nA3-Ro-872"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2t-Kf-eqe">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" type="user" id="HpY-l1-Jfc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="DoctorName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPc-Ae-bLy">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Doctor Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5d-os-g8X">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiJ-lW-5qD">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHt-lf-Vw3">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CwG-op-4IT">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="92P-z0-uKL"/>
+                                    <constraint firstAttribute="width" constant="151" id="C22-vk-tiH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIR-r4-mUK">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E8N-Uz-6eA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nHt-lf-Vw3" firstAttribute="centerX" secondItem="f5d-os-g8X" secondAttribute="centerX" type="default" id="5v4-ve-9ke"/>
+                            <constraint firstItem="QIR-r4-mUK" firstAttribute="top" secondItem="exD-VL-rGA" secondAttribute="top" constant="230" id="8Lx-7V-Cy2"/>
+                            <constraint firstItem="nHt-lf-Vw3" firstAttribute="baseline" secondItem="QIR-r4-mUK" secondAttribute="baseline" type="default" id="8ed-p0-coT"/>
+                            <constraint firstItem="nHt-lf-Vw3" firstAttribute="top" secondItem="exD-VL-rGA" secondAttribute="top" constant="234" id="E1S-yC-pWU"/>
+                            <constraint firstItem="T6t-5I-CY6" firstAttribute="leading" secondItem="exD-VL-rGA" secondAttribute="leading" constant="141" id="EGh-HI-UpY"/>
+                            <constraint firstItem="jPc-Ae-bLy" firstAttribute="baseline" secondItem="T6t-5I-CY6" secondAttribute="baseline" type="default" id="IGS-sZ-e1C"/>
+                            <constraint firstItem="UiJ-lW-5qD" firstAttribute="top" secondItem="exD-VL-rGA" secondAttribute="top" constant="165" id="JQ4-uD-Yi4"/>
+                            <constraint firstItem="r2t-Kf-eqe" firstAttribute="trailing" secondItem="T6t-5I-CY6" secondAttribute="trailing" type="default" id="SnL-3y-hIJ"/>
+                            <constraint firstItem="CwG-op-4IT" firstAttribute="leading" secondItem="r2t-Kf-eqe" secondAttribute="leading" type="default" id="YhK-Xv-vFG"/>
+                            <constraint firstItem="f5d-os-g8X" firstAttribute="baseline" secondItem="r2t-Kf-eqe" secondAttribute="baseline" type="default" id="Zb8-ip-JzM"/>
+                            <constraint firstItem="QIR-r4-mUK" firstAttribute="leading" secondItem="CwG-op-4IT" secondAttribute="leading" type="default" id="a8m-L1-XOO"/>
+                            <constraint firstItem="UiJ-lW-5qD" firstAttribute="baseline" secondItem="CwG-op-4IT" secondAttribute="baseline" type="default" id="eRG-PR-UhS"/>
+                            <constraint firstItem="jPc-Ae-bLy" firstAttribute="top" secondItem="exD-VL-rGA" secondAttribute="top" constant="31" id="g9a-dH-2Hg"/>
+                            <constraint firstItem="T6t-5I-CY6" firstAttribute="top" secondItem="exD-VL-rGA" secondAttribute="top" constant="27" id="gBM-Fd-NoW"/>
+                            <constraint firstItem="QIR-r4-mUK" firstAttribute="trailing" secondItem="CwG-op-4IT" secondAttribute="trailing" type="default" id="gpg-gm-f28"/>
+                            <constraint firstItem="r2t-Kf-eqe" firstAttribute="top" secondItem="exD-VL-rGA" secondAttribute="top" constant="93" id="hZT-BO-hhe"/>
+                            <constraint firstItem="f5d-os-g8X" firstAttribute="top" secondItem="exD-VL-rGA" secondAttribute="top" constant="97" id="iuh-IR-0so"/>
+                            <constraint firstItem="CwG-op-4IT" firstAttribute="trailing" secondItem="r2t-Kf-eqe" secondAttribute="trailing" type="default" id="jfS-ID-WDN"/>
+                            <constraint firstItem="f5d-os-g8X" firstAttribute="leading" secondItem="exD-VL-rGA" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="k7X-zh-Ond"/>
+                            <constraint firstItem="CwG-op-4IT" firstAttribute="top" secondItem="exD-VL-rGA" secondAttribute="top" constant="161" id="n99-Vh-m5p"/>
+                            <constraint firstItem="jPc-Ae-bLy" firstAttribute="leading" secondItem="exD-VL-rGA" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="w6v-wd-ub1"/>
+                            <constraint firstItem="UiJ-lW-5qD" firstAttribute="trailing" secondItem="f5d-os-g8X" secondAttribute="trailing" type="default" id="yN3-QF-V7F"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Save Changes" id="8O1-MI-Clo"/>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Edit Doctor" id="cJc-5b-bHk"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZH2-al-7I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423" y="1792"/>
+        </scene>
     </scenes>
+    <classes>
+        <class className="CreateDoctorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateDoctorViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="createDoctorButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CreatePillViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatePillViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="createPillButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doctorIdTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CreateReminderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateReminderViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="createReminderButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="dosageTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pillIdTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="timeTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DoctorManagerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DoctorManagerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addDoctorButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="EditDoctorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditDoctorViewController.h"/>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="createAccount:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="logIn:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="passWordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userNameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PillManagerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PillManagerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addPillButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="ReminderManagerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderManagerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addReminderButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="viewDoctorsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="viewPillsButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

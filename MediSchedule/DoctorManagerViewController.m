@@ -173,4 +173,12 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
 }
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *) indexPath
+{
+    NSLog(@"shit just got detailed view tapped...");
+    [self performSegueWithIdentifier:@"DoctorManagerToEditDoctorSegue" sender:self];
+}
+
+
 @end
