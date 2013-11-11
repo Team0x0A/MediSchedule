@@ -17,9 +17,6 @@
 #import "PillManager.h"
 #import "CreatePillViewController.h"
 
-//Testing purposes only: (DELETE THIS AFTER)
-#import "DoctorManager.h"
-
 
 //***************************************************************************************
 // Private Interface:
@@ -27,12 +24,6 @@
 @interface PillManagerViewController ()
 {
     PillManager *myManager; // Pill Manager to be used for entire application
-    //******************************************
-    //Delete this once doctor manager view
-    //controller is set up:
-    DoctorManager *doctorManager;
-    //*******************************************
-    
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addPillButton;
 
@@ -58,50 +49,12 @@
         myManager = [[PillManager alloc] init];
     }
     
-    //Testing purposes only: (DELETE THIS AFTER)
-    if (!doctorManager)
-    {
-        doctorManager = [[DoctorManager alloc] init];
-    }
-    // To test, uncomment following line:
-    //self testPillManager];
-    
-    //******************************************
-    //Delete this once doctor manager view
-    //controller is set up:
-    //[self testDoctorManager];
-    //*******************************************
+     //Uncomment to perform tests:
+    //[self testPillManager];
     
     // Setup the addPillButton:
     [_addPillButton setTarget:self];
     [_addPillButton setAction:@selector(addPillButtonTapped:)];
-}
-
-//Move this to DoctorManagerViewController when implemented!
-- (void) testDoctorManager
-{
-   
-    while ([doctorManager numOfDoctors] > 0)
-    {
-        [doctorManager deleteDoctorWithIndex:0];
-    }
-    [doctorManager addDoctorWithName:@"HT" WithNumber:@"420" WithAddress:@"123 fake street" WithEmail:@"doctor@doctor.com"];
-    [doctorManager addDoctorWithName:@"HT1" WithNumber:@"4201" WithAddress:@"123 fake street1" WithEmail:@"doctor@doctor.com1"];
-    [doctorManager addDoctorWithName:@"HT2" WithNumber:@"4202" WithAddress:@"123 fake street2" WithEmail:@"doctor@doctor.com2"];
-    [doctorManager addDoctorWithName:@"HT3" WithNumber:@"4203" WithAddress:@"123 fake street3" WithEmail:@"doctor@doctor.com3"];
-    [doctorManager addDoctorWithName:@"HT4" WithNumber:@"4204" WithAddress:@"123 fake street4" WithEmail:@"doctor@doctor.com4"];
-    [doctorManager addDoctorWithName:@"HT5" WithNumber:@"4205" WithAddress:@"123 fake street5" WithEmail:@"doctor@doctor.com5"];
-    
-    NSLog(@"%@", [doctorManager description]);
-    NSLog(@"%@",[doctorManager listOfDoctorIds]);
-    assert([doctorManager numOfDoctors] == 6);
-    assert([[doctorManager nameOfDoctorWithId:0] isEqualToString:@"HT"]);
-    assert([[doctorManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
-    [doctorManager deleteDoctorWithId:0];
-    assert([doctorManager numOfDoctors] == 5);
-    assert([[doctorManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
-    NSLog(@"DoctorManager test succeeded!");
-    
 }
 
 

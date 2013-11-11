@@ -49,7 +49,8 @@
     {
         myManager = [[DoctorManager alloc] init];
     }
-
+    //Uncomment to perform tests:
+    //[self testDoctorManager];
     // Setup the addDoctorButton:
     [_addDoctorButton setTarget:self];
     [_addDoctorButton setAction:@selector(addDoctorButtonTapped:)];
@@ -190,5 +191,33 @@
     [self performSegueWithIdentifier:@"DoctorManagerToEditDoctorSegue" sender:self];
 }
 
+
+// Test doctor manager:
+// *****************************
+- (void) testDoctorManager
+{
+    
+    while ([myManager numOfDoctors] > 0)
+    {
+        [myManager deleteDoctorWithIndex:0];
+    }
+    [myManager addDoctorWithName:@"HT" WithNumber:@"420" WithAddress:@"123 fake street" WithEmail:@"doctor@doctor.com"];
+    [myManager addDoctorWithName:@"HT1" WithNumber:@"4201" WithAddress:@"123 fake street1" WithEmail:@"doctor@doctor.com1"];
+    [myManager addDoctorWithName:@"HT2" WithNumber:@"4202" WithAddress:@"123 fake street2" WithEmail:@"doctor@doctor.com2"];
+    [myManager addDoctorWithName:@"HT3" WithNumber:@"4203" WithAddress:@"123 fake street3" WithEmail:@"doctor@doctor.com3"];
+    [myManager addDoctorWithName:@"HT4" WithNumber:@"4204" WithAddress:@"123 fake street4" WithEmail:@"doctor@doctor.com4"];
+    [myManager addDoctorWithName:@"HT5" WithNumber:@"4205" WithAddress:@"123 fake street5" WithEmail:@"doctor@doctor.com5"];
+    
+    NSLog(@"%@", [myManager description]);
+    NSLog(@"%@",[myManager listOfDoctorIds]);
+    assert([myManager numOfDoctors] == 6);
+    assert([[myManager nameOfDoctorWithId:0] isEqualToString:@"HT"]);
+    assert([[myManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
+    [myManager deleteDoctorWithId:0];
+    assert([myManager numOfDoctors] == 5);
+    assert([[myManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
+    NSLog(@"Doctor Manager test succeeded!");
+    
+}
 
 @end

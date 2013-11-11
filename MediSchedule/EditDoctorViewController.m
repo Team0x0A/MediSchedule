@@ -1,10 +1,17 @@
-//
-//  EditDoctorViewController.m
-//  MediSchedule
-//
-//  Created by Justin Wang on 11/10/13.
-//  Copyright (c) 2013 Team 0x0A. All rights reserved.
-//
+/*
+ *  EditDoctorViewController.m
+ *  MediSchedule
+ *
+ *  Implementation file for EditDoctorViewController class
+ *
+ *  Programmers:
+ *  Ishan Bhutani
+ *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
+ *
+ *  Copyright (c) 2013 Team 0x0A
+ */
 
 #import "EditDoctorViewController.h"
 
