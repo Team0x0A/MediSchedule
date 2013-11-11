@@ -25,11 +25,9 @@
 
 - (NSString *) description;
 
-//Modifiers:
-
+// Modifiers (by ID):
+// ****************************************
 - (void) deleteDoctorWithId:(int) doctorId;
-
-- (void) deleteDoctorWithIndex:(int) index;
 
 - (void) setNameTo: (NSString*) newName
        OfDoctorId: (int) doctorId;
@@ -44,8 +42,24 @@
          OfDoctorId: (int) doctorId;
 
 
-//Accessors:
+// Modifiers (by index):
+// ****************************************
+- (void) deleteDoctorWithIndex:(int) index;
 
+- (void) setNameTo: (NSString*) newName
+        OfDoctorWithIndex: (int) index;
+
+- (void) setAddressTo: (NSString*) newAddress
+           OfDoctorWithIndex: (int) index;
+
+- (void) setNumberTo: (NSString *) newNumber
+          OfDoctorWithIndex: (int) index;
+
+- (void) setEmailTo: (NSString*) newEmail
+         OfDoctorWithIndex: (int) index;
+
+// Accessors (by ID):
+// ****************************************
 - (int) numOfDoctors;
 
 - (NSArray*) listOfDoctorIds;
@@ -58,6 +72,8 @@
 
 - (NSString *) emailOfDoctorWithId:(int) doctorId;
 
+// Accessors (by index):
+// ****************************************
 - (NSString*) nameOfDoctorWithIndex: (int) index;
 
 - (NSString*) addressOfDoctorWithIndex: (int) index;

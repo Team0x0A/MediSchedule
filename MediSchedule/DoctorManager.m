@@ -155,8 +155,43 @@
      [self saveToFile:[self fileLocation]];
 }
 
-//Accessors:
+// Modifiers (by index):
+// ****************************************
+- (void) setNameTo: (NSString*) newName
+ OfDoctorWithIndex: (int) index
+{
+    Doctor *doctor = [doctors objectAtIndex:index];
+    [doctor setName:newName];
+    [self saveToFile:[self fileLocation]];
+}
 
+- (void) setAddressTo: (NSString*) newAddress
+    OfDoctorWithIndex: (int) index
+{
+    Doctor *doctor = [doctors objectAtIndex:index];
+    [doctor setAddress:newAddress];
+    [self saveToFile:[self fileLocation]];
+}
+
+- (void) setNumberTo: (NSString *) newNumber
+   OfDoctorWithIndex: (int) index
+{
+    Doctor *doctor = [doctors objectAtIndex:index];
+    [doctor setNumber:newNumber];
+    [self saveToFile:[self fileLocation]];
+}
+
+- (void) setEmailTo: (NSString*) newEmail
+  OfDoctorWithIndex: (int) index
+{
+    Doctor *doctor = [doctors objectAtIndex:index];
+    [doctor setEmail:newEmail];
+    [self saveToFile:[self fileLocation]];
+}
+
+
+// Accessors:
+// ****************************************
 - (int) numOfDoctors
 {
     return [doctors count];

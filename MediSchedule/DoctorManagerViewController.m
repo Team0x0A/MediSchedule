@@ -16,6 +16,7 @@
 #import "DoctorManagerViewController.h"
 #import "DoctorManager.h"
 #import "CreateDoctorViewController.h"
+#import "EditDoctorViewController.h"
 
 //***************************************************************************************
 // Private Interface:
@@ -23,6 +24,7 @@
 @interface DoctorManagerViewController ()
 {
     DoctorManager *myManager; // Doctor manager to be used for entire applocation
+    int indexOfCurrentlySelectedCell;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addDoctorButton;
 
@@ -96,6 +98,14 @@
         
         CreateDoctorViewController *detailController = segue.destinationViewController;
         detailController.callBack = self;
+    }
+    else if ([[destination title] isEqual: @"EditDoctor"])
+    {
+        EditDoctorViewController *editDoctorViewController = segue.destinationViewController;
+        editDoctorViewController.doctorManager = myManager;
+        editDoctorViewController.doctorIndex = indexOfCurrentlySelectedCell;
+        editDoctorViewController.callBack = self;
+        
     }
 }
 
@@ -176,7 +186,7 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *) indexPath
 {
-    NSLog(@"shit just got detailed view tapped...");
+    indexOfCurrentlySelectedCell = [indexPath item];
     [self performSegueWithIdentifier:@"DoctorManagerToEditDoctorSegue" sender:self];
 }
 

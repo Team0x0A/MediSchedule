@@ -607,78 +607,19 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Edit Doctor" id="cJc-5b-bHk"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="r2t-Kf-eqe" id="NSR-jl-COh"/>
+                        <outlet property="emailTextField" destination="QIR-r4-mUK" id="YnU-xj-L8d"/>
+                        <outlet property="nameTextField" destination="T6t-5I-CY6" id="tie-XU-bBF"/>
+                        <outlet property="phoneNumberTextField" destination="CwG-op-4IT" id="JOn-86-dGp"/>
+                        <outlet property="saveButton" destination="8O1-MI-Clo" id="Tzm-S9-IKI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH2-al-7I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1423" y="1792"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CreateDoctorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateDoctorViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addressTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="createDoctorButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CreatePillViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatePillViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="createPillButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="doctorIdTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="CreateReminderViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateReminderViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="createReminderButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="dosageTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="pillIdTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="timeTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="DoctorManagerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DoctorManagerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addDoctorButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="EditDoctorViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditDoctorViewController.h"/>
-        </class>
-        <class className="LoginViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="createAccount:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="logIn:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="passWordTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="userNameTextField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="PillManagerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PillManagerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addPillButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="ReminderManagerViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderManagerViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addReminderButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="viewDoctorsButton" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="viewPillsButton" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
