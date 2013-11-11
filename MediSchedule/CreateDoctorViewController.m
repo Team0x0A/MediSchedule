@@ -56,25 +56,30 @@
 
 
 
-// createPillButtonTapped:
-// called by createPillButton
+
+
+// createDoctorButtonTapped:
+// called by createDoctorButton
 // ****************************************
 - (void) createDoctorButtonTapped: (id)sender
 {
-    /*
-    // Get the doctor name from the text field:
+    // Get all input data from text fields:
     NSString* name = [[self nameTextField] text];
+    NSString* address = [[self addressTextField] text];
+    NSString* phoneNumber = [[self phoneNumberTextField] text];
+    NSString* email = [[self emailTextField] text];
     
-    // Get the doctorId from the text field:
-    int doctorId = [[[self doctorIdTextField] text] integerValue];
+    // Add new doctor to doctorManager:
+    [callBack addDoctorWithName:name WithNumber:phoneNumber WithAddress:address WithEmail:email];
     
-    NSString* notes = [[self notesTextField] text];
+    NSLog(@"createDoctorButtonTapped called...");
     
-    [callBack addPillWithName:name WithImage:NULL WithDoctorId:doctorId WithNotes:notes];
-    */
     // Pop CreatePillViewController off of the navigationController view stack:
     [[self navigationController] popViewControllerAnimated:YES];
 }
+
+
+
 
 
 #pragma mark UITextFieldDelegate

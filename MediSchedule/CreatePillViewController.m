@@ -60,14 +60,12 @@
 // ****************************************
 - (void) createPillButtonTapped: (id)sender
 {
-    // Get the pill name from the text field:
+    // Get all input data from text fields:
     NSString* name = [[self nameTextField] text];
-    
-    // Get the doctorId from the text field:
     int doctorId = [[[self doctorIdTextField] text] integerValue];
-    
     NSString* notes = [[self notesTextField] text];
     
+    // add new pill to pillManager:
     [callBack addPillWithName:name WithImage:NULL WithDoctorId:doctorId WithNotes:notes];
     
     // Pop CreatePillViewController off of the navigationController view stack:

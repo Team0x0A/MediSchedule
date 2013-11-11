@@ -15,6 +15,7 @@
 
 #import "DoctorManagerViewController.h"
 #import "DoctorManager.h"
+#import "CreateDoctorViewController.h"
 
 //***************************************************************************************
 // Private Interface:
@@ -74,6 +75,7 @@
                WithAddress: (NSString*) newAddress
                  WithEmail: (NSString*) newEmail
 {
+    NSLog(@"addDoctor called...");
     [myManager addDoctorWithName:newName WithNumber:newNumber WithAddress:newAddress WithEmail:newEmail];
     [self addCellAt:[myManager numOfDoctors] - 1];
 }
@@ -86,15 +88,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue
                  sender:(id)sender
 {
-    /*
+    
     UIViewController* destination = [segue destinationViewController];
     
     if([[destination title] isEqual: @"CreateDoctor"])
     {
         
-        CreatePillViewController *detailController = segue.destinationViewController;
+        CreateDoctorViewController *detailController = segue.destinationViewController;
         detailController.callBack = self;
-    }*/
+    }
 }
 
 
@@ -169,6 +171,6 @@
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
 }
 @end
