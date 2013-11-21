@@ -38,7 +38,8 @@
 		9ED57BBA182C61AC000A8B38 /* PillManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BB9182C61AC000A8B38 /* PillManagerViewController.m */; };
 		9ED57BBD182C70BF000A8B38 /* CreatePillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */; };
 		D15F6E2B181DDC2300322100 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D15F6E2A181DDC2300322100 /* icon.png */; };
-		D1DB54CC183D6415000708B9 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DB54CB183D6415000708B9 /* Picture.m */; };
+		D1DB54CE183D7F1C000708B9 /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DB54CD183D7F1C000708B9 /* select.png */; };
+		D1DB54D7183D8A7C000708B9 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DB54D6183D8A7C000708B9 /* Picture.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,8 +104,9 @@
 		9ED57BBB182C70BF000A8B38 /* CreatePillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePillViewController.h; sourceTree = "<group>"; };
 		9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePillViewController.m; sourceTree = "<group>"; };
 		D15F6E2A181DDC2300322100 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		D1DB54CA183D6415000708B9 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
-		D1DB54CB183D6415000708B9 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
+		D1DB54CD183D7F1C000708B9 /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select.png; path = ../../Desktop/select.png; sourceTree = "<group>"; };
+		D1DB54D5183D8A7C000708B9 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
+		D1DB54D6183D8A7C000708B9 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,8 +141,8 @@
 				9E4D8A2F182D93990011850E /* Reminders */,
 				9EB6DD161821E1740086666E /* LoginViewController.h */,
 				9EB6DD171821E1740086666E /* LoginViewController.m */,
-				D1DB54CA183D6415000708B9 /* Picture.h */,
-				D1DB54CB183D6415000708B9 /* Picture.m */,
+				D1DB54D5183D8A7C000708B9 /* Picture.h */,
+				D1DB54D6183D8A7C000708B9 /* Picture.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				D15F6E2A181DDC2300322100 /* icon.png */,
+				D1DB54CD183D7F1C000708B9 /* select.png */,
 				0CB85710181C7E3100D71BA1 /* MediSchedule */,
 				0CB85737181C7E3200D71BA1 /* MediScheduleTests */,
 				0CB85709181C7E3100D71BA1 /* Frameworks */,
@@ -356,6 +359,7 @@
 				0CB85721181C7E3200D71BA1 /* Default-568h@2x.png in Resources */,
 				0CB85724181C7E3200D71BA1 /* MainStoryboard.storyboard in Resources */,
 				D15F6E2B181DDC2300322100 /* icon.png in Resources */,
+				D1DB54CE183D7F1C000708B9 /* select.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,7 +411,7 @@
 				9E4D8A2E182D938F0011850E /* DoctorManagerViewController.m in Sources */,
 				9E4D8A34182D9FBA0011850E /* CreateDoctorViewController.m in Sources */,
 				9E82E7F618306D560027A8E2 /* EditDoctorViewController.m in Sources */,
-				D1DB54CC183D6415000708B9 /* Picture.m in Sources */,
+				D1DB54D7183D8A7C000708B9 /* Picture.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

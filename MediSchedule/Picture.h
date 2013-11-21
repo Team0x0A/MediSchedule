@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Picture : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-
+@interface Picture : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+- (IBAction)ButCamera:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *ImageView;
 - (IBAction)ButPic:(id)sender;
-- (IBAction)ButCamero:(id)sender;
-@property (nonatomic, strong)UIImagePickerController *imagePicker;
+@property(nonatomic,strong)UIImagePickerController *imagePicker;
 
 @end

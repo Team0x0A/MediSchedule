@@ -13,7 +13,6 @@
 @end
 
 @implementation Picture
-@synthesize imagePicker;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,18 +42,19 @@
     self.imagePicker.delegate = self;
     [self presentViewController:self.imagePicker animated:YES completion:nil];
 }
-
--(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    UIImage *img = [info objectForKey: UIImagePickerControllerEditedImage];
+    UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
     [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
     self.ImageView.image = img;
-    
 }
 
 
-- (IBAction)ButCamero:(id)sender {
-    self.imagePicker = [[UIImagePickerController alloc]init];
-    self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+- (IBAction)ButCamera:(id)sender {
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        self.imagePicker = [[UIImagePickerController alloc]init];
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+        
 }
 @end

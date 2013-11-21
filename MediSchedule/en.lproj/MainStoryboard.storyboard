@@ -172,7 +172,7 @@
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Vhq-ml-O1K"/>
                         <barButtonItem title="Picture" id="vML-V3-mCm">
                             <connections>
-                                <segue destination="tFL-DL-lNA" kind="push" id="HFU-Fw-RtH"/>
+                                <segue destination="3XN-3d-8mw" kind="push" id="Vet-Fu-TfB"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -191,64 +191,45 @@
             <point key="canvasLocation" x="885" y="-315"/>
         </scene>
         <!--Picture - Picture-->
-        <scene sceneID="tnS-Rx-jEV">
+        <scene sceneID="W4P-QL-Njj">
             <objects>
-                <viewController id="tFL-DL-lNA" customClass="Picture" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Eel-1R-WwV">
+                <viewController id="3XN-3d-8mw" customClass="Picture" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t5M-u8-Lqw">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sQt-lz-cuF">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="334" id="Wth-TP-fOw"/>
-                                    <constraint firstAttribute="width" constant="305" id="YRN-o2-qVg"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jm-br-5oK">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Photos">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="ButPic:" destination="tFL-DL-lNA" eventType="touchUpInside" id="cJU-Mp-KPQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Umn-TR-ekl">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Camera">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="ButCamero:" destination="tFL-DL-lNA" eventType="touchUpInside" id="2jc-8d-D3C"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bd4-fS-LyS"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Umn-TR-ekl" secondAttribute="trailing" constant="32" id="3gZ-tI-TU5"/>
-                            <constraint firstItem="sQt-lz-cuF" firstAttribute="top" secondItem="Eel-1R-WwV" secondAttribute="top" constant="9" id="5sK-bb-cTJ"/>
-                            <constraint firstItem="sQt-lz-cuF" firstAttribute="centerX" secondItem="Eel-1R-WwV" secondAttribute="centerX" type="default" id="FMH-DP-HaU"/>
-                            <constraint firstAttribute="bottom" secondItem="8jm-br-5oK" secondAttribute="bottom" constant="61" id="fpn-ib-pM7"/>
-                            <constraint firstItem="8jm-br-5oK" firstAttribute="leading" secondItem="Eel-1R-WwV" secondAttribute="leading" constant="33" id="iXJ-el-z8W"/>
-                            <constraint firstItem="Umn-TR-ekl" firstAttribute="baseline" secondItem="8jm-br-5oK" secondAttribute="baseline" type="default" id="r6L-Rq-AG2"/>
+                            <constraint firstItem="Bd4-fS-LyS" firstAttribute="bottom" secondItem="t5M-u8-Lqw" secondAttribute="bottom" type="default" id="Ezn-LQ-aC7"/>
+                            <constraint firstItem="Bd4-fS-LyS" firstAttribute="top" secondItem="t5M-u8-Lqw" secondAttribute="top" type="default" id="Q21-Zj-zae"/>
+                            <constraint firstItem="Bd4-fS-LyS" firstAttribute="trailing" secondItem="t5M-u8-Lqw" secondAttribute="trailing" type="default" id="Spy-Fm-MPW"/>
+                            <constraint firstItem="Bd4-fS-LyS" firstAttribute="leading" secondItem="t5M-u8-Lqw" secondAttribute="leading" type="default" id="liG-rW-fhw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Picture" id="kXg-Hi-Lhp"/>
+                    <toolbarItems>
+                        <barButtonItem title="Photos" id="Lbk-Fj-wDq">
+                            <connections>
+                                <action selector="ButPic:" destination="3XN-3d-8mw" id="bKE-gK-rlZ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="u8A-yx-Wfo"/>
+                        <barButtonItem title="Camera" id="hdJ-tq-iOQ">
+                            <connections>
+                                <action selector="ButCamera:" destination="3XN-3d-8mw" id="yG1-0N-8tq"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Picture" id="JR9-cw-y1Y"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="ImageView" destination="sQt-lz-cuF" id="rr6-D5-PMS"/>
+                        <outlet property="ImageView" destination="Bd4-fS-LyS" id="j3Q-sT-QBh"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wId-ne-hk6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sfC-Hf-TLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1326" y="-313"/>
+            <point key="canvasLocation" x="1280" y="-315"/>
         </scene>
         <!--Doctor Manager View Controller-->
         <scene sceneID="IUg-Xl-dDQ">
@@ -747,7 +728,7 @@
         <class className="Picture" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/Picture.h"/>
             <relationships>
-                <relationship kind="action" name="ButCamero:"/>
+                <relationship kind="action" name="ButCamera:"/>
                 <relationship kind="action" name="ButPic:"/>
                 <relationship kind="outlet" name="ImageView" candidateClass="UIImageView"/>
             </relationships>
