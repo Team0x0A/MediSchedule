@@ -38,7 +38,6 @@
 		9ED57BBA182C61AC000A8B38 /* PillManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BB9182C61AC000A8B38 /* PillManagerViewController.m */; };
 		9ED57BBD182C70BF000A8B38 /* CreatePillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */; };
 		D15F6E2B181DDC2300322100 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D15F6E2A181DDC2300322100 /* icon.png */; };
-		D1DB54CE183D7F1C000708B9 /* select.png in Resources */ = {isa = PBXBuildFile; fileRef = D1DB54CD183D7F1C000708B9 /* select.png */; };
 		D1DB54D7183D8A7C000708B9 /* Picture.m in Sources */ = {isa = PBXBuildFile; fileRef = D1DB54D6183D8A7C000708B9 /* Picture.m */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +103,6 @@
 		9ED57BBB182C70BF000A8B38 /* CreatePillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePillViewController.h; sourceTree = "<group>"; };
 		9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePillViewController.m; sourceTree = "<group>"; };
 		D15F6E2A181DDC2300322100 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		D1DB54CD183D7F1C000708B9 /* select.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = select.png; path = ../../Desktop/select.png; sourceTree = "<group>"; };
 		D1DB54D5183D8A7C000708B9 /* Picture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Picture.h; sourceTree = "<group>"; };
 		D1DB54D6183D8A7C000708B9 /* Picture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Picture.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				D15F6E2A181DDC2300322100 /* icon.png */,
-				D1DB54CD183D7F1C000708B9 /* select.png */,
 				0CB85710181C7E3100D71BA1 /* MediSchedule */,
 				0CB85737181C7E3200D71BA1 /* MediScheduleTests */,
 				0CB85709181C7E3100D71BA1 /* Frameworks */,
@@ -329,6 +326,11 @@
 				CLASSPREFIX = MediSchedule;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Team 0x0A";
+				TargetAttributes = {
+					0CB85706181C7E3100D71BA1 = {
+						DevelopmentTeam = XM6475YHW9;
+					};
+				};
 			};
 			buildConfigurationList = 0CB85702181C7E3100D71BA1 /* Build configuration list for PBXProject "MediSchedule" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -359,7 +361,6 @@
 				0CB85721181C7E3200D71BA1 /* Default-568h@2x.png in Resources */,
 				0CB85724181C7E3200D71BA1 /* MainStoryboard.storyboard in Resources */,
 				D15F6E2B181DDC2300322100 /* icon.png in Resources */,
-				D1DB54CE183D7F1C000708B9 /* select.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,10 +521,13 @@
 		0CB85743181C7E3200D71BA1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediSchedule/MediSchedule-Prefix.pch";
 				INFOPLIST_FILE = "MediSchedule/MediSchedule-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos6.1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -532,10 +536,13 @@
 		0CB85744181C7E3200D71BA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MediSchedule/MediSchedule-Prefix.pch";
 				INFOPLIST_FILE = "MediSchedule/MediSchedule-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos6.1;
 				WRAPPER_EXTENSION = app;
 			};
