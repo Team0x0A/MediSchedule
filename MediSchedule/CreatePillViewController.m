@@ -166,12 +166,22 @@
     [self pickerView:self.doctorPicker didSelectRow:[self.doctorPicker selectedRowInComponent:0] inComponent:0];
     if ([self.doctorPicker isHidden])
     {
+        if ([myManager numOfDoctors] == 0)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No doctors found"
+                                                            message:@"Please add doctors into the application."
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            return;
+        }
         self.chooseDoctorButton.title = @"Done";
         [self.doctorPicker setHidden:NO];
     }
     else
     {
-        self.chooseDoctorButton.title = @"Choose Pill";
+        self.chooseDoctorButton.title = @"Choose Doctor";
         [self.doctorPicker setHidden:YES];
     }
 }

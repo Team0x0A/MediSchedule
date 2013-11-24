@@ -48,12 +48,6 @@
 }
 
 
-- (void) viewWillAppear:(BOOL)animated
-{
-    //ONLY HERE FOR DEBUGGING PURPOSES (disables login screen) delete after!!
-    [self performSegueWithIdentifier:@"login" sender:self];
-}
-
 // viewDidLoad:
 // ****************************************
 - (void)viewDidLoad

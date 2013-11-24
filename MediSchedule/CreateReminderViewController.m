@@ -164,6 +164,16 @@
     [self pickerView:self.pillPicker didSelectRow:[self.pillPicker selectedRowInComponent:0] inComponent:0];
     if ([self.pillPicker isHidden])
     {
+        if ([myManager numOfPills] == 0)
+        {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No pills found"
+                                               message:@"Please add medications into the application."
+                                              delegate:nil
+                                     cancelButtonTitle:@"OK"
+                                     otherButtonTitles:nil];
+            [alert show];
+            return;
+        }
         self.choosePillButton.title = @"Done";
         [self.pillPicker setHidden:NO];
         [self.imageOfPill setHidden:YES];
