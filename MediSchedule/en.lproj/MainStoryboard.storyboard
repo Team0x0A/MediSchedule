@@ -182,11 +182,6 @@
                     <toolbarItems>
                         <barButtonItem title="Create Reminder" id="OOl-Pf-bDa"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="Vhq-ml-O1K"/>
-                        <barButtonItem title="Picture" id="vML-V3-mCm">
-                            <connections>
-                                <segue destination="3XN-3d-8mw" kind="push" id="Vet-Fu-TfB"/>
-                            </connections>
-                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Create Reminder" id="26"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -201,49 +196,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885" y="-315"/>
-        </scene>
-        <!--Picture - Picture-->
-        <scene sceneID="W4P-QL-Njj">
-            <objects>
-                <viewController id="3XN-3d-8mw" customClass="Picture" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="t5M-u8-Lqw">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bd4-fS-LyS">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Bd4-fS-LyS" firstAttribute="leading" secondItem="t5M-u8-Lqw" secondAttribute="leading" type="default" id="M62-TN-47g"/>
-                            <constraint firstItem="Bd4-fS-LyS" firstAttribute="top" secondItem="t5M-u8-Lqw" secondAttribute="top" type="default" id="S45-w3-xy0"/>
-                            <constraint firstAttribute="bottom" secondItem="Bd4-fS-LyS" secondAttribute="bottom" type="default" id="U9V-Yw-87H"/>
-                            <constraint firstAttribute="trailing" secondItem="Bd4-fS-LyS" secondAttribute="trailing" type="default" id="n1F-ZH-vrg"/>
-                        </constraints>
-                    </view>
-                    <toolbarItems>
-                        <barButtonItem title="Photos" id="Lbk-Fj-wDq">
-                            <connections>
-                                <action selector="ButPic:" destination="3XN-3d-8mw" id="bKE-gK-rlZ"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="u8A-yx-Wfo"/>
-                        <barButtonItem title="Camera" id="hdJ-tq-iOQ">
-                            <connections>
-                                <action selector="ButCamera:" destination="3XN-3d-8mw" id="yG1-0N-8tq"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
-                    <navigationItem key="navigationItem" title="Picture" id="JR9-cw-y1Y"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="ImageView" destination="Bd4-fS-LyS" id="j3Q-sT-QBh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sfC-Hf-TLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1280" y="-315"/>
         </scene>
         <!--Doctor Manager View Controller-->
         <scene sceneID="IUg-Xl-dDQ">
