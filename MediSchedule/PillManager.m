@@ -163,7 +163,7 @@
     return  [pills count];
 }
 
-- (NSArray*) listOfPillsIds
+- (NSArray*) listOfPillIds
 {
     NSMutableArray *pillIds = [[NSMutableArray alloc] init];
     for (Pill* i in pills)

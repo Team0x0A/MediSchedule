@@ -20,7 +20,7 @@
 //***************************************************************************************
 // Public Interface:
 //***************************************************************************************
-@interface CreateReminderViewController : UIViewController <UITextFieldDelegate>
+@interface CreateReminderViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (strong, nonatomic) ReminderManagerViewController* callBack;
 

@@ -222,7 +222,7 @@
     
     NSLog(@"PillMangager description: %@",[myManager description]);
     
-    NSLog(@"PillMangager pillids: %@",[[myManager listOfPillsIds] description]);
+    NSLog(@"PillMangager pillids: %@",[[myManager listOfPillIds] description]);
     
     assert([myManager numOfPills] == 5);
     

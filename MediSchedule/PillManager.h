@@ -48,7 +48,7 @@
 
 - (int) numOfPills;
 
-- (NSArray*) listOfPillsIds;
+- (NSArray*) listOfPillIds;
 
 - (NSString*) nameOfPillWithId: (int) pillId;
 

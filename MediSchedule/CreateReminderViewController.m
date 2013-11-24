@@ -15,20 +15,26 @@
 
 
 #import "CreateReminderViewController.h"
+#import "PillManager.h"
 
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
 @interface CreateReminderViewController ()
 {
-    
+    PillManager *myManager;
+    NSArray *listOfPillIds;
+    int pillid;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *timeTextField;
-@property (strong, nonatomic) IBOutlet UITextField *pillIdTextField;
 @property (strong, nonatomic) IBOutlet UITextField *dosageTextField;
 @property (strong, nonatomic) IBOutlet UITextField *notesTextField;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *createReminderButton;
+@property (strong, nonatomic) IBOutlet UIPickerView *pillPicker;
+@property (strong, nonatomic) IBOutlet UILabel *pillName;
+@property (strong, nonatomic) IBOutlet UIImageView *imageOfPill;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *choosePillButton;
 
 
 - (void)configureView;
@@ -72,13 +78,14 @@
     
     // Set this view controller as the delegate of all the text fields
     [_timeTextField setDelegate:self];
-    [_pillIdTextField setDelegate:self];
     [_dosageTextField setDelegate:self];
     [_notesTextField setDelegate:self];
     
     // Setup the createReminderButton to call the createReminderButtonTapped method:
     [_createReminderButton setTarget:self];
     [_createReminderButton setAction:@selector(createReminderButtonTapped:)];
+    myManager =  [[PillManager alloc] init];
+    listOfPillIds = [[NSArray alloc] initWithArray:[myManager listOfPillIds]];
 }
 
 
@@ -93,9 +100,6 @@
     // Get time from field:
     // This needs to be read from the text field:
     Time* time = [[Time alloc] init];
-    
-    // Get pillId from field:
-    int pillid = [[[self pillIdTextField] text] integerValue];
     
     // Get dosage from field:
     int dosage = [[[self dosageTextField] text] integerValue];
@@ -127,6 +131,51 @@
 	return YES;
     
 }
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
+{
+    return [listOfPillIds count];
+}
+
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
+{
+    return [myManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+{
+    if([pickerView numberOfRowsInComponent:0] != 0)
+    {
+        self.pillName.text = [myManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
+        pillid = [[listOfPillIds objectAtIndex:row] integerValue];
+        [self.imageOfPill setImage:[myManager imageOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]]];
+        [[self imageOfPill] setHidden:YES];
+    }
+}
+
+- (IBAction)displayPillPicker:(UIBarButtonItem *)sender
+{
+    if ([self.pillPicker isHidden])
+    {
+        self.choosePillButton.title = @"Done";
+    }
+    else
+    {
+        self.choosePillButton.title = @"Choose Pill";
+    }
+
+    self.pillPicker.hidden = !self.pillPicker.hidden;
+    self.imageOfPill.hidden = !self.imageOfPill.hidden;
+}
+
 
 
 @end
