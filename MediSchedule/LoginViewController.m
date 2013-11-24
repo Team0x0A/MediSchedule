@@ -37,7 +37,7 @@
 
 
 
-// viewDidLoad:
+// initWithNibName:
 // ****************************************
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,14 +48,17 @@
 }
 
 
-
+- (void) viewWillAppear:(BOOL)animated
+{
+    //ONLY HERE FOR DEBUGGING PURPOSES (disables login screen) delete after!!
+    [self performSegueWithIdentifier:@"login" sender:self];
+}
 
 // viewDidLoad:
 // ****************************************
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     userProfile = [[NSMutableDictionary alloc] initWithContentsOfURL:[self fileLocation]];
     if (!userProfile)//If file was empty (i.e no username/password saved)
     {

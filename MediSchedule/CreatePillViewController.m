@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *doctorIdTextField;
 @property (weak, nonatomic) IBOutlet UITextField *notesTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *createPillButton;
+@property(nonatomic,strong)UIImagePickerController *imagePicker;
+@property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -64,9 +66,9 @@
     NSString* name = [[self nameTextField] text];
     int doctorId = [[[self doctorIdTextField] text] integerValue];
     NSString* notes = [[self notesTextField] text];
-    
+    UIImage *image = [[self imageView] image];
     // add new pill to pillManager:
-    [callBack addPillWithName:name WithImage:NULL WithDoctorId:doctorId WithNotes:notes];
+    [callBack addPillWithName:name WithImage:image WithDoctorId:doctorId WithNotes:notes];
     
     // Pop CreatePillViewController off of the navigationController view stack:
     [[self navigationController] popViewControllerAnimated:YES];
@@ -77,11 +79,51 @@
 // textFieldShouldReturn:
 // delegated from the name, doctorId and notes text fields:
 // ****************************************
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
     
 	[textField resignFirstResponder];
     
 	return YES;
     
 }
+
+// picFromPhotos:
+// Get new image from photo library on phone
+// *************************************************
+- (IBAction)picFromPhotos:(UIButton *)sender
+{
+    self.imagePicker = [[UIImagePickerController alloc] init];
+    self.imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self.imagePicker setAllowsEditing:YES];
+    [self.imagePicker setDelegate:(id<UINavigationControllerDelegate,UIImagePickerControllerDelegate>)self];
+    [self presentViewController:self.imagePicker animated:YES completion:nil];
+}
+
+// picFromCamera:
+// Get new image from camera on phone
+// *************************************************
+- (IBAction)picFromCamera:(UIButton *)sender
+{
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        self.imagePicker = [[UIImagePickerController alloc]init];
+        self.imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        [self.imagePicker setDelegate:(id<UINavigationControllerDelegate,UIImagePickerControllerDelegate>)self];
+        [self.imagePicker setAllowsEditing:YES];
+        [self presentViewController:self.imagePicker animated:YES completion:nil];
+    }
+}
+
+// imagePickerController: pickerDidFinishPickingMediaWithInfo:
+// Called when picture has been selected; adds picture into pill
+// **********************************************************************
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
+    [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
+    self.imageView.image = img;
+}
+
+
 @end

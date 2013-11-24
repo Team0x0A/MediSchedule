@@ -20,7 +20,7 @@
 //***************************************************************************************
 // Public Interface:
 //***************************************************************************************
-@interface CreatePillViewController : UIViewController <UITextFieldDelegate>
+@interface CreatePillViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate>
 
 @property (strong, nonatomic) PillManagerViewController* callBack;
 
