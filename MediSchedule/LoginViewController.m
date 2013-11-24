@@ -35,8 +35,6 @@
 //***************************************************************************************
 @implementation LoginViewController
 
-
-
 // initWithNibName:
 // ****************************************
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -131,8 +129,14 @@
     }
 }
 
-- (IBAction)logIn:(UIBarButtonItem *)sender
+- (IBAction)login:(UIBarButtonItem *)sender
 {
+    ///////////////////////////////////////////////////////////////////////////////////////////// DELETE AFTER TESTING
+    //Uncomment to disable login authentication:
+    //[self performSegueWithIdentifier:@"login" sender:self];
+    //return;
+    //////////////////////////////////////////////////////////////////////////////////////////////
+    
     UIAlertView *alert;
     if ([[userProfile objectForKey:@"username"] isEqualToString:@""] && [[userProfile objectForKey:@"password"] isEqualToString:@""])
     {
