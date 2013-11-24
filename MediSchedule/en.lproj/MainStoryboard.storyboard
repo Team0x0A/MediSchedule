@@ -400,14 +400,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Doctor Id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUp-mt-y1O">
-                                <rect key="frame" x="37" y="144" width="72" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Notes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEN-u9-EZW">
-                                <rect key="frame" x="37" y="189" width="46" height="30"/>
+                                <rect key="frame" x="37" y="132" width="46" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -420,25 +414,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="De2-oN-ebi">
-                                <rect key="frame" x="141" y="141" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-Hr-zmX">
-                                <rect key="frame" x="141" y="189" width="97" height="30"/>
+                                <rect key="frame" x="141" y="132" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WME-bd-kay">
-                                <rect key="frame" x="141" y="246" width="91" height="91"/>
+                                <rect key="frame" x="141" y="189" width="91" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="7gJ-Md-mbs"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fV-Hw-WTf">
-                                <rect key="frame" x="37" y="246" width="81" height="26"/>
+                                <rect key="frame" x="37" y="189" width="81" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="JA6-6K-HCX"/>
@@ -457,7 +446,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ai2-pN-emh">
-                                <rect key="frame" x="37" y="279" width="81" height="25"/>
+                                <rect key="frame" x="37" y="222" width="81" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="okf-7h-0vk"/>
@@ -474,42 +463,65 @@
                                     <action selector="picFromCamera:" destination="ol7-fq-Jvy" eventType="touchUpInside" id="gjp-he-MY3"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No doctor selected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-fi-iPP">
+                                <rect key="frame" x="0.0" y="57" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILQ-Uv-PSt">
+                                <rect key="frame" x="0.0" y="300" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ol7-fq-Jvy" id="Zyy-rZ-zbU"/>
+                                    <outlet property="delegate" destination="ol7-fq-Jvy" id="h2q-Cl-pV2"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zs2-hH-yQB" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="102" id="0o6-tH-eQT"/>
-                            <constraint firstItem="k7Y-jy-Yr1" firstAttribute="trailing" secondItem="De2-oN-ebi" secondAttribute="trailing" type="default" id="1Sb-J4-Va2"/>
-                            <constraint firstItem="De2-oN-ebi" firstAttribute="leading" secondItem="k7Y-jy-Yr1" secondAttribute="leading" type="default" id="1dD-YZ-CTf"/>
-                            <constraint firstItem="De2-oN-ebi" firstAttribute="baseline" secondItem="TUp-mt-y1O" secondAttribute="baseline" type="default" id="32r-EF-qxh"/>
-                            <constraint firstItem="TUp-mt-y1O" firstAttribute="leading" secondItem="vEN-u9-EZW" secondAttribute="leading" type="default" id="4rg-Qi-m73"/>
+                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" type="default" id="9mq-gr-D6e"/>
                             <constraint firstItem="4fV-Hw-WTf" firstAttribute="leading" secondItem="vEN-u9-EZW" secondAttribute="leading" type="default" id="B6S-9K-qcs"/>
+                            <constraint firstAttribute="trailing" secondItem="ILQ-Uv-PSt" secondAttribute="trailing" type="default" id="C7Z-8s-0qV"/>
                             <constraint firstItem="Ai2-pN-emh" firstAttribute="trailing" secondItem="4fV-Hw-WTf" secondAttribute="trailing" type="default" id="GCq-P5-s75"/>
-                            <constraint firstItem="vEN-u9-EZW" firstAttribute="bottom" secondItem="4QR-Hr-zmX" secondAttribute="bottom" type="default" id="HXi-r2-scW"/>
-                            <constraint firstItem="De2-oN-ebi" firstAttribute="trailing" secondItem="4QR-Hr-zmX" secondAttribute="trailing" type="default" id="JPh-fN-nfd"/>
+                            <constraint firstItem="vEN-u9-EZW" firstAttribute="leading" secondItem="zs2-hH-yQB" secondAttribute="leading" type="default" id="M7x-kh-OD1"/>
+                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="leading" secondItem="Zhc-fi-iPP" secondAttribute="leading" type="default" id="MMn-zb-w6N"/>
                             <constraint firstItem="4fV-Hw-WTf" firstAttribute="top" secondItem="WME-bd-kay" secondAttribute="top" type="default" id="NJq-LF-o7S"/>
-                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="leading" secondItem="De2-oN-ebi" secondAttribute="leading" type="default" id="OGW-vJ-Y6p"/>
-                            <constraint firstItem="zs2-hH-yQB" firstAttribute="leading" secondItem="TUp-mt-y1O" secondAttribute="leading" type="default" id="PZZ-z6-izF"/>
-                            <constraint firstItem="vEN-u9-EZW" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="189" id="RbF-gD-geL"/>
                             <constraint firstItem="k7Y-jy-Yr1" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="141" id="U3T-Ia-zLG"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="leading" secondItem="k7Y-jy-Yr1" secondAttribute="leading" type="default" id="ZIc-ux-1Hq"/>
                             <constraint firstItem="zs2-hH-yQB" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="37" id="anp-ZL-ryA"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="top" secondItem="vEN-u9-EZW" secondAttribute="top" type="default" id="cCk-VO-LPF"/>
                             <constraint firstItem="WME-bd-kay" firstAttribute="centerY" secondItem="Ai2-pN-emh" secondAttribute="centerY" type="default" id="drV-RD-tUR"/>
-                            <constraint firstItem="De2-oN-ebi" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="141" id="fz2-ZZ-Lbg"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="top" secondItem="k7Y-jy-Yr1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="e4k-tk-CEr"/>
+                            <constraint firstItem="4fV-Hw-WTf" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="189" id="eQU-wY-y1V"/>
                             <constraint firstItem="Ai2-pN-emh" firstAttribute="top" secondItem="4fV-Hw-WTf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hyb-NR-s99"/>
                             <constraint firstItem="k7Y-jy-Yr1" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="94" id="l5F-BF-iFj"/>
-                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="top" secondItem="vEN-u9-EZW" secondAttribute="top" type="default" id="pME-wo-hDf"/>
-                            <constraint firstAttribute="bottom" secondItem="WME-bd-kay" secondAttribute="bottom" constant="123" id="qDN-1c-1Hj"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="bottom" secondItem="vEN-u9-EZW" secondAttribute="bottom" type="default" id="qCr-3d-SoV"/>
+                            <constraint firstItem="Zhc-fi-iPP" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="57" id="qIJ-6w-9w2"/>
                             <constraint firstItem="WME-bd-kay" firstAttribute="leading" secondItem="4QR-Hr-zmX" secondAttribute="leading" type="default" id="rnC-ii-uAZ"/>
+                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="300" type="user" id="sEf-Dc-J0v"/>
                             <constraint firstItem="Ai2-pN-emh" firstAttribute="leading" secondItem="4fV-Hw-WTf" secondAttribute="leading" type="default" id="wtz-rm-fyk"/>
+                            <constraint firstItem="4QR-Hr-zmX" firstAttribute="trailing" secondItem="k7Y-jy-Yr1" secondAttribute="trailing" type="default" id="x63-Fg-uh2"/>
+                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="trailing" secondItem="Zhc-fi-iPP" secondAttribute="trailing" type="default" id="zLn-zW-uJs"/>
                         </constraints>
                     </view>
                     <toolbarItems>
                         <barButtonItem title="Create Pill" id="miL-bP-goy"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="RLZ-Y5-kDE"/>
+                        <barButtonItem title="Choose Doctor" id="YxP-0v-Ihz">
+                            <connections>
+                                <action selector="displayPillPicker:" destination="ol7-fq-Jvy" id="pOB-Bc-bqh"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Create Pill" id="d3f-GI-KJJ"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="chooseDoctorButton" destination="YxP-0v-Ihz" id="U1b-Re-QFf"/>
                         <outlet property="createPillButton" destination="miL-bP-goy" id="JPM-hQ-p8Q"/>
-                        <outlet property="doctorIdTextField" destination="De2-oN-ebi" id="tvG-bI-fGc"/>
+                        <outlet property="doctorName" destination="Zhc-fi-iPP" id="LHF-aS-iBf"/>
+                        <outlet property="doctorPicker" destination="ILQ-Uv-PSt" id="jfl-gI-zX5"/>
                         <outlet property="imageView" destination="WME-bd-kay" id="VFW-d2-Rk7"/>
                         <outlet property="nameTextField" destination="k7Y-jy-Yr1" id="CKw-5W-aDb"/>
                         <outlet property="notesTextField" destination="4QR-Hr-zmX" id="ewb-JN-BDb"/>

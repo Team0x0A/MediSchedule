@@ -24,7 +24,7 @@
 {
     PillManager *myManager;
     NSArray *listOfPillIds;
-    int pillid;
+    int pillId;
 }
 
 @property (strong, nonatomic) IBOutlet UITextField *timeTextField;
@@ -109,7 +109,7 @@
     
     // Add the reminder to the reminder manager:
     [callBack addReminderWithTime:time
-                       WithPillId:pillid
+                       WithPillId:pillId
                        WithDosage:dosage
                         WithNotes:notes];
     
@@ -124,12 +124,10 @@
 // textFieldShouldReturn:
 // delegated from the time, pillId, dosage and notes text fields:
 // ****************************************
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
 	[textField resignFirstResponder];
-    
 	return YES;
-    
 }
 
 // returns the number of 'columns' to display.
@@ -155,7 +153,7 @@
     if([pickerView numberOfRowsInComponent:0] != 0)
     {
         self.pillName.text = [myManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
-        pillid = [[listOfPillIds objectAtIndex:row] integerValue];
+        pillId = [[listOfPillIds objectAtIndex:row] integerValue];
         [self.imageOfPill setImage:[myManager imageOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]]];
         [[self imageOfPill] setHidden:YES];
     }
@@ -163,17 +161,19 @@
 
 - (IBAction)displayPillPicker:(UIBarButtonItem *)sender
 {
+    [self pickerView:self.pillPicker didSelectRow:[self.pillPicker selectedRowInComponent:0] inComponent:0];
     if ([self.pillPicker isHidden])
     {
         self.choosePillButton.title = @"Done";
+        [self.pillPicker setHidden:NO];
+        [self.imageOfPill setHidden:YES];
     }
     else
     {
         self.choosePillButton.title = @"Choose Pill";
+        [self.pillPicker setHidden:YES];
+        [self.imageOfPill setHidden:NO];
     }
-
-    self.pillPicker.hidden = !self.pillPicker.hidden;
-    self.imageOfPill.hidden = !self.imageOfPill.hidden;
 }
 
 

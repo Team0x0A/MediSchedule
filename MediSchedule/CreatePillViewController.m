@@ -14,17 +14,28 @@
  */
 
 #import "CreatePillViewController.h"
+#import "DoctorManager.h"
 
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
 @interface CreatePillViewController ()
+{
+    DoctorManager *myManager;
+    NSArray *listOfDoctorIds;
+     int doctorId;
+}
+
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *doctorIdTextField;
+
 @property (weak, nonatomic) IBOutlet UITextField *notesTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *createPillButton;
 @property(nonatomic,strong)UIImagePickerController *imagePicker;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (strong, nonatomic) IBOutlet UIPickerView *doctorPicker;
+@property (strong, nonatomic) IBOutlet UILabel *doctorName;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *chooseDoctorButton;
 
 @end
 
@@ -47,13 +58,13 @@
 	
     // Set this view controller as the delegate of all the text fields:
     [_nameTextField setDelegate:self];
-    [_doctorIdTextField setDelegate:self];
     [_notesTextField setDelegate:self];
     
     // Setup the createPillButton to call the createPillButtonTapped method:
     [_createPillButton setTarget:self];
     [_createPillButton setAction:@selector(createPillButtonTapped:)];
-    
+    myManager =  [[DoctorManager alloc] init];
+    listOfDoctorIds = [[NSArray alloc] initWithArray:[myManager listOfDoctorIds]];
 }
 
 
@@ -64,7 +75,6 @@
 {
     // Get all input data from text fields:
     NSString* name = [[self nameTextField] text];
-    int doctorId = [[[self doctorIdTextField] text] integerValue];
     NSString* notes = [[self notesTextField] text];
     UIImage *image = [[self imageView] image];
     // add new pill to pillManager:
@@ -123,6 +133,47 @@
     UIImage *img = [info objectForKey:UIImagePickerControllerEditedImage];
     [self.imagePicker dismissViewControllerAnimated:YES completion:nil];
     self.imageView.image = img;
+}
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
+{
+    return [listOfDoctorIds count];
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
+{
+    return [myManager nameOfDoctorWithId:[[listOfDoctorIds objectAtIndex:row] integerValue]];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
+{
+    if([pickerView numberOfRowsInComponent:0] != 0)
+    {
+        self.doctorName.text = [myManager nameOfDoctorWithId:[[listOfDoctorIds objectAtIndex:row] integerValue]];
+        doctorId = [[listOfDoctorIds objectAtIndex:row] integerValue];
+    }
+}
+
+- (IBAction)displayPillPicker:(UIBarButtonItem *)sender
+{
+    [self pickerView:self.doctorPicker didSelectRow:[self.doctorPicker selectedRowInComponent:0] inComponent:0];
+    if ([self.doctorPicker isHidden])
+    {
+        self.chooseDoctorButton.title = @"Done";
+        [self.doctorPicker setHidden:NO];
+    }
+    else
+    {
+        self.chooseDoctorButton.title = @"Choose Pill";
+        [self.doctorPicker setHidden:YES];
+    }
 }
 
 
