@@ -62,6 +62,11 @@
     [_userNameTextField setDelegate:self];
     [_passWordTextField setDelegate:self];
     
+    //when the keyboard pops up, screen move up
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+
+    
 }
 
 
@@ -178,6 +183,18 @@
                                                                       inDomains:NSUserDomainMask] lastObject];
     return [NSURL URLWithString:@"UserProfile"
                   relativeToURL:documentDirectory];
+}
+
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    //Assign new frame to your view
+    [self.view setFrame:CGRectMake(0,-60,320,460)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
+    
+}
+
+-(void)keyboardDidHide:(NSNotification *)notification
+{
+    [self.view setFrame:CGRectMake(0,0,320,460)];
 }
 
 @end
