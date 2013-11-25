@@ -116,9 +116,6 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N1l-oe-vFj">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="P9S-Hg-RtY"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -144,7 +141,10 @@
                                 </connections>
                             </pickerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No pill selected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV6-zk-Fen">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="g2c-OY-6gG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-8W-rdl">
@@ -157,24 +157,24 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TRr-i9-26V" firstAttribute="top" secondItem="uX2-C2-Wkn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7z2-VM-z77"/>
-                            <constraint firstItem="ZgG-8W-rdl" firstAttribute="leading" secondItem="2eF-uG-9LE" secondAttribute="leading" type="default" id="BLT-dA-8g2"/>
-                            <constraint firstItem="dV6-zk-Fen" firstAttribute="top" secondItem="22" secondAttribute="top" constant="72" id="IXY-ng-6HA"/>
                             <constraint firstItem="uX2-C2-Wkn" firstAttribute="bottom" secondItem="MIe-fR-nYg" secondAttribute="bottom" type="default" id="JTi-l8-VDf"/>
                             <constraint firstItem="uX2-C2-Wkn" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="117" id="KCM-o7-lQf"/>
                             <constraint firstItem="TRr-i9-26V" firstAttribute="leading" secondItem="uX2-C2-Wkn" secondAttribute="leading" type="default" id="MSn-B0-unI"/>
+                            <constraint firstItem="ZgG-8W-rdl" firstAttribute="centerX" secondItem="naz-hE-csD" secondAttribute="centerX" type="default" id="MaL-ot-vDN"/>
+                            <constraint firstItem="ZgG-8W-rdl" firstAttribute="centerY" secondItem="naz-hE-csD" secondAttribute="centerY" type="default" id="Ouy-y2-hjm"/>
                             <constraint firstItem="TRr-i9-26V" firstAttribute="trailing" secondItem="uX2-C2-Wkn" secondAttribute="trailing" type="default" id="PCK-jc-HY2"/>
-                            <constraint firstAttribute="bottom" secondItem="ZgG-8W-rdl" secondAttribute="bottom" constant="89" id="Pak-h3-k30"/>
-                            <constraint firstItem="N1l-oe-vFj" firstAttribute="top" secondItem="22" secondAttribute="top" constant="186" id="QbL-2J-mlD"/>
+                            <constraint firstItem="N1l-oe-vFj" firstAttribute="top" secondItem="TRr-i9-26V" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Pjy-3x-5sq"/>
                             <constraint firstItem="N1l-oe-vFj" firstAttribute="bottom" secondItem="2eF-uG-9LE" secondAttribute="bottom" type="default" id="Qih-mS-0lx"/>
-                            <constraint firstItem="naz-hE-csD" firstAttribute="leading" secondItem="dV6-zk-Fen" secondAttribute="leading" type="default" id="Sxe-Kx-bTC"/>
-                            <constraint firstItem="naz-hE-csD" firstAttribute="trailing" secondItem="dV6-zk-Fen" secondAttribute="trailing" type="default" id="TAC-sy-H2P"/>
                             <constraint firstAttribute="trailing" secondItem="naz-hE-csD" secondAttribute="trailing" type="user" id="Uqz-nO-UD7"/>
-                            <constraint firstItem="naz-hE-csD" firstAttribute="top" secondItem="22" secondAttribute="top" constant="300" type="user" id="WBW-a1-w1L"/>
                             <constraint firstItem="N1l-oe-vFj" firstAttribute="trailing" secondItem="TRr-i9-26V" secondAttribute="trailing" type="default" id="WkI-TA-FJi"/>
+                            <constraint firstItem="dV6-zk-Fen" firstAttribute="trailing" secondItem="22" secondAttribute="trailing" type="default" id="c2T-1y-pBt"/>
                             <constraint firstItem="uX2-C2-Wkn" firstAttribute="top" secondItem="dV6-zk-Fen" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dmw-AH-feE"/>
                             <constraint firstItem="dV6-zk-Fen" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="hPh-wb-k0d"/>
                             <constraint firstItem="TRr-i9-26V" firstAttribute="bottom" secondItem="Vzl-1X-89U" secondAttribute="bottom" type="default" id="hdm-QQ-J9F"/>
+                            <constraint firstItem="naz-hE-csD" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="iZx-NO-5F9"/>
                             <constraint firstItem="Vzl-1X-89U" firstAttribute="leading" secondItem="MIe-fR-nYg" secondAttribute="leading" type="default" id="kAO-bJ-SOp"/>
+                            <constraint firstItem="naz-hE-csD" firstAttribute="bottom" secondItem="22" secondAttribute="bottom" type="default" id="kde-xb-Btt"/>
+                            <constraint firstItem="dV6-zk-Fen" firstAttribute="top" secondItem="22" secondAttribute="top" constant="10" id="p9n-yO-4q1"/>
                             <constraint firstItem="TRr-i9-26V" firstAttribute="leading" secondItem="N1l-oe-vFj" secondAttribute="leading" type="default" id="sVi-AY-GUT"/>
                             <constraint firstItem="MIe-fR-nYg" firstAttribute="leading" secondItem="22" secondAttribute="leading" constant="36" id="yiY-QI-tNJ"/>
                             <constraint firstItem="Vzl-1X-89U" firstAttribute="leading" secondItem="2eF-uG-9LE" secondAttribute="leading" type="default" id="zcc-fe-2gv"/>
@@ -396,6 +396,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WME-bd-kay">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="7gJ-Md-mbs"/>
+                                    <constraint firstAttribute="height" constant="89" id="Rbj-pV-B8L"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fV-Hw-WTf">
@@ -432,7 +433,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No doctor selected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-fi-iPP">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Z5o-es-zPw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILQ-Uv-PSt">
@@ -444,29 +448,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Zhc-fi-iPP" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="13" id="15O-ZQ-5xL"/>
+                            <constraint firstItem="k7Y-jy-Yr1" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="50" id="54Y-qJ-O0a"/>
+                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="trailing" secondItem="L9n-nt-ijZ" secondAttribute="trailing" type="default" id="6v1-VS-GtX"/>
                             <constraint firstItem="4fV-Hw-WTf" firstAttribute="leading" secondItem="vEN-u9-EZW" secondAttribute="leading" type="default" id="B6S-9K-qcs"/>
-                            <constraint firstItem="Zhc-fi-iPP" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="69" id="Bk6-Fy-Vze"/>
                             <constraint firstItem="Ai2-pN-emh" firstAttribute="trailing" secondItem="4fV-Hw-WTf" secondAttribute="trailing" type="default" id="GCq-P5-s75"/>
-                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="top" secondItem="WME-bd-kay" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HcU-5g-a3G"/>
                             <constraint firstItem="vEN-u9-EZW" firstAttribute="leading" secondItem="zs2-hH-yQB" secondAttribute="leading" type="default" id="M7x-kh-OD1"/>
-                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="leading" secondItem="Zhc-fi-iPP" secondAttribute="leading" type="default" id="MMn-zb-w6N"/>
-                            <constraint firstItem="4fV-Hw-WTf" firstAttribute="top" secondItem="WME-bd-kay" secondAttribute="top" type="default" id="NJq-LF-o7S"/>
+                            <constraint firstItem="4fV-Hw-WTf" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="175" id="P8A-PS-jUE"/>
+                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="bottom" secondItem="L9n-nt-ijZ" secondAttribute="bottom" type="default" id="Peu-hW-3wm"/>
                             <constraint firstAttribute="trailing" secondItem="Zhc-fi-iPP" secondAttribute="trailing" type="default" id="Pkr-0n-41y"/>
                             <constraint firstItem="k7Y-jy-Yr1" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="141" id="U3T-Ia-zLG"/>
+                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" type="default" id="U57-yf-268"/>
                             <constraint firstItem="4QR-Hr-zmX" firstAttribute="leading" secondItem="k7Y-jy-Yr1" secondAttribute="leading" type="default" id="ZIc-ux-1Hq"/>
                             <constraint firstItem="zs2-hH-yQB" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" constant="37" id="anp-ZL-ryA"/>
-                            <constraint firstItem="k7Y-jy-Yr1" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="106" id="bB6-xL-iIP"/>
                             <constraint firstItem="4QR-Hr-zmX" firstAttribute="top" secondItem="vEN-u9-EZW" secondAttribute="top" type="default" id="cCk-VO-LPF"/>
                             <constraint firstItem="WME-bd-kay" firstAttribute="centerY" secondItem="Ai2-pN-emh" secondAttribute="centerY" type="default" id="drV-RD-tUR"/>
                             <constraint firstItem="4QR-Hr-zmX" firstAttribute="top" secondItem="k7Y-jy-Yr1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="e4k-tk-CEr"/>
+                            <constraint firstItem="zs2-hH-yQB" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="58" id="fzI-BZ-iHk"/>
                             <constraint firstItem="Ai2-pN-emh" firstAttribute="top" secondItem="4fV-Hw-WTf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="hyb-NR-s99"/>
                             <constraint firstItem="4QR-Hr-zmX" firstAttribute="bottom" secondItem="vEN-u9-EZW" secondAttribute="bottom" type="default" id="qCr-3d-SoV"/>
                             <constraint firstItem="WME-bd-kay" firstAttribute="leading" secondItem="4QR-Hr-zmX" secondAttribute="leading" type="default" id="rnC-ii-uAZ"/>
-                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="300" type="user" id="sEf-Dc-J0v"/>
-                            <constraint firstItem="zs2-hH-yQB" firstAttribute="top" secondItem="L9n-nt-ijZ" secondAttribute="top" constant="114" id="wsc-z7-sAX"/>
                             <constraint firstItem="Ai2-pN-emh" firstAttribute="leading" secondItem="4fV-Hw-WTf" secondAttribute="leading" type="default" id="wtz-rm-fyk"/>
                             <constraint firstItem="4QR-Hr-zmX" firstAttribute="trailing" secondItem="k7Y-jy-Yr1" secondAttribute="trailing" type="default" id="x63-Fg-uh2"/>
-                            <constraint firstItem="ILQ-Uv-PSt" firstAttribute="trailing" secondItem="Zhc-fi-iPP" secondAttribute="trailing" type="default" id="zLn-zW-uJs"/>
                             <constraint firstItem="Zhc-fi-iPP" firstAttribute="leading" secondItem="L9n-nt-ijZ" secondAttribute="leading" type="default" id="zR4-3g-uRl"/>
                         </constraints>
                     </view>
@@ -739,9 +742,6 @@
         <class className="CreatePillViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatePillViewController.h"/>
             <relationships>
-                <relationship kind="action" name="displayPillPicker:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="picFromCamera:" candidateClass="UIButton"/>
-                <relationship kind="action" name="picFromPhotos:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="chooseDoctorButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="createPillButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="doctorName" candidateClass="UILabel"/>
@@ -754,7 +754,6 @@
         <class className="CreateReminderViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateReminderViewController.h"/>
             <relationships>
-                <relationship kind="action" name="displayPillPicker:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="choosePillButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="createReminderButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="dosageTextField" candidateClass="UITextField"/>
@@ -784,8 +783,6 @@
         <class className="LoginViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
             <relationships>
-                <relationship kind="action" name="createAccount:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="login:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="passWordTextField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="userNameTextField" candidateClass="UITextField"/>
             </relationships>
