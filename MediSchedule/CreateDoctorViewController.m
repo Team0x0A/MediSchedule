@@ -52,6 +52,10 @@
     // Setup the createDoctorButton to call the createDoctorButtonTapped method:
     [_createDoctorButton setTarget:self];
     [_createDoctorButton setAction:@selector(createDoctorButtonTapped:)];
+    
+    //set the keyboard under the input text field
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 
@@ -92,5 +96,18 @@
     
 	return YES;
     
+}
+
+
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    //Assign new frame to your view
+    [self.view setFrame:CGRectMake(0,-30,320,460)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
+    
+}
+
+-(void)keyboardDidHide:(NSNotification *)notification
+{
+    [self.view setFrame:CGRectMake(0,0,320,460)];
 }
 @end

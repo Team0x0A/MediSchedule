@@ -65,6 +65,10 @@
     [_createPillButton setAction:@selector(createPillButtonTapped:)];
     myManager =  [[DoctorManager alloc] init];
     listOfDoctorIds = [[NSArray alloc] initWithArray:[myManager listOfDoctorIds]];
+    
+    //set the keyboard under the input text field
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
 
 
@@ -186,5 +190,16 @@
     }
 }
 
+- (void)keyboardDidShow:(NSNotification *)notification
+{
+    //Assign new frame to your view
+    [self.view setFrame:CGRectMake(0,-70,320,460)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
+    
+}
+
+-(void)keyboardDidHide:(NSNotification *)notification
+{
+    [self.view setFrame:CGRectMake(0,0,320,460)];
+}
 
 @end

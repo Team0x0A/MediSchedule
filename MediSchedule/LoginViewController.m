@@ -188,7 +188,7 @@
 - (void)keyboardDidShow:(NSNotification *)notification
 {
     //Assign new frame to your view
-    [self.view setFrame:CGRectMake(0,-60,320,460)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
+    [self.view setFrame:CGRectMake(0,-70,320,460)]; //here taken -20 for example i.e. your view will be scrolled to -20. change its value according to your requirement.
     
 }
 

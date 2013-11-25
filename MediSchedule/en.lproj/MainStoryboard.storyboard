@@ -725,6 +725,89 @@
             <point key="canvasLocation" x="1423" y="1792"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="CreateDoctorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateDoctorViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="createDoctorButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CreatePillViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreatePillViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="displayPillPicker:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="picFromCamera:" candidateClass="UIButton"/>
+                <relationship kind="action" name="picFromPhotos:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="chooseDoctorButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="createPillButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="doctorName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="doctorPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="CreateReminderViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateReminderViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="displayPillPicker:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="choosePillButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="createReminderButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="dosageTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="imageOfPill" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="notesTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pillName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="pillPicker" candidateClass="UIPickerView"/>
+                <relationship kind="outlet" name="timeTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="DoctorManagerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DoctorManagerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addDoctorButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="EditDoctorViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/EditDoctorViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addressTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="emailTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nameTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="phoneNumberTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="LoginViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/LoginViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="createAccount:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="login:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="passWordTextField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="userNameTextField" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="PillManagerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/PillManagerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addPillButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="ReminderManagerViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ReminderManagerViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addReminderButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="viewDoctorsButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="viewPillsButton" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
