@@ -87,6 +87,8 @@
     return -1; // pills is empty (error)
 }
 
+
+
 //Returns the location of the file saved on the device
 - (NSURL *) fileLocation
 {
@@ -158,6 +160,13 @@
 
 
 // Accessors:
+
+- (int) getIdOfPillWithIndex: (int) index
+{
+    Pill *pill = [pills objectAtIndex:index];
+    return [pill pillId];
+}
+
 - (int) numOfPills
 {
     return  [pills count];

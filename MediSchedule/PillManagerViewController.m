@@ -16,7 +16,7 @@
 #import "PillManagerViewController.h"
 #import "PillManager.h"
 #import "CreatePillViewController.h"
-
+#import "ReminderManager.h"
 
 //***************************************************************************************
 // Private Interface:
@@ -24,6 +24,7 @@
 @interface PillManagerViewController ()
 {
     PillManager *myManager; // Pill Manager to be used for entire application
+    ReminderManager *listOfReminders;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addPillButton;
 
@@ -47,6 +48,11 @@
     if (!myManager)
     {
         myManager = [[PillManager alloc] init];
+    }
+    
+    if (!listOfReminders)
+    {
+        listOfReminders = [[ReminderManager alloc] init];
     }
     
      //Uncomment to perform tests:
@@ -176,6 +182,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
+        //[listOfReminders deleteReminderWithId:[myManager getIdOfPillWithIndex:[indexPath item]]];
         [myManager deletePillWithIndex:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }

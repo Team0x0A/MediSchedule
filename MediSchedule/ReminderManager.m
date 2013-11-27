@@ -75,12 +75,13 @@
 }
 
 - (void) deleteReminderWithId: (int) pillId
-{/*
-    Reminder *delete;
+{
+    int index = 0;
     for (Reminder *i in reminders)
     {
-        //if ([i pillId] == pillId) deleteReminderAtIndex
-    }*/
+        if ([i pillId] == pillId) [self deleteReminderAtIndex:index];
+        index++;
+    }
 }
 
 // Modifiers:

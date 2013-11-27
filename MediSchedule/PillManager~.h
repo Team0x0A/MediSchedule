@@ -46,8 +46,6 @@
 
 // Accessors:
 
-- (int) getIdOfPillWithIndex: (int) index;
-
 - (int) numOfPills;
 
 - (NSArray*) listOfPillIds;

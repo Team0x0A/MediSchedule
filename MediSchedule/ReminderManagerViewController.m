@@ -51,7 +51,6 @@
 
 
 
-
 // viewDidLoad:
 // gets called when the view manager is created
 // ****************************************
@@ -120,6 +119,7 @@
 {
     [self performSegueWithIdentifier:@"ReminderManagerToDoctorManagerSegue" sender:self];
 }
+
 
 
 
@@ -205,7 +205,8 @@
     static NSString *CellIdentifier = @"ReminderCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[listOfPills nameOfPillWithId:[myManager pillIdAtIndex:[indexPath item]]]];
+    //[[cell textLabel] setText:[listOfPills nameOfPillWithId:[myManager pillIdAtIndex:[indexPath item]]]];
+    [[cell textLabel] setText:@"blah"];
     [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAtIndex:[indexPath item]] description]]];
     
     return cell;
