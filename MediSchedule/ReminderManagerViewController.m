@@ -17,7 +17,7 @@
 #import "CreateReminderViewController.h"
 #import "ReminderManager.h"
 #import "Reminder.h"
-
+#import "PillManager.h"
 
 //***************************************************************************************
 // Private Interface:
@@ -25,6 +25,7 @@
 @interface ReminderManagerViewController ()
 {
     ReminderManager *myManager;// Reminder Manager to be used for entire application
+    PillManager *listOfPills;
     NSMutableArray *_objects;
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addReminderButton;
@@ -62,6 +63,11 @@
     if (!myManager)
     {
         myManager = [[ReminderManager alloc] init];
+    }
+    
+    if (!listOfPills)
+    {
+        listOfPills = [[PillManager alloc] init];
     }
     
     // This calls some tests on the reminder manager
@@ -200,7 +206,7 @@
     static NSString *CellIdentifier = @"ReminderCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"Pill: Default Pill"]];
+    [[cell textLabel] setText:[listOfPills nameOfPillWithId:[myManager pillIdAtIndex:[indexPath item]]]];
     [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAtIndex:[indexPath item]] description]]];
     
     return cell;

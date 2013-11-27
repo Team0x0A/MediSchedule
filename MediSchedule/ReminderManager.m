@@ -74,6 +74,15 @@
     [self saveToFile:[self fileLocation]];
 }
 
+- (void) deleteReminderWithId: (int) pillId
+{/*
+    Reminder *delete;
+    for (Reminder *i in reminders)
+    {
+        //if ([i pillId] == pillId) deleteReminderAtIndex
+    }*/
+}
+
 // Modifiers:
 - (void) setTimeTo:(Time*) newTime
                 AtIndex:(int) index

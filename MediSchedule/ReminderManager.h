@@ -28,6 +28,8 @@
 
 - (void) deleteReminderAtIndex:(int)index;
 
+- (void) deleteReminderWithId: (int) pillId;
+
 // Modifiers:
 - (void) setTimeTo:(Time*) newTime
                 AtIndex:(int) index;
