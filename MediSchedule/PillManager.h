@@ -49,10 +49,9 @@
 
 
 - (void) setNameTo: (NSString*) newName OfPillWithIndex: (int) index;
-
 - (void) setImageTo: (UIImage*) newImage OfPillWithIndex: (int) index;
 - (void) setDoctorIdTo: (int) newDoctorID OfPillWithIndex: (int) index;
-- (void) setNotesTo: (NSString*) newNotes OfPillwithIndex: (int) index;
+- (void) setNotesTo: (NSString*) newNotes OfPillWithIndex: (int) index;
 
 
 // Accessors:
@@ -74,5 +73,7 @@
 - (NSString*) nameOfPillWithIndex: (int) index;
 
 - (NSString*) notesOfPillWithIndex:(int) index;
+
+- (UIImage*) imageOfPillWithIndex:(int)index;
 
 @end

@@ -183,7 +183,7 @@
     [pill setDoctorId:newDoctorID];
     [self saveToFile:[self fileLocation]];
 }
--(void) setNotesTo:(NSString *)newNotes OfPillwithIndex:(int)index
+-(void) setNotesTo:(NSString *)newNotes OfPillWithIndex:(int)index
 {
     Pill *pill = [pills objectAtIndex:index];
     [pill setNotes:newNotes];
@@ -247,6 +247,11 @@
 {
     Pill *pill = [pills objectAtIndex:index];
     return [pill notes];
+}
+- (UIImage*) imageOfPillWithIndex:(int)index
+{
+    Pill *pill = [pills objectAtIndex:index];
+    return [pill image];
 }
 
 @end

@@ -16,6 +16,7 @@
 #import "PillManagerViewController.h"
 #import "PillManager.h"
 #import "CreatePillViewController.h"
+#import "EditPillViewController.h"
 #import "ReminderManager.h"
 
 //***************************************************************************************
@@ -103,6 +104,13 @@
         
         CreatePillViewController *detailController = segue.destinationViewController;
         detailController.callBack = self;
+    }
+    else if ([[destination title] isEqual: @"EditPill"])
+    {
+        EditPillViewController *editPillViewController = segue.destinationViewController;
+        editPillViewController.pillManager = myManager;
+        editPillViewController.pillIndex = indexOfCurrentlySelectedCell;
+        editPillViewController.callBack = self;
     }
 }
 
@@ -194,7 +202,7 @@
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     indexOfCurrentlySelectedCell = [indexPath item];
-    [self performSegueWithIdentifier:@"PillManagerToEditDoctorSegue"sender:self];
+    [self performSegueWithIdentifier:@"PillManagerToEditPillSegue"sender:self];
 }
 
 
