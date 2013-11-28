@@ -25,6 +25,7 @@
 {
     PillManager *myManager; // Pill Manager to be used for entire application
     ReminderManager *listOfReminders;
+    int indexOfCurrentlySelectedCell;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addPillButton;
 
@@ -189,6 +190,11 @@
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
+}
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    indexOfCurrentlySelectedCell = [indexPath item];
+    [self performSegueWithIdentifier:@"PillManagerToEditDoctorSegue"sender:self];
 }
 
 

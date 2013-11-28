@@ -38,6 +38,7 @@
 		9ED57BBA182C61AC000A8B38 /* PillManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BB9182C61AC000A8B38 /* PillManagerViewController.m */; };
 		9ED57BBD182C70BF000A8B38 /* CreatePillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */; };
 		D15F6E2B181DDC2300322100 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D15F6E2A181DDC2300322100 /* icon.png */; };
+		D1A2B8281846C43A009F6CD3 /* EditPillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D1A2B8271846C43A009F6CD3 /* EditPillViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		9ED57BBB182C70BF000A8B38 /* CreatePillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePillViewController.h; sourceTree = "<group>"; };
 		9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreatePillViewController.m; sourceTree = "<group>"; };
 		D15F6E2A181DDC2300322100 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		D1A2B8261846C43A009F6CD3 /* EditPillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPillViewController.h; sourceTree = "<group>"; };
+		D1A2B8271846C43A009F6CD3 /* EditPillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPillViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,8 @@
 				9ED57BB9182C61AC000A8B38 /* PillManagerViewController.m */,
 				9ED57BBB182C70BF000A8B38 /* CreatePillViewController.h */,
 				9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */,
+				D1A2B8261846C43A009F6CD3 /* EditPillViewController.h */,
+				D1A2B8271846C43A009F6CD3 /* EditPillViewController.m */,
 			);
 			name = Pills;
 			sourceTree = "<group>";
@@ -407,6 +412,7 @@
 				9E4D8A2E182D938F0011850E /* DoctorManagerViewController.m in Sources */,
 				9E4D8A34182D9FBA0011850E /* CreateDoctorViewController.m in Sources */,
 				9E82E7F618306D560027A8E2 /* EditDoctorViewController.m in Sources */,
+				D1A2B8281846C43A009F6CD3 /* EditPillViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

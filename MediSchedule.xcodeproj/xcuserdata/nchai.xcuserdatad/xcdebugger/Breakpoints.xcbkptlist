@@ -13,7 +13,20 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "105"
          endingLineNumber = "105"
-         landmarkName = "-getPillNameOf:"
+         landmarkName = "-saveToFile:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "MediSchedule/EditPillViewController.m"
+         timestampString = "407296850.973465"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "67"
+         endingLineNumber = "67"
+         landmarkName = "-saveButtonTapped:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

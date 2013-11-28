@@ -2,12 +2,18 @@
 //  EditPillViewController.h
 //  MediSchedule
 //
-//  Created by Maryam Fadaei on 10/30/13.
-//  Copyright (c) 2013 Ishan Bhutani. All rights reserved.
+//  Created by Ning Chai on 11/27/13.
+//  Copyright (c) 2013 Team 0x0A. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "PillManager.h"
+#import "PillManagerViewController.h"
 
-@interface EditPillViewController : UINavigationItem
+@interface EditPillViewController : UIViewController <UITextFieldDelegate>
 
+@property (strong, nonatomic)
+    PillManagerViewController* callBack;
+@property (strong, nonatomic) PillManager* pillManager;
+@property int pillIndex;
 @end

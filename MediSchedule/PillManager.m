@@ -119,12 +119,12 @@
     [pills removeObjectAtIndex:[self getIndexOfPillWithId:pillId]];
     [self saveToFile:[self fileLocation]];
 }
-
-- (void) deletePillWithIndex: (int)index
+-(void) deletePillWithIndex:(int)index
 {
     [pills removeObjectAtIndex:index];
     [self saveToFile:[self fileLocation]];
 }
+
 
 - (void) setNameTo: (NSString*) newName
                 OfPillId: (int) pillId
@@ -159,6 +159,36 @@
 }
 
 
+// Modifiers (by index):
+// ****************************************
+
+- (void) setNameTo:(NSString *)newName OfPillWithIndex:(int)index
+
+{
+    Pill *pill = [pills objectAtIndex: index];
+    [pill setName:newName];
+    [self saveToFile:[self fileLocation]];
+}
+
+-(void) setImageTo:(UIImage *)newImage OfPillWithIndex:(int)index
+{
+    Pill *pill = [pills objectAtIndex: index];
+    [pill setImage:newImage];
+    [self saveToFile:[self fileLocation]];
+}
+
+-(void) setDoctorIdTo:(int)newDoctorID OfPillWithIndex:(int)index
+{
+    Pill *pill = [pills objectAtIndex:index];
+    [pill setDoctorId:newDoctorID];
+    [self saveToFile:[self fileLocation]];
+}
+-(void) setNotesTo:(NSString *)newNotes OfPillwithIndex:(int)index
+{
+    Pill *pill = [pills objectAtIndex:index];
+    [pill setNotes:newNotes];
+    [self saveToFile:[self fileLocation]];
+}
 // Accessors:
 
 - (int) getIdOfPillWithIndex: (int) index
