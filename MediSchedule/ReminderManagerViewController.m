@@ -49,8 +49,6 @@
     [super awakeFromNib];
 }
 
-
-
 // viewDidLoad:
 // gets called when the view manager is created
 // ****************************************
@@ -145,7 +143,7 @@
 // addReminderWithTime:
 // called by CreateReminderViewController when creating new reminder
 // ****************************************
--(void) addReminderWithTime:(Time*) time
+-(void) addReminderWithTime:(NSDate*) time
                  WithPillId:(int) pillId
                  WithDosage:(int) dosage
                   WithNotes:(NSString *) notes
@@ -166,9 +164,10 @@
     {
         [myManager deleteReminderAtIndex:0];
     }
+    /*
     [self addReminderWithTime:[[Time alloc] initWithString:@"6:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 1st"];
     [self addReminderWithTime:[[Time alloc] initWithString:@"12:00"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 2nd"];
-    [self addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];
+    [self addReminderWithTime:[[Time alloc] initWithString:@"3:20"] WithPillId:0 WithDosage:0 WithNotes:@"Was added 3rd"];*/
 }
 
 
@@ -205,9 +204,12 @@
     static NSString *CellIdentifier = @"ReminderCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    //[[cell textLabel] setText:[listOfPills nameOfPillWithId:[myManager pillIdAtIndex:[indexPath item]]]];
-    [[cell textLabel] setText:@"blah"];
-    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[[myManager timeAtIndex:[indexPath item]] description]]];
+    [[cell textLabel] setText:[listOfPills nameOfPillWithId:[myManager pillIdAtIndex:[indexPath item]]]];
+    //[[cell textLabel] setText:@"blah"];
+    NSString *localDate = [NSDateFormatter localizedStringFromDate: [myManager timeAtIndex:[indexPath item]]
+                                                         dateStyle:NSDateFormatterNoStyle
+                                                         timeStyle:NSDateFormatterShortStyle];
+    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",localDate]];
     
     return cell;
 }

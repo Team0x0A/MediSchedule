@@ -119,12 +119,12 @@
     [pills removeObjectAtIndex:[self getIndexOfPillWithId:pillId]];
     [self saveToFile:[self fileLocation]];
 }
+
 -(void) deletePillWithIndex:(int)index
 {
     [pills removeObjectAtIndex:index];
     [self saveToFile:[self fileLocation]];
 }
-
 
 - (void) setNameTo: (NSString*) newName
                 OfPillId: (int) pillId

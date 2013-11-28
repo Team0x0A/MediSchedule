@@ -26,7 +26,7 @@
 @synthesize dosage;
 @synthesize notes;
 
--(id)initWithTime:(Time *)newTime
+-(id)initWithTime:(NSDate *)newTime
        WithPillId:(int)newPillId
        WithDosage:(int)newDosage
         WithNotes:(NSString *)newNotes

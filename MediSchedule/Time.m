@@ -23,6 +23,7 @@
 
 @implementation Time
 
+
 - initWithHour:(int) setHour
        WithMin:(int) setMin
        WithSec:(int) setSec
@@ -52,7 +53,6 @@
         int setHour = [token0 intValue];
         int setMin = [token1 intValue];
 
-        
         NSDateComponents *comps = [[NSDateComponents alloc] init];
         [comps setHour:setHour];
         [comps setMinute:setMin];

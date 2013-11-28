@@ -21,7 +21,7 @@
 
 -(id)init;
 
--(int) addReminderWithTime:(Time*) time
+-(int) addReminderWithTime:(NSDate*) time
                  WithPillId:(int) pillId
                  WithDosage:(int) dosage
                   WithNotes:(NSString *) notes;
@@ -31,7 +31,7 @@
 - (void) deleteReminderWithId: (int) pillId;
 
 // Modifiers:
-- (void) setTimeTo:(Time*) newTime
+- (void) setTimeTo:(NSDate*) newTime
                 AtIndex:(int) index;
 
 - (void) setPillIdTo:(int) newPillId
@@ -46,7 +46,7 @@
 // Accessors:
 - (int) numOfReminders;
 
-- (Time*) timeAtIndex:(int)index;
+- (NSDate*) timeAtIndex:(int)index;
 
 - (int) pillIdAtIndex:(int)index;
 

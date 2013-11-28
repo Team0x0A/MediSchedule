@@ -52,7 +52,7 @@
     return (NSString*)output;
 }
 
-- (int) addReminderWithTime:(Time*)time
+- (int) addReminderWithTime:(NSDate*)time
                  WithPillId:(int)pillId
                  WithDosage:(int)dosage
                   WithNotes:(NSString *)notes
@@ -85,7 +85,7 @@
 }
 
 // Modifiers:
-- (void) setTimeTo:(Time*) newTime
+- (void) setTimeTo:(NSDate*) newTime
                 AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setTime:newTime];
@@ -121,7 +121,7 @@
     return [reminders count];
 }
 
-- (Time*) timeAtIndex:(int)index
+- (NSDate*) timeAtIndex:(int)index
 {
     return [[reminders objectAtIndex:index] time];
 }
@@ -146,15 +146,19 @@
 // these values are used to sort the array into ascending order (smallest time at 0th index)
 NSInteger timeSort(id reminder1, id reminder2, void *context)
 {
-    int v1 = [[reminder1 time] intValue];
-    int v2 = [[reminder2 time] intValue];
+   // int v1 = [[reminder1 time] intValue];
+   // int v2 = [[reminder2 time] intValue];
+    NSDate *v1 = [reminder1 time];
+    NSDate *v2 = [reminder2 time];
     
+    return [v1 compare:v2];
+    /*
     if (v1 < v2)
         return NSOrderedAscending;
     else if (v1 > v2)
         return NSOrderedDescending;
     else
-        return NSOrderedSame;
+        return NSOrderedSame;*/
 }
 
 //Returns the location of the file saved on the device

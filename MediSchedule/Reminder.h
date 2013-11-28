@@ -20,12 +20,12 @@
 //NSCoding protocol allows the object to archive/unarchive itself when saving to files
 @interface Reminder : NSObject <NSCoding>
 
-@property Time* time;
+@property NSDate* time;
 @property int pillId;
 @property int dosage;
 @property NSString *notes;
 
-- (id)initWithTime:(Time *)time
+- (id)initWithTime:(NSDate *)time
         WithPillId:(int)pillId
         WithDosage:(int)dosage
          WithNotes:(NSString *)notes;

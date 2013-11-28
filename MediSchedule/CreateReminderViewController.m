@@ -36,6 +36,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageOfPill;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *choosePillButton;
 
+@property (strong, nonatomic) IBOutlet UIDatePicker *timePicker;
 
 - (void)configureView;
 
@@ -84,6 +85,8 @@
     // Setup the createReminderButton to call the createReminderButtonTapped method:
     [_createReminderButton setTarget:self];
     [_createReminderButton setAction:@selector(createReminderButtonTapped:)];
+    
+    pillId = -1;// no pill selected
     myManager =  [[PillManager alloc] init];
     listOfPillIds = [[NSArray alloc] initWithArray:[myManager listOfPillIds]];
     
@@ -102,9 +105,19 @@
 // ****************************************
 - (void)createReminderButtonTapped: (id)sender
 {
+    if ([[[self dosageTextField] text] length] < 1 || [[[self notesTextField] text] length] < 1 || pillId == -1)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
+                                                        message:@"Please fill out all forms."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     // Get time from field:
     // This needs to be read from the text field:
-    Time* time = [[Time alloc] init];
+    //Time* time = [[Time alloc] init];
     
     // Get dosage from field:
     int dosage = [[[self dosageTextField] text] integerValue];
@@ -113,7 +126,7 @@
     NSString *notes = [[self notesTextField] text];
     
     // Add the reminder to the reminder manager:
-    [callBack addReminderWithTime:time
+    [callBack addReminderWithTime:[self.timePicker date]
                        WithPillId:pillId
                        WithDosage:dosage
                         WithNotes:notes];
@@ -181,12 +194,14 @@
         }
         self.choosePillButton.title = @"Done";
         [self.pillPicker setHidden:NO];
+        [self.timePicker setHidden:YES];
         [self.imageOfPill setHidden:YES];
     }
     else
     {
         self.choosePillButton.title = @"Choose Pill";
         [self.pillPicker setHidden:YES];
+        [self.timePicker setHidden:NO];
         [self.imageOfPill setHidden:NO];
     }
 }

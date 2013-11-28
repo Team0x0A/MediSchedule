@@ -25,7 +25,7 @@
 @interface ReminderManagerViewController : UITableViewController
 
 // called by CreateReminderViewController when creating new reminder:
--(void) addReminderWithTime:(Time*) time
+-(void) addReminderWithTime:(NSDate*) time
                  WithPillId:(int) pillId
                  WithDosage:(int) dosage
                   WithNotes:(NSString *) notes;

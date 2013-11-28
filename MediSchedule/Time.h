@@ -24,6 +24,7 @@
 
 -initWithString:(NSString*) inputString;
 
+
 - (NSString *)description;
 - (int) hour;
 - (int) min;
