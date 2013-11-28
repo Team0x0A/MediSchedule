@@ -23,7 +23,7 @@
 {
     DoctorManager *doctorManager;
     NSArray *listOfDoctorIds;
-     int doctorId;
+    int doctorId;
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
@@ -63,7 +63,8 @@
     // Setup the createPillButton to call the createPillButtonTapped method:
     [_createPillButton setTarget:self];
     [_createPillButton setAction:@selector(createPillButtonTapped:)];
-
+    doctorId = -1;//no doctor selected
+    
     doctorManager =  [[DoctorManager alloc] init];
     listOfDoctorIds = [[NSArray alloc] initWithArray:[doctorManager listOfDoctorIds]];
     
@@ -78,6 +79,17 @@
 // ****************************************
 - (void) createPillButtonTapped: (id)sender
 {
+    if ([[[self nameTextField] text] length] < 1 || [[[self notesTextField] text] length] < 1 || [[self imageView] image] == nil || doctorId == -1)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
+                                                        message:@"Please fill out all forms."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
     // Get all input data from text fields:
     NSString* name = [[self nameTextField] text];
     NSString* notes = [[self notesTextField] text];

@@ -57,14 +57,16 @@
 {
     
     [super viewDidLoad];
-    doctorManager =  [[DoctorManager alloc] init];
-    listOfDoctorIds = [[NSArray alloc] initWithArray:[doctorManager listOfDoctorIds]];
+
     [self.nameTextField setDelegate:self];
     [self.notesTextField setDelegate:self];
     
     [self.saveButton setTarget:self];
     [self.saveButton setAction:@selector(saveButtonTapped:)];
-	
+    
+    doctorManager =  [[DoctorManager alloc] init];
+    listOfDoctorIds = [[NSArray alloc] initWithArray:[doctorManager listOfDoctorIds]];
+    
     [self.nameTextField setText:[pillManager nameOfPillWithIndex:pillIndex]];
     [self.notesTextField setText:[pillManager notesOfPillWithIndex:pillIndex]];
     [self.imageView setImage:[pillManager imageOfPillWithIndex:pillIndex]];
@@ -77,6 +79,17 @@
 // ****************************************
 - (void) saveButtonTapped: (id)sender
 {
+    if ([[[self nameTextField] text] length] < 1 || [[[self notesTextField] text] length] < 1 || [[self imageView] image] == nil || doctorId == -1)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
+                                                        message:@"Please fill out all forms."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
     NSString* name = [[self nameTextField] text];
     NSString* notes = [[self notesTextField] text];
     

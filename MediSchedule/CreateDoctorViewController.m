@@ -56,6 +56,14 @@
     //set the keyboard under the input text field
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    
+    //To hide keyboard when something outside the keyboard is tapped
+    //only for phone number since it doesnt have a done key
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
 
@@ -67,6 +75,16 @@
 // ****************************************
 - (void) createDoctorButtonTapped: (id)sender
 {
+    if ([[[self nameTextField] text] length] < 1 || [[[self addressTextField] text] length] < 1 || [[[self phoneNumberTextField] text] length] < 1 || [[[self emailTextField] text] length] < 1)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
+                                                        message:@"Please fill out all forms."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     // Get all input data from text fields:
     NSString* name = [[self nameTextField] text];
     NSString* address = [[self addressTextField] text];
@@ -99,6 +117,8 @@
 }
 
 
+
+
 - (void)keyboardDidShow:(NSNotification *)notification
 {
     //Assign new frame to your view
@@ -109,5 +129,12 @@
 -(void)keyboardDidHide:(NSNotification *)notification
 {
     [self.view setFrame:CGRectMake(0,0,320,460)];
+}
+
+
+
+-(void) dismissKeyboard
+{
+    [self.phoneNumberTextField resignFirstResponder];
 }
 @end

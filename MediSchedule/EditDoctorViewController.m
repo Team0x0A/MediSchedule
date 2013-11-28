@@ -59,6 +59,14 @@
     [_addressTextField setText:[doctorManager addressOfDoctorWithIndex:doctorIndex]];
     [_phoneNumberTextField setText:[doctorManager numberOfDoctorWithIndex:doctorIndex]];
     [_emailTextField setText:[doctorManager emailOfDoctorWithIndex:doctorIndex]];
+    
+    //To hide keyboard when something outside the keyboard is tapped
+    //only for phone number since it doesnt have a done key
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
 
@@ -68,6 +76,16 @@
 // ****************************************
 - (void) saveButtonTapped: (id)sender
 {
+    if ([[[self nameTextField] text] length] < 1 || [[[self addressTextField] text] length] < 1 || [[[self phoneNumberTextField] text] length] < 1 || [[[self emailTextField] text] length] < 1)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
+                                                        message:@"Please fill out all forms."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
     // Get all input data from text fields:
     NSString* name = [[self nameTextField] text];
     NSString* address = [[self addressTextField] text];
@@ -97,5 +115,10 @@
     
 	return YES;
     
+}
+
+-(void) dismissKeyboard
+{
+    [self.phoneNumberTextField resignFirstResponder];
 }
 @end
