@@ -16,6 +16,9 @@
 #import "Reminder.h"
 
 @interface Reminder ()
+{
+    UILocalNotification *notification;
+}
 
 @end
 
@@ -38,9 +41,25 @@
         [self setPillId:newPillId];
         [self setDosage:newDosage];
         [self setNotes:newNotes];
-        
+        [self initializeNotification:notification];
     }
     return self;
+}
+
+- (void) initializeNotification:(UILocalNotification *) newNotification
+{
+    NSLog(@"initializing notification");
+    newNotification = [[UILocalNotification alloc] init];
+    newNotification.fireDate = time;
+    newNotification.timeZone = [NSTimeZone localTimeZone];
+    newNotification.repeatInterval = NSDayCalendarUnit;
+    newNotification.alertBody = @"Take your medication now!";
+    newNotification.alertAction = @"View";
+    newNotification.soundName = UILocalNotificationDefaultSoundName;
+    NSDictionary *infoDict = [NSDictionary dictionaryWithObjects:@[[[NSNumber alloc] initWithInt:[self pillId]], [[NSNumber alloc] initWithInt:[self dosage]], [self notes] ] forKeys:@[@"pillId", @"dosage", @"notes"]];
+    newNotification.userInfo = infoDict;
+    newNotification.applicationIconBadgeNumber = 1;
+    [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
 }
 
 // Initialize Reminder object with unarchived data from aDecoder
