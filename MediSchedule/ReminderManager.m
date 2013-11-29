@@ -146,19 +146,10 @@
 // these values are used to sort the array into ascending order (smallest time at 0th index)
 NSInteger timeSort(id reminder1, id reminder2, void *context)
 {
-   // int v1 = [[reminder1 time] intValue];
-   // int v2 = [[reminder2 time] intValue];
     NSDate *v1 = [reminder1 time];
     NSDate *v2 = [reminder2 time];
     
     return [v1 compare:v2];
-    /*
-    if (v1 < v2)
-        return NSOrderedAscending;
-    else if (v1 > v2)
-        return NSOrderedDescending;
-    else
-        return NSOrderedSame;*/
 }
 
 //Returns the location of the file saved on the device

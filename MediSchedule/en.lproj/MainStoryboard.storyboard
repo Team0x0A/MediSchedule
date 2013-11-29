@@ -107,14 +107,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Time" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uX2-C2-Wkn">
-                                <rect key="frame" x="0.0" y="56" width="320" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="xoG-ce-I44"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dosage (mg)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TRr-i9-26V">
                                 <rect key="frame" x="0.0" y="90" width="320" height="30"/>
                                 <constraints>
@@ -160,7 +152,7 @@
                                     <!--2013-11-28 10:19:52 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -178,7 +170,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                         </subviews>
@@ -187,7 +179,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="C68-xs-hK3" firstAttribute="top" secondItem="naz-hE-csD" secondAttribute="top" type="default" id="0Do-Bo-9SW"/>
                             <constraint firstItem="TRr-i9-26V" firstAttribute="top" secondItem="22" secondAttribute="top" constant="90" id="2B0-Gk-niF"/>
                             <constraint firstItem="N1l-oe-vFj" firstAttribute="leading" secondItem="naz-hE-csD" secondAttribute="leading" type="default" id="4xv-uv-vAe"/>
-                            <constraint firstItem="uX2-C2-Wkn" firstAttribute="top" secondItem="22" secondAttribute="top" constant="56" id="7eZ-oY-jL8"/>
                             <constraint firstItem="ZgG-8W-rdl" firstAttribute="centerX" secondItem="N1l-oe-vFj" secondAttribute="centerX" type="default" id="8HG-zq-gEb"/>
                             <constraint firstItem="C68-xs-hK3" firstAttribute="trailing" secondItem="naz-hE-csD" secondAttribute="trailing" type="default" id="CUj-hg-CnP"/>
                             <constraint firstItem="N1l-oe-vFj" firstAttribute="top" secondItem="22" secondAttribute="top" constant="124" id="Dei-Eg-FJ4"/>
@@ -195,14 +186,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="C68-xs-hK3" firstAttribute="trailing" secondItem="N1l-oe-vFj" secondAttribute="trailing" type="default" id="FbH-dB-2yH"/>
                             <constraint firstItem="ZgG-8W-rdl" firstAttribute="top" secondItem="N1l-oe-vFj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="K8b-mv-PjR"/>
                             <constraint firstAttribute="trailing" secondItem="naz-hE-csD" secondAttribute="trailing" type="user" id="Uqz-nO-UD7"/>
-                            <constraint firstItem="naz-hE-csD" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="WAD-pD-XLO"/>
+                            <constraint firstItem="dV6-zk-Fen" firstAttribute="leading" secondItem="22" secondAttribute="leading" type="default" id="VRV-Xe-Ghy"/>
                             <constraint firstItem="C68-xs-hK3" firstAttribute="leading" secondItem="naz-hE-csD" secondAttribute="leading" type="default" id="Zdr-w5-JKK"/>
                             <constraint firstAttribute="bottom" secondItem="C68-xs-hK3" secondAttribute="bottom" type="default" id="asS-1B-jfO"/>
-                            <constraint firstItem="dV6-zk-Fen" firstAttribute="leading" secondItem="uX2-C2-Wkn" secondAttribute="leading" type="default" id="d4V-CL-3Up"/>
-                            <constraint firstItem="TRr-i9-26V" firstAttribute="trailing" secondItem="uX2-C2-Wkn" secondAttribute="trailing" type="default" id="ivQ-wI-yqK"/>
-                            <constraint firstItem="dV6-zk-Fen" firstAttribute="trailing" secondItem="uX2-C2-Wkn" secondAttribute="trailing" type="default" id="l5Z-kd-xF4"/>
+                            <constraint firstItem="dV6-zk-Fen" firstAttribute="leading" secondItem="TRr-i9-26V" secondAttribute="leading" type="default" id="eV6-Zk-brs"/>
                             <constraint firstItem="dV6-zk-Fen" firstAttribute="top" secondItem="22" secondAttribute="top" constant="10" id="p9n-yO-4q1"/>
-                            <constraint firstItem="TRr-i9-26V" firstAttribute="leading" secondItem="uX2-C2-Wkn" secondAttribute="leading" type="default" id="tlv-UY-ksS"/>
+                            <constraint firstItem="dV6-zk-Fen" firstAttribute="trailing" secondItem="TRr-i9-26V" secondAttribute="trailing" type="default" id="wdm-BP-OAb"/>
                             <constraint firstItem="N1l-oe-vFj" firstAttribute="leading" secondItem="TRr-i9-26V" secondAttribute="leading" type="default" id="yTa-SM-mZe"/>
                         </constraints>
                     </view>
@@ -226,7 +215,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <outlet property="pillName" destination="dV6-zk-Fen" id="mDd-Tk-FPX"/>
                         <outlet property="pillPicker" destination="naz-hE-csD" id="xhv-DG-G9B"/>
                         <outlet property="timePicker" destination="C68-xs-hK3" id="UPD-v9-gY9"/>
-                        <outlet property="timeTextField" destination="uX2-C2-Wkn" id="YIu-jb-eCt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>

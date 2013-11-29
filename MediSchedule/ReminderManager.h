@@ -15,7 +15,6 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "Time.h"
 
 @interface ReminderManager : NSObject
 

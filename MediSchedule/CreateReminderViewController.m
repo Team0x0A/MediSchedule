@@ -27,7 +27,6 @@
     int pillId;
 }
 
-@property (strong, nonatomic) IBOutlet UITextField *timeTextField;
 @property (strong, nonatomic) IBOutlet UITextField *dosageTextField;
 @property (strong, nonatomic) IBOutlet UITextField *notesTextField;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *createReminderButton;
@@ -78,7 +77,6 @@
     [self configureView];
     
     // Set this view controller as the delegate of all the text fields
-    [_timeTextField setDelegate:self];
     [_dosageTextField setDelegate:self];
     [_notesTextField setDelegate:self];
     
@@ -115,9 +113,7 @@
         [alert show];
         return;
     }
-    // Get time from field:
-    // This needs to be read from the text field:
-    //Time* time = [[Time alloc] init];
+
     
     // Get dosage from field:
     int dosage = [[[self dosageTextField] text] integerValue];
@@ -140,7 +136,7 @@
 
 #pragma mark UITextFieldDelegate
 // textFieldShouldReturn:
-// delegated from the time, pillId, dosage and notes text fields:
+// delegated from the pillId, dosage and notes text fields:
 // ****************************************
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
