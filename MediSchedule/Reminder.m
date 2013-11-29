@@ -14,9 +14,12 @@
  */
 
 #import "Reminder.h"
-
+#import "GlobalVariables.h"
+#import "PillManager.h"
 @interface Reminder ()
 {
+    PillManager *pillManager;
+    GlobalVariables *globalVariables;
     UILocalNotification *notification;
 }
 
@@ -24,7 +27,7 @@
 
 @implementation Reminder
 
-@synthesize time;
+@synthesize time = _time;
 @synthesize pillId;
 @synthesize dosage;
 @synthesize notes;
@@ -37,12 +40,14 @@
     self = [super init];
     if (self)
     {
+        globalVariables = [GlobalVariables getInstance];
+        pillManager = globalVariables.pillManager;
         [self setTime:newTime];
         [self setPillId:newPillId];
         [self setDosage:newDosage];
         [self setNotes:newNotes];
-        //notification = [[UILocalNotification alloc] init];
-        //[self initializeNotification:notification];
+        notification = [[UILocalNotification alloc] init];
+        [self initializeNotification:notification];
     }
     return self;
 }
@@ -50,10 +55,10 @@
 - (void) initializeNotification:(UILocalNotification *) newNotification
 {
     NSLog(@"initializing notification");
-    newNotification.fireDate = time;
+    newNotification.fireDate = self.time;
     newNotification.timeZone = [NSTimeZone localTimeZone];
     newNotification.repeatInterval = NSDayCalendarUnit;
-    newNotification.alertBody = @"Take your medication now!";
+    newNotification.alertBody = [[NSString alloc] initWithFormat:@"Take %dmg of %@", self.dosage, [pillManager nameOfPillWithId:self.pillId]];
     newNotification.alertAction = @"View";
     newNotification.soundName = UILocalNotificationDefaultSoundName;
     NSDictionary *infoDict = [NSDictionary dictionaryWithObjects:@[[[NSNumber alloc] initWithInt:[self pillId]], [[NSNumber alloc] initWithInt:[self dosage]], [self notes] ] forKeys:@[@"pillId", @"dosage", @"notes"]];
@@ -64,9 +69,19 @@
 
 - (void) dealloc
 {
-    //[[UIApplication sharedApplication] cancelLocalNotification:notification];
+    if (notification) [[UIApplication sharedApplication] cancelLocalNotification:notification];
 }
 
+- (void) setTime:(NSDate *)time
+{
+    if (notification) notification.fireDate = time;
+    _time = time;
+}
+
+- (NSDate *) time
+{
+    return _time;
+}
 
 // Initialize Reminder object with unarchived data from aDecoder
 - (id) initWithCoder:(NSCoder *)aDecoder

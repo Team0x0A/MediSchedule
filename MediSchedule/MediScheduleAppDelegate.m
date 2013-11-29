@@ -14,11 +14,25 @@
  */
 
 #import "MediScheduleAppDelegate.h"
+#import "GlobalVariables.h"
+#import "PillManager.h"
+#import "ReminderManager.h"
+
+@interface MediScheduleAppDelegate()
+{
+    ReminderManager *reminderManager;
+    PillManager *pillManager;
+    GlobalVariables *globalVariables;
+}
+@end
 
 @implementation MediScheduleAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    globalVariables = [GlobalVariables getInstance];
+    reminderManager = globalVariables.reminderManager;
+    pillManager = globalVariables.pillManager;
     return YES;
 }
 							
@@ -49,6 +63,25 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    NSDictionary *infoDict = [notification userInfo];
+    NSString *pillName = [pillManager nameOfPillWithId:[[infoDict objectForKey:@"pillId"] integerValue]];
+    int dosage = [[infoDict objectForKey:@"dosage"] integerValue];
+    UIImage *image = [pillManager imageOfPillWithId:[[infoDict objectForKey:@"pillId"] integerValue]];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(75, 150, 125, 125)];
+    [imageView setImage:image];
+    
+    NSString *notes = [infoDict objectForKey:@"notes"];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[[NSString alloc] initWithFormat:@"Take %dmg of %@", dosage, pillName]
+                                                    message:notes
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert addSubview:imageView];
+    [alert show];
 }
 
 @end

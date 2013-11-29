@@ -40,7 +40,7 @@
 
 
 - (void)testExample
-{
+{/*
     ReminderManager* testManager = [[ReminderManager alloc] init];
     
     // Add 10 reminders in order:
@@ -79,7 +79,7 @@
     [testManager deleteReminderWith:0];
     [testManager deleteReminderWith:0];
     [testManager deleteReminderWith:0];
-    [testManager deleteReminderWith:0];
+    [testManager deleteReminderWith:0];*/
 }
 
 @end
