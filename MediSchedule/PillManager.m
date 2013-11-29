@@ -183,6 +183,7 @@
     [pill setDoctorId:newDoctorID];
     [self saveToFile:[self fileLocation]];
 }
+
 -(void) setNotesTo:(NSString *)newNotes OfPillWithIndex:(int)index
 {
     Pill *pill = [pills objectAtIndex:index];

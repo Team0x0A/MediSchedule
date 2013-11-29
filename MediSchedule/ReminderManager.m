@@ -16,8 +16,8 @@
 #import "ReminderManager.h"
 #import "Reminder.h"
 #import <CoreFoundation/CoreFoundation.h>
-
-@interface ReminderManager (){
+@interface ReminderManager ()
+{
     NSMutableArray *reminders;
 }
 @end

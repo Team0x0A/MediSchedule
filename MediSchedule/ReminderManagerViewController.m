@@ -18,14 +18,16 @@
 #import "ReminderManager.h"
 #import "Reminder.h"
 #import "PillManager.h"
+#import "GlobalVariables.h"
 
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
 @interface ReminderManagerViewController ()
 {
-    ReminderManager *myManager;// Reminder Manager to be used for entire application
-    PillManager *listOfPills;
+    GlobalVariables *globalVariables;
+    ReminderManager *reminderManager;// Reminder Manager to be used for entire application
+    PillManager *pillManager;
     NSMutableArray *_objects;
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addReminderButton;
@@ -57,15 +59,10 @@
     [super viewDidLoad];
 
     // The reminder manager is initialized the first time the application loads
-    if (!myManager)
-    {
-        myManager = [[ReminderManager alloc] init];
-    }
+    globalVariables = [GlobalVariables getInstance];
+    reminderManager = globalVariables.reminderManager;
+    pillManager = globalVariables.pillManager;
     
-    if (!listOfPills)
-    {
-        listOfPills = [[PillManager alloc] init];
-    }
     
     // This calls some tests on the reminder manager
     // [self testReminderManager];
@@ -149,7 +146,7 @@
                   WithNotes:(NSString *) notes
 {
     int index;
-    index = [myManager addReminderWithTime:time WithPillId:pillId WithDosage:dosage WithNotes:notes];
+    index = [reminderManager addReminderWithTime:time WithPillId:pillId WithDosage:dosage WithNotes:notes];
     [self addCellAt:index];
 }
 
@@ -160,9 +157,9 @@
 // ****************************************
 - (void) testReminderManager
 {
-    while ([myManager numOfReminders] > 0)
+    while ([reminderManager numOfReminders] > 0)
     {
-        [myManager deleteReminderAtIndex:0];
+        [reminderManager deleteReminderAtIndex:0];
     }
 }
 
@@ -200,9 +197,10 @@
     static NSString *CellIdentifier = @"ReminderCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[listOfPills nameOfPillWithId:[myManager pillIdAtIndex:[indexPath item]]]];
+    [[cell textLabel] setText:[pillManager nameOfPillWithId:[reminderManager pillIdAtIndex:[indexPath item]]]];
+    
     //[[cell textLabel] setText:@"blah"];
-    NSString *localDate = [NSDateFormatter localizedStringFromDate: [myManager timeAtIndex:[indexPath item]]
+    NSString *localDate = [NSDateFormatter localizedStringFromDate: [reminderManager timeAtIndex:[indexPath item]]
                                                          dateStyle:NSDateFormatterNoStyle
                                                          timeStyle:NSDateFormatterShortStyle];
     [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",localDate]];
@@ -231,7 +229,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [myManager numOfReminders];
+    return [reminderManager numOfReminders];
 }
 
 
@@ -258,7 +256,7 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
 commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [myManager deleteReminderAtIndex:[indexPath item]];
+        [reminderManager deleteReminderAtIndex:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

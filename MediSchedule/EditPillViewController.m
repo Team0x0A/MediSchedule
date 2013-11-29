@@ -13,9 +13,11 @@
 
 #import "EditPillViewController.h"
 #import "DoctorManager.h"
+#import "GlobalVariables.h"
 
 @interface EditPillViewController ()
 {
+    GlobalVariables *globalVariables;
     DoctorManager *doctorManager;
     NSArray *listOfDoctorIds;
     int doctorId;
@@ -57,16 +59,17 @@
 {
     
     [super viewDidLoad];
-
+    
+    globalVariables = [GlobalVariables getInstance];
+    doctorManager =  globalVariables.doctorManager;
+    listOfDoctorIds = [[NSArray alloc] initWithArray:[doctorManager listOfDoctorIds]];
+    
     [self.nameTextField setDelegate:self];
     [self.notesTextField setDelegate:self];
     
     [self.saveButton setTarget:self];
     [self.saveButton setAction:@selector(saveButtonTapped:)];
-    
-    doctorManager =  [[DoctorManager alloc] init];
-    listOfDoctorIds = [[NSArray alloc] initWithArray:[doctorManager listOfDoctorIds]];
-    
+
     [self.nameTextField setText:[pillManager nameOfPillWithIndex:pillIndex]];
     [self.notesTextField setText:[pillManager notesOfPillWithIndex:pillIndex]];
     [self.imageView setImage:[pillManager imageOfPillWithIndex:pillIndex]];

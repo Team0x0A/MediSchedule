@@ -29,6 +29,7 @@
 		0CB85754181C7FE500D71BA1 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574D181C7FE500D71BA1 /* Reminder.m */; };
 		0CB85755181C7FE500D71BA1 /* ReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574F181C7FE500D71BA1 /* ReminderManager.m */; };
 		0CB85756181C7FE500D71BA1 /* Time.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB85751181C7FE500D71BA1 /* Time.m */; };
+		844923CE18486B2D00F34BEE /* GlobalVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 844923CD18486B2D00F34BEE /* GlobalVariables.m */; };
 		84AAAFAB182379F2009B7E98 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAF9B182379F2009B7E98 /* Doctor.m */; };
 		84AAAFAD182379F2009B7E98 /* DoctorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAF9F182379F2009B7E98 /* DoctorManager.m */; };
 		9E4D8A2E182D938F0011850E /* DoctorManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D8A2D182D938F0011850E /* DoctorManagerViewController.m */; };
@@ -86,6 +87,8 @@
 		0CB8574F181C7FE500D71BA1 /* ReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManager.m; sourceTree = "<group>"; };
 		0CB85750181C7FE500D71BA1 /* Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Time.h; sourceTree = "<group>"; };
 		0CB85751181C7FE500D71BA1 /* Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Time.m; sourceTree = "<group>"; };
+		844923CC18486B2D00F34BEE /* GlobalVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVariables.h; sourceTree = "<group>"; };
+		844923CD18486B2D00F34BEE /* GlobalVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVariables.m; sourceTree = "<group>"; };
 		84AAAF9A182379F2009B7E98 /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
 		84AAAF9B182379F2009B7E98 /* Doctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Doctor.m; sourceTree = "<group>"; };
 		84AAAF9E182379F2009B7E98 /* DoctorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorManager.h; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 		0CB85710181C7E3100D71BA1 /* MediSchedule */ = {
 			isa = PBXGroup;
 			children = (
+				844923CC18486B2D00F34BEE /* GlobalVariables.h */,
+				844923CD18486B2D00F34BEE /* GlobalVariables.m */,
 				0CB85722181C7E3200D71BA1 /* MainStoryboard.storyboard */,
 				0C82C0DB181C8BA80006F60B /* View Controllers */,
 				0CB85757181C7FEA00D71BA1 /* Data Structures */,
@@ -395,6 +400,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				844923CE18486B2D00F34BEE /* GlobalVariables.m in Sources */,
 				0CB85717181C7E3100D71BA1 /* main.m in Sources */,
 				0CB8571B181C7E3200D71BA1 /* MediScheduleAppDelegate.m in Sources */,
 				84AAAFAD182379F2009B7E98 /* DoctorManager.m in Sources */,

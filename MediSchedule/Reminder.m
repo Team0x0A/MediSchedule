@@ -41,7 +41,8 @@
         [self setPillId:newPillId];
         [self setDosage:newDosage];
         [self setNotes:newNotes];
-        [self initializeNotification:notification];
+        //notification = [[UILocalNotification alloc] init];
+        //[self initializeNotification:notification];
     }
     return self;
 }
@@ -49,7 +50,6 @@
 - (void) initializeNotification:(UILocalNotification *) newNotification
 {
     NSLog(@"initializing notification");
-    newNotification = [[UILocalNotification alloc] init];
     newNotification.fireDate = time;
     newNotification.timeZone = [NSTimeZone localTimeZone];
     newNotification.repeatInterval = NSDayCalendarUnit;
@@ -61,6 +61,12 @@
     newNotification.applicationIconBadgeNumber = 1;
     [[UIApplication sharedApplication] scheduleLocalNotification:newNotification];
 }
+
+- (void) dealloc
+{
+    //[[UIApplication sharedApplication] cancelLocalNotification:notification];
+}
+
 
 // Initialize Reminder object with unarchived data from aDecoder
 - (id) initWithCoder:(NSCoder *)aDecoder

@@ -18,14 +18,16 @@
 #import "CreatePillViewController.h"
 #import "EditPillViewController.h"
 #import "ReminderManager.h"
+#import "GlobalVariables.h"
 
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
 @interface PillManagerViewController ()
 {
-    PillManager *myManager; // Pill Manager to be used for entire application
-    ReminderManager *listOfReminders;
+    GlobalVariables *globalVariables;
+    PillManager *pillManager; 
+    ReminderManager *reminderManager;
     int indexOfCurrentlySelectedCell;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addPillButton;
@@ -47,15 +49,9 @@
 {
     [super viewDidLoad];
     
-    if (!myManager)
-    {
-        myManager = [[PillManager alloc] init];
-    }
-    
-    if (!listOfReminders)
-    {
-        listOfReminders = [[ReminderManager alloc] init];
-    }
+    globalVariables = [GlobalVariables getInstance];
+    reminderManager = globalVariables.reminderManager;
+    pillManager = globalVariables.pillManager;
     
      //Uncomment to perform tests:
     //[self testPillManager];
@@ -85,8 +81,8 @@
             WithDoctorId: (int) newDoctorId
                WithNotes: (NSString*) newNotes;
 {
-    [myManager addPillWithName:newName WithImage:newImage WithDoctorId:newDoctorId WithNotes:newNotes];
-    [self addCellAt:[myManager numOfPills] - 1];
+    [pillManager addPillWithName:newName WithImage:newImage WithDoctorId:newDoctorId WithNotes:newNotes];
+    [self addCellAt:[pillManager numOfPills] - 1];
 }
 
 
@@ -108,7 +104,7 @@
     else if ([[destination title] isEqual: @"EditPill"])
     {
         EditPillViewController *editPillViewController = segue.destinationViewController;
-        editPillViewController.pillManager = myManager;
+        editPillViewController.pillManager = pillManager;
         editPillViewController.pillIndex = indexOfCurrentlySelectedCell;
         editPillViewController.callBack = self;
     }
@@ -150,7 +146,7 @@
 // ****************************************
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [myManager numOfPills];
+    return [pillManager numOfPills];
 }
 
 
@@ -165,8 +161,8 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"%@",[myManager nameOfPillWithIndex:[indexPath item]]]];
-    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[myManager notesOfPillWithIndex:[indexPath item]]]];
+    [[cell textLabel] setText:[[NSString alloc] initWithFormat:@"%@",[pillManager nameOfPillWithIndex:[indexPath item]]]];
+    [[cell detailTextLabel] setText:[[NSString alloc] initWithFormat:@"%@",[pillManager notesOfPillWithIndex:[indexPath item]]]];
     
     return cell;
 }
@@ -192,7 +188,7 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         //[listOfReminders deleteReminderWithId:[myManager getIdOfPillWithIndex:[indexPath item]]];
-        [myManager deletePillWithIndex:[indexPath item]];
+        [pillManager deletePillWithIndex:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -211,48 +207,48 @@
 // ****************************************
 - (void) testPillManager
 {
-    while ([myManager numOfPills] > 0)
+    while ([pillManager numOfPills] > 0)
     {
-        [myManager deletePillWithIndex:0];
+        [pillManager deletePillWithIndex:0];
     }
     
-    [myManager addPillWithName:@"Tylenol"
+    [pillManager addPillWithName:@"Tylenol"
                      WithImage:[[UIImage alloc] init]
                   WithDoctorId:1
                      WithNotes:@"First pill added"];
     
-    [myManager addPillWithName:@"Advil"
+    [pillManager addPillWithName:@"Advil"
                      WithImage:[[UIImage alloc] init]
                   WithDoctorId:1
                      WithNotes:@"Second pill added"];
     
-    [myManager addPillWithName:@"Benelyn"
+    [pillManager addPillWithName:@"Benelyn"
                      WithImage:[[UIImage alloc] init]
                   WithDoctorId:1
                      WithNotes:@"Third pill added"];
     
-    [myManager addPillWithName:@"Some more drugs"
+    [pillManager addPillWithName:@"Some more drugs"
                      WithImage:[[UIImage alloc] init]
                   WithDoctorId:2
                      WithNotes:@"Fourth pill added"];
     
-    [myManager addPillWithName:@"Even more drugs"
+    [pillManager addPillWithName:@"Even more drugs"
                      WithImage:[[UIImage alloc] init]
                   WithDoctorId:2
                      WithNotes:@"Fifth pill added"];
     
-    NSLog(@"PillMangager description: %@",[myManager description]);
+    NSLog(@"PillMangager description: %@",[pillManager description]);
     
-    NSLog(@"PillMangager pillids: %@",[[myManager listOfPillIds] description]);
+    NSLog(@"PillMangager pillids: %@",[[pillManager listOfPillIds] description]);
     
-    assert([myManager numOfPills] == 5);
+    assert([pillManager numOfPills] == 5);
     
-    [myManager deletePillWithId:0];
-    assert([myManager numOfPills] == 4);
+    [pillManager deletePillWithId:0];
+    assert([pillManager numOfPills] == 4);
     
-    NSLog(@"PillMangager description: %@",[myManager description]);
+    NSLog(@"PillMangager description: %@",[pillManager description]);
     
-    assert([[myManager nameOfPillWithId:1] isEqualToString:@"Advil"]);
+    assert([[pillManager nameOfPillWithId:1] isEqualToString:@"Advil"]);
     NSLog(@"PillManager test succeeded!");
 }
 @end

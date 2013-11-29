@@ -15,12 +15,14 @@
 
 #import "CreatePillViewController.h"
 #import "DoctorManager.h"
+#import "GlobalVariables.h"
 
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
 @interface CreatePillViewController ()
 {
+    GlobalVariables *globalVariables;
     DoctorManager *doctorManager;
     NSArray *listOfDoctorIds;
     int doctorId;
@@ -55,7 +57,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	
+    
+    globalVariables = [GlobalVariables getInstance];
+    doctorManager =  globalVariables.doctorManager;
+    
     // Set this view controller as the delegate of all the text fields:
     [_nameTextField setDelegate:self];
     [_notesTextField setDelegate:self];
@@ -65,7 +70,8 @@
     [_createPillButton setAction:@selector(createPillButtonTapped:)];
     doctorId = -1;//no doctor selected
     
-    doctorManager =  [[DoctorManager alloc] init];
+
+    
     listOfDoctorIds = [[NSArray alloc] initWithArray:[doctorManager listOfDoctorIds]];
     
     //set the keyboard under the input text field

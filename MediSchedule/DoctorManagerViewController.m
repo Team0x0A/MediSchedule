@@ -17,13 +17,15 @@
 #import "DoctorManager.h"
 #import "CreateDoctorViewController.h"
 #import "EditDoctorViewController.h"
+#import "GlobalVariables.h"
 
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
 @interface DoctorManagerViewController ()
 {
-    DoctorManager *myManager; // Doctor manager to be used for entire applocation
+    GlobalVariables *globalVariables;
+    DoctorManager *doctorManager; // Doctor manager to be used for entire applocation
     int indexOfCurrentlySelectedCell;
 }
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addDoctorButton;
@@ -45,10 +47,9 @@
 {
     [super viewDidLoad];
     
-    if(!myManager)
-    {
-        myManager = [[DoctorManager alloc] init];
-    }
+    globalVariables = [GlobalVariables getInstance];
+    doctorManager =  globalVariables.doctorManager;
+    
     //Uncomment to perform tests:
     //[self testDoctorManager];
     // Setup the addDoctorButton:
@@ -79,8 +80,8 @@
                  WithEmail: (NSString*) newEmail
 {
     NSLog(@"addDoctor called...");
-    [myManager addDoctorWithName:newName WithNumber:newNumber WithAddress:newAddress WithEmail:newEmail];
-    [self addCellAt:[myManager numOfDoctors] - 1];
+    [doctorManager addDoctorWithName:newName WithNumber:newNumber WithAddress:newAddress WithEmail:newEmail];
+    [self addCellAt:[doctorManager numOfDoctors] - 1];
 }
 
 
@@ -103,7 +104,7 @@
     else if ([[destination title] isEqual: @"EditDoctor"])
     {
         EditDoctorViewController *editDoctorViewController = segue.destinationViewController;
-        editDoctorViewController.doctorManager = myManager;
+        editDoctorViewController.doctorManager = doctorManager;
         editDoctorViewController.doctorIndex = indexOfCurrentlySelectedCell;
         editDoctorViewController.callBack = self;
         
@@ -142,7 +143,7 @@
 // ****************************************
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [myManager numOfDoctors];
+    return [doctorManager numOfDoctors];
 }
 
 
@@ -155,8 +156,8 @@
     static NSString *CellIdentifier = @"DoctorCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    [[cell textLabel] setText: [myManager nameOfDoctorWithIndex:[indexPath item]]];
-    [[cell detailTextLabel] setText: [myManager numberOfDoctorWithIndex:[indexPath item]]];
+    [[cell textLabel] setText: [doctorManager nameOfDoctorWithIndex:[indexPath item]]];
+    [[cell detailTextLabel] setText: [doctorManager numberOfDoctorWithIndex:[indexPath item]]];
     
     return cell;
 }
@@ -177,7 +178,7 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [myManager deleteDoctorWithIndex:[indexPath item]];
+        [doctorManager deleteDoctorWithIndex:[indexPath item]];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -197,25 +198,25 @@
 - (void) testDoctorManager
 {
     
-    while ([myManager numOfDoctors] > 0)
+    while ([doctorManager numOfDoctors] > 0)
     {
-        [myManager deleteDoctorWithIndex:0];
+        [doctorManager deleteDoctorWithIndex:0];
     }
-    [myManager addDoctorWithName:@"HT" WithNumber:@"420" WithAddress:@"123 fake street" WithEmail:@"doctor@doctor.com"];
-    [myManager addDoctorWithName:@"HT1" WithNumber:@"4201" WithAddress:@"123 fake street1" WithEmail:@"doctor@doctor.com1"];
-    [myManager addDoctorWithName:@"HT2" WithNumber:@"4202" WithAddress:@"123 fake street2" WithEmail:@"doctor@doctor.com2"];
-    [myManager addDoctorWithName:@"HT3" WithNumber:@"4203" WithAddress:@"123 fake street3" WithEmail:@"doctor@doctor.com3"];
-    [myManager addDoctorWithName:@"HT4" WithNumber:@"4204" WithAddress:@"123 fake street4" WithEmail:@"doctor@doctor.com4"];
-    [myManager addDoctorWithName:@"HT5" WithNumber:@"4205" WithAddress:@"123 fake street5" WithEmail:@"doctor@doctor.com5"];
+    [doctorManager addDoctorWithName:@"HT" WithNumber:@"420" WithAddress:@"123 fake street" WithEmail:@"doctor@doctor.com"];
+    [doctorManager addDoctorWithName:@"HT1" WithNumber:@"4201" WithAddress:@"123 fake street1" WithEmail:@"doctor@doctor.com1"];
+    [doctorManager addDoctorWithName:@"HT2" WithNumber:@"4202" WithAddress:@"123 fake street2" WithEmail:@"doctor@doctor.com2"];
+    [doctorManager addDoctorWithName:@"HT3" WithNumber:@"4203" WithAddress:@"123 fake street3" WithEmail:@"doctor@doctor.com3"];
+    [doctorManager addDoctorWithName:@"HT4" WithNumber:@"4204" WithAddress:@"123 fake street4" WithEmail:@"doctor@doctor.com4"];
+    [doctorManager addDoctorWithName:@"HT5" WithNumber:@"4205" WithAddress:@"123 fake street5" WithEmail:@"doctor@doctor.com5"];
     
-    NSLog(@"%@", [myManager description]);
-    NSLog(@"%@",[myManager listOfDoctorIds]);
-    assert([myManager numOfDoctors] == 6);
-    assert([[myManager nameOfDoctorWithId:0] isEqualToString:@"HT"]);
-    assert([[myManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
-    [myManager deleteDoctorWithId:0];
-    assert([myManager numOfDoctors] == 5);
-    assert([[myManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
+    NSLog(@"%@", [doctorManager description]);
+    NSLog(@"%@",[doctorManager listOfDoctorIds]);
+    assert([doctorManager numOfDoctors] == 6);
+    assert([[doctorManager nameOfDoctorWithId:0] isEqualToString:@"HT"]);
+    assert([[doctorManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
+    [doctorManager deleteDoctorWithId:0];
+    assert([doctorManager numOfDoctors] == 5);
+    assert([[doctorManager nameOfDoctorWithId:5] isEqualToString:@"HT5"]);
     NSLog(@"Doctor Manager test succeeded!");
     
 }

@@ -16,13 +16,15 @@
 
 #import "CreateReminderViewController.h"
 #import "PillManager.h"
+#import "GlobalVariables.h"
 
 //***************************************************************************************
 // Private Interface:
 //***************************************************************************************
 @interface CreateReminderViewController ()
 {
-    PillManager *myManager;
+    GlobalVariables *globalVariables;
+    PillManager *pillManager;
     NSArray *listOfPillIds;
     int pillId;
 }
@@ -76,6 +78,12 @@
     [super viewDidLoad];
     [self configureView];
     
+    globalVariables = [GlobalVariables getInstance];
+    pillManager = globalVariables.pillManager;
+    listOfPillIds = [[NSArray alloc] initWithArray:[pillManager listOfPillIds]];
+    
+    pillId = -1;// no pill selected
+    
     // Set this view controller as the delegate of all the text fields
     [_dosageTextField setDelegate:self];
     [_notesTextField setDelegate:self];
@@ -84,9 +92,7 @@
     [_createReminderButton setTarget:self];
     [_createReminderButton setAction:@selector(createReminderButtonTapped:)];
     
-    pillId = -1;// no pill selected
-    myManager =  [[PillManager alloc] init];
-    listOfPillIds = [[NSArray alloc] initWithArray:[myManager listOfPillIds]];
+
     
     //set the keyboard under the input text field
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -159,16 +165,16 @@
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
 {
-    return [myManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
+    return [pillManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
 {
     if([pickerView numberOfRowsInComponent:0] != 0)
     {
-        self.pillName.text = [myManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
+        self.pillName.text = [pillManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
         pillId = [[listOfPillIds objectAtIndex:row] integerValue];
-        [self.imageOfPill setImage:[myManager imageOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]]];
+        [self.imageOfPill setImage:[pillManager imageOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]]];
         [[self imageOfPill] setHidden:YES];
     }
 }
@@ -178,7 +184,7 @@
     [self pickerView:self.pillPicker didSelectRow:[self.pillPicker selectedRowInComponent:0] inComponent:0];
     if ([self.pillPicker isHidden])
     {
-        if ([myManager numOfPills] == 0)
+        if ([pillManager numOfPills] == 0)
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No pills found"
                                                message:@"Please add medications into the application."

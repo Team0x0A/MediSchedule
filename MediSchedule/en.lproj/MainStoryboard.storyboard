@@ -733,7 +733,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <scene sceneID="fwU-X1-mCn">
             <objects>
                 <viewController title="EditDoctor" id="J4Y-g3-4cq" customClass="EditDoctorViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="exD-VL-rGA" customClass="CreateDoctorScreen">
+                    <view key="view" contentMode="scaleToFill" id="exD-VL-rGA">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
