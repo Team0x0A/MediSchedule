@@ -33,6 +33,14 @@
     globalVariables = [GlobalVariables getInstance];
     reminderManager = globalVariables.reminderManager;
     pillManager = globalVariables.pillManager;
+    
+    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    
+    if (notification)
+    {
+        [self showNotification:notification];
+        application.applicationIconBadgeNumber = 0;
+    }
     return YES;
 }
 							
@@ -66,6 +74,12 @@
 }
 
 - (void) application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    application.applicationIconBadgeNumber = 0;
+    [self showNotification:notification];
+}
+
+- (void) showNotification: (UILocalNotification *) notification
 {
     NSDictionary *infoDict = [notification userInfo];
     NSString *pillName = [pillManager nameOfPillWithId:[[infoDict objectForKey:@"pillId"] integerValue]];
