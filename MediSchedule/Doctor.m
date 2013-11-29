@@ -14,7 +14,14 @@
  */
 
 #import "Doctor.h"
+#import "PillManager.h"
+#import "GlobalVariables.h"
+
 @interface Doctor ()
+{
+    GlobalVariables *globalVariables;
+    PillManager *pillManager;
+}
 
 @end
 
@@ -33,12 +40,15 @@
       WithEmail: (NSString*) newEmail;
 {
     self = [super init];
-    if (self){
+    if (self)
+    {
         [self setDoctorId:newId];
         [self setName:newName];
         [self setNumber:newNumber];
         [self setAddress:newAddress];
         [self setEmail:newEmail];
+        globalVariables = [GlobalVariables getInstance];
+        pillManager = globalVariables.pillManager;
     }
     return self;
 }
@@ -56,6 +66,11 @@
         [self setEmail:[aDecoder decodeObjectForKey:@"email"]];
     }
     return self;
+}
+
+- (void) dealloc
+{
+    [pillManager deletePillWithDoctorId:self.doctorId];
 }
 
 // Writes archived variable instances to aCoder

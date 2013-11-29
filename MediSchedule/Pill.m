@@ -14,9 +14,13 @@
  */
 
 #import "Pill.h"
+#import "GlobalVariables.h"
 
 @interface Pill ()
-
+{
+    GlobalVariables *globalVariables;
+    ReminderManager *reminderManager;
+}
 @end
 
 @implementation Pill
@@ -40,8 +44,15 @@
         [self setImage:newImage];
         [self setDoctorId:newDoctorId];
         [self setNotes:newNotes];
+        globalVariables = [GlobalVariables getInstance];
+        reminderManager = globalVariables.reminderManager;
     }
     return self;
+}
+
+- (void) dealloc
+{
+    [reminderManager deleteReminderWithPillId:self.pillId];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder

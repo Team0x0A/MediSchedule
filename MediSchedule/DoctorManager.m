@@ -101,10 +101,10 @@
 
 - (void) loadFile: (NSURL*) fileLocation
 {
-    NSData *savedReminders = [[NSData alloc] initWithContentsOfURL:fileLocation];
-    if (savedReminders)
+    NSData *savedDoctors = [[NSData alloc] initWithContentsOfURL:fileLocation];
+    if (savedDoctors)
     {
-        doctors = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedReminders]];
+        doctors = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedDoctors]];
     }
 }
 

@@ -74,7 +74,7 @@
     [self saveToFile:[self fileLocation]];
 }
 
-- (void) deleteReminderWithId: (int) pillId
+- (void) deleteReminderWithPillId: (int) pillId
 {
     int index = 0;
     for (Reminder *i in reminders)
@@ -82,11 +82,12 @@
         if ([i pillId] == pillId) [self deleteReminderAtIndex:index];
         index++;
     }
+    [self saveToFile:[self fileLocation]];
 }
 
 // Modifiers:
 - (void) setTimeTo:(NSDate*) newTime
-                AtIndex:(int) index
+           AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setTime:newTime];
     [reminders sortUsingFunction:timeSort context:nil];
@@ -94,21 +95,21 @@
 }
 
 - (void) setPillIdTo:(int) newPillId
-                  AtIndex:(int) index
+             AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setPillId:newPillId];
     [self saveToFile:[self fileLocation]];
 }
 
 - (void) setDosageTo:(int) newDosage
-                  AtIndex:(int) index
+             AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setDosage:newDosage];
     [self saveToFile:[self fileLocation]];
 }
 
 - (void) setNotesTo:(NSString*) newNotes
-                 AtIndex:(int) index
+            AtIndex:(int) index
 {
     [[reminders objectAtIndex:index] setNotes:newNotes];
     [self saveToFile:[self fileLocation]];

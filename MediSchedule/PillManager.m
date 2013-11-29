@@ -35,6 +35,7 @@
         {
             pills = [[NSMutableArray alloc] init];
             [self loadFile:[self fileLocation]];
+            
             NSLog(@"PillManager Initialized!");
         }
     }
@@ -106,10 +107,10 @@
 
 - (void) loadFile: (NSURL*) fileLocation
 {
-    NSData *savedReminders = [[NSData alloc] initWithContentsOfURL:fileLocation];
-    if (savedReminders)
+    NSData *savedPills = [[NSData alloc] initWithContentsOfURL:fileLocation];
+    if (savedPills)
     {
-        pills = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedReminders]];
+        pills = [[NSMutableArray alloc] initWithArray: [NSKeyedUnarchiver unarchiveObjectWithData:savedPills]];
     }
 }
 
@@ -117,6 +118,18 @@
 - (void) deletePillWithId: (int) pillId
 {
     [pills removeObjectAtIndex:[self getIndexOfPillWithId:pillId]];
+    //[reminderManager deleteReminderWithId:pillId];
+    [self saveToFile:[self fileLocation]];
+}
+
+- (void) deletePillWithDoctorId: (int) doctorId
+{
+    int index = 0;
+    for (Pill *i in pills)
+    {
+        if ([i doctorId] == doctorId) [self deletePillWithIndex:index];
+        index++;
+    }
     [self saveToFile:[self fileLocation]];
 }
 
