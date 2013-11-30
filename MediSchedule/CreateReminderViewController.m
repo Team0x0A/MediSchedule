@@ -98,6 +98,12 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 
+    //To hide keyboard when something outside the keyboard is tapped
+    //only for dosage
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
 
@@ -220,6 +226,10 @@
     //[self.view setFrame:CGRectMake(0,0,320,460)];
 }
 
+-(void) dismissKeyboard
+{
+    [self.dosageTextField resignFirstResponder];
+}
 
 
 @end
