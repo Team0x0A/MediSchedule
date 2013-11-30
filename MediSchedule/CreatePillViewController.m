@@ -146,6 +146,16 @@
         [self.imagePicker setAllowsEditing:YES];
         [self presentViewController:self.imagePicker animated:YES completion:nil];
     }
+    else
+    {
+        UIAlertView *alert;
+        alert = [[UIAlertView alloc] initWithTitle:@"No camera found"
+                                           message:@"Please choose an existing picture."
+                                          delegate:nil
+                                 cancelButtonTitle:@"OK"
+                                 otherButtonTitles:nil];
+        [alert show];
+    }
 }
 
 // imagePickerController: pickerDidFinishPickingMediaWithInfo:
