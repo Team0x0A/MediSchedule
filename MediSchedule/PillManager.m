@@ -118,20 +118,9 @@
 - (void) deletePillWithId: (int) pillId
 {
     [pills removeObjectAtIndex:[self getIndexOfPillWithId:pillId]];
-    //[reminderManager deleteReminderWithId:pillId];
     [self saveToFile:[self fileLocation]];
 }
 
-- (void) deletePillWithDoctorId: (int) doctorId
-{
-    int index = 0;
-    for (Pill *i in pills)
-    {
-        if ([i doctorId] == doctorId) [self deletePillWithIndex:index];
-        index++;
-    }
-    [self saveToFile:[self fileLocation]];
-}
 
 -(void) deletePillWithIndex:(int)index
 {

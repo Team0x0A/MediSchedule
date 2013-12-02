@@ -29,8 +29,6 @@
 
 - (void) deletePillWithId: (int) pillId;
 
-- (void) deletePillWithDoctorId: (int) doctorId;
-
 - (void) deletePillWithIndex: (int)index;
 
 - (void) setNameTo: (NSString*) newName

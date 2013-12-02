@@ -45,7 +45,14 @@
         [self setTime:newTime];
         [self setPillId:newPillId];
         [self setDosage:newDosage];
-        [self setNotes:newNotes];
+        if (newNotes)
+        {
+            [self setNotes:newNotes];
+        }
+        else
+        {
+            [self setNotes:@""];
+        }
         notification = [[UILocalNotification alloc] init];
         [self initializeNotification:notification];
     }

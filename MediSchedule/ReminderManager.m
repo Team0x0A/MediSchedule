@@ -74,14 +74,20 @@
     [self saveToFile:[self fileLocation]];
 }
 
-- (void) deleteReminderWithPillId: (int) pillId
+- (void) deleteRemindersWithPillId: (int) pillId
 {
     int index = 0;
     for (Reminder *i in reminders)
     {
-        if ([i pillId] == pillId) [self deleteReminderAtIndex:index];
+        if ([i pillId] == pillId)
+        {
+            [self deleteReminderAtIndex:index];
+            [self deleteRemindersWithPillId:pillId];
+            return;
+        }
         index++;
     }
+    [reminders sortUsingFunction:timeSort context:nil];
     [self saveToFile:[self fileLocation]];
 }
 

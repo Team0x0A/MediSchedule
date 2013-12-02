@@ -44,9 +44,30 @@
     {
         [self setDoctorId:newId];
         [self setName:newName];
-        [self setNumber:newNumber];
-        [self setAddress:newAddress];
-        [self setEmail:newEmail];
+        if (newNumber)
+        {
+             [self setNumber:newNumber];
+        }
+       else
+       {
+           [self setNumber:@""];
+       }
+        if (newAddress)
+        {
+            [self setAddress:newAddress];
+        }
+        else
+        {
+            [self setAddress:@""];
+        }
+        if (newEmail)
+        {
+            [self setEmail:newEmail];
+        }
+        else
+        {
+            [self setEmail:@""];
+        }
         globalVariables = [GlobalVariables getInstance];
         pillManager = globalVariables.pillManager;
     }
@@ -66,11 +87,6 @@
         [self setEmail:[aDecoder decodeObjectForKey:@"email"]];
     }
     return self;
-}
-
-- (void) dealloc
-{
-    [pillManager deletePillWithDoctorId:self.doctorId];
 }
 
 // Writes archived variable instances to aCoder

@@ -41,9 +41,30 @@
     if (self) {
         [self setPillId:newId];
         [self setName:newName];
-        [self setImage:newImage];
+        if (newImage)
+        {
+            [self setImage:newImage];
+        }
+        else
+        {
+            [self setImage:[[UIImage alloc] init]];
+        }
+        if (newDoctorId)
+        {
         [self setDoctorId:newDoctorId];
-        [self setNotes:newNotes];
+        }
+        else
+        {
+            [self setDoctorId:-1];
+        }
+        if (newNotes)
+        {
+            [self setNotes:newNotes];
+        }
+        else
+        {
+            [self setNotes:@""];
+        }
         globalVariables = [GlobalVariables getInstance];
         reminderManager = globalVariables.reminderManager;
     }
@@ -52,7 +73,7 @@
 
 - (void) dealloc
 {
-    [reminderManager deleteReminderWithPillId:self.pillId];
+    [reminderManager deleteRemindersWithPillId:self.pillId];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder

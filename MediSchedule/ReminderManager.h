@@ -27,7 +27,7 @@
 
 - (void) deleteReminderAtIndex:(int)index;
 
-- (void) deleteReminderWithPillId: (int) pillId;
+- (void) deleteRemindersWithPillId: (int) pillId;
 
 // Modifiers:
 - (void) setTimeTo:(NSDate*) newTime

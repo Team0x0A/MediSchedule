@@ -30,6 +30,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
     globalVariables = [GlobalVariables getInstance];
     reminderManager = globalVariables.reminderManager;
     pillManager = globalVariables.pillManager;
@@ -42,6 +43,11 @@
         application.applicationIconBadgeNumber = 0;
     }
     return YES;
+}
+
+- (void) reset
+{
+    globalVariables = [GlobalVariables getInstance];
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
