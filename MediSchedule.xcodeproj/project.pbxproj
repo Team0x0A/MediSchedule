@@ -28,6 +28,7 @@
 		0CB85753181C7FE500D71BA1 /* PillManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574B181C7FE500D71BA1 /* PillManager.m */; };
 		0CB85754181C7FE500D71BA1 /* Reminder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574D181C7FE500D71BA1 /* Reminder.m */; };
 		0CB85755181C7FE500D71BA1 /* ReminderManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CB8574F181C7FE500D71BA1 /* ReminderManager.m */; };
+		84419871184C989300450E7A /* EditReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84419870184C989300450E7A /* EditReminderViewController.m */; };
 		844923CE18486B2D00F34BEE /* GlobalVariables.m in Sources */ = {isa = PBXBuildFile; fileRef = 844923CD18486B2D00F34BEE /* GlobalVariables.m */; };
 		84AAAFAB182379F2009B7E98 /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAF9B182379F2009B7E98 /* Doctor.m */; };
 		84AAAFAD182379F2009B7E98 /* DoctorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AAAF9F182379F2009B7E98 /* DoctorManager.m */; };
@@ -35,7 +36,6 @@
 		9E4D8A34182D9FBA0011850E /* CreateDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4D8A33182D9FBA0011850E /* CreateDoctorViewController.m */; };
 		9E82E7F618306D560027A8E2 /* EditDoctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E82E7F518306D560027A8E2 /* EditDoctorViewController.m */; };
 		9EB6DD181821E1740086666E /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6DD171821E1740086666E /* LoginViewController.m */; };
-		9EC5485D184C146800166F49 /* EditReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC5485C184C146800166F49 /* EditReminderViewController.m */; };
 		9ED57BBA182C61AC000A8B38 /* PillManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BB9182C61AC000A8B38 /* PillManagerViewController.m */; };
 		9ED57BBD182C70BF000A8B38 /* CreatePillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9ED57BBC182C70BF000A8B38 /* CreatePillViewController.m */; };
 		D15F6E2B181DDC2300322100 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D15F6E2A181DDC2300322100 /* icon.png */; };
@@ -85,6 +85,8 @@
 		0CB8574D181C7FE500D71BA1 /* Reminder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reminder.m; sourceTree = "<group>"; };
 		0CB8574E181C7FE500D71BA1 /* ReminderManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReminderManager.h; sourceTree = "<group>"; };
 		0CB8574F181C7FE500D71BA1 /* ReminderManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReminderManager.m; sourceTree = "<group>"; };
+		8441986F184C989300450E7A /* EditReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditReminderViewController.h; sourceTree = "<group>"; };
+		84419870184C989300450E7A /* EditReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditReminderViewController.m; sourceTree = "<group>"; };
 		844923CC18486B2D00F34BEE /* GlobalVariables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalVariables.h; sourceTree = "<group>"; };
 		844923CD18486B2D00F34BEE /* GlobalVariables.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalVariables.m; sourceTree = "<group>"; };
 		84AAAF9A182379F2009B7E98 /* Doctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Doctor.h; sourceTree = "<group>"; };
@@ -99,8 +101,6 @@
 		9E82E7F518306D560027A8E2 /* EditDoctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditDoctorViewController.m; sourceTree = "<group>"; };
 		9EB6DD161821E1740086666E /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		9EB6DD171821E1740086666E /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		9EC5485B184C146800166F49 /* EditReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EditReminderViewController.h; path = ../EditReminderViewController.h; sourceTree = "<group>"; };
-		9EC5485C184C146800166F49 /* EditReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EditReminderViewController.m; path = ../EditReminderViewController.m; sourceTree = "<group>"; };
 		9ED57BB8182C61AC000A8B38 /* PillManagerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PillManagerViewController.h; sourceTree = "<group>"; };
 		9ED57BB9182C61AC000A8B38 /* PillManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PillManagerViewController.m; sourceTree = "<group>"; };
 		9ED57BBB182C70BF000A8B38 /* CreatePillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreatePillViewController.h; sourceTree = "<group>"; };
@@ -247,8 +247,8 @@
 		9E4D8A2F182D93990011850E /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
-				9EC5485B184C146800166F49 /* EditReminderViewController.h */,
-				9EC5485C184C146800166F49 /* EditReminderViewController.m */,
+				8441986F184C989300450E7A /* EditReminderViewController.h */,
+				84419870184C989300450E7A /* EditReminderViewController.m */,
 				0C82C0DC181CA0A90006F60B /* CreateReminderViewController.h */,
 				0C82C0DD181CA0A90006F60B /* CreateReminderViewController.m */,
 				0C82C0DE181CA0A90006F60B /* ReminderManagerViewController.h */,
@@ -410,6 +410,7 @@
 				0CB85754181C7FE500D71BA1 /* Reminder.m in Sources */,
 				0CB85755181C7FE500D71BA1 /* ReminderManager.m in Sources */,
 				0C82C0E0181CA0A90006F60B /* CreateReminderViewController.m in Sources */,
+				84419871184C989300450E7A /* EditReminderViewController.m in Sources */,
 				0C82C0E1181CA0A90006F60B /* ReminderManagerViewController.m in Sources */,
 				9EB6DD181821E1740086666E /* LoginViewController.m in Sources */,
 				9ED57BBA182C61AC000A8B38 /* PillManagerViewController.m in Sources */,
@@ -418,7 +419,6 @@
 				9E4D8A34182D9FBA0011850E /* CreateDoctorViewController.m in Sources */,
 				9E82E7F618306D560027A8E2 /* EditDoctorViewController.m in Sources */,
 				D1A2B8281846C43A009F6CD3 /* EditPillViewController.m in Sources */,
-				9EC5485D184C146800166F49 /* EditReminderViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
