@@ -19,6 +19,7 @@
 #import "Reminder.h"
 #import "PillManager.h"
 #import "GlobalVariables.h"
+#import "EditReminderViewController.h"
 
 //***************************************************************************************
 // Private Interface:
@@ -29,6 +30,7 @@
     ReminderManager *reminderManager;// Reminder Manager to be used for entire application
     PillManager *pillManager;
     NSMutableArray *_objects;
+    int indexOfCurrentlySelectedCell;
 }
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *addReminderButton;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *viewPillsButton;
@@ -126,11 +128,19 @@
 {
     UIViewController* destination = [segue destinationViewController];
     
+    // Prepare to segue to the CreateReminder view controller:
     if([[destination title] isEqual: @"CreateReminder"])
     {
-        
         CreateReminderViewController *detailController = segue.destinationViewController;
         detailController.callBack = self;
+    }
+    // Prepare to segue to the EditReminder view controller:
+    else if ([[destination title] isEqual: @"EditReminder"])
+    {
+        EditReminderViewController *editReminderViewController = segue.destinationViewController;
+        editReminderViewController.reminderManager = reminderManager;
+        editReminderViewController.reminderIndex = indexOfCurrentlySelectedCell;
+        editReminderViewController.callBack = self;
     }
 }
 
@@ -261,6 +271,15 @@ commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
+}
+
+
+// accessoryButtomTappedForRowWithIndexPath
+// ****************************************
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    indexOfCurrentlySelectedCell = [indexPath item];
+    [self performSegueWithIdentifier:@"ReminderManagerToEditReminderSegue" sender:self];
 }
 
 @end

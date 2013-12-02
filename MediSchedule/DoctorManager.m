@@ -81,7 +81,7 @@
             if ([i doctorId] == doctorId) return [doctors indexOfObject:i];
         }
     }
-    return -1; // pills is empty (error)
+    return -1; // doctor does not exist
 }
 
 //Returns the location of the file saved on the device
@@ -190,7 +190,7 @@
 }
 
 
-// Accessors:
+// Accessors (by id):
 // ****************************************
 - (int) numOfDoctors
 {
@@ -209,28 +209,60 @@
 
 - (NSString*) nameOfDoctorWithId: (int) doctorId
 {
-    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
-    return [doctor name];
+    int doctorIndex = [self getIndexOfDoctorWithId:doctorId];
+    
+    // if a doctor exists with doctorId then return his name
+    // otherwise return a default string: No Doctor
+    if(doctorIndex != -1) {
+        Doctor *doctor = [doctors objectAtIndex:doctorIndex];
+        return [doctor name];
+    }
+    else {
+        return @"No Doctor";
+    }
 }
 
 - (NSString*) addressOfDoctorWithId: (int) doctorId
 {
-    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
-    return [doctor address];
+    int doctorIndex = [self getIndexOfDoctorWithId:doctorId];
+    
+    if(doctorIndex != -1) {
+        Doctor *doctor = [doctors objectAtIndex:doctorIndex];
+        return [doctor address];
+    }
+    else {
+        return @"No Address";
+    }
 }
 
 - (NSString*) numberOfDoctorWithId: (int) doctorId
 {
-    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
-    return [doctor number];
+    int doctorIndex = [self getIndexOfDoctorWithId:doctorId];
+    
+    if(doctorIndex != -1) {
+        Doctor *doctor = [doctors objectAtIndex:doctorIndex];
+        return [doctor number];
+    }
+    else {
+        return @"No Phone Number";
+    }
 }
 
 - (NSString *) emailOfDoctorWithId:(int) doctorId
 {
-    Doctor *doctor = [doctors objectAtIndex:[self getIndexOfDoctorWithId:doctorId]];
-    return [doctor email];
+    int doctorIndex = [self getIndexOfDoctorWithId:doctorId];
+    
+    if(doctorIndex != -1) {
+        Doctor *doctor = [doctors objectAtIndex:doctorIndex];
+        return [doctor email];
+    }
+    else {
+        return @"No Email";
+    }
 }
 
+// Accessors (by index):
+// ****************************************
 - (NSString*) nameOfDoctorWithIndex: (int) index
 {
     Doctor *doctor = [doctors objectAtIndex:index];

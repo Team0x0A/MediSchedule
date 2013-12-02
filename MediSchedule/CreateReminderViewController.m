@@ -115,10 +115,11 @@
 // ****************************************
 - (void)createReminderButtonTapped: (id)sender
 {
-    if ([[[self dosageTextField] text] length] < 1 || [[[self notesTextField] text] length] < 1 || pillId == -1)
+    // Gurantee that all reminders contain a dosage and pillId (they must have a time by default):
+    if ([[[self dosageTextField] text] length] < 1 || pillId == -1)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
-                                                        message:@"Please fill out all forms."
+                                                        message:@"Please choose a pill and a dosage."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

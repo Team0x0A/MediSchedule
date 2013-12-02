@@ -75,16 +75,18 @@
 // ****************************************
 - (void) createDoctorButtonTapped: (id)sender
 {
-    if ([[[self nameTextField] text] length] < 1 || [[[self addressTextField] text] length] < 1 || [[[self phoneNumberTextField] text] length] < 1 || [[[self emailTextField] text] length] < 1)
+    // Gurantee that the doctor has at least a name:
+    if ([[[self nameTextField] text] length] < 1)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
-                                                        message:@"Please fill out all forms."
+                                                        message:@"Please fill out name."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
         return;
     }
+    
     // Get all input data from text fields:
     NSString* name = [[self nameTextField] text];
     NSString* address = [[self addressTextField] text];

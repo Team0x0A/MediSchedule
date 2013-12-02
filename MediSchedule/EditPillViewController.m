@@ -7,6 +7,8 @@
  *  Programmers:
  *  Ishan Bhutani
  *  Ning Chai
+ *  Zheren Lu
+ *  Justin Wang
  *
  *  Copyright (c) 2013 Team 0x0A
  */
@@ -15,6 +17,9 @@
 #import "DoctorManager.h"
 #import "GlobalVariables.h"
 
+//***************************************************************************************
+// Private Interface:
+//***************************************************************************************
 @interface EditPillViewController ()
 {
     GlobalVariables *globalVariables;
@@ -23,17 +28,14 @@
     int doctorId;
 }
 
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *notesTextField;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-
-@property(nonatomic,strong) UIImagePickerController *imagePicker;
-@property (strong, nonatomic) IBOutlet UIImageView *imageView;
-
-@property (strong, nonatomic) IBOutlet UIPickerView *doctorPicker;
-@property (strong, nonatomic) IBOutlet UILabel *doctorName;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem *chooseDoctorButton;
-
+@property (strong, nonatomic) IBOutlet UITextField      *nameTextField;
+@property (strong, nonatomic) IBOutlet UITextField      *notesTextField;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem  *saveButton;
+@property (strong, nonatomic) UIImagePickerController   *imagePicker;
+@property (strong, nonatomic) IBOutlet UIImageView      *imageView;
+@property (strong, nonatomic) IBOutlet UIPickerView     *doctorPicker;
+@property (strong, nonatomic) IBOutlet UILabel          *doctorName;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem  *chooseDoctorButton;
 
 @end
 
@@ -41,16 +43,11 @@
 //***************************************************************************************
 // Implementation:
 //***************************************************************************************
-
-
 @implementation EditPillViewController
 
 @synthesize callBack;
 @synthesize pillManager;
 @synthesize pillIndex;
-
-
-
 
 
 // viewDidLoad:
@@ -64,12 +61,15 @@
     doctorManager =  globalVariables.doctorManager;
     listOfDoctorIds = [[NSArray alloc] initWithArray:[doctorManager listOfDoctorIds]];
     
+    // set this view controller as the delegate of all the text fields:
     [self.nameTextField setDelegate:self];
     [self.notesTextField setDelegate:self];
     
+    // setup the saveButton to call the saveButtonTapped method:
     [self.saveButton setTarget:self];
     [self.saveButton setAction:@selector(saveButtonTapped:)];
 
+    // set all of the fields according to the pill we are editing:
     [self.nameTextField setText:[pillManager nameOfPillWithIndex:pillIndex]];
     [self.notesTextField setText:[pillManager notesOfPillWithIndex:pillIndex]];
     [self.imageView setImage:[pillManager imageOfPillWithIndex:pillIndex]];
@@ -82,10 +82,11 @@
 // ****************************************
 - (void) saveButtonTapped: (id)sender
 {
-    if ([[[self nameTextField] text] length] < 1 || [[[self notesTextField] text] length] < 1 || [[self imageView] image] == nil || doctorId == -1)
+    // gurantee that the user has entered at least a name for the pill:
+    if ([[[self nameTextField] text] length] < 1)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
-                                                        message:@"Please fill out all forms."
+                                                        message:@"Please fill out pill name."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

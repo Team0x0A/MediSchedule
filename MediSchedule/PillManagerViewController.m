@@ -40,8 +40,6 @@
 // Implementation:
 //***************************************************************************************
 @implementation PillManagerViewController
-
-
 // viewDidLoad:
 // gets called when the view manager is created
 // ****************************************
@@ -60,6 +58,8 @@
     [_addPillButton setTarget:self];
     [_addPillButton setAction:@selector(addPillButtonTapped:)];
 }
+
+
 
 
 // addPillButtonTapped:
@@ -87,6 +87,7 @@
 
 
 
+
 // prepareForSegue:
 // gets called before seguing to another view controller
 // ****************************************
@@ -95,12 +96,14 @@
 {
     UIViewController* destination = [segue destinationViewController];
     
+    // Prepare to segue to create pill view:
     if([[destination title] isEqual: @"CreatePill"])
     {
         
         CreatePillViewController *detailController = segue.destinationViewController;
         detailController.callBack = self;
     }
+    // Prepare to segue to edit pill view:
     else if ([[destination title] isEqual: @"EditPill"])
     {
         EditPillViewController *editPillViewController = segue.destinationViewController;

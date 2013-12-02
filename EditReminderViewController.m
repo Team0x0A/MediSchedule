@@ -31,14 +31,12 @@
 
 @property (strong, nonatomic) IBOutlet UITextField      *dosageTextField;
 @property (strong, nonatomic) IBOutlet UITextField      *notesTextField;
-@property (strong, nonatomic) IBOutlet UIBarButtonItem  *createReminderButton;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem  *saveButton;
 @property (strong, nonatomic) IBOutlet UIPickerView     *pillPicker;
 @property (strong, nonatomic) IBOutlet UILabel          *pillName;
 @property (strong, nonatomic) IBOutlet UIImageView      *imageOfPill;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem  *choosePillButton;
 @property (strong, nonatomic) IBOutlet UIDatePicker     *timePicker;
-
-- (void)configureView;
 
 @end
 
@@ -51,23 +49,8 @@
 @implementation EditReminderViewController
 
 @synthesize callBack;
-
-
-
-
-// configureView:
-// ****************************************
-- (void)configureView
-{
-    // Update the user interface for the detail item.
-    /*
-     if (self.detailItem) {
-     self.detailDescriptionLabel.text = [self.detailItem description];
-     }*/
-}
-
-
-
+@synthesize reminderManager;
+@synthesize reminderIndex;
 
 
 // viewDidLoad:
@@ -75,23 +58,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureView];
-    
+
     globalVariables = [GlobalVariables getInstance];
     pillManager = globalVariables.pillManager;
     listOfPillIds = [[NSArray alloc] initWithArray:[pillManager listOfPillIds]];
     
-    pillId = -1;// no pill selected
-    
+ 
     // Set this view controller as the delegate of all the text fields
     [_dosageTextField setDelegate:self];
     [_notesTextField setDelegate:self];
     
-    // Setup the createReminderButton to call the createReminderButtonTapped method:
-    [_createReminderButton setTarget:self];
-    [_createReminderButton setAction:@selector(createReminderButtonTapped:)];
-    
-    
+    // Setup the saveButton to call the saveButtonTapped method:
+    [self.saveButton setTarget:self];
+    [self.saveButton setAction:@selector(saveButtonTapped:)];
     
     //set the keyboard under the input text field
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -103,28 +82,34 @@
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+    
+    // set all the fields according to the reminder we are editing:
+    [self.dosageTextField setText: [NSString stringWithFormat:@"%d",[reminderManager dosageAtIndex:reminderIndex]]];
+    [self.notesTextField setText: [reminderManager notesAtIndex:reminderIndex]];
+    //[self.timePicker setDate: [reminderManager timeAtIndex:reminderIndex]];
+    pillId = [reminderManager pillIdAtIndex:reminderIndex];
 }
 
 
 
 
 
-// createReminderButtonTapped:
+// saveButtonTapped:
 // called by createReminderButton
 // ****************************************
-- (void)createReminderButtonTapped: (id)sender
+- (void)saveButtonTapped: (id)sender
 {
-    if ([[[self dosageTextField] text] length] < 1 || [[[self notesTextField] text] length] < 1 || pillId == -1)
+    // Gurantee that all reminders contain a dosage and pillId (they must have a time by default):
+    if ([[[self dosageTextField] text] length] < 1 || pillId == -1)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
-                                                        message:@"Please fill out all forms."
+                                                        message:@"Please choose a pill and a dosage."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
         [alert show];
         return;
     }
-    
     
     // Get dosage from field:
     int dosage = [[[self dosageTextField] text] integerValue];
@@ -146,6 +131,7 @@
 
 
 #pragma mark UITextFieldDelegate
+
 // textFieldShouldReturn:
 // delegated from the pillId, dosage and notes text fields:
 // ****************************************
@@ -155,24 +141,42 @@
 	return YES;
 }
 
+
+
+// numberOfComponentsInPickerView:
 // returns the number of 'columns' to display.
+// ****************************************
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
+
+
+
+// numberOfRowsInComponent:
 // returns the # of rows in each component..
+// ****************************************
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
 {
     return [listOfPillIds count];
 }
 
 
+
+// titleforRow:
+// returns the name of the pill located at the row
+// ****************************************
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
 {
     return [pillManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
 }
 
+
+
+
+// didSelectRow:
+// ****************************************
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
 {
     if([pickerView numberOfRowsInComponent:0] != 0)
@@ -184,6 +188,9 @@
     }
 }
 
+
+// displayPillPicker:
+// ****************************************
 - (IBAction)displayPillPicker:(UIBarButtonItem *)sender
 {
     [self pickerView:self.pillPicker didSelectRow:[self.pillPicker selectedRowInComponent:0] inComponent:0];
@@ -213,6 +220,9 @@
     }
 }
 
+
+// keyBoardDidShow:
+// ****************************************
 - (void)keyboardDidShow:(NSNotification *)notification
 {
     //Assign new frame to your view
@@ -220,11 +230,19 @@
     
 }
 
+
+
+// keyBoardDidHide:
+// ****************************************
 -(void)keyboardDidHide:(NSNotification *)notification
 {
     //[self.view setFrame:CGRectMake(0,0,320,460)];
 }
 
+
+
+// dismissKeyboard:
+// ****************************************
 -(void) dismissKeyboard
 {
     [self.dosageTextField resignFirstResponder];
