@@ -29,7 +29,6 @@
 }
 
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
-
 @property (weak, nonatomic) IBOutlet UITextField *notesTextField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *createPillButton;
 @property(nonatomic,strong) UIImagePickerController *imagePicker;
@@ -85,10 +84,10 @@
 // ****************************************
 - (void) createPillButtonTapped: (id)sender
 {
-    if ([[[self nameTextField] text] length] < 1 || [[[self notesTextField] text] length] < 1 || [[self imageView] image] == nil || doctorId == -1)
-    {
+    // gurantee that the user has entered at least a name for the pill:
+    if([[[self nameTextField] text] length] < 1) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Invalid entry"
-                                                        message:@"Please fill out all forms."
+                                                        message:@"Please fill out pill name."
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];

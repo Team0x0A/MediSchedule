@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <development version="4600" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--Login View Controller - MediSchedule-->
@@ -15,7 +15,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yeV-4g-HJ2">
-                                <rect key="frame" x="63" y="192" width="194" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="194" id="IUh-Vf-80m"/>
                                     <constraint firstAttribute="height" constant="30" id="lzq-3R-jCD"/>
@@ -27,7 +26,6 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2P8-Qg-D4m">
-                                <rect key="frame" x="63" y="222" width="194" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="PUO-Iq-riw"/>
                                 </constraints>
@@ -35,7 +33,6 @@
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2G-sP-jKZ">
-                                <rect key="frame" x="125" y="50" width="70" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="1po-kf-nhp"/>
                                     <constraint firstAttribute="height" constant="30" id="SX9-hb-0Jc"/>
@@ -108,7 +105,6 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dosage (mg)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="TRr-i9-26V">
-                                <rect key="frame" x="0.0" y="90" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="W8T-dB-bw1"/>
                                 </constraints>
@@ -116,7 +112,6 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Notes" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="N1l-oe-vFj">
-                                <rect key="frame" x="0.0" y="124" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ijI-2G-Y5c"/>
                                 </constraints>
@@ -124,14 +119,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naz-hE-csD">
-                                <rect key="frame" x="0.0" y="298" width="320" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="21" id="2QC-tl-GaU"/>
                                     <outlet property="delegate" destination="21" id="xZw-BW-XSo"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No pill selected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dV6-zk-Fen">
-                                <rect key="frame" x="0.0" y="10" width="320" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="g2c-OY-6gG"/>
                                 </constraints>
@@ -139,15 +132,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZgG-8W-rdl">
-                                <rect key="frame" x="105" y="162" width="111" height="61"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="111" id="XzF-fi-azv"/>
                                     <constraint firstAttribute="height" constant="61" id="r6f-IR-8eP"/>
                                 </constraints>
                             </imageView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="C68-xs-hK3">
-                                <rect key="frame" x="0.0" y="298" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="407326792.99216002">
                                     <!--2013-11-28 10:19:52 +0000-->
                                 </date>
@@ -219,7 +209,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="23" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="885" y="-315"/>
+            <point key="canvasLocation" x="915" y="-315"/>
         </scene>
         <!--Edit Pill View Controller - EditPill-->
         <scene sceneID="Avj-A9-jgr">
@@ -230,7 +220,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Notes" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yNh-sd-Zeo">
-                                <rect key="frame" x="0.0" y="76" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vkp-C0-CPd"/>
                                 </constraints>
@@ -238,14 +227,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xT4-Su-WlJ">
-                                <rect key="frame" x="141" y="148" width="91" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="89" id="Kui-nV-uNB"/>
                                     <constraint firstAttribute="width" constant="91" id="Qgk-KY-ILO"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGq-Up-Jg7">
-                                <rect key="frame" x="37" y="148" width="81" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="bVb-uT-8q2"/>
                                     <constraint firstAttribute="width" constant="81" id="rSH-e1-MFV"/>
@@ -264,7 +251,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTQ-xS-2MD">
-                                <rect key="frame" x="37" y="213" width="81" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="hrS-9g-2oZ"/>
                                 </constraints>
@@ -282,7 +268,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GD8-Cv-ADk">
-                                <rect key="frame" x="0.0" y="43" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="teV-SG-UHf"/>
                                 </constraints>
@@ -290,15 +275,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RBY-WH-GLe">
-                                <rect key="frame" x="0.0" y="298" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <outlet property="dataSource" destination="aBh-Aj-3yJ" id="Pao-AX-dv9"/>
                                     <outlet property="delegate" destination="aBh-Aj-3yJ" id="Iqa-HR-j5s"/>
                                 </connections>
                             </pickerView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No doctor selected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9O-6b-2us">
-                                <rect key="frame" x="0.0" y="114" width="320" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Twk-b2-TSZ"/>
                                 </constraints>
@@ -371,13 +353,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GfB-Fk-CEq">
-                                            <rect key="frame" x="10" y="2" width="36" height="22"/>
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dMO-vo-UGs">
-                                            <rect key="frame" x="10" y="24" width="50" height="17"/>
+                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -416,7 +398,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XBq-Pb-1fW">
-                                <rect key="frame" x="0.0" y="78" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gEf-9S-Oc3"/>
                                 </constraints>
@@ -424,7 +405,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4z2-SH-ex8">
-                                <rect key="frame" x="0.0" y="113" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6Ak-gi-x3d"/>
                                 </constraints>
@@ -432,7 +412,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FqP-PZ-fvm">
-                                <rect key="frame" x="0.0" y="149" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="jad-8P-rbT"/>
                                 </constraints>
@@ -440,7 +419,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ElW-ZK-Ha3">
-                                <rect key="frame" x="0.0" y="185" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="wZ5-lN-K9i"/>
                                 </constraints>
@@ -490,7 +468,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k7Y-jy-Yr1">
-                                <rect key="frame" x="0.0" y="44" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NgZ-fx-nyC"/>
                                 </constraints>
@@ -498,7 +475,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Notes" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4QR-Hr-zmX">
-                                <rect key="frame" x="0.0" y="79" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="yLY-RT-TpG"/>
                                 </constraints>
@@ -506,14 +482,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WME-bd-kay">
-                                <rect key="frame" x="141" y="153" width="91" height="89"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="7gJ-Md-mbs"/>
                                     <constraint firstAttribute="height" constant="89" id="Rbj-pV-B8L"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fV-Hw-WTf">
-                                <rect key="frame" x="37" y="152" width="81" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="JA6-6K-HCX"/>
                                     <constraint firstAttribute="height" constant="25" id="NGS-Oz-WQ3"/>
@@ -531,7 +505,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ai2-pN-emh">
-                                <rect key="frame" x="37" y="211" width="81" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="okf-7h-0vk"/>
                                 </constraints>
@@ -548,7 +521,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No doctor selected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zhc-fi-iPP">
-                                <rect key="frame" x="0.0" y="117" width="320" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="uh7-vP-kfq"/>
                                 </constraints>
@@ -556,7 +528,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILQ-Uv-PSt">
-                                <rect key="frame" x="0.0" y="298" width="320" height="162"/>
                                 <connections>
                                     <outlet property="dataSource" destination="ol7-fq-Jvy" id="Zyy-rZ-zbU"/>
                                     <outlet property="delegate" destination="ol7-fq-Jvy" id="h2q-Cl-pV2"/>
@@ -620,21 +591,21 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" textLabel="Esh-LN-tFe" detailTextLabel="12Z-vb-gsc" style="IBUITableViewCellStyleSubtitle" id="lDq-B1-j3y">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReminderCell" textLabel="Esh-LN-tFe" detailTextLabel="12Z-vb-gsc" style="IBUITableViewCellStyleSubtitle" id="lDq-B1-j3y">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Esh-LN-tFe">
-                                            <rect key="frame" x="10" y="2" width="36" height="22"/>
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="12Z-vb-gsc">
-                                            <rect key="frame" x="10" y="24" width="37" height="17"/>
+                                            <rect key="frame" x="10" y="24" width="36" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -663,6 +634,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <segue destination="21" kind="push" identifier="ReminderManagerToCreateReminderSegue" id="i1g-3C-Vkw"/>
                         <segue destination="XrY-mU-idU" kind="push" identifier="ReminderManagerToPillManagerSegue" id="nSY-ud-cOh"/>
                         <segue destination="cdv-Bx-qYn" kind="push" identifier="ReminderManagerToDoctorManagerSegue" id="Ge2-SB-5q8"/>
+                        <segue destination="sXg-t1-dIT" kind="push" identifier="ReminderManagerToEditReminderSegue" id="tnL-9Y-MTn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Alm-4L-sSa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -693,13 +665,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6U6-BZ-eOH">
-                                            <rect key="frame" x="10" y="2" width="36" height="22"/>
+                                            <rect key="frame" x="10" y="2" width="38" height="22"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nO9-cO-mE6">
-                                            <rect key="frame" x="10" y="24" width="50" height="17"/>
+                                            <rect key="frame" x="10" y="24" width="47" height="18"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -738,7 +710,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="top" borderStyle="line" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T6t-5I-CY6">
-                                <rect key="frame" x="0.0" y="86" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ytr-C2-2Y8"/>
                                 </constraints>
@@ -746,7 +717,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r2t-Kf-eqe">
-                                <rect key="frame" x="0.0" y="119" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0oL-S0-ya5"/>
                                 </constraints>
@@ -754,7 +724,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Phone Number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CwG-op-4IT">
-                                <rect key="frame" x="0.0" y="153" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="gcw-f2-aUK"/>
                                 </constraints>
@@ -762,7 +731,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Email Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QIR-r4-mUK">
-                                <rect key="frame" x="0.0" y="186" width="320" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="SW4-0b-Deo"/>
                                 </constraints>
@@ -802,6 +770,121 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZH2-al-7I8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1423" y="1792"/>
+        </scene>
+        <!--Edit Reminder View Controller - CreateReminder-->
+        <scene sceneID="Mhj-wD-fcW">
+            <objects>
+                <viewController title="CreateReminder" id="sXg-t1-dIT" customClass="EditReminderViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KTi-IL-Tk7">
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Dosage (mg)" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="xlQ-nT-JlN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ODD-4S-Q1W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Notes" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="WB0-jE-49N">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dql-63-Aoe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6j-kh-lH9">
+                                <connections>
+                                    <outlet property="dataSource" destination="sXg-t1-dIT" id="L3w-i1-SRa"/>
+                                    <outlet property="delegate" destination="sXg-t1-dIT" id="b3f-nl-7ci"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No pill selected!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCg-V8-O9l">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vsM-bg-sZT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ep-2h-k9j">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="BIU-Kd-JZD"/>
+                                    <constraint firstAttribute="width" constant="111" id="pwK-mc-tM1"/>
+                                </constraints>
+                            </imageView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="DeO-AS-RgZ">
+                                <date key="date" timeIntervalSinceReferenceDate="407326792.99216002">
+                                    <!--2013-11-28 10:19:52 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WB0-jE-49N" firstAttribute="leading" secondItem="v6j-kh-lH9" secondAttribute="leading" type="default" id="14v-NV-uET"/>
+                            <constraint firstAttribute="bottom" secondItem="DeO-AS-RgZ" secondAttribute="bottom" type="default" id="3c5-bd-L46"/>
+                            <constraint firstItem="7ep-2h-k9j" firstAttribute="centerX" secondItem="WB0-jE-49N" secondAttribute="centerX" type="default" id="554-By-iWz"/>
+                            <constraint firstItem="FCg-V8-O9l" firstAttribute="leading" secondItem="xlQ-nT-JlN" secondAttribute="leading" type="default" id="CzV-jY-oqj"/>
+                            <constraint firstItem="xlQ-nT-JlN" firstAttribute="top" secondItem="KTi-IL-Tk7" secondAttribute="top" constant="90" id="L9K-eD-hZd"/>
+                            <constraint firstItem="WB0-jE-49N" firstAttribute="leading" secondItem="xlQ-nT-JlN" secondAttribute="leading" type="default" id="S9k-yq-tk0"/>
+                            <constraint firstItem="FCg-V8-O9l" firstAttribute="top" secondItem="KTi-IL-Tk7" secondAttribute="top" constant="10" id="T6J-pN-Ej0"/>
+                            <constraint firstItem="WB0-jE-49N" firstAttribute="top" secondItem="KTi-IL-Tk7" secondAttribute="top" constant="124" id="Vja-Oh-h2U"/>
+                            <constraint firstItem="FCg-V8-O9l" firstAttribute="trailing" secondItem="xlQ-nT-JlN" secondAttribute="trailing" type="default" id="YxJ-mC-WQY"/>
+                            <constraint firstItem="7ep-2h-k9j" firstAttribute="top" secondItem="WB0-jE-49N" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="awf-Kb-zyq"/>
+                            <constraint firstItem="DeO-AS-RgZ" firstAttribute="top" secondItem="v6j-kh-lH9" secondAttribute="top" type="default" id="gnr-hK-8R3"/>
+                            <constraint firstAttribute="trailing" secondItem="v6j-kh-lH9" secondAttribute="trailing" type="user" id="iDP-y5-pif"/>
+                            <constraint firstItem="DeO-AS-RgZ" firstAttribute="trailing" secondItem="WB0-jE-49N" secondAttribute="trailing" type="default" id="j0d-42-fyy"/>
+                            <constraint firstItem="DeO-AS-RgZ" firstAttribute="leading" secondItem="v6j-kh-lH9" secondAttribute="leading" type="default" id="oV8-TW-k3p"/>
+                            <constraint firstItem="DeO-AS-RgZ" firstAttribute="trailing" secondItem="v6j-kh-lH9" secondAttribute="trailing" type="default" id="pTv-tM-dpf"/>
+                            <constraint firstItem="WB0-jE-49N" firstAttribute="trailing" secondItem="xlQ-nT-JlN" secondAttribute="trailing" type="default" id="ufh-tG-4bF"/>
+                            <constraint firstItem="FCg-V8-O9l" firstAttribute="leading" secondItem="KTi-IL-Tk7" secondAttribute="leading" type="default" id="ukW-1G-L8W"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem title="Create Reminder" id="lHB-NO-ZpE"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="8dt-cR-rWe"/>
+                        <barButtonItem title="Choose Pill" id="4vV-g1-wbu">
+                            <connections>
+                                <action selector="displayPillPicker:" destination="sXg-t1-dIT" id="Yb5-GS-2cM"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" title="Create Reminder" id="jX1-tA-dNs"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="choosePillButton" destination="4vV-g1-wbu" id="edH-rW-UXu"/>
+                        <outlet property="createReminderButton" destination="lHB-NO-ZpE" id="Tul-9s-Buh"/>
+                        <outlet property="dosageTextField" destination="xlQ-nT-JlN" id="qa9-kM-dJu"/>
+                        <outlet property="imageOfPill" destination="7ep-2h-k9j" id="Xj8-Ju-RAF"/>
+                        <outlet property="notesTextField" destination="WB0-jE-49N" id="L6Z-eh-KA9"/>
+                        <outlet property="pillName" destination="FCg-V8-O9l" id="KRX-fI-daq"/>
+                        <outlet property="pillPicker" destination="v6j-kh-lH9" id="Lmm-cz-7Im"/>
+                        <outlet property="timePicker" destination="DeO-AS-RgZ" id="1To-MK-Hec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uTg-RP-o8G" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="915" y="-999"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -195,10 +195,14 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }
 }
+
+
+// accessoryButtomTappedForRowWithIndexPath
+// ****************************************
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     indexOfCurrentlySelectedCell = [indexPath item];
-    [self performSegueWithIdentifier:@"PillManagerToEditPillSegue"sender:self];
+    [self performSegueWithIdentifier:@"PillManagerToEditPillSegue" sender:self];
 }
 
 

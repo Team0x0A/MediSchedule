@@ -18,8 +18,7 @@
 
 @interface EditPillViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (strong, nonatomic)
-    PillManagerViewController* callBack;
+@property (strong, nonatomic) PillManagerViewController* callBack;
 @property (strong, nonatomic) PillManager* pillManager;
 @property int pillIndex;
 @end
