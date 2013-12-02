@@ -82,8 +82,9 @@
     // set all the fields according to the reminder we are editing:
     [self.dosageTextField setText: [NSString stringWithFormat:@"%d",[reminderManager dosageAtIndex:reminderIndex]]];
     [self.notesTextField setText: [reminderManager notesAtIndex:reminderIndex]];
-    //[self.timePicker setDate: [reminderManager timeAtIndex:reminderIndex]];
+    [self.timePicker setDate: [reminderManager timeAtIndex:reminderIndex]];
     pillId = [reminderManager pillIdAtIndex:reminderIndex];
+    self.pillName.text = [pillManager nameOfPillWithId:pillId];
     
     //To hide keyboard when something outside the keyboard is tapped
     //only for dosage
@@ -114,19 +115,20 @@
         return;
     }
     
-    // Get dosage from field:
-    int dosage = [[[self dosageTextField] text] integerValue];
     
-    // Get notes from field:
+    // Get all input:
+    int dosage      = [[[self dosageTextField] text] integerValue];
     NSString *notes = [[self notesTextField] text];
+    NSDate *date    = [self.timePicker date];
     
-    // Add the reminder to the reminder manager:
-    [callBack addReminderWithTime:[self.timePicker date]
-                       WithPillId:pillId
-                       WithDosage:dosage
-                        WithNotes:notes];
+    // update the reminder:
+    [reminderManager setDosageTo:dosage AtIndex:reminderIndex];
+    [reminderManager setNotesTo:notes AtIndex:reminderIndex];
+    [reminderManager setTimeTo:date AtIndex:reminderIndex];
+    [reminderManager setPillIdTo:pillId AtIndex:reminderIndex];
     
     // Pop CreateReminderViewController off of the navigationController view stack:
+    [callBack loadView];
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
@@ -134,7 +136,6 @@
 
 
 #pragma mark UITextFieldDelegate
-
 // textFieldShouldReturn:
 // delegated from the pillId, dosage and notes text fields:
 // ****************************************

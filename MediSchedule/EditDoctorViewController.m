@@ -88,12 +88,14 @@
         [alert show];
         return;
     }
-    // Get all input data from text fields:
-    NSString* name = [[self nameTextField] text];
-    NSString* address = [[self addressTextField] text];
-    NSString* phoneNumber = [[self phoneNumberTextField] text];
-    NSString* email = [[self emailTextField] text];
     
+    // Get all input data from text fields:
+    NSString* name          = [[self nameTextField] text];
+    NSString* address       = [[self addressTextField] text];
+    NSString* phoneNumber   = [[self phoneNumberTextField] text];
+    NSString* email         = [[self emailTextField] text];
+    
+    // update the doctor:
     [doctorManager setNameTo:name OfDoctorWithIndex:doctorIndex];
     [doctorManager setAddressTo:address OfDoctorWithIndex:doctorIndex];
     [doctorManager setNumberTo:phoneNumber OfDoctorWithIndex:doctorIndex];

@@ -92,8 +92,6 @@
     [_createReminderButton setTarget:self];
     [_createReminderButton setAction:@selector(createReminderButtonTapped:)];
     
-
-    
     //set the keyboard under the input text field
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
@@ -157,24 +155,42 @@
 	return YES;
 }
 
+
+
+
+// numberOfComponentsInPickerView:
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
+
+
+
+// numberOfRowsInComponent:
 // returns the # of rows in each component..
+// ****************************************
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component
 {
     return [listOfPillIds count];
 }
 
 
+
+// titleforRow:
+// returns the name of the pill located at the row
+// ****************************************
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component
 {
     return [pillManager nameOfPillWithId:[[listOfPillIds objectAtIndex:row] integerValue]];
 }
 
+
+
+
+// didSelectRow:
+// ****************************************
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component
 {
     if([pickerView numberOfRowsInComponent:0] != 0)
@@ -186,6 +202,10 @@
     }
 }
 
+
+
+// displayPillPicker:
+// ****************************************
 - (IBAction)displayPillPicker:(UIBarButtonItem *)sender
 {
     [self pickerView:self.pillPicker didSelectRow:[self.pillPicker selectedRowInComponent:0] inComponent:0];
@@ -215,6 +235,9 @@
     }
 }
 
+
+// keyBoardDidShow:
+// ****************************************
 - (void)keyboardDidShow:(NSNotification *)notification
 {
     //Assign new frame to your view
@@ -222,11 +245,18 @@
     
 }
 
+
+
+// keyBoardDidHide:
+// ****************************************
 -(void)keyboardDidHide:(NSNotification *)notification
 {
     //[self.view setFrame:CGRectMake(0,0,320,460)];
 }
 
+
+// dismissKeyboard:
+// ****************************************
 -(void) dismissKeyboard
 {
     [self.dosageTextField resignFirstResponder];
