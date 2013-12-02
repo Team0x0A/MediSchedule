@@ -27,6 +27,8 @@
 
 // Modifiers (by ID):
 
+- (void) removeDoctorIdsOfPillWithId: (int) pillId;
+
 - (void) deletePillWithId: (int) pillId;
 
 - (void) deletePillWithIndex: (int)index;

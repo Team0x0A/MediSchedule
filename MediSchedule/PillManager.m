@@ -115,6 +115,19 @@
 }
 
 // Modifiers:
+
+- (void) removeDoctorIdsOfPillWithId: (int) pillId
+{
+    for (Pill *i in pills)
+    {
+        if([i pillId] == pillId)
+        {
+            [i setDoctorId:-1];
+        }
+    }
+}
+
+
 - (void) deletePillWithId: (int) pillId
 {
     [pills removeObjectAtIndex:[self getIndexOfPillWithId:pillId]];

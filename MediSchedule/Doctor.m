@@ -73,6 +73,10 @@
     }
     return self;
 }
+- (void) dealloc
+{
+    
+}
 
 // Initialize Time object with unarchived data from aDecoder
 - (id) initWithCoder:(NSCoder *)aDecoder
