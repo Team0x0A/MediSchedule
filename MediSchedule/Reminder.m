@@ -42,7 +42,7 @@
     {
         globalVariables = [GlobalVariables getInstance];
         pillManager = globalVariables.pillManager;
-        [self setTime:newTime];
+        
         [self setPillId:newPillId];
         [self setDosage:newDosage];
         if (newNotes)
@@ -53,8 +53,9 @@
         {
             [self setNotes:@""];
         }
-        notification = [[UILocalNotification alloc] init];
-        [self initializeNotification:notification];
+        [self setTime:newTime];
+        //notification = [[UILocalNotification alloc] init];
+        //[self initializeNotification:notification];
     }
     return self;
 }
@@ -81,8 +82,10 @@
 
 - (void) setTime:(NSDate *)time
 {
-    if (notification) notification.fireDate = time;
     _time = time;
+    if (notification) [[UIApplication sharedApplication] cancelLocalNotification:notification];
+    notification = [[UILocalNotification alloc] init];
+    [self initializeNotification:notification];
 }
 
 - (NSDate *) time
