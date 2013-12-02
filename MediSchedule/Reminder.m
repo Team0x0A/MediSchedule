@@ -54,8 +54,6 @@
             [self setNotes:@""];
         }
         [self setTime:newTime];
-        //notification = [[UILocalNotification alloc] init];
-        //[self initializeNotification:notification];
     }
     return self;
 }
