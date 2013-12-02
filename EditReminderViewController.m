@@ -57,10 +57,12 @@
 // ****************************************
 - (void)viewDidLoad
 {
+    NSLog(@"Editing reminder with index: %d", reminderIndex);
     [super viewDidLoad];
 
     globalVariables = [GlobalVariables getInstance];
     pillManager = globalVariables.pillManager;
+    reminderManager = globalVariables.reminderManager;
     listOfPillIds = [[NSArray alloc] initWithArray:[pillManager listOfPillIds]];
     
  
@@ -76,18 +78,19 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
     
-    //To hide keyboard when something outside the keyboard is tapped
-    //only for dosage
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
     
     // set all the fields according to the reminder we are editing:
     [self.dosageTextField setText: [NSString stringWithFormat:@"%d",[reminderManager dosageAtIndex:reminderIndex]]];
     [self.notesTextField setText: [reminderManager notesAtIndex:reminderIndex]];
     //[self.timePicker setDate: [reminderManager timeAtIndex:reminderIndex]];
     pillId = [reminderManager pillIdAtIndex:reminderIndex];
+    
+    //To hide keyboard when something outside the keyboard is tapped
+    //only for dosage
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
 }
 
 

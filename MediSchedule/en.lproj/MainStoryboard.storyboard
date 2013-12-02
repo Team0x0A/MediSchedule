@@ -771,10 +771,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="1423" y="1792"/>
         </scene>
-        <!--Edit Reminder View Controller - CreateReminder-->
+        <!--Edit Reminder View Controller - EditReminder-->
         <scene sceneID="Mhj-wD-fcW">
             <objects>
-                <viewController title="CreateReminder" id="sXg-t1-dIT" customClass="EditReminderViewController" sceneMemberID="viewController">
+                <viewController title="EditReminder" id="sXg-t1-dIT" customClass="EditReminderViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KTi-IL-Tk7">
                         <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

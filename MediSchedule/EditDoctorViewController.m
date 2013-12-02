@@ -55,6 +55,7 @@
     [_saveButton setTarget:self];
     [_saveButton setAction:@selector(saveButtonTapped:)];
     
+    // set all fields according to the doctor we are editing:
     [_nameTextField setText:[doctorManager nameOfDoctorWithIndex:doctorIndex]];
     [_addressTextField setText:[doctorManager addressOfDoctorWithIndex:doctorIndex]];
     [_phoneNumberTextField setText:[doctorManager numberOfDoctorWithIndex:doctorIndex]];
