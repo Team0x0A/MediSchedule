@@ -180,8 +180,6 @@
 		0CB85710181C7E3100D71BA1 /* MediSchedule */ = {
 			isa = PBXGroup;
 			children = (
-				844923CC18486B2D00F34BEE /* GlobalVariables.h */,
-				844923CD18486B2D00F34BEE /* GlobalVariables.m */,
 				0CB85722181C7E3200D71BA1 /* MainStoryboard.storyboard */,
 				0C82C0DB181C8BA80006F60B /* View Controllers */,
 				0CB85757181C7FEA00D71BA1 /* Data Structures */,
@@ -228,6 +226,8 @@
 		0CB85757181C7FEA00D71BA1 /* Data Structures */ = {
 			isa = PBXGroup;
 			children = (
+				844923CC18486B2D00F34BEE /* GlobalVariables.h */,
+				844923CD18486B2D00F34BEE /* GlobalVariables.m */,
 				84AAAF9E182379F2009B7E98 /* DoctorManager.h */,
 				84AAAF9F182379F2009B7E98 /* DoctorManager.m */,
 				84AAAF9A182379F2009B7E98 /* Doctor.h */,
